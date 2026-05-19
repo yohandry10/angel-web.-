@@ -8,6 +8,18 @@ export default async function handler(request) {
     absoluteUrl = `${proto}://${host}${request.url}`;
   }
   
-  const absoluteRequest = new Request(absoluteUrl, request);
+  const init = {
+    method: request.method,
+    headers: request.headers,
+  };
+  
+  // Node.js/undici is strict about GET/HEAD requests not having a body,
+  // and requires duplex: 'half' for requests with a stream body.
+  if (request.method !== "GET" && request.method !== "HEAD") {
+    init.body = request.body;
+    init.duplex = "half";
+  }
+  
+  const absoluteRequest = new Request(absoluteUrl, init);
   return server.fetch(absoluteRequest);
 }
