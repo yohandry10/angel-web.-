@@ -1,4 +1,11 @@
 {
   "buildCommand": "pnpm build",
-  "outputDirectory": ".vercel/output"
+  "outputDirectory": "dist/client",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/server"
+    }
+  ]
 }
