@@ -4,8 +4,8 @@ import heroImg from "@/assets/hero-devops.jpg";
 import { ITCursor } from "@/components/ITCursor";
 import { ContactModal } from "@/components/ContactModal";
 
-const TITLE = "Angel R. Gadea L. — DevOps, Cloud & MLOps Engineer";
-const DESC = "Portafolio de Angel R. Gadea L. Especialista en Arquitectura Cloud, DevOps, Machine Learning y Sistemas UNIX/Middleware.";
+const TITLE = "Equipo de Investigación IA, DevOps y DevSecOps";
+const DESC = "Equipo de investigadores que resuelve problemas complejos de IA, LLMs, Deep Learning y Machine Learning para América Latina, EEUU y Europa.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -94,12 +94,12 @@ function Index() {
         <div className="flex items-center justify-between px-[clamp(24px,5vw,80px)] py-5">
           <a href="#" className="flex items-center gap-3 group">
             <div className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_12px_var(--cyan-glow)] animate-pulse" />
-            <span className="font-mono text-xs tracking-[0.25em] uppercase group-hover:text-cyan-glow transition">ANGEL_GADEA</span>
+            <span className="font-mono text-xs tracking-[0.25em] uppercase group-hover:text-cyan-glow transition">AI_RESEARCH_TEAM</span>
           </a>
           <nav className="hidden md:flex items-center gap-10 font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground">
             <a href="#proceso" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Proceso</a>
             <a href="#stack" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Stack</a>
-            <a href="#bio" data-cursor="$ whoami" className="hover:text-cyan-glow transition-colors duration-300">Bio</a>
+            <a href="#bio" data-cursor="$ whoami" className="hover:text-cyan-glow transition-colors duration-300">Equipo</a>
             <a href="#criterio" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Criterio</a>
           </nav>
           <div className="flex items-center gap-6">
@@ -121,10 +121,10 @@ function Index() {
         {/* Mobile menu dropdown */}
         <div className={`md:hidden overflow-hidden transition-all duration-500 ${mobileMenu ? "max-h-80 border-t border-line/30" : "max-h-0"}`}>
           <nav className="flex flex-col gap-1 px-[clamp(24px,5vw,80px)] py-4 bg-background/95 backdrop-blur-xl">
-            {["Proceso", "Stack", "Bio", "Criterio"].map((item) => (
+            {["Proceso", "Stack", "Equipo", "Criterio"].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`#${item === "Equipo" ? "bio" : item.toLowerCase()}`}
                 onClick={() => setMobileMenu(false)}
                 className="font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
               >
@@ -166,14 +166,14 @@ function Index() {
             <span className="reveal-line"><span className="block">CON CRITERIO.</span></span>
           </h1>
           <p className="reveal mt-6 max-w-md text-base md:text-lg leading-relaxed text-muted-foreground">
-            Diseño plataformas en la nube, pipelines CI/CD y sistemas observables para equipos que liberan código todos los días.
+            Somos un equipo de investigadores que resuelve problemas complejos de IA y entendimiento de LLMs, combinando Deep Learning, Machine Learning, DevOps y DevSecOps para América Latina, EEUU y Europa.
           </p>
           <div className="reveal mt-8 flex flex-wrap items-center gap-8">
             <button onClick={openModal} data-cursor="$ deploy" className="group inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
               Iniciar proyecto
               <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
             </button>
-            <a href="#proceso" data-cursor="$ scroll" className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted-foreground hover:text-foreground transition">↓ Cómo trabajo</a>
+            <a href="#proceso" data-cursor="$ scroll" className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted-foreground hover:text-foreground transition">↓ Cómo trabajamos</a>
           </div>
           <div className="relative mt-auto pt-12 flex flex-wrap items-end gap-12 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
             <div><div className="text-cyan-glow/60 mb-2">[01]</div><div>Lima, Perú</div><div>—12.04° S</div></div>
@@ -223,7 +223,7 @@ function Index() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
             <div className="lg:col-span-5 flex flex-col reveal-left">
               <h2 className="font-sans font-medium tracking-[-0.04em] mb-12" style={{ fontSize: "clamp(40px,5.5vw,88px)", lineHeight: 0.92 }}>
-                Lo que <span className="font-serif-it font-normal text-amber-glow">construyo</span>,<br />opero y{" "}<span className="font-serif-it font-normal text-cyan-glow">mantengo</span>.
+                Lo que <span className="font-serif-it font-normal text-amber-glow">construimos</span>,<br />operamos y{" "}<span className="font-serif-it font-normal text-cyan-glow">mantenemos</span>.
               </h2>
 
               {/* Tabs verticales tipo terminal */}
@@ -288,7 +288,7 @@ function Index() {
           {/* Left column — sticky avatar card, narrower */}
           <div className="lg:col-span-3">
             <div className="reveal flex items-center gap-4 mb-12">
-              <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ whoami ]</span>
+              <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ equipo ]</span>
             </div>
             <div className="reveal sticky top-24">
               <div className="aspect-[3/4] bg-muted/30 border border-line relative overflow-hidden group">
@@ -299,7 +299,7 @@ function Index() {
                   </div>
                 </div>
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-                  <span>· id_eng</span>
+                  <span>· research_team</span>
                   <span className="text-cyan-glow flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-glow animate-pulse shadow-[0_0_6px_var(--cyan-glow)]" />
                     ONLINE
@@ -315,29 +315,25 @@ function Index() {
           {/* Right column — main content, wider */}
           <div className="lg:col-span-9">
             <h2 className="reveal font-sans font-medium tracking-[-0.04em] mb-10" style={{ fontSize: "clamp(40px,5.5vw,88px)", lineHeight: 0.92 }}>
-              Ingeniero de{" "}<span className="font-serif-it font-normal text-amber-glow">plataforma</span>.<br />
-              Operador con{" "}<span className="font-serif-it font-normal text-cyan-glow">criterio</span>.
+              Equipo de{" "}<span className="font-serif-it font-normal text-amber-glow">investigación aplicada</span>.<br />
+              Ingeniería con{" "}<span className="font-serif-it font-normal text-cyan-glow">criterio</span>.
             </h2>
 
             <div className="space-y-8 max-w-2xl text-base md:text-lg leading-[1.75] text-muted-foreground">
               <p className="reveal">
-                Más de <span className="text-foreground font-medium">17 años</span> de experiencia profesional 
-                en la industria bancaria y de telecomunicaciones como Architecture and Support Solution Engineer, especializándome en entornos UNIX (Solaris, AIX, Linux) y 
-                plataformas Middleware (JBoss, Weblogic, WebSphere).
+                Somos un <span className="text-foreground font-medium">grupo de investigadores e ingenieros</span> enfocado en resolver problemas complejos de IA y entendimiento de LLMs, con experiencia aplicada en entornos críticos de banca, telecomunicaciones y tecnología.
               </p>
               <p className="reveal">
-                He evolucionado hacia arquitecturas modernas, liderando posiciones <span className="text-foreground font-medium">DevOps, Cloud y MLOps</span>. 
-                Desarrollo y opero infraestructura en AWS, Azure y GCP, automatizando pipelines con Jenkins, GitHub Actions, ArgoCD, y orquestando con Kubernetes y OpenShift.
+                Trabajamos con <span className="text-foreground font-medium">Deep Learning, Machine Learning, DevOps y DevSecOps</span>, diseñando soluciones que conectan investigación, arquitectura cloud, automatización, seguridad y operación real.
               </p>
               <p className="reveal">
-                Combino la infraestructura con <span className="text-foreground font-medium">Machine Learning y Data Engineering</span>. 
-                Implemento proyectos de clasificación y predicción (Deep Learning, CNN, RNN) usando TensorFlow, PyTorch y Scikit-learn, integrados con Databricks y DataFactory.
+                Aplicamos modelos, pipelines y plataformas en diferentes áreas para organizaciones de <span className="text-foreground font-medium">América Latina, EEUU y Europa</span>, integrando TensorFlow, PyTorch, Scikit-learn, Databricks, DataFactory y prácticas de seguridad desde el diseño.
               </p>
             </div>
 
             <div className="reveal mt-10 grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-10 border-t border-line pt-10">
               {[
-                { k: "Años de experiencia", v: "17+" },
+                { k: "Experiencia combinada", v: "17+" },
                 { k: "Clusters operados", v: "40+" },
                 { k: "Migraciones cloud", v: "12" },
                 { k: "Postmortems", v: "200+" },
@@ -358,7 +354,7 @@ function Index() {
         <div className="relative">
           <p className="reveal max-w-5xl font-sans font-medium tracking-[-0.03em] mb-20" style={{ fontSize: "clamp(40px,5vw,76px)", lineHeight: 1.05 }}>
             La infraestructura <span className="font-serif-it text-cyan-glow">no es invisible</span> cuando falla.
-            Mi trabajo es que <span className="font-serif-it text-amber-glow">nunca tengas que pensar</span> en ella.
+            Nuestro trabajo es que <span className="font-serif-it text-amber-glow">nunca tengas que pensar</span> en ella.
           </p>
           <div className="grid md:grid-cols-3 border-t border-line">
             {[
@@ -432,21 +428,11 @@ function Index() {
 
           <div className="grid md:grid-cols-3 gap-12 border-t border-line pt-12">
             <div>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">Contacto & Redes</div>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">Contacto</div>
               <div className="flex flex-col gap-4">
-                <a href="mailto:angric.galir@gmail.com" data-cursor="$ mail" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
+                <a href="mailto:operaciones@nextelco.cloud" data-cursor="$ mail" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5 break-all">angric.galir@gmail.com</span>
-                </a>
-                
-                <a href="https://www.linkedin.com/in/angel-r-gadea-l-57b0b6b4/" target="_blank" rel="noreferrer" data-cursor="$ link" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                  <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5">Angel Gadea L.</span>
-                </a>
-
-                <a href="https://github.com/AngelGadeaL" target="_blank" rel="noreferrer" data-cursor="$ link" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                  <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5">AngelGadeaL</span>
+                  <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5 break-all">operaciones@nextelco.cloud</span>
                 </a>
               </div>
             </div>
@@ -465,7 +451,7 @@ function Index() {
           </div>
 
           <div className="mt-32 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-            <div>© 2026 Angel R. Gadea L. — DevOps, Cloud & MLOps</div>
+            <div>© 2026 AI Research Team — DevOps, DevSecOps & MLOps</div>
             <div>Hecho con criterio · No con plantillas</div>
           </div>
         </div>

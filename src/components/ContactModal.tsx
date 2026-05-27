@@ -5,7 +5,7 @@ const schema = z.object({
   name: z.string().trim().min(2, "Nombre muy corto").max(80),
   email: z.string().trim().email("Email inválido").max(160),
   company: z.string().trim().max(80).optional(),
-  message: z.string().trim().min(10, "Cuéntame un poco más").max(1000),
+  message: z.string().trim().min(10, "Cuéntanos un poco más").max(1000),
 });
 
 export function ContactModal({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -38,7 +38,7 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
     setErrors({});
     const subject = encodeURIComponent(`[Proyecto] ${r.data.name}${r.data.company ? " · " + r.data.company : ""}`);
     const body = encodeURIComponent(`${r.data.message}\n\n— ${r.data.name}\n${r.data.email}`);
-    window.location.href = `mailto:angric.galir@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:operaciones@nextelco.cloud?subject=${subject}&body=${body}`;
     setSent(true);
   };
 
@@ -65,7 +65,7 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
             <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-[-0.03em] mb-4">
               Mensaje <span className="font-serif-it font-normal text-amber-glow">enviado</span>.
             </h3>
-            <p className="text-muted-foreground">Te responderé en menos de 24h hábiles.</p>
+            <p className="text-muted-foreground">Te responderemos en menos de 24h hábiles.</p>
             <button onClick={onClose} className="mt-8 font-mono text-[11px] tracking-[0.25em] uppercase border-b border-foreground pb-1 hover:text-cyan-glow hover:border-cyan-glow transition">
               Cerrar →
             </button>
@@ -75,7 +75,7 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
             <div>
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-cyan-glow mb-2">[ Iniciar conversación ]</div>
               <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-[-0.03em]">
-                Cuéntame del <span className="font-serif-it font-normal text-amber-glow">proyecto</span>.
+                Cuéntanos del <span className="font-serif-it font-normal text-amber-glow">proyecto</span>.
               </h3>
             </div>
 
