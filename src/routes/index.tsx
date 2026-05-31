@@ -176,7 +176,7 @@ function Index() {
             <a href="#proceso" data-cursor="$ scroll" className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted-foreground hover:text-foreground transition">↓ Cómo trabajamos</a>
           </div>
           <div className="relative mt-auto pt-12 flex flex-wrap items-end gap-12 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-            <div><div className="text-cyan-glow/60 mb-2">[01]</div><div>Lima, Perú</div><div>—12.04° S</div></div>
+            <div><div className="text-cyan-glow/60 mb-2">[01]</div><div>Miami, EEUU</div><div>—25.76° N</div></div>
             <div><div className="text-cyan-glow/60 mb-2">[02]</div><div>Uptime 99.98%</div><div>Last 12 months</div></div>
           </div>
         </div>
@@ -306,7 +306,7 @@ function Index() {
                   </span>
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-                  Lima · UTC−5
+                  Miami · UTC−5
                 </div>
               </div>
             </div>
@@ -434,11 +434,15 @@ function Index() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                   <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5 break-all">operaciones@nextelco.cloud</span>
                 </a>
+                <a href="tel:+17862244098" data-cursor="$ call" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5">001 (786) 2244098</span>
+                </a>
               </div>
             </div>
             <div>
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Ubicación</div>
-              <div className="text-xl md:text-2xl">Lima, Perú</div>
+              <div className="text-xl md:text-2xl">Miami, EEUU</div>
               <div className="font-mono text-xs text-muted-foreground mt-1">UTC−5 · Remoto global</div>
             </div>
             <div>
