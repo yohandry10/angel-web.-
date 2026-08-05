@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero-devops.jpg";
-import { ITCursor } from "@/components/ITCursor";
+import logoNavbar from "@/assets/logo-navbar-white.png";
 import { ContactModal } from "@/components/ContactModal";
 
 const TITLE = "Equipo de Investigación IA, DevOps y DevSecOps";
@@ -86,21 +86,21 @@ function Index() {
 
   return (
     <main className="bg-background text-foreground overflow-x-hidden">
-      <ITCursor />
       <ContactModal open={modal} onClose={() => setModal(false)} />
 
       {/* NAVBAR — fixed + glassmorphism on scroll */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/80 backdrop-blur-xl border-b border-line/50 shadow-[0_1px_20px_rgba(0,0,0,0.3)]" : "bg-transparent border-b border-transparent"}`}>
         <div className="flex items-center justify-between px-[clamp(24px,5vw,80px)] py-5">
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_12px_var(--cyan-glow)] animate-pulse" />
-            <span className="font-mono text-xs tracking-[0.25em] uppercase group-hover:text-cyan-glow transition">AI_RESEARCH_TEAM</span>
+            <img src={logoNavbar} alt="NEXTELCO" className="h-9 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-10 font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground">
             <a href="#proceso" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Proceso</a>
             <a href="#stack" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Stack</a>
+            <Link to="/experiencia" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Experiencia</Link>
             <a href="#bio" data-cursor="$ whoami" className="hover:text-cyan-glow transition-colors duration-300">Equipo</a>
             <a href="#criterio" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Criterio</a>
+            <Link to="/erp" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">ERP</Link>
           </nav>
           <div className="flex items-center gap-6">
             <button onClick={openModal} data-cursor="$ contact" className="hidden sm:inline-flex font-mono text-[12px] tracking-[0.2em] uppercase border-b border-foreground/60 pb-0.5 hover:border-cyan-glow hover:text-cyan-glow transition-colors duration-300">
@@ -131,6 +131,20 @@ function Index() {
                 {item}
               </a>
             ))}
+            <Link
+              to="/experiencia"
+              onClick={() => setMobileMenu(false)}
+              className="font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
+            >
+              Experiencia
+            </Link>
+            <Link
+              to="/erp"
+              onClick={() => setMobileMenu(false)}
+              className="font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
+            >
+              ERP
+            </Link>
             <button
               onClick={() => { setMobileMenu(false); openModal(); }}
               className="font-mono text-[12px] tracking-[0.2em] uppercase text-cyan-glow py-3 text-left"
@@ -282,6 +296,59 @@ function Index() {
         </div>
       </section>
 
+      {/* PRODUCTO ESTRELLA — KONTA ERP */}
+      <section id="producto" className="px-[clamp(24px,5vw,80px)] py-[clamp(72px,10vh,140px)] border-t border-line relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+        <div className="relative">
+          <div className="reveal-left flex items-center gap-4 mb-16">
+            <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ Producto estrella ]</span>
+            <div className="flex-1 hairline" />
+          </div>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-6 reveal-left">
+              <h2 className="font-sans font-medium tracking-[-0.04em] mb-8" style={{ fontSize: "clamp(40px,5.5vw,80px)", lineHeight: 0.92 }}>
+                Konta — el ERP <span className="font-serif-it font-normal text-amber-glow">insignia</span> de NEXTELCO.
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-6 max-w-xl">
+                Nuestro producto estrella: un ERP operativo por evento para empresas peruanas. Facturación electrónica SUNAT, contabilidad automática en tiempo real, inventario multi-almacén y POS offline — para cerrar el mes contable el día 2, no el 15.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-10">
+                {["Facturación SUNAT", "Contabilidad automática", "Inventario multi-almacén", "POS offline", "CPE", "Multi-sucursal"].map((t) => (
+                  <span key={t} className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground border border-line px-2.5 py-1">{t}</span>
+                ))}
+              </div>
+              <Link to="/erp" data-cursor="$ open" className="group inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
+                Conocer Konta
+                <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
+              </Link>
+            </div>
+            <div className="lg:col-span-6 reveal-right">
+              <div className="bg-ink border border-line">
+                <div className="flex items-center justify-between px-5 py-3 border-b border-line">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_8px_var(--cyan-glow)]" />
+                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">~/nextelco/konta — módulos</span>
+                  </div>
+                  <span className="font-mono text-[10px] text-muted-foreground/60">live</span>
+                </div>
+                <div className="grid grid-cols-2 gap-px bg-line">
+                  {[["Ventas", "POS + CPE"], ["Compras", "OC + recepción"], ["Contabilidad", "PCGE automático"], ["Inventario", "multi-almacén"], ["CPE SUNAT", "OSE / PSE"], ["Finanzas", "caja + bancos"]].map(([k, v]) => (
+                    <div key={k} className="bg-ink p-5 md:p-6 group hover:bg-muted/40 transition-colors duration-500">
+                      <div className="text-base md:text-lg font-medium group-hover:text-cyan-glow transition-colors duration-500">{k}</div>
+                      <div className="font-mono text-[10px] tracking-[0.1em] uppercase text-muted-foreground mt-1">{v}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="px-6 py-4 border-t border-line font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60 flex items-center gap-3">
+                  <span>$ status:</span>
+                  <span className="text-cyan-glow">operando 1,200+ negocios en Perú</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* BIO */}
       <section id="bio" className="reveal-section px-[clamp(24px,5vw,80px)] py-[clamp(72px,10vh,140px)] border-t border-line">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
@@ -417,44 +484,50 @@ function Index() {
         <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-cyan-glow/10 blur-[120px]" />
         <div className="absolute -left-32 bottom-0 w-[400px] h-[400px] rounded-full bg-amber-glow/10 blur-[120px]" />
         <div className="relative">
-          <div className="reveal font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow mb-8">[ Siguiente sprint ]</div>
-          <h2 className="reveal font-sans font-medium tracking-[-0.05em] max-w-6xl mb-16" style={{ fontSize: "clamp(48px,7vw,112px)", lineHeight: 0.88 }}>
-            Hablemos de tu <span className="font-serif-it font-normal text-amber-glow">infraestructura</span>.
-          </h2>
-          <button onClick={openModal} data-cursor="$ open" className="reveal group inline-flex items-center gap-4 bg-foreground text-ink px-8 py-5 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500 mb-20">
-            Abrir formulario
-            <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
-          </button>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-7">
+              <div className="reveal font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow mb-8">[ Siguiente sprint ]</div>
+              <h2 className="reveal font-sans font-medium tracking-[-0.05em] mb-12" style={{ fontSize: "clamp(44px,6vw,104px)", lineHeight: 0.88 }}>
+                Hablemos de tu <span className="font-serif-it font-normal text-amber-glow">infraestructura</span>.
+              </h2>
+              <button onClick={openModal} data-cursor="$ open" className="reveal group inline-flex items-center gap-4 bg-foreground text-ink px-8 py-5 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
+                Abrir formulario
+                <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
+              </button>
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-12 border-t border-line pt-12">
-            <div>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">Contacto</div>
-              <div className="flex flex-col gap-4">
-                <a href="mailto:operaciones@nextelco.cloud" data-cursor="$ mail" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5 break-all">operaciones@nextelco.cloud</span>
-                </a>
-                <a href="tel:+17862244098" data-cursor="$ call" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5">001 (786) 2244098</span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Ubicación</div>
-              <div className="text-xl md:text-2xl">Miami, EEUU</div>
-              <div className="font-mono text-xs text-muted-foreground mt-1">UTC−5 · Remoto global</div>
-            </div>
-            <div>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Disponibilidad</div>
-              <div className="flex items-center gap-3 text-xl md:text-2xl">
-                <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_12px_var(--cyan-glow)] animate-pulse" />
-                Q1 2026
+            <div className="lg:col-span-5 reveal">
+              <div className="bg-ink/60 border border-line p-8 md:p-10">
+                <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-5">Contacto</div>
+                <div className="flex flex-col gap-4 pb-8 border-b border-line">
+                  <a href="mailto:operaciones@nextelco.cloud" data-cursor="$ mail" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5 break-all">operaciones@nextelco.cloud</span>
+                  </a>
+                  <a href="tel:+17862244098" data-cursor="$ call" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span className="border-b border-transparent group-hover:border-cyan-glow transition pb-0.5">001 (786) 2244098</span>
+                  </a>
+                </div>
+                <div className="grid grid-cols-2 gap-6 pt-8">
+                  <div>
+                    <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Ubicación</div>
+                    <div className="text-lg md:text-xl">Lima, Perú</div>
+                    <div className="font-mono text-xs text-muted-foreground mt-1">UTC−5 · Remoto global</div>
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Disponibilidad</div>
+                    <div className="flex items-center gap-3 text-lg md:text-xl">
+                      <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_12px_var(--cyan-glow)] animate-pulse" />
+                      Q1 2026
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-32 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+          <div className="mt-20 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
             <div>© 2026 AI Research Team — DevOps, DevSecOps & MLOps</div>
             <div>Hecho con criterio · No con plantillas</div>
           </div>

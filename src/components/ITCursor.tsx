@@ -13,15 +13,13 @@ export function ITCursor() {
 
   useEffect(() => {
     if (!enabled) return;
-    let mx = 0, my = 0, rx = 0, ry = 0;
+    let mx = 0, my = 0;
     let raf = 0;
 
     const move = (e: MouseEvent) => { mx = e.clientX; my = e.clientY; };
     const loop = () => {
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
       if (dotRef.current) dotRef.current.style.transform = `translate3d(${mx - 3}px, ${my - 3}px, 0)`;
-      if (ringRef.current) ringRef.current.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
+      if (ringRef.current) ringRef.current.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
       if (labelRef.current) labelRef.current.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
       raf = requestAnimationFrame(loop);
     };
