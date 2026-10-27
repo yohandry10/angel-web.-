@@ -24,7 +24,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     tag: "Sin conexión",
     q: "¿Funciona sin internet?",
-    a: "La aplicación de escritorio permite registrar operaciones locales en el punto de venta y sincronizarlas al recuperar la conexión, dentro del alcance admitido. La emisión y la respuesta de los comprobantes electrónicos sí necesitan conexión con SUNAT u OSE.",
+    a: "Sí, con la aplicación de escritorio. El POS y la caja, las cotizaciones, los pedidos con reserva de stock, los clientes y el inventario siguen operando sin conexión y se sincronizan al volver; los demás módulos se consultan con los datos ya descargados. Emitir y enviar comprobantes electrónicos sí requiere conexión.",
   },
   {
     tag: "Sucursales",
@@ -39,7 +39,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     tag: "Migración",
     q: "¿Pueden migrar mi información actual?",
-    a: "El ERP tiene importaciones de datos. Revisamos contigo qué traer (productos, clientes, proveedores, saldos) y desde qué sistema; el alcance, el costo y el plazo se definen en esa evaluación.",
+    a: "Sí. El ERP importa clientes, proveedores, stock inicial, balance de apertura, cuentas por cobrar y por pagar abiertas y comprobantes históricos. Revisamos contigo de qué sistema vienen los datos; el alcance, el costo y el plazo se definen en esa evaluación.",
   },
   {
     tag: "Implementación",

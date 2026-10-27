@@ -86,7 +86,7 @@ export default function Hero() {
           <span className="w-1 h-1 rounded-full bg-current opacity-50" />
           <span className="inline-flex items-center gap-1.5">
             <Ic.check size={12} className="text-accent" />
-            Web y aplicación de escritorio
+            Web y escritorio, también sin conexión
           </span>
           <span className="w-1 h-1 rounded-full bg-current opacity-50" />
           <span className="inline-flex items-center gap-1.5">

@@ -12,7 +12,7 @@ const ECOSYSTEM = [
     icon: Ic.flash,
     cat: "POS",
     name: "Punto de venta y cajas",
-    desc: "Apertura y cierre de caja, cobros por medio de pago, tickets, ingresos, egresos y control de diferencias. Operación local en la app de escritorio.",
+    desc: "Apertura y cierre de caja, cobros por medio de pago, tickets, ingresos, egresos y control de diferencias. Sigue vendiendo sin conexión en la app de escritorio.",
   },
   {
     icon: Ic.box,
@@ -48,7 +48,7 @@ const ECOSYSTEM = [
     icon: Ic.bank,
     cat: "Finanzas",
     name: "Cuentas por cobrar y pagar",
-    desc: "Saldos, vencimientos, cobros, pagos, anticipos y saldos a favor aplicados a obligaciones posteriores.",
+    desc: "Saldos, vencimientos, cobros, pagos, anticipos y saldos a favor. Retenciones, percepciones y detracciones, con su depósito y efecto en la cuenta.",
   },
   {
     icon: Ic.trendUp,

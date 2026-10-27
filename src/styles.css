@@ -500,7 +500,7 @@ details[open] .acc-plus {
 
 /* Sticky nav blur */
 @utility nav-blur {
-  background: color-mix(in oklab, var(--bg) 70%, transparent);
+  background: color-mix(in oklab, var(--bg) 94%, transparent);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--line);
