@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { ITCursor } from "@/components/ITCursor";
+import { SITE_URL } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -74,9 +75,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0a1218" },
-      { name: "author", content: "AI Research Team — DevOps, DevSecOps y MLOps" },
-      { name: "keywords", content: "IA, LLM, Deep Learning, Machine Learning, DevOps, DevSecOps, MLOps, Kubernetes, Terraform, AWS, GCP, Azure, CI/CD, Observabilidad, America Latina, EEUU, Europa" },
-      { property: "og:site_name", content: "AI Research Team" },
+      { name: "author", content: "NEXTELCO" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { name: "keywords", content: "NEXTELCO, ERP, CRM, sistemas empresariales, IA, LLM, Deep Learning, Machine Learning, DevOps, DevSecOps, MLOps, Kubernetes, Terraform, AWS, GCP, Azure, CI/CD, Observabilidad, Lima, Perú, America Latina, EEUU, Europa" },
+      { property: "og:site_name", content: "NEXTELCO" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_PE" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -92,12 +94,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "AI Research Team",
-          email: "operaciones@nextelco.cloud",
-          telephone: "+17862244098",
-          address: { "@type": "PostalAddress", addressLocality: "Miami", addressRegion: "FL", addressCountry: "US" },
-          knowsAbout: ["LLMs", "Deep Learning", "Machine Learning", "DevOps", "DevSecOps", "MLOps", "Kubernetes", "Terraform", "AWS", "GCP", "Azure", "CI/CD", "Observability", "GitOps"],
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}#organization`,
+              name: "NEXTELCO",
+              url: SITE_URL,
+              email: "operaciones@nextelco.cloud",
+              telephone: "+17862244098",
+              address: { "@type": "PostalAddress", addressLocality: "Lima", addressRegion: "Lima", addressCountry: "PE" },
+              knowsAbout: ["ERP", "CRM", "Sistemas empresariales", "LLMs", "Deep Learning", "Machine Learning", "DevOps", "DevSecOps", "MLOps", "Kubernetes", "Terraform", "AWS", "GCP", "Azure", "CI/CD", "Observability", "GitOps"],
+              makesOffer: {
+                "@type": "Offer",
+                itemOffered: { "@type": "SoftwareApplication", name: "NEXTELCO ERP", url: `${SITE_URL}/erp` },
+              },
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}#website`,
+              url: SITE_URL,
+              name: "NEXTELCO",
+              inLanguage: "es-PE",
+              publisher: { "@id": `${SITE_URL}#organization` },
+            },
+          ],
         }),
       },
     ],

@@ -17,25 +17,31 @@ export default function FinalCTA() {
       />
 
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8 py-[100px] sm:py-[120px] text-center">
-        <span className="kicker justify-center">Empieza hoy</span>
+        <span className="kicker justify-center">Demo</span>
         <h2 className="mt-5 max-w-[20ch] mx-auto font-semibold tracking-[-0.04em] leading-[1.04]" style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)" }}>
-          Tu primer cierre contable es esta semana.
+          Mira tu operación conectada en NEXTELCO ERP.
         </h2>
         <p className="mt-6 max-w-[44ch] mx-auto text-[16px] sm:text-[18px] text-fg-2 leading-[1.55]">
-          Migración gratis. Tu equipo capacitado en 3 días. Comprobantes válidos para SUNAT desde el primer minuto.
+          Revisamos cómo vendes, compras, almacenas, cobras y pagas planillas, y te mostramos ese recorrido en el sistema.
         </p>
 
         <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="#" className="btn btn-primary btn-lg">
-            Crear cuenta gratis
+          <a
+            href="mailto:operaciones@nextelco.cloud?subject=Quiero%20una%20demo%20de%20NEXTELCO%20ERP"
+            className="btn btn-primary btn-lg"
+          >
+            Solicitar una demo
             <Ic.arrowR size={15} className="-mr-1" />
           </a>
-          <a href="#" className="btn btn-ghost btn-lg">
-            Agendar demo de 20 min
+          <a
+            href="mailto:operaciones@nextelco.cloud?subject=Consulta%20sobre%20NEXTELCO%20ERP"
+            className="btn btn-ghost btn-lg"
+          >
+            Hacer una consulta
           </a>
         </div>
 
-        <p className="mt-5 text-[12.5px] text-fg-4">Sin tarjeta · Cancela cuando quieras · Soporte humano en Lima</p>
+        <p className="mt-5 text-[12.5px] text-fg-4">operaciones@nextelco.cloud · Equipo en Lima, Perú</p>
       </div>
     </section>
   );

@@ -39,19 +39,35 @@ export default function DashboardMockup() {
   const maxV = Math.max(...bars.map((b) => b.v));
 
   const modules = [
-    { name: "Inicio", icon: Ic.cpu, active: false, ai: false },
-    { name: "Ventas", icon: Ic.cart, active: true, ai: false },
-    { name: "Compras", icon: Ic.box, active: false, ai: false },
-    { name: "Contabilidad", icon: Ic.calc, active: false, ai: true },
-    { name: "Finanzas", icon: Ic.bank, active: false, ai: false },
-    { name: "Inventario", icon: Ic.boxes, active: false, ai: false },
-    { name: "CPE SUNAT", icon: Ic.fileCheck, active: false, ai: false },
+    { name: "Ventas", icon: Ic.cart, active: true },
+    { name: "POS y cajas", icon: Ic.flash, active: false },
+    { name: "Compras", icon: Ic.box, active: false },
+    { name: "Inventario", icon: Ic.boxes, active: false },
+    { name: "PECOSA", icon: Ic.receipt, active: false },
+    { name: "Logística", icon: Ic.globe, active: false },
+    { name: "Devoluciones", icon: Ic.layers, active: false },
+    { name: "Finanzas", icon: Ic.bank, active: false },
+    { name: "Contabilidad", icon: Ic.calc, active: false },
+    { name: "Documentos SUNAT", icon: Ic.fileCheck, active: false },
+    { name: "RRHH y planillas", icon: Ic.users, active: false },
+    { name: "Sucursales y permisos", icon: Ic.building, active: false },
+    { name: "Reportes", icon: Ic.trendUp, active: false },
   ];
 
+  // Cada asiento conserva el vínculo con el documento que lo originó
   const entries = [
-    { code: "F001-1234", concept: "Venta · Distribuidora Andina", amount: "S/ 1,180.00", time: "hace 12s" },
-    { code: "F001-1233", concept: "Venta · Ferretería El Sol", amount: "S/ 480.00", time: "hace 1 min" },
-    { code: "B001-0023", concept: "Venta POS · Restaurante Rumi", amount: "S/ 89.50", time: "hace 3 min" },
+    { code: "F001-00004123", concept: "Venta a crédito · Ferretería Central", amount: "S/ 4,720.00", time: "Ventas" },
+    { code: "FP-E001-0871", concept: "Factura de proveedor · CxP", amount: "S/ 2,360.00", time: "Compras" },
+    { code: "PLA-2026-10", concept: "Planilla de octubre", amount: "S/ 68,400.00", time: "RRHH" },
+  ];
+
+  const pipeline = [
+    { label: "Cotización", state: "done" },
+    { label: "Pedido", state: "done" },
+    { label: "Reserva", state: "done" },
+    { label: "Despacho", state: "partial" },
+    { label: "Factura", state: "todo" },
+    { label: "Cobro", state: "todo" },
   ];
 
   return (
@@ -78,7 +94,7 @@ export default function DashboardMockup() {
               <rect x="4" y="11" width="16" height="10" rx="2" />
               <path d="M8 11V8a4 4 0 0 1 8 0v3" />
             </svg>
-            <span className="text-[11px] tracking-tight text-fg-3 font-mono">app.konta.pe/dashboard</span>
+            <span className="text-[11px] tracking-tight text-fg-3 font-mono">erp.nextelco.cloud/dashboard</span>
           </div>
         </div>
         <div className="text-fg-4 hidden sm:flex items-center gap-2">
@@ -87,10 +103,10 @@ export default function DashboardMockup() {
       </div>
 
       {/* App body */}
-      <div className="flex" style={{ height: 420 }}>
+      <div className="flex" style={{ height: 472 }}>
         {/* Sidebar */}
         <aside
-          className="hidden sm:flex flex-col w-[180px] border-r border-line py-3 px-2.5 gap-0.5"
+          className="hidden sm:flex flex-col w-[190px] border-r border-line py-3 px-2.5 gap-0.5"
           style={{ background: "var(--bg-soft)" }}
         >
           <div className="px-2 pb-2 flex items-center gap-2">
@@ -106,7 +122,7 @@ export default function DashboardMockup() {
                 />
               </svg>
             </div>
-            <span className="text-[12.5px] font-semibold text-fg">Konta</span>
+            <span className="text-[12.5px] font-semibold text-fg">NEXTELCO ERP</span>
           </div>
           <div className="px-2 pt-1 pb-1.5 text-[10px] font-medium uppercase tracking-[0.1em] text-fg-4">Módulos</div>
           {modules.map((m, i) => {
@@ -115,21 +131,13 @@ export default function DashboardMockup() {
               <div
                 key={i}
                 className={
-                  "flex items-center gap-2 px-2 h-7 rounded-md text-[12px] cursor-default " +
+                  "flex items-center gap-2 px-2 h-[25px] rounded-md text-[11.5px] cursor-default " +
                   (m.active ? "text-fg" : "text-fg-2 hover:text-fg")
                 }
                 style={m.active ? { background: "var(--surface-2)", boxShadow: "inset 0 0 0 1px var(--line)" } : {}}
               >
                 <ItemIcon size={13} className={m.active ? "text-accent" : "text-fg-3"} />
                 <span className="flex-1 truncate">{m.name}</span>
-                {m.ai && (
-                  <span
-                    className="text-[9px] font-semibold px-1.5 h-4 inline-flex items-center rounded"
-                    style={{ background: "var(--accent-soft)", color: "var(--accent)" }}
-                  >
-                    AI
-                  </span>
-                )}
               </div>
             );
           })}
@@ -138,11 +146,11 @@ export default function DashboardMockup() {
               className="w-6 h-6 rounded-full grid place-items-center text-[10px] font-semibold"
               style={{ background: "var(--accent)", color: "#04101c" }}
             >
-              AQ
+              AD
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-[11px] font-medium text-fg">Andrea Q.</span>
-              <span className="text-[9.5px] text-fg-4">Distribuidora Andina</span>
+              <span className="text-[11px] font-medium text-fg">Administración</span>
+              <span className="text-[9.5px] text-fg-4">Sede Lima · Demo</span>
             </div>
           </div>
         </aside>
@@ -162,7 +170,7 @@ export default function DashboardMockup() {
                   <span className="absolute inset-0 rounded-full pulse-dot"></span>
                   <span className="relative w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent)" }} />
                 </span>
-                En vivo
+                Datos de demo
               </span>
               <span className="text-fg-3">
                 <Ic.bell size={13} />
@@ -173,9 +181,9 @@ export default function DashboardMockup() {
           {/* KPIs */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 px-4 sm:px-5 pt-4">
             <Kpi label="Ventas hoy" value="S/ 12,450" delta="+18%" up />
-            <Kpi label="CPE emitidos" value="47" delta="+9" up muted />
-            <Kpi label="Caja" value="S/ 4,280" delta="−2%" up={false} muted />
-            <Kpi label="Por cobrar" value="S/ 18,990" delta="−4 días" muted />
+            <Kpi label="Pedidos por despachar" value="18" delta="6 parciales" up muted />
+            <Kpi label="Por cobrar" value="S/ 18,990" delta="4 vencidos" up={false} muted />
+            <Kpi label="Stock reservado" value="342 u." delta="3 almacenes" muted />
           </div>
 
           {/* Chart + journal */}
@@ -215,10 +223,10 @@ export default function DashboardMockup() {
             {/* Journal */}
             <div className="rounded-lg border border-line p-3.5" style={{ background: "var(--bg-soft)" }}>
               <div className="flex items-center justify-between">
-                <span className="text-[11px] text-fg-3">Asientos generados automáticamente</span>
+                <span className="text-[11px] text-fg-3">Asientos desde operaciones</span>
                 <span className="inline-flex items-center gap-1 text-[10px] text-accent">
-                  <Ic.flash size={10} className="text-accent" />
-                  auto
+                  <Ic.check size={10} className="text-accent" />
+                  vinculados
                 </span>
               </div>
               <div className="mt-2.5 flex flex-col">
@@ -247,6 +255,27 @@ export default function DashboardMockup() {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Pipeline of one order */}
+          <div className="mx-4 sm:mx-5 mt-3 rounded-lg border border-line px-3.5 py-2.5 hidden sm:block" style={{ background: "var(--bg-soft)" }}>
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] text-fg-3">
+                Pedido <span className="font-mono text-fg">PV-000482</span> · Comercial Norte
+              </span>
+              <span className="text-[10px] text-fg-4">Despacho parcial 80 / 120 u.</span>
+            </div>
+            <ol className="mt-2 grid grid-cols-6 gap-1.5">
+              {pipeline.map((p) => (
+                <li key={p.label} className="flex flex-col gap-1">
+                  <span
+                    className="h-1 rounded-full"
+                    style={{ background: p.state === "done" ? "var(--accent)" : p.state === "partial" ? "color-mix(in oklab, var(--accent) 45%, var(--line))" : "var(--line)" }}
+                  />
+                  <span className={"text-[9.5px] " + (p.state === "todo" ? "text-fg-4" : "text-fg-2")}>{p.label}</span>
+                </li>
+              ))}
+            </ol>
           </div>
         </main>
       </div>

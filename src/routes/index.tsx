@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero-devops.jpg";
 import logoNavbar from "@/assets/logo-navbar-white.png";
 import { ContactModal } from "@/components/ContactModal";
+import { SITE_URL } from "@/lib/seo";
 
-const TITLE = "Equipo de Investigación IA, DevOps y DevSecOps";
-const DESC = "Equipo de investigadores que resuelve problemas complejos de IA, LLMs, Deep Learning y Machine Learning para América Latina, EEUU y Europa.";
+const TITLE = "NEXTELCO — Sistemas empresariales, ERP, IA, DevOps y DevSecOps";
+const DESC = "Desde Lima, Perú, construimos sistemas empresariales de alto rendimiento —ERP, CRM y plataformas a medida— y resolvemos problemas complejos de negocio con Deep Learning, Machine Learning, DevOps y DevSecOps. Creadores de NEXTELCO ERP.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -15,13 +16,13 @@ export const Route = createFileRoute("/")({
       { name: "description", content: DESC },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
-      { property: "og:url", content: "/" },
-      { property: "og:image", content: heroImg },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}${heroImg}` },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: heroImg },
+      { name: "twitter:image", content: `${SITE_URL}${heroImg}` },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
   }),
 });
 
@@ -180,7 +181,7 @@ function Index() {
             <span className="reveal-line"><span className="block">CON CRITERIO.</span></span>
           </h1>
           <p className="reveal mt-6 max-w-md text-base md:text-lg leading-relaxed text-muted-foreground">
-            Somos un equipo de investigadores que resuelve problemas complejos de IA y entendimiento de LLMs, combinando Deep Learning, Machine Learning, DevOps y DevSecOps para América Latina, EEUU y Europa.
+            Construimos sistemas empresariales de alto rendimiento —ERP, CRM y plataformas a medida— y resolvemos problemas complejos de negocio con Deep Learning, Machine Learning, DevOps y DevSecOps para América Latina, EEUU y Europa.
           </p>
           <div className="reveal mt-8 flex flex-wrap items-center gap-8">
             <button onClick={openModal} data-cursor="$ deploy" className="group inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
@@ -190,7 +191,7 @@ function Index() {
             <a href="#proceso" data-cursor="$ scroll" className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted-foreground hover:text-foreground transition">↓ Cómo trabajamos</a>
           </div>
           <div className="relative mt-auto pt-12 flex flex-wrap items-end gap-12 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-            <div><div className="text-cyan-glow/60 mb-2">[01]</div><div>Miami, EEUU</div><div>—25.76° N</div></div>
+            <div><div className="text-cyan-glow/60 mb-2">[01]</div><div>Lima, Perú</div><div>—12.05° S</div></div>
             <div><div className="text-cyan-glow/60 mb-2">[02]</div><div>Uptime 99.98%</div><div>Last 12 months</div></div>
           </div>
         </div>
@@ -296,7 +297,7 @@ function Index() {
         </div>
       </section>
 
-      {/* PRODUCTO ESTRELLA — KONTA ERP */}
+      {/* PRODUCTO ESTRELLA — NEXTELCO ERP */}
       <section id="producto" className="px-[clamp(24px,5vw,80px)] py-[clamp(72px,10vh,140px)] border-t border-line relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
         <div className="relative">
@@ -307,18 +308,18 @@ function Index() {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 reveal-left">
               <h2 className="font-sans font-medium tracking-[-0.04em] mb-8" style={{ fontSize: "clamp(40px,5.5vw,80px)", lineHeight: 0.92 }}>
-                Konta — el ERP <span className="font-serif-it font-normal text-amber-glow">insignia</span> de NEXTELCO.
+                NEXTELCO ERP — nuestro producto <span className="font-serif-it font-normal text-amber-glow">insignia</span>.
               </h2>
               <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-6 max-w-xl">
-                Nuestro producto estrella: un ERP operativo por evento para empresas peruanas. Facturación electrónica SUNAT, contabilidad automática en tiempo real, inventario multi-almacén y POS offline — para cerrar el mes contable el día 2, no el 15.
+                Nuestro producto estrella: un ERP que conecta ventas, compras, inventario, logística, finanzas, contabilidad y planillas. Cada operación alimenta a las que dependen de ella, con permisos e historial, sin volver a digitar lo mismo.
               </p>
               <div className="flex flex-wrap gap-2 mb-10">
-                {["Facturación SUNAT", "Contabilidad automática", "Inventario multi-almacén", "POS offline", "CPE", "Multi-sucursal"].map((t) => (
+                {["Comprobantes electrónicos", "Contabilidad desde operaciones", "Inventario multi-almacén", "POS y cajas", "PECOSA", "Planillas", "Multi-sucursal"].map((t) => (
                   <span key={t} className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground border border-line px-2.5 py-1">{t}</span>
                 ))}
               </div>
               <Link to="/erp" data-cursor="$ open" className="group inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
-                Conocer Konta
+                Conocer NEXTELCO ERP
                 <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
               </Link>
             </div>
@@ -327,12 +328,12 @@ function Index() {
                 <div className="flex items-center justify-between px-5 py-3 border-b border-line">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_8px_var(--cyan-glow)]" />
-                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">~/nextelco/konta — módulos</span>
+                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">~/nextelco/erp — módulos</span>
                   </div>
                   <span className="font-mono text-[10px] text-muted-foreground/60">live</span>
                 </div>
                 <div className="grid grid-cols-2 gap-px bg-line">
-                  {[["Ventas", "POS + CPE"], ["Compras", "OC + recepción"], ["Contabilidad", "PCGE automático"], ["Inventario", "multi-almacén"], ["CPE SUNAT", "OSE / PSE"], ["Finanzas", "caja + bancos"]].map(([k, v]) => (
+                  {[["Ventas", "POS + CPE"], ["Compras", "OC + recepción"], ["Contabilidad", "asientos vinculados"], ["Inventario", "multi-almacén"], ["CPE SUNAT", "CPE + GRE + SIRE"], ["Finanzas", "caja + bancos"]].map(([k, v]) => (
                     <div key={k} className="bg-ink p-5 md:p-6 group hover:bg-muted/40 transition-colors duration-500">
                       <div className="text-base md:text-lg font-medium group-hover:text-cyan-glow transition-colors duration-500">{k}</div>
                       <div className="font-mono text-[10px] tracking-[0.1em] uppercase text-muted-foreground mt-1">{v}</div>
@@ -341,7 +342,7 @@ function Index() {
                 </div>
                 <div className="px-6 py-4 border-t border-line font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60 flex items-center gap-3">
                   <span>$ status:</span>
-                  <span className="text-cyan-glow">operando 1,200+ negocios en Perú</span>
+                  <span className="text-cyan-glow">más de 100 clientes en Perú</span>
                 </div>
               </div>
             </div>
@@ -373,7 +374,7 @@ function Index() {
                   </span>
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-                  Miami · UTC−5
+                  Lima · UTC−5
                 </div>
               </div>
             </div>
@@ -388,7 +389,7 @@ function Index() {
 
             <div className="space-y-8 max-w-2xl text-base md:text-lg leading-[1.75] text-muted-foreground">
               <p className="reveal">
-                Somos un <span className="text-foreground font-medium">grupo de investigadores e ingenieros</span> enfocado en resolver problemas complejos de IA y entendimiento de LLMs, con experiencia aplicada en entornos críticos de banca, telecomunicaciones y tecnología.
+                Somos un <span className="text-foreground font-medium">equipo de ingenieros e investigadores</span> que construye sistemas empresariales de alto rendimiento —ERP, CRM y plataformas a medida— y resuelve problemas complejos de negocio e IA, con experiencia aplicada en entornos críticos de banca, telecomunicaciones y tecnología.
               </p>
               <p className="reveal">
                 Trabajamos con <span className="text-foreground font-medium">Deep Learning, Machine Learning, DevOps y DevSecOps</span>, diseñando soluciones que conectan investigación, arquitectura cloud, automatización, seguridad y operación real.
@@ -528,7 +529,7 @@ function Index() {
           </div>
 
           <div className="mt-20 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-            <div>© 2026 AI Research Team — DevOps, DevSecOps & MLOps</div>
+            <div>© 2026 NEXTELCO — Sistemas empresariales, DevOps y DevSecOps</div>
             <div>Hecho con criterio · No con plantillas</div>
           </div>
         </div>

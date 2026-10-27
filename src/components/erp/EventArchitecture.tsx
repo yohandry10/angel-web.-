@@ -1,7 +1,140 @@
-import React from "react";
+import React, { useState } from "react";
 import { Ic } from "./Icons";
 
-function TriggerCard() {
+type IconT = React.ComponentType<{ size?: number; className?: string }>;
+
+interface Effect {
+  icon: IconT;
+  name: string;
+  headline: string;
+  status: string;
+}
+
+interface Flow {
+  id: string;
+  tab: string;
+  steps: string[];
+  trigger: {
+    icon: IconT;
+    label: string;
+    title: string;
+    subtitle: string;
+    amountLabel: string;
+    amount: string;
+    code: string;
+    note: string;
+  };
+  top: Effect[];
+  bot: Effect[];
+}
+
+// Datos de ejemplo. Cada recorrido muestra qué registra el ERP y en qué estado queda cada paso.
+const FLOWS: Flow[] = [
+  {
+    id: "venta",
+    tab: "Venta",
+    steps: ["Cotización", "Pedido", "Reserva", "Despacho", "Factura", "Cobro"],
+    trigger: {
+      icon: Ic.cart,
+      label: "Pedido aprobado",
+      title: "Pedido PV-000482",
+      subtitle: "Comercial Norte · COT-0311",
+      amountLabel: "Total · crédito 30 días",
+      amount: "S/ 4,720.00",
+      code: "Lista mayorista",
+      note: "Aprobado",
+    },
+    top: [
+      { icon: Ic.boxes, name: "Inventario", headline: "120 u. reservadas en Almacén Central", status: "Reservado" },
+      { icon: Ic.globe, name: "Logística", headline: "Orden de preparación, picking y packing", status: "En curso" },
+      { icon: Ic.fileCheck, name: "SUNAT · CPE", headline: "Factura y guía de remisión al despachar", status: "Por emitir" },
+    ],
+    bot: [
+      { icon: Ic.bank, name: "Por cobrar", headline: "Saldo con vencimiento a 30 días", status: "Al facturar" },
+      { icon: Ic.calc, name: "Contabilidad", headline: "Asiento vinculado a la factura", status: "Al facturar" },
+      { icon: Ic.users, name: "Comisiones", headline: "Comisión del vendedor por marca", status: "Calculada" },
+    ],
+  },
+  {
+    id: "compra",
+    tab: "Compra",
+    steps: ["Orden", "Recepción", "Factura del proveedor", "Pago"],
+    trigger: {
+      icon: Ic.box,
+      label: "Recepción registrada",
+      title: "Recepción REC-0193",
+      subtitle: "Insumos del Sur · OC-0087",
+      amountLabel: "Recibido / pedido",
+      amount: "80 / 120 u.",
+      code: "Almacén Central",
+      note: "Parcial",
+    },
+    top: [
+      { icon: Ic.boxes, name: "Inventario", headline: "Entrada al almacén y kardex valorizado", status: "Actualizado" },
+      { icon: Ic.receipt, name: "Orden de compra", headline: "40 u. pendientes de recibir", status: "Parcial" },
+      { icon: Ic.clock, name: "Historial", headline: "Usuario, fecha y documento de origen", status: "Registrado" },
+    ],
+    bot: [
+      { icon: Ic.fileCheck, name: "Factura proveedor", headline: "Al registrarla nace la cuenta por pagar", status: "Siguiente" },
+      { icon: Ic.bank, name: "Por pagar", headline: "Vencimiento y programación del pago", status: "Siguiente" },
+      { icon: Ic.calc, name: "Contabilidad", headline: "Asiento de la compra, enlazado a la factura", status: "Siguiente" },
+    ],
+  },
+  {
+    id: "devolucion",
+    tab: "Devolución",
+    steps: ["Solicitud", "Recepción", "Nota de crédito", "Saldo a favor o reembolso"],
+    trigger: {
+      icon: Ic.layers,
+      label: "Devolución recibida",
+      title: "RMA-0057",
+      subtitle: "Comercial Norte · F001-4123",
+      amountLabel: "Recibido / solicitado",
+      amount: "3 / 5 u.",
+      code: "Motivo: producto dañado",
+      note: "Parcial",
+    },
+    top: [
+      { icon: Ic.boxes, name: "Inventario", headline: "Reingreso de 3 u. al almacén", status: "Actualizado" },
+      { icon: Ic.receipt, name: "Devolución", headline: "2 u. pendientes de recibir", status: "Parcial" },
+      { icon: Ic.fileCheck, name: "SUNAT · CPE", headline: "Nota de crédito electrónica", status: "Por emitir" },
+    ],
+    bot: [
+      { icon: Ic.bank, name: "Saldo a favor", headline: "Crédito disponible para el cliente", status: "Al emitir NC" },
+      { icon: Ic.trendUp, name: "Tesorería", headline: "Aplicación a otra factura o reembolso", status: "A elegir" },
+      { icon: Ic.calc, name: "Contabilidad", headline: "Asiento vinculado a la nota de crédito", status: "Al emitir NC" },
+    ],
+  },
+  {
+    id: "planilla",
+    tab: "Planilla",
+    steps: ["Asistencia y conceptos", "Planilla", "Boleta", "Pago"],
+    trigger: {
+      icon: Ic.users,
+      label: "Planilla aprobada",
+      title: "Planilla octubre 2026",
+      subtitle: "24 colaboradores · Sede Lima",
+      amountLabel: "Neto a pagar",
+      amount: "S/ 68,400.00",
+      code: "PLA-2026-10",
+      note: "Aprobada",
+    },
+    top: [
+      { icon: Ic.clock, name: "Asistencia", headline: "Horas, tardanzas y vacaciones del mes", status: "Consolidado" },
+      { icon: Ic.receipt, name: "Boletas", headline: "Boleta de pago por colaborador", status: "Generadas" },
+      { icon: Ic.shield, name: "Beneficios", headline: "CTS y liquidaciones calculadas", status: "Calculado" },
+    ],
+    bot: [
+      { icon: Ic.bank, name: "Tesorería", headline: "Pagos al personal programados", status: "Programado" },
+      { icon: Ic.calc, name: "Contabilidad", headline: "Asiento de planilla generado", status: "Generado" },
+      { icon: Ic.layers, name: "PLAME · T-Registro", headline: "Información preparada para declarar", status: "Por revisar" },
+    ],
+  },
+];
+
+function TriggerCard({ flow }: { flow: Flow }) {
+  const t = flow.trigger;
+  const I = t.icon;
   return (
     <div
       className="relative"
@@ -19,49 +152,42 @@ function TriggerCard() {
               <span className="absolute inset-0 rounded-full pulse-dot" />
               <span className="relative w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent)" }} />
             </span>
-            Operación en vivo
+            {t.label}
           </span>
-          <span className="text-[10px] font-mono text-fg-4">14:23:08</span>
+          <span className="text-[10px] font-mono text-fg-4">Ejemplo</span>
         </div>
 
         <div className="mt-3 flex items-center gap-2.5">
           <div
-            className="w-9 h-9 rounded-md grid place-items-center"
+            className="w-9 h-9 rounded-md grid place-items-center shrink-0"
             style={{ background: "var(--accent-soft)", border: "1px solid color-mix(in oklab, var(--accent) 30%, transparent)" }}
           >
-            <Ic.cart size={16} className="text-accent" />
+            <I size={16} className="text-accent" />
           </div>
-          <div className="flex flex-col">
-            <span className="text-[13px] font-semibold text-fg">Venta confirmada</span>
-            <span className="text-[11px] font-mono text-fg-3">POS · Tienda Surco</span>
+          <div className="flex flex-col min-w-0">
+            <span className="text-[13px] font-semibold text-fg">{t.title}</span>
+            <span className="text-[11px] font-mono text-fg-3 truncate">{t.subtitle}</span>
           </div>
         </div>
 
-        <div className="mt-3 flex items-baseline justify-between">
-          <span className="text-[11px] text-fg-3">Total + IGV</span>
-          <span className="text-[18px] font-semibold tnum tracking-[-0.02em] text-fg">S/ 1,180.00</span>
+        <div className="mt-3 flex items-baseline justify-between gap-3">
+          <span className="text-[11px] text-fg-3">{t.amountLabel}</span>
+          <span className="text-[18px] font-semibold tnum tracking-[-0.02em] text-fg whitespace-nowrap">{t.amount}</span>
         </div>
       </div>
 
-      <div className="border-t border-line px-4 py-2 flex items-center justify-between" style={{ background: "var(--bg-soft)" }}>
-        <span className="text-[10.5px] font-mono text-fg-4">F001-00001234</span>
-        <span className="inline-flex items-center gap-1 text-[10.5px] font-mono" style={{ color: "var(--accent)" }}>
-          <Ic.zap size={10} />1 click
+      <div className="border-t border-line px-4 py-2 flex items-center justify-between gap-3" style={{ background: "var(--bg-soft)" }}>
+        <span className="text-[10.5px] font-mono text-fg-4 truncate">{t.code}</span>
+        <span className="inline-flex items-center gap-1 text-[10.5px] shrink-0" style={{ color: "var(--accent)" }}>
+          <Ic.check size={10} />
+          {t.note}
         </span>
       </div>
     </div>
   );
 }
 
-interface EffectCardProps {
-  icon: React.ComponentType<{ size?: number; className?: string }>;
-  name: string;
-  headline: string;
-  latency: string;
-  position?: "top" | "bot";
-}
-
-function EffectCard({ icon: I, name, headline, latency }: EffectCardProps) {
+function EffectCard({ icon: I, name, headline, status }: Effect) {
   return (
     <div
       className="relative px-3.5 py-3 rounded-[10px] lift"
@@ -71,39 +197,25 @@ function EffectCard({ icon: I, name, headline, latency }: EffectCardProps) {
         boxShadow: "0 12px 24px -16px rgba(0,0,0,0.4)",
       }}
     >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 min-w-0">
-          <span
-            className="inline-grid place-items-center w-6 h-6 rounded-md shrink-0"
-            style={{ background: "var(--bg-soft)", border: "1px solid var(--line)" }}
-          >
-            <I size={12} className="text-fg-2" />
-          </span>
-          <span className="text-[10.5px] font-medium uppercase tracking-[0.08em] text-fg-3 truncate">{name}</span>
-        </div>
-        <span className="inline-flex items-center gap-1 text-[10px] font-mono tnum shrink-0" style={{ color: "var(--accent)" }}>
-          <Ic.check size={9} />
-          {latency}
+      <div className="flex items-center gap-2 min-w-0">
+        <span
+          className="inline-grid place-items-center w-6 h-6 rounded-md shrink-0"
+          style={{ background: "var(--bg-soft)", border: "1px solid var(--line)" }}
+        >
+          <I size={12} className="text-fg-2" />
         </span>
+        <span className="text-[10.5px] font-medium uppercase tracking-[0.08em] text-fg-3">{name}</span>
       </div>
       <div className="mt-2 text-[12.5px] font-medium text-fg leading-snug tracking-tight">{headline}</div>
+      <div className="mt-1.5 inline-flex items-center gap-1 text-[10.5px]" style={{ color: "var(--accent)" }}>
+        <Ic.check size={9} />
+        {status}
+      </div>
     </div>
   );
 }
 
-const TOP_ROW = [
-  { icon: Ic.calc, name: "Contabilidad", headline: "Asiento doble partida generado", latency: "180ms" },
-  { icon: Ic.boxes, name: "Inventario", headline: "Stock actualizado en sucursal", latency: "92ms" },
-  { icon: Ic.fileCheck, name: "SUNAT · CPE", headline: "Factura electrónica aceptada", latency: "198ms" },
-];
-
-const BOT_ROW = [
-  { icon: Ic.bank, name: "Cuentas por cobrar", headline: "Crédito a 30 días registrado", latency: "44ms" },
-  { icon: Ic.trendUp, name: "Tesorería", headline: "Flujo de caja proyectado", latency: "21ms" },
-  { icon: Ic.cpu, name: "Dashboard", headline: "KPIs en vivo refrescados", latency: "12ms" },
-];
-
-function FlowViz() {
+function FlowViz({ flow }: { flow: Flow }) {
   const W = 1100,
     H = 460;
   const triggerOut = [320, 230];
@@ -254,33 +366,41 @@ function FlowViz() {
         </svg>
 
         {/* Trigger card */}
-        <div className="absolute" style={{ left: 20, top: 145, width: 280, zIndex: 10 }}>
-          <TriggerCard />
+        <div key={flow.id} className="absolute flow-in" style={{ left: 20, top: 145, width: 280, zIndex: 10 }}>
+          <TriggerCard flow={flow} />
         </div>
 
         {/* Top row cards */}
-        {TOP_ROW.map((e, i) => (
-          <div key={"top" + i} className="absolute" style={{ left: TOP_X[i], top: 20, width: cardW, zIndex: 10 }}>
-            <EffectCard {...e} position="top" />
+        {flow.top.map((e, i) => (
+          <div
+            key={flow.id + "top" + i}
+            className="absolute flow-in"
+            style={{ left: TOP_X[i], top: 2, width: cardW, zIndex: 10, animationDelay: `${80 + i * 60}ms` }}
+          >
+            <EffectCard {...e} />
           </div>
         ))}
 
         {/* Bot row cards */}
-        {BOT_ROW.map((e, i) => (
-          <div key={"bot" + i} className="absolute" style={{ left: BOT_X[i], top: 340, width: cardW, zIndex: 10 }}>
-            <EffectCard {...e} position="bot" />
+        {flow.bot.map((e, i) => (
+          <div
+            key={flow.id + "bot" + i}
+            className="absolute flow-in"
+            style={{ left: BOT_X[i], top: 340, width: cardW, zIndex: 10, animationDelay: `${260 + i * 60}ms` }}
+          >
+            <EffectCard {...e} />
           </div>
         ))}
       </div>
 
       {/* Mobile fallback — stacked */}
       <div className="lg:hidden flex flex-col gap-3">
-        <TriggerCard />
+        <TriggerCard flow={flow} />
         <div className="relative pl-6 mt-2">
           <div className="absolute left-2 top-1 bottom-1 w-px" style={{ background: "var(--accent)", opacity: 0.4 }} />
           <div className="flex flex-col gap-3">
-            {[...TOP_ROW, ...BOT_ROW].map((e, i) => (
-              <div key={i} className="relative">
+            {[...flow.top, ...flow.bot].map((e, i) => (
+              <div key={flow.id + i} className="relative">
                 <span className="absolute -left-[18px] top-4 w-2 h-2 rounded-full" style={{ background: "var(--accent)" }} />
                 <EffectCard {...e} />
               </div>
@@ -294,9 +414,9 @@ function FlowViz() {
 
 function GuaranteeStrip() {
   const items = [
-    { icon: Ic.shield, t: "Ni un dato perdido", d: "Cada operación se confirma antes de avanzar." },
-    { icon: Ic.zap, t: "Reintenta sola", d: "Si SUNAT se cae, Konta vuelve a intentarlo." },
-    { icon: Ic.clock, t: "Auditoría completa", d: "Quién, qué y cuándo. Rastreable al milisegundo." },
+    { icon: Ic.layers, t: "Trazable hasta el origen", d: "Cada movimiento y asiento enlaza al documento que lo generó." },
+    { icon: Ic.shield, t: "Permisos en cada paso", d: "Aprobaciones, excepciones y cierres según rol y establecimiento." },
+    { icon: Ic.clock, t: "Historial de acciones", d: "Quién hizo qué, en qué empresa y cuándo." },
   ];
   return (
     <div className="mt-12 sm:mt-14 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -329,8 +449,11 @@ function GuaranteeStrip() {
 }
 
 export default function EventArchitecture() {
+  const [active, setActive] = useState(FLOWS[0].id);
+  const flow = FLOWS.find((f) => f.id === active) ?? FLOWS[0];
+
   return (
-    <section id="arquitectura" data-screen-label="05 Cómo funciona" className="relative py-20 sm:py-28 border-t border-line overflow-hidden">
+    <section id="arquitectura" data-screen-label="04 Cómo funciona" className="relative py-20 sm:py-28 border-t border-line overflow-hidden">
       <div aria-hidden className="absolute inset-0 dot-grid" style={{ opacity: 0.06 }} />
 
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8">
@@ -338,22 +461,62 @@ export default function EventArchitecture() {
         <div className="max-w-[52rem]">
           <span className="kicker">Cómo funciona</span>
           <h2 className="mt-4 text-[32px] sm:text-[44px] lg:text-[52px] font-semibold tracking-[-0.035em] leading-[1.04]">
-            Una operación. Todo tu negocio,
-            <br className="hidden sm:inline" /> <span className="text-fg-3">en sincronía.</span>
+            Una operación alimenta
+            <br className="hidden sm:inline" /> <span className="text-fg-3">a las que dependen de ella.</span>
           </h2>
-          <p className="mt-6 text-[16px] sm:text-[17px] text-fg-2 leading-[1.6] max-w-[60ch]">
-            Cuando emites una venta, una compra o un comprobante, todos los módulos de Konta se actualizan al mismo tiempo: contabilidad, inventario,
-            SUNAT, cuentas por cobrar y tu dashboard. Sin re-digitar, sin Excel intermedio, sin esperar a fin de mes.
+          <p className="mt-6 text-[16px] sm:text-[17px] text-fg-2 leading-[1.6] max-w-[62ch]">
+            Cada documento nace del anterior: el pedido reserva el stock, el almacén prepara y despacha, la factura sale del pedido y abre la
+            cuenta por cobrar, y la contabilidad recibe el asiento enlazado a su origen. Nadie vuelve a digitar lo mismo, y cada paso conserva
+            sus condiciones, permisos y estados.
           </p>
         </div>
 
+        {/* Flow selector */}
+        <div className="mt-10 flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
+          <div
+            role="tablist"
+            aria-label="Recorridos"
+            className="inline-flex self-start p-1 rounded-full max-w-full overflow-x-auto no-scrollbar"
+            style={{ background: "var(--surface)", border: "1px solid var(--line)" }}
+          >
+            {FLOWS.map((f) => {
+              const on = f.id === active;
+              return (
+                <button
+                  key={f.id}
+                  role="tab"
+                  aria-selected={on}
+                  onClick={() => setActive(f.id)}
+                  className={"h-8 px-3.5 sm:px-4 rounded-full text-[13px] font-medium transition-colors cursor-pointer shrink-0 " + (on ? "" : "text-fg-3 hover:text-fg")}
+                  style={on ? { background: "var(--accent)", color: "#04101c" } : undefined}
+                >
+                  {f.tab}
+                </button>
+              );
+            })}
+          </div>
+          <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-fg-3" aria-label={"Recorrido de " + flow.tab.toLowerCase()}>
+            {flow.steps.map((st, i) => (
+              <li key={st} className="inline-flex items-center gap-2">
+                {i > 0 && <Ic.arrowR size={12} className="text-fg-4" />}
+                <span className={i === 0 ? "text-fg" : ""}>{st}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
         {/* Flow viz */}
-        <div className="mt-14 sm:mt-16">
-          <FlowViz />
+        <div className="mt-10 sm:mt-12" role="tabpanel" aria-label={flow.tab}>
+          <FlowViz flow={flow} />
         </div>
 
         {/* Guarantee strip */}
         <GuaranteeStrip />
+
+        <p className="mt-6 text-[12px] text-fg-4 max-w-[80ch]">
+          Recorridos ilustrativos con datos de ejemplo. El envío de comprobantes a SUNAT u OSE depende de la configuración fiscal de cada empresa y
+          de la respuesta de esos servicios.
+        </p>
       </div>
     </section>
   );

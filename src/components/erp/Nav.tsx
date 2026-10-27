@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Ic } from "./Icons";
 
-export function KontaLogo({ size = 28, withWordmark = true, className = "" }: { size?: number; withWordmark?: boolean; className?: string }) {
+export function ErpLogo({ size = 28, withWordmark = true, className = "" }: { size?: number; withWordmark?: boolean; className?: string }) {
   return (
     <div className={"inline-flex items-center gap-2 " + className}>
       <div
@@ -25,7 +25,10 @@ export function KontaLogo({ size = 28, withWordmark = true, className = "" }: { 
         </svg>
       </div>
       {withWordmark && (
-        <span className="text-[17px] font-semibold tracking-[-0.02em] text-fg">Konta</span>
+        <span className="text-[17px] tracking-[-0.02em] text-fg">
+          <span className="font-semibold">NEXTELCO</span>{" "}
+          <span className="font-medium text-fg-2">ERP</span>
+        </span>
       )}
     </div>
   );
@@ -53,12 +56,13 @@ export default function Nav() {
     document.documentElement.classList.toggle("dark", next === "dark");
   };
 
+  // Mismo orden en el que aparecen las secciones en la página
   const links = [
     { label: "Producto", href: "#producto" },
+    { label: "Cómo funciona", href: "#arquitectura" },
     { label: "Módulos", href: "#modulos" },
-    { label: "Precios", href: "#precios" },
     { label: "Clientes", href: "#clientes" },
-    { label: "Recursos", href: "#recursos" },
+    { label: "Preguntas", href: "#faq" },
   ];
 
   return (
@@ -69,13 +73,15 @@ export default function Nav() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 h-[60px] flex items-center justify-between">
         {/* Left: logo + ownership */}
         <div className="flex items-center gap-3">
-          <a href="#" className="flex items-center" aria-label="Konta — inicio">
-            <KontaLogo size={26} />
+          <a href="#producto" className="flex items-center" aria-label="NEXTELCO ERP — inicio">
+            <ErpLogo size={26} />
           </a>
-          <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] text-fg-4 border-l border-line pl-3">
-            por
-            <a href="/" className="text-fg-3 hover:text-fg font-semibold tracking-[-0.01em] transition-colors">NEXTELCO</a>
-          </span>
+          <a
+            href="/"
+            className="hidden sm:inline-flex items-center gap-1.5 text-[11px] text-fg-4 hover:text-fg-2 border-l border-line pl-3 transition-colors"
+          >
+            Sitio corporativo
+          </a>
         </div>
 
         {/* Center: links */}
@@ -100,14 +106,8 @@ export default function Nav() {
           >
             {theme === "dark" ? <Ic.sun size={15} /> : <Ic.moon size={15} />}
           </button>
-          <a
-            href="#login"
-            className="hidden sm:inline-flex h-9 px-3 items-center text-[13.5px] font-medium text-fg-2 hover:text-fg transition-colors rounded-md"
-          >
-            Iniciar sesión
-          </a>
           <a href="#cta" className="btn btn-primary h-9 text-[13.5px] px-3.5">
-            Empezar gratis
+            Solicitar demo
           </a>
           <button
             onClick={() => setOpen((o) => !o)}
@@ -140,8 +140,8 @@ export default function Nav() {
               >
                 {theme === "dark" ? <Ic.sun size={15} /> : <Ic.moon size={15} />}
               </button>
-              <a href="#login" className="btn btn-ghost flex-1">
-                Iniciar sesión
+              <a href="/" className="btn btn-ghost flex-1">
+                Sitio corporativo
               </a>
             </div>
           </nav>

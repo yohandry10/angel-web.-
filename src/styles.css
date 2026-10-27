@@ -115,7 +115,7 @@
 
 
 /* =========================================================
-   ERP LANDING (Konta) — scoped under .erp-root
+   ERP LANDING (NEXTELCO ERP) — scoped under .erp-root
    ========================================================= */
 
 
@@ -259,6 +259,10 @@
   .erp-root *::selection {
     background: var(--accent-soft);
     color: var(--text);
+  }
+  /* La nav fija mide 60px: evita que el ancla quede debajo de ella */
+  .erp-root section[id] {
+    scroll-margin-top: 76px;
   }
 }
 
@@ -571,6 +575,26 @@ details[open] .acc-plus {
   width: 12px;
   height: 12px;
   border-radius: 999px;
+}
+
+/* Cards of the selected flow settle in when the flow changes */
+@keyframes flowIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.flow-in {
+  animation: flowIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow-in {
+    animation: none;
+  }
 }
 
 /* Flowing dashes along connector lines */

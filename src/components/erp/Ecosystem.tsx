@@ -5,98 +5,122 @@ const ECOSYSTEM = [
   {
     icon: Ic.cart,
     cat: "Ventas",
-    name: "Ventas",
-    desc: "Cotiza, pedido y factura en un solo flujo conectado a SUNAT y a tu inventario.",
-  },
-  {
-    icon: Ic.box,
-    cat: "Compras",
-    name: "Compras",
-    desc: "Solicitudes, órdenes y recepciones que actualizan tus cuentas por pagar solas.",
+    name: "Ventas y gestión comercial",
+    desc: "Cotizaciones con aprobación, pedidos, reserva de stock, listas de precios por cliente, vendedor o marca, control de crédito y comisiones.",
   },
   {
     icon: Ic.flash,
     cat: "POS",
-    name: "Punto de venta",
-    desc: "Caja con apertura y cierre, ticket impreso. Funciona sin internet y sincroniza al volver.",
+    name: "Punto de venta y cajas",
+    desc: "Apertura y cierre de caja, cobros por medio de pago, tickets, ingresos, egresos y control de diferencias. Operación local en la app de escritorio.",
+  },
+  {
+    icon: Ic.box,
+    cat: "Compras",
+    name: "Compras y proveedores",
+    desc: "Cotizaciones y órdenes con aprobación, fechas de entrega, recepciones parciales, factura del proveedor y devoluciones a proveedor.",
   },
   {
     icon: Ic.boxes,
     cat: "Inventario",
-    name: "Inventario multi-almacén",
-    desc: "Kárdex valorizado por sucursal, transferencias, mermas y series con trazabilidad.",
-  },
-  {
-    icon: Ic.fileCheck,
-    cat: "SUNAT",
-    name: "Facturación electrónica",
-    desc: "Boleta, factura, nota de crédito y CPE en 1 click. OSE/PSE homologado.",
+    name: "Inventario y almacenes",
+    desc: "Varios almacenes y ubicaciones, stock reservado y disponible, transferencias, ajustes y kardex físico y valorizado.",
   },
   {
     icon: Ic.receipt,
-    cat: "GRE",
-    name: "Guías de remisión",
-    desc: "Guía electrónica vinculada al despacho. Sin papeles, sin doble digitar.",
+    cat: "PECOSA",
+    name: "PECOSA",
+    desc: "Pedido comprobante de salida para entregar bienes del almacén a áreas internas, con aprobación y registro en el kardex.",
   },
   {
-    icon: Ic.calc,
-    cat: "Contabilidad",
-    name: "Contabilidad automática",
-    desc: "Asientos doble partida generados al instante. Cierre de períodos y centros de costo.",
+    icon: Ic.globe,
+    cat: "Logística",
+    name: "Logística y despachos",
+    desc: "Picking, packing, despachos parciales, pendientes, tránsito, entrega e incidencias, enlazados al pedido y a la guía de remisión.",
   },
   {
     icon: Ic.layers,
-    cat: "SIRE",
-    name: "Registro de Ventas",
-    desc: "Libro electrónico validado antes de enviar. Cumples con SUNAT sin observaciones.",
+    cat: "Devoluciones",
+    name: "Devoluciones",
+    desc: "Solicitudes de devolución, recepciones parciales, notas de crédito, saldos a favor y reembolsos.",
   },
   {
     icon: Ic.bank,
     cat: "Finanzas",
-    name: "Finanzas & Tesorería",
-    desc: "Cobranzas, pagos, bancos y caja en una sola vista. Olvida los Excel paralelos.",
+    name: "Cuentas por cobrar y pagar",
+    desc: "Saldos, vencimientos, cobros, pagos, anticipos y saldos a favor aplicados a obligaciones posteriores.",
   },
   {
     icon: Ic.trendUp,
     cat: "Tesorería",
-    name: "Flujo de caja",
-    desc: "Proyección a 90 días con tus movimientos reales. Sabes hoy lo que te falta mañana.",
+    name: "Bancos y conciliación",
+    desc: "Cajas y bancos, importación de extractos, conciliación manual y automática, tipo de cambio y proyección de flujo de caja.",
+  },
+  {
+    icon: Ic.calc,
+    cat: "Contabilidad",
+    name: "Contabilidad",
+    desc: "Plan de cuentas, asientos desde operaciones, confirmación y reversión, cierre y reapertura de períodos con permisos.",
+  },
+  {
+    icon: Ic.database,
+    cat: "Contabilidad",
+    name: "Costos, activos y presupuestos",
+    desc: "Centros de costo, presupuestos, multimoneda y diferencias de cambio, activos fijos y depreciación, plantillas recurrentes y devengos.",
+  },
+  {
+    icon: Ic.fileCheck,
+    cat: "SUNAT",
+    name: "Documentos electrónicos",
+    desc: "Facturas, boletas, notas de crédito y débito y guías de remisión electrónicas, con seguimiento de estados y errores.",
+  },
+  {
+    icon: Ic.flag,
+    cat: "SIRE · PLE",
+    name: "SIRE y libros electrónicos",
+    desc: "Preparación de SIRE de ventas y compras con comparación por período, y libros electrónicos PLE en los formatos implementados.",
   },
   {
     icon: Ic.users,
     cat: "RRHH",
-    name: "RRHH & Planillas",
-    desc: "Candidatos, contratos, planillas y pagos al personal. Conceptos peruanos preconfigurados.",
+    name: "RRHH y planillas",
+    desc: "Contratos, horarios, asistencia, vacaciones, boletas, CTS, liquidaciones y preparación de información para PLAME y T-Registro.",
+  },
+  {
+    icon: Ic.building,
+    cat: "Control",
+    name: "Empresas, sucursales y permisos",
+    desc: "Establecimientos con sus almacenes, cajas y series. Acceso por usuario, rol, permiso y establecimiento, con auditoría de acciones.",
   },
   {
     icon: Ic.cpu,
-    cat: "Analítica",
-    name: "Dashboard en vivo",
-    desc: "Ventas, caja, cobranzas y CPE refrescados al instante. KPIs por sucursal o consolidados.",
+    cat: "Reportes",
+    name: "Reportes y exportaciones",
+    desc: "Tableros comerciales, financieros, contables y operativos; balance de comprobación, estados financieros y exportación a Excel y PDF.",
   },
 ];
 
 export default function Ecosystem() {
   return (
-    <section id="modulos" data-screen-label="06 Ecosistema" className="relative py-20 sm:py-28 border-t border-line">
+    <section id="modulos" data-screen-label="05 Ecosistema" className="relative py-20 sm:py-28 border-t border-line">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-[44ch]">
             <span className="kicker">Ecosistema</span>
             <h2 className="mt-4 text-[32px] sm:text-[44px] lg:text-[52px] font-semibold tracking-[-0.035em] leading-[1.04]">
-              Doce módulos.
+              Dieciséis módulos.
               <br />
-              <span className="text-fg-3">Un solo sistema operativo.</span>
+              <span className="text-fg-3">Un solo sistema.</span>
             </h2>
           </div>
           <p className="text-[14px] text-fg-3 max-w-[40ch]">
-            Ventas, contabilidad, SUNAT, inventario, finanzas y planillas — diseñados para empresas peruanas, funcionando como uno solo.
+            Desde la cotización hasta el asiento contable, desde la asistencia hasta la boleta. En web y en aplicación de escritorio, con configuración por empresa.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-t border-l border-line">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-line">
           {ECOSYSTEM.map((m, i) => {
             const I = m.icon;
             return (
@@ -119,9 +143,11 @@ export default function Ecosystem() {
 
         {/* Footer line */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[13.5px] text-fg-3">Activas los módulos que necesitas hoy. Encendes el resto cuando crezcas — sin migrar.</p>
-          <a href="#integraciones" className="inline-flex items-center gap-1.5 text-[13px] text-fg-2 hover:text-accent transition-colors">
-            Ver integraciones disponibles
+          <p className="text-[13.5px] text-fg-3 max-w-[70ch]">
+            La implementación contempla Perú, Argentina y Colombia, con funciones específicas por país. Esta página describe el alcance para Perú.
+          </p>
+          <a href="#cta" className="inline-flex items-center gap-1.5 text-[13px] text-fg-2 hover:text-accent transition-colors shrink-0">
+            Consultar el alcance para tu país
             <Ic.arrowR size={13} />
           </a>
         </div>

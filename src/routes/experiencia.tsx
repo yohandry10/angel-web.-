@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import logoNavbar from "@/assets/logo-navbar-white.png";
+import { SITE_URL } from "@/lib/seo";
 
+const PAGE_URL = `${SITE_URL}/experiencia`;
 const TITLE = "Experiencia en DevOps, Cloud e Inteligencia Artificial Aplicada — NEXTELCO";
 const DESC = "Diseño, automatización y operación de plataformas modernas: DevOps, arquitecturas Cloud, seguridad, observabilidad e IA aplicada con LLMs, RAG, MCP y agentes.";
 
@@ -13,9 +15,22 @@ export const Route = createFileRoute("/experiencia")({
       { name: "description", content: DESC },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
-      { property: "og:url", content: "/experiencia" },
+      { property: "og:url", content: PAGE_URL },
     ],
-    links: [{ rel: "canonical", href: "/experiencia" }],
+    links: [{ rel: "canonical", href: PAGE_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Experiencia", item: PAGE_URL },
+          ],
+        }),
+      },
+    ],
   }),
 });
 
