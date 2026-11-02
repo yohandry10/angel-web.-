@@ -43,7 +43,7 @@ export default function Hero() {
           >
             <span className="text-[9.5px] font-semibold uppercase tracking-[0.1em]">Perú</span>
           </span>
-          <span className="text-fg-2">Comprobantes y guías electrónicas, SIRE y libros PLE</span>
+          <span className="truncate text-fg-2">Comprobantes, guías, SIRE y PLE</span>
           <Ic.arrowR size={11} className="text-fg-4 group-hover:translate-x-0.5 transition-transform" />
         </a>
 
