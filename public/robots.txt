@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nextelco.cloud/sitemap.xml
+Sitemap: https://www.nextelco.cloud/sitemap.xml

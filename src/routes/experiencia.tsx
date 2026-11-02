@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import logoNavbar from "@/assets/logo-navbar-white.png";
+import heroImg from "@/assets/hero-devops.jpg";
 import { SITE_URL } from "@/lib/seo";
 
 const PAGE_URL = `${SITE_URL}/experiencia`;
@@ -16,6 +17,8 @@ export const Route = createFileRoute("/experiencia")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: PAGE_URL },
+      { property: "og:image", content: `${SITE_URL}${heroImg}` },
+      { name: "twitter:image", content: `${SITE_URL}${heroImg}` },
     ],
     links: [{ rel: "canonical", href: PAGE_URL }],
     scripts: [

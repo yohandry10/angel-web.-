@@ -10,6 +10,7 @@ import FAQ from "@/components/erp/FAQ";
 import FinalCTA from "@/components/erp/FinalCTA";
 import Footer from "@/components/erp/Footer";
 import { FAQ_ITEMS } from "@/components/erp/faq-data";
+import heroImg from "@/assets/hero-devops.jpg";
 import { SITE_URL } from "@/lib/seo";
 
 const PAGE_URL = `${SITE_URL}/erp`;
@@ -31,9 +32,11 @@ export const Route = createFileRoute("/erp")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: PAGE_URL },
+      { property: "og:image", content: `${SITE_URL}${heroImg}` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: `${SITE_URL}${heroImg}` },
     ],
     links: [{ rel: "canonical", href: PAGE_URL }],
     scripts: [

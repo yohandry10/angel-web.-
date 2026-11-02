@@ -61,11 +61,17 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
 
         {sent ? (
           <div className="p-12 text-center">
-            <div className="font-mono text-xs tracking-[0.3em] uppercase text-cyan-glow mb-6">[ Pipeline ejecutado ]</div>
+            <div className="font-mono text-xs tracking-[0.3em] uppercase text-cyan-glow mb-6">[ Un paso más ]</div>
             <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-[-0.03em] mb-4">
-              Mensaje <span className="font-serif-it font-normal text-amber-glow">enviado</span>.
+              Revisa tu <span className="font-serif-it font-normal text-amber-glow">correo</span>.
             </h3>
-            <p className="text-muted-foreground">Te responderemos en menos de 24h hábiles.</p>
+            <p className="text-muted-foreground">
+              Abrimos tu programa de correo con el mensaje listo: envíalo desde ahí y te responderemos en menos de 24h hábiles.
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              ¿No se abrió nada? Escríbenos a{" "}
+              <a href="mailto:operaciones@nextelco.cloud" className="text-cyan-glow border-b border-cyan-glow">operaciones@nextelco.cloud</a>.
+            </p>
             <button onClick={onClose} className="mt-8 font-mono text-[11px] tracking-[0.25em] uppercase border-b border-foreground pb-1 hover:text-cyan-glow hover:border-cyan-glow transition">
               Cerrar →
             </button>
