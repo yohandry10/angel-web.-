@@ -92,7 +92,7 @@ function Index() {
       {/* NAVBAR — fixed + glassmorphism on scroll */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/80 backdrop-blur-xl border-b border-line/50 shadow-[0_1px_20px_rgba(0,0,0,0.3)]" : "bg-transparent border-b border-transparent"}`}>
         <div className="flex items-center justify-between px-[clamp(24px,5vw,80px)] py-5">
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <img src={logoNavbar} alt="NEXTELCO" className="h-9 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-10 font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground">

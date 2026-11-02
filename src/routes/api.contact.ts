@@ -11,6 +11,21 @@ const DEFAULT_FROM = "NEXTELCO Web <web@nextelco.cloud>";
 // Quita saltos de línea para que nadie inyecte cabeceras en el asunto.
 const oneLine = (v: string) => v.replace(/[\r\n]+/g, " ").trim();
 
+// Límite por IP: 5 envíos cada 10 minutos. Es en memoria, así que cada instancia
+// de servidor lleva su cuenta; frena ráfagas, no a un atacante con muchas IP.
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_WINDOW = 5;
+const hits = new Map<string, number[]>();
+
+function overLimit(ip: string): boolean {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) hits.clear();
+  return recent.length > MAX_PER_WINDOW;
+}
+
 const schema = z.object({
   name: z.string().trim().min(2).max(80),
   email: z.string().trim().email().max(160),
@@ -24,6 +39,11 @@ export const Route = createFileRoute("/api/contact")({
   server: {
     handlers: {
       POST: async ({ request }) => {
+        const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "desconocida";
+        if (overLimit(ip)) {
+          return Response.json({ ok: false, error: "Demasiados envíos. Inténtalo más tarde." }, { status: 429 });
+        }
+
         let data: z.infer<typeof schema>;
         try {
           const parsed = schema.safeParse(await request.json());
