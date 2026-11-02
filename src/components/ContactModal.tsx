@@ -9,9 +9,11 @@ const schema = z.object({
 });
 
 export function ContactModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", company: "", message: "", website: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [serverError, setServerError] = useState("");
 
   useEffect(() => {
     if (!open) return;
@@ -26,7 +28,7 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
 
   if (!open) return null;
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const r = schema.safeParse(form);
     if (!r.success) {
@@ -36,12 +38,23 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
       return;
     }
     setErrors({});
-    const subject = encodeURIComponent(`[Proyecto] ${r.data.name}${r.data.company ? " · " + r.data.company : ""}`);
-    const body = encodeURIComponent(`${r.data.message}\n\n— ${r.data.name}\n${r.data.email}`);
-    window.location.href = `mailto:operaciones@nextelco.cloud?subject=${subject}&body=${body}`;
-    setSent(true);
+    setServerError("");
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const json = await res.json().catch(() => ({ ok: false, error: "" }));
+      if (!res.ok || !json.ok) throw new Error(json.error || "No pudimos enviar el mensaje.");
+      setSent(true);
+    } catch (err) {
+      setServerError(err instanceof Error ? err.message : "No pudimos enviar el mensaje.");
+    } finally {
+      setSending(false);
+    }
   };
-
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
       <div className="absolute inset-0 bg-ink/85 backdrop-blur-md" onClick={onClose} />
@@ -61,16 +74,12 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
 
         {sent ? (
           <div className="p-12 text-center">
-            <div className="font-mono text-xs tracking-[0.3em] uppercase text-cyan-glow mb-6">[ Un paso más ]</div>
+            <div className="font-mono text-xs tracking-[0.3em] uppercase text-cyan-glow mb-6">[ Recibido ]</div>
             <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-[-0.03em] mb-4">
-              Revisa tu <span className="font-serif-it font-normal text-amber-glow">correo</span>.
+              Mensaje <span className="font-serif-it font-normal text-amber-glow">enviado</span>.
             </h3>
             <p className="text-muted-foreground">
-              Abrimos tu programa de correo con el mensaje listo: envíalo desde ahí y te responderemos en menos de 24h hábiles.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground">
-              ¿No se abrió nada? Escríbenos a{" "}
-              <a href="mailto:operaciones@nextelco.cloud" className="text-cyan-glow border-b border-cyan-glow">operaciones@nextelco.cloud</a>.
+              Te responderemos en menos de 24h hábiles.
             </p>
             <button onClick={onClose} className="mt-8 font-mono text-[11px] tracking-[0.25em] uppercase border-b border-foreground pb-1 hover:text-cyan-glow hover:border-cyan-glow transition">
               Cerrar →
@@ -78,6 +87,13 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
           </div>
         ) : (
           <form onSubmit={submit} className="p-6 md:p-10 space-y-6">
+            {/* Campo trampa para bots: oculto a personas */}
+            <div aria-hidden className="absolute left-[-9999px] h-px w-px overflow-hidden">
+              <label>
+                Sitio web
+                <input tabIndex={-1} autoComplete="off" name="website" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} />
+              </label>
+            </div>
             <div>
               <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-cyan-glow mb-2">[ Iniciar conversación ]</div>
               <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-[-0.03em]">
@@ -92,12 +108,18 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
             <Field label="$ company (opt)" name="company" value={form.company} onChange={(v) => setForm({ ...form, company: v })} error={errors.company} />
             <Field label="$ message" name="message" textarea value={form.message} onChange={(v) => setForm({ ...form, message: v })} error={errors.message} />
 
+            {serverError && (
+              <p role="alert" className="text-sm text-amber-glow">
+                {serverError} Si el problema sigue, escríbenos a{" "}
+                <a href="mailto:operaciones@nextelco.cloud" className="border-b border-amber-glow">operaciones@nextelco.cloud</a>.
+              </p>
+            )}
             <div className="flex items-center justify-between pt-4">
               <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
                 {form.message.length}/1000
               </span>
-              <button type="submit" data-cursor="$ send" className="group inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
-                Enviar mensaje
+              <button type="submit" disabled={sending} data-cursor="$ send" className="group disabled:opacity-60 inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
+                {sending ? "Enviando…" : "Enviar mensaje"}
                 <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
               </button>
             </div>
