@@ -31,7 +31,7 @@ function OrderTrace() {
         <span aria-hidden className="absolute left-[15px] top-3 bottom-3 w-px" style={{ background: "var(--line)" }} />
         {TRACE.map((t) => {
           const I = t.icon;
-          const color = t.state === "done" ? "var(--accent)" : t.state === "partial" ? "color-mix(in oklab, var(--accent) 55%, var(--text-3))" : "var(--text-3)";
+          const color = t.state === "done" ? "var(--accent)" : t.state === "partial" ? "color-mix(in oklab, var(--accent) 55%, var(--text-3))" : "var(--text-2)";
           return (
             <li key={t.doc} className="relative flex items-start gap-3 py-2">
               <span
