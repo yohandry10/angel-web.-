@@ -132,9 +132,9 @@ export default function Ecosystem() {
                   >
                     <I size={15} className="text-fg-2 group-hover:text-accent transition-colors" />
                   </span>
-                  <span className="text-[10.5px] font-mono uppercase tracking-[0.12em] text-fg-4">{m.cat}</span>
+                  <span className="text-[12.5px] font-medium text-fg-3">{m.cat}</span>
                 </div>
-                <div className="mt-4 text-[15px] font-semibold tracking-[-0.01em] text-fg">{m.name}</div>
+                <div className="mt-5 text-[16px] font-semibold tracking-[-0.01em] text-fg">{m.name}</div>
                 <div className="mt-1.5 text-[12.5px] text-fg-3 leading-[1.5]">{m.desc}</div>
               </div>
             );

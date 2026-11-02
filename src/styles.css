@@ -659,3 +659,10 @@ details[open] .acc-plus {
   display: inline-block;
   min-width: 1ch;
 }
+/* Foco visible para teclado en la landing del ERP */
+.erp-root a:focus-visible,
+.erp-root button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}

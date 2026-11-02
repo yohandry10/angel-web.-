@@ -19,7 +19,7 @@ function OrderTrace() {
     <div className="w-full">
       <div className="flex items-baseline justify-between mb-5">
         <div className="flex flex-col">
-          <span className="text-[10.5px] font-mono uppercase tracking-[0.14em] text-fg-4">Recorrido de un pedido</span>
+          <span className="text-[12.5px] font-medium text-fg-3">Recorrido de un pedido</span>
           <span className="mt-1 text-[12px] text-fg-3">Ejemplo con datos de demostración</span>
         </div>
         <span className="text-[12px] text-fg-3">
@@ -101,7 +101,7 @@ export default function Testimonials() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr]">
             {/* LEFT: the case */}
             <div className="relative p-7 sm:p-10 lg:p-12 flex flex-col">
-              <span className="inline-flex items-center gap-1.5 text-[10.5px] font-mono uppercase tracking-[0.14em] text-fg-4">
+              <span className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-fg-3">
                 <span className="w-1 h-1 rounded-full" style={{ background: "var(--accent)" }} />
                 Caso de uso · Distribución mayorista
               </span>
@@ -146,7 +146,7 @@ export default function Testimonials() {
               className="rounded-[14px] border border-line p-6 sm:p-7 flex flex-col lift"
               style={{ background: "var(--surface)" }}
             >
-              <span className="inline-flex items-center gap-1.5 text-[10.5px] font-mono uppercase tracking-[0.14em] text-fg-4">
+              <span className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-fg-3">
                 <span className="w-1 h-1 rounded-full" style={{ background: "var(--accent)" }} />
                 {t.industry}
               </span>
