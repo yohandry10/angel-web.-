@@ -1,39 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Ic } from "./Icons";
+import logoNavbar from "@/assets/logo-navbar-white.png";
 
 export function ErpLogo({ size = 28, withWordmark = true, className = "" }: { size?: number; withWordmark?: boolean; className?: string }) {
+  // Mismo logotipo que el sitio corporativo; "ERP" indica el producto.
   return (
-    <div className={"inline-flex items-center gap-2 " + className}>
-      <div
-        className="relative grid place-items-center rounded-[7px]"
-        style={{
-          width: size,
-          height: size,
-          background: "var(--accent)",
-          boxShadow: "0 0 0 1px rgba(42,168,255,0.25), 0 4px 12px -4px rgba(42,168,255,0.45)",
-        }}
-      >
-        <svg viewBox="0 0 24 24" width={size * 0.6} height={size * 0.6} aria-hidden>
-          <path
-            d="M7 4v16M7 12l8-8M7 12l9 8"
-            stroke="#04101c"
-            strokeWidth="2.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
-        </svg>
-      </div>
+    <div className={"inline-flex items-center gap-2.5 " + className}>
+      <img src={logoNavbar} alt="NEXTELCO" style={{ height: size + 8 }} className="erp-logo w-auto" />
       {withWordmark && (
-        <span className="text-[17px] tracking-[-0.02em] text-fg">
-          <span className="font-semibold">NEXTELCO</span>{" "}
-          <span className="font-medium text-fg-2">ERP</span>
-        </span>
+        <span className="rounded-md border border-line px-1.5 py-0.5 text-[11px] font-medium leading-none text-fg-2">ERP</span>
       )}
     </div>
   );
 }
-
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);

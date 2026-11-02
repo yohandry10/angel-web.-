@@ -666,3 +666,8 @@ details[open] .acc-plus {
   outline-offset: 3px;
   border-radius: 6px;
 }
+
+/* Logotipo en tema claro del ERP: versión oscura del mismo logo */
+.erp-root.light .erp-logo {
+  filter: invert(1);
+}
