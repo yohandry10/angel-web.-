@@ -1,5 +1,6 @@
 import React from "react";
 import { ErpLogo } from "./Nav";
+import { DEMO_WA_URL } from "@/lib/erp-contact";
 
 export default function Footer() {
   const cols = [
@@ -22,7 +23,7 @@ export default function Footer() {
     {
       title: "Contacto",
       links: [
-        { label: "Solicitar una demo", href: "#cta" },
+        { label: "Solicitar una demo", href: DEMO_WA_URL },
         { label: "operaciones@nextelco.cloud", href: "mailto:operaciones@nextelco.cloud" },
       ],
     },

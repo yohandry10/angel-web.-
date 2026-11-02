@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Ic } from "./Icons";
 import logoNavbar from "@/assets/logo-navbar-white.png";
+import { DEMO_WA_URL } from "@/lib/erp-contact";
 
 export function ErpLogo({ size = 28, withWordmark = true, className = "" }: { size?: number; withWordmark?: boolean; className?: string }) {
   // Mismo logotipo que el sitio corporativo; "ERP" indica el producto.
@@ -85,7 +86,7 @@ export default function Nav() {
           >
             {theme === "dark" ? <Ic.sun size={15} /> : <Ic.moon size={15} />}
           </button>
-          <a href="#cta" className="btn btn-primary h-9 whitespace-nowrap text-[13.5px] px-3.5">
+          <a href={DEMO_WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary h-9 whitespace-nowrap text-[13.5px] px-3.5">
             Solicitar demo
           </a>
           <button

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Ic } from "./Icons";
 import { FAQ_ITEMS, type FAQItem } from "./faq-data";
+import { DEMO_WA_URL } from "@/lib/erp-contact";
 
 interface FaqItemProps {
   item: FAQItem;
@@ -62,7 +63,7 @@ export default function FAQ() {
 
             {/* CTAs */}
             <div className="mt-7 flex flex-col sm:flex-row gap-2.5">
-              <a href="#cta" className="btn btn-primary">
+              <a href={DEMO_WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Solicitar una demo
                 <Ic.arrowR size={14} className="-mr-1" />
               </a>

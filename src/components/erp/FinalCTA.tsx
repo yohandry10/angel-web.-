@@ -1,5 +1,6 @@
 import React from "react";
 import { Ic } from "./Icons";
+import { DEMO_WA_URL } from "@/lib/erp-contact";
 
 export default function FinalCTA() {
   return (
@@ -27,7 +28,7 @@ export default function FinalCTA() {
 
         <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="mailto:operaciones@nextelco.cloud?subject=Quiero%20una%20demo%20de%20NEXTELCO%20ERP"
+            href={DEMO_WA_URL} target="_blank" rel="noopener noreferrer"
             className="btn btn-primary btn-lg"
           >
             Solicitar una demo

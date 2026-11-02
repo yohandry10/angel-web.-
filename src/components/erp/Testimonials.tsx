@@ -1,5 +1,6 @@
 import React from "react";
 import { Ic } from "./Icons";
+import { DEMO_WA_URL } from "@/lib/erp-contact";
 
 type IconT = React.ComponentType<{ size?: number; className?: string }>;
 
@@ -122,7 +123,7 @@ export default function Testimonials() {
                   </span>
                 ))}
                 <a
-                  href="#cta"
+                  href={DEMO_WA_URL} target="_blank" rel="noopener noreferrer"
                   className="ml-auto inline-flex items-center gap-1.5 text-[12.5px] text-fg-2 hover:text-accent transition-colors"
                 >
                   Verlo con tu operación
@@ -172,7 +173,7 @@ export default function Testimonials() {
         {/* Footer link */}
         <div className="mt-10 flex items-center justify-center">
           <a
-            href="#cta"
+            href={DEMO_WA_URL} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 h-10 rounded-full border border-line text-[13px] text-fg-2 hover:text-fg hover:border-fg-4 transition-colors"
           >
             Agenda una demo con un recorrido de tu empresa

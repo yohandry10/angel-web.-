@@ -1,6 +1,7 @@
 import React from "react";
 import { Ic } from "./Icons";
 import DashboardMockup from "./DashboardMockup";
+import { DEMO_WA_URL } from "@/lib/erp-contact";
 
 const HERO_MODULES = [
   { name: "Ventas", icon: Ic.cart },
@@ -65,15 +66,9 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-2.5">
-          <a href="#cta" className="btn btn-primary btn-lg w-full sm:w-auto">
+          <a href={DEMO_WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg w-full sm:w-auto">
             Solicitar una demo
             <Ic.arrowR size={15} className="-mr-1" />
-          </a>
-          <a href="#arquitectura" className="btn btn-ghost btn-lg w-full sm:w-auto">
-            <span className="inline-grid place-items-center w-5 h-5 rounded-full border border-line">
-              <Ic.play size={8} className="ml-[1px]" />
-            </span>
-            Ver cómo funciona
           </a>
         </div>
 
