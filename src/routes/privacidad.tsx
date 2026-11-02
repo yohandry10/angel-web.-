@@ -70,6 +70,7 @@ function Privacidad() {
             <li><strong>Vercel</strong>, que aloja el sitio.</li>
             <li><strong>Resend</strong>, que envía el correo del formulario a nuestro buzón.</li>
             <li><strong>Zoho</strong>, que recibe y guarda ese correo en nuestro buzón.</li>
+            <li><strong>Google Analytics</strong>, para medir visitas y consultas, solo si aceptas las cookies de medición.</li>
           </ul>
           <p>No vendemos ni cedemos tus datos a terceros para publicidad.</p>
         </section>
@@ -84,8 +85,7 @@ function Privacidad() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold">7. Cookies y tecnologías similares</h2>
           <p>
-            Este sitio no usa cookies de seguimiento, publicidad ni analítica, y no guarda datos de navegación en el dispositivo del visitante.
-            Si en el futuro se incorporan, esta sección se actualizará y se pedirá tu consentimiento cuando corresponda.
+            Usamos cookies de medición solo si aceptas. Google Analytics guarda cookies propias (por ejemplo _ga) para medir las visitas y el envío de consultas. No usamos cookies de publicidad ni de remarketing. Si rechazas, no se carga ningún script de Google. Tu elección se guarda en el propio navegador para no mostrarte el aviso de nuevo; puedes cambiarla borrando los datos del sitio en tu navegador.
           </p>
         </section>
 

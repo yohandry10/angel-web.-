@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { ITCursor } from "@/components/ITCursor";
+import { CookieBanner } from "@/components/CookieBanner";
 import { SITE_URL } from "@/lib/seo";
 
 function NotFoundComponent() {
@@ -148,6 +149,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ITCursor />
+      <CookieBanner />
       <Outlet />
     </QueryClientProvider>
   );

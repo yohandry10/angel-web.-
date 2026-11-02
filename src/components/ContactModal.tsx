@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { trackLead } from "@/lib/analytics";
 import { z } from "zod";
 
 const schema = z.object({
@@ -49,6 +50,7 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
       const json = await res.json().catch(() => ({ ok: false, error: "" }));
       if (!res.ok || !json.ok) throw new Error(json.error || "No pudimos enviar el mensaje.");
       setSent(true);
+      trackLead();
     } catch (err) {
       setServerError(err instanceof Error ? err.message : "No pudimos enviar el mensaje.");
     } finally {
