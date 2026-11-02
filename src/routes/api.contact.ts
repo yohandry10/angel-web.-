@@ -22,7 +22,8 @@ function overLimit(ip: string): boolean {
   const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
   recent.push(now);
   hits.set(ip, recent);
-  if (hits.size > 5000) hits.clear();
+  // Mapa acotado: al llenarse se descarta la IP más antigua, no todo el mapa.
+  if (hits.size > 5000) hits.delete(hits.keys().next().value as string);
   return recent.length > MAX_PER_WINDOW;
 }
 
@@ -39,7 +40,8 @@ export const Route = createFileRoute("/api/contact")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "desconocida";
+        // En Vercel, x-vercel-forwarded-for lo pone la plataforma y el cliente no puede falsificarlo.
+        const ip = request.headers.get("x-vercel-forwarded-for")?.split(",")[0].trim() || "desconocida";
         if (overLimit(ip)) {
           return Response.json({ ok: false, error: "Demasiados envíos. Inténtalo más tarde." }, { status: 429 });
         }
