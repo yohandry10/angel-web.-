@@ -6,9 +6,9 @@ export function ErpLogo({ size = 28, withWordmark = true, className = "" }: { si
   // Mismo logotipo que el sitio corporativo; "ERP" indica el producto.
   return (
     <div className={"inline-flex items-center gap-2.5 " + className}>
-      <img src={logoNavbar} alt="NEXTELCO" style={{ height: size + 8 }} className="erp-logo w-auto" />
+      <img src={logoNavbar} alt="NEXTELCO" className="erp-logo h-7 w-auto sm:h-9" />
       {withWordmark && (
-        <span className="rounded-md border border-line px-1.5 py-0.5 text-[11px] font-medium leading-none text-fg-2">ERP</span>
+        <span className="hidden rounded-md border border-line px-1.5 py-0.5 text-[11px] font-medium leading-none text-fg-2 sm:inline">ERP</span>
       )}
     </div>
   );
@@ -85,7 +85,7 @@ export default function Nav() {
           >
             {theme === "dark" ? <Ic.sun size={15} /> : <Ic.moon size={15} />}
           </button>
-          <a href="#cta" className="btn btn-primary h-9 text-[13.5px] px-3.5">
+          <a href="#cta" className="btn btn-primary h-9 whitespace-nowrap text-[13.5px] px-3.5">
             Solicitar demo
           </a>
           <button
