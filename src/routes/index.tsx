@@ -169,21 +169,21 @@ function Index() {
 
         <div className="relative z-20 flex flex-col justify-start min-h-screen w-[90vw] md:w-[min(54vw,900px)]"
           style={{ paddingLeft: "clamp(24px,5vw,80px)", paddingTop: "clamp(120px, 15vh, 160px)", paddingBottom: "clamp(40px, 8vh, 80px)" }}>
-          <div className="reveal mb-6 flex items-center gap-4">
+          <div className="reveal in mb-6 flex items-center gap-4">
             <div className="w-10 h-px bg-cyan-glow" />
             <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">Ingeniería · Infraestructura · 2026</span>
           </div>
           <h1 className="font-sans font-semibold tracking-[-0.05em]" style={{ fontSize: "clamp(42px, 7.5vw, 128px)", lineHeight: 0.85 }}>
-            <span className="reveal-line"><span className="block">DEPLOY</span></span>
-            <span className="reveal-line"><span className="font-serif-it font-normal text-amber-glow block pl-[0.2em]">sin</span></span>
-            <span className="reveal-line"><span className="block">FRICCIÓN.</span></span>
-            <span className="reveal-line"><span className="font-serif-it font-normal text-amber-glow block pl-[0.1em]">escalar</span></span>
-            <span className="reveal-line"><span className="block">CON CRITERIO.</span></span>
+            <span className="reveal-line in"><span className="block">DEPLOY</span></span>
+            <span className="reveal-line in"><span className="font-serif-it font-normal text-amber-glow block pl-[0.2em]">sin</span></span>
+            <span className="reveal-line in"><span className="block">FRICCIÓN.</span></span>
+            <span className="reveal-line in"><span className="font-serif-it font-normal text-amber-glow block pl-[0.1em]">escalar</span></span>
+            <span className="reveal-line in"><span className="block">CON CRITERIO.</span></span>
           </h1>
-          <p className="reveal mt-6 max-w-md text-base md:text-lg leading-relaxed text-muted-foreground">
+          <p className="reveal in mt-6 max-w-md text-base md:text-lg leading-relaxed text-muted-foreground">
             Construimos sistemas empresariales de alto rendimiento —ERP, CRM y plataformas a medida— y resolvemos problemas complejos de negocio con Deep Learning, Machine Learning, DevOps y DevSecOps para América Latina, EEUU y Europa.
           </p>
-          <div className="reveal mt-8 flex flex-wrap items-center gap-8">
+          <div className="reveal in mt-8 flex flex-wrap items-center gap-8">
             <button onClick={openModal} data-cursor="$ deploy" className="group inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
               Iniciar proyecto
               <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
