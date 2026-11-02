@@ -529,7 +529,8 @@ function Index() {
           </div>
 
           <div className="mt-20 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-            <div>© 2026 NEXTELCO — Sistemas empresariales, DevOps y DevSecOps</div>
+            <div>© 2026 NEXTELCO SAC — Sistemas empresariales, DevOps y DevSecOps</div>
+            <div className="flex gap-3"><a href="/aviso-legal" className="hover:text-foreground transition-colors">Aviso legal</a> <span aria-hidden="true">·</span> <a href="/privacidad" className="hover:text-foreground transition-colors">Política de privacidad</a></div>
             <div>Hecho con criterio · No con plantillas</div>
           </div>
         </div>

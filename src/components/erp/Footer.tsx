@@ -63,7 +63,9 @@ export default function Footer() {
         {/* Status bar */}
         <div className="mt-14 pt-6 border-t border-line flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-[12px] text-fg-4 flex-wrap">
-            <span>© 2026 NEXTELCO ERP · un producto de NEXTELCO</span>
+            <span>© 2026 NEXTELCO SAC · NEXTELCO ERP</span>
+            <a href="/aviso-legal" className="hover:text-fg transition-colors">Aviso legal</a>
+            <a href="/privacidad" className="hover:text-fg transition-colors">Privacidad</a>
             <span className="text-fg-4">·</span>
             <span className="inline-flex items-center gap-1.5">
               Hecho en Lima, Perú

@@ -238,7 +238,8 @@ function Experiencia() {
             <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
           </Link>
           <div className="mt-24 pt-8 border-t border-line font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-            © 2026 NEXTELCO — DevOps, Cloud & IA aplicada
+            © 2026 NEXTELCO SAC — DevOps, Cloud & IA aplicada</div>
+            <div className="flex gap-3"><a href="/aviso-legal" className="hover:text-foreground transition-colors">Aviso legal</a> <span aria-hidden="true">·</span> <a href="/privacidad" className="hover:text-foreground transition-colors">Política de privacidad</a>
           </div>
         </div>
       </section>

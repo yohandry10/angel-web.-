@@ -9,13 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ExperienciaRouteImport } from './routes/experiencia'
-import { Route as ErpRouteImport } from './routes/erp'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
+import { Route as ErpRouteImport } from './routes/erp'
+import { Route as ExperienciaRouteImport } from './routes/experiencia'
+import { Route as PrivacidadRouteImport } from './routes/privacidad'
+import { Route as ApiContactRouteImport } from './routes/api.contact'
 
-const ExperienciaRoute = ExperienciaRouteImport.update({
-  id: '/experiencia',
-  path: '/experiencia',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ErpRoute = ErpRouteImport.update({
@@ -23,49 +31,97 @@ const ErpRoute = ErpRouteImport.update({
   path: '/erp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ExperienciaRoute = ExperienciaRouteImport.update({
+  id: '/experiencia',
+  path: '/experiencia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadRoute = PrivacidadRouteImport.update({
+  id: '/privacidad',
+  path: '/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/api/contact': typeof ApiContactRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/erp' | '/experiencia'
+  fullPaths:
+    | '/'
+    | '/aviso-legal'
+    | '/erp'
+    | '/experiencia'
+    | '/privacidad'
+    | '/api/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/erp' | '/experiencia'
-  id: '__root__' | '/' | '/erp' | '/experiencia'
+  to:
+    | '/'
+    | '/aviso-legal'
+    | '/erp'
+    | '/experiencia'
+    | '/privacidad'
+    | '/api/contact'
+  id:
+    | '__root__'
+    | '/'
+    | '/aviso-legal'
+    | '/erp'
+    | '/experiencia'
+    | '/privacidad'
+    | '/api/contact'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisoLegalRoute: typeof AvisoLegalRoute
   ErpRoute: typeof ErpRoute
   ExperienciaRoute: typeof ExperienciaRoute
+  PrivacidadRoute: typeof PrivacidadRoute
+  ApiContactRoute: typeof ApiContactRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/experiencia': {
-      id: '/experiencia'
-      path: '/experiencia'
-      fullPath: '/experiencia'
-      preLoaderRoute: typeof ExperienciaRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aviso-legal': {
+      id: '/aviso-legal'
+      path: '/aviso-legal'
+      fullPath: '/aviso-legal'
+      preLoaderRoute: typeof AvisoLegalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/erp': {
@@ -75,11 +131,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ErpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/experiencia': {
+      id: '/experiencia'
+      path: '/experiencia'
+      fullPath: '/experiencia'
+      preLoaderRoute: typeof ExperienciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidad': {
+      id: '/privacidad'
+      path: '/privacidad'
+      fullPath: '/privacidad'
+      preLoaderRoute: typeof PrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -87,8 +157,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisoLegalRoute: AvisoLegalRoute,
   ErpRoute: ErpRoute,
   ExperienciaRoute: ExperienciaRoute,
+  PrivacidadRoute: PrivacidadRoute,
+  ApiContactRoute: ApiContactRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
