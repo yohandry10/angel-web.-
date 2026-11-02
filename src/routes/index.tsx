@@ -162,7 +162,7 @@ function Index() {
         <div ref={heroRef} className="absolute right-0 top-0 h-full w-full md:w-[64vw] z-[1] will-change-transform">
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 md:via-background/70 to-transparent z-10 w-full md:w-[28%]" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 md:from-background/80 via-transparent to-background/40 z-10" />
-          <img src={heroImg} alt="Server rack iluminado representando infraestructura DevOps" className="h-full w-full object-cover object-center" width={1080} height={1920} />
+          <img src={heroImg} alt="Server rack iluminado representando infraestructura DevOps" className="h-full w-full object-cover object-center" width={1080} height={1920} fetchPriority="high" />
           <div className="absolute top-1/3 right-[18%] w-[2px] h-[40vh] bg-cyan-glow/60 blur-[2px] z-20 hidden md:block" />
         </div>
 
