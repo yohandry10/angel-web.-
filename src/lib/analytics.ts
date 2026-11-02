@@ -47,11 +47,12 @@ export function applyConsent(value: Consent) {
     window.dataLayer!.push(args);
   };
   window.gtag("consent", "default", {
-    analytics_storage: "granted",
+    analytics_storage: "denied",
     ad_storage: "denied",
     ad_user_data: "denied",
     ad_personalization: "denied",
   });
+  window.gtag("consent", "update", { analytics_storage: "granted" });
   loadGoogleTag();
   window.gtag("js", new Date());
   window.gtag("config", GA_ID);
