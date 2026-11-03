@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as ErpRouteImport } from './routes/erp'
 import { Route as ExperienciaRouteImport } from './routes/experiencia'
+import { Route as PortafolioWebRouteImport } from './routes/portafolio-web'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
 import { Route as ApiContactRouteImport } from './routes/api.contact'
 
@@ -36,6 +37,11 @@ const ExperienciaRoute = ExperienciaRouteImport.update({
   path: '/experiencia',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortafolioWebRoute = PortafolioWebRouteImport.update({
+  id: '/portafolio-web',
+  path: '/portafolio-web',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacidadRoute = PrivacidadRouteImport.update({
   id: '/privacidad',
   path: '/privacidad',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/portafolio-web': typeof PortafolioWebRoute
   '/privacidad': typeof PrivacidadRoute
   '/api/contact': typeof ApiContactRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/portafolio-web': typeof PortafolioWebRoute
   '/privacidad': typeof PrivacidadRoute
   '/api/contact': typeof ApiContactRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/portafolio-web': typeof PortafolioWebRoute
   '/privacidad': typeof PrivacidadRoute
   '/api/contact': typeof ApiContactRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/erp'
     | '/experiencia'
+    | '/portafolio-web'
     | '/privacidad'
     | '/api/contact'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/erp'
     | '/experiencia'
+    | '/portafolio-web'
     | '/privacidad'
     | '/api/contact'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/erp'
     | '/experiencia'
+    | '/portafolio-web'
     | '/privacidad'
     | '/api/contact'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   AvisoLegalRoute: typeof AvisoLegalRoute
   ErpRoute: typeof ErpRoute
   ExperienciaRoute: typeof ExperienciaRoute
+  PortafolioWebRoute: typeof PortafolioWebRoute
   PrivacidadRoute: typeof PrivacidadRoute
   ApiContactRoute: typeof ApiContactRoute
 }
@@ -138,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperienciaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portafolio-web': {
+      id: '/portafolio-web'
+      path: '/portafolio-web'
+      fullPath: '/portafolio-web'
+      preLoaderRoute: typeof PortafolioWebRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacidad': {
       id: '/privacidad'
       path: '/privacidad'
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AvisoLegalRoute: AvisoLegalRoute,
   ErpRoute: ErpRoute,
   ExperienciaRoute: ExperienciaRoute,
+  PortafolioWebRoute: PortafolioWebRoute,
   PrivacidadRoute: PrivacidadRoute,
   ApiContactRoute: ApiContactRoute,
 }

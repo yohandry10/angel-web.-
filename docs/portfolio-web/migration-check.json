@@ -1,0 +1,36 @@
+{
+  "projects": 18,
+  "allFieldsPreserved": true,
+  "categories": [
+    {
+      "label": "Todos",
+      "count": 18
+    },
+    {
+      "label": "Webs",
+      "count": 12
+    },
+    {
+      "label": "Sistemas",
+      "count": 2
+    },
+    {
+      "label": "Ecommerce",
+      "count": 3
+    },
+    {
+      "label": "Aulas virtuales",
+      "count": 1
+    },
+    {
+      "label": "APIs",
+      "count": 0
+    },
+    {
+      "label": "Automatizaciones",
+      "count": 0
+    }
+  ],
+  "allImagesPresent": true,
+  "webpBytes": 1589588
+}

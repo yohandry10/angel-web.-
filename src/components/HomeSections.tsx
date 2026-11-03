@@ -404,9 +404,9 @@ export function HomeContact({ onContact }: { onContact: () => void }) {
         </div>
       </div>
       <footer className="home-footer">
-        <a href="#inicio" aria-label="NEXTELCO — volver al inicio">
+        <Link to="/" hash="inicio" aria-label="NEXTELCO — volver al inicio">
           <BrandLogo />
-        </a>
+        </Link>
         <span>© 2026 NEXTELCO SAC</span>
         <nav aria-label="Información legal">
           <Link to="/aviso-legal">Aviso legal</Link>

@@ -19,7 +19,12 @@ const SERVICES = [
   { name: "DEVOPS", detail: "Cloud, CI/CD y automatización.", icon: CloudCog, href: "#stack" },
   { name: "ERP", detail: "Toda tu operación, conectada.", icon: Database, href: "/erp" },
   { name: "CRM", detail: "Clientes, ventas y oportunidades.", icon: UsersRound, href: "#producto" },
-  { name: "WEB", detail: "Experiencias rápidas que convierten.", icon: Globe2, href: "#stack" },
+  {
+    name: "WEB",
+    detail: "Experiencias rápidas que convierten.",
+    icon: Globe2,
+    href: "/portafolio-web",
+  },
   { name: "SISTEMAS", detail: "Software a la medida de tu negocio.", icon: Code2, href: "#stack" },
   {
     name: "SOPORTE",
@@ -87,6 +92,7 @@ export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
           <a href="#proceso">Proceso</a>
           <a href="#stack">Servicios</a>
           <Link to="/erp">ERP</Link>
+          <Link to="/portafolio-web">Portafolio web</Link>
           <Link to="/experiencia">Experiencia</Link>
           <button type="button" onClick={onContact}>
             Conversemos <ArrowUpRight size={15} />
@@ -113,6 +119,9 @@ export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
           </a>
           <Link to="/erp" onClick={() => setMenuOpen(false)}>
             NEXTELCO ERP
+          </Link>
+          <Link to="/portafolio-web" onClick={() => setMenuOpen(false)}>
+            Portafolio web
           </Link>
           <Link to="/experiencia" onClick={() => setMenuOpen(false)}>
             Experiencia

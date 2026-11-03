@@ -29,6 +29,15 @@
         ],
         "createdAt": "2026-11-03T14:13:24.662Z",
         "reason": "Agent: src/styles.css already defines and locally hosts Geist as the Nextelco corporate and ERP typeface; the laptop interface intentionally preserves that existing identity. No font replacement was requested."
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/components/WebPortfolio.css"
+        ],
+        "createdAt": "2026-11-03T16:03:00.231Z",
+        "reason": "Agent: the fourth user-provided reference explicitly uses a cyan-to-violet gradient heading; preserve that requested art direction only in the portfolio hero."
       }
     ]
   }
