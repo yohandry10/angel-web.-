@@ -1,0 +1,62 @@
+[
+  {
+    "accent": "#0050d8",
+    "footer": "rgb(251, 252, 255)",
+    "ink": "#18202b",
+    "muted": "#565c66",
+    "panel": "#f0f2f5",
+    "paper": "#fbfcff",
+    "path": "/"
+  },
+  {
+    "accent": "#0050d8",
+    "footer": "rgb(251, 252, 255)",
+    "ink": "#18202b",
+    "muted": "#565c66",
+    "panel": "#f0f2f5",
+    "paper": "#fbfcff",
+    "path": "/erp"
+  },
+  {
+    "accent": "#0050d8",
+    "footer": "rgb(251, 252, 255)",
+    "ink": "#18202b",
+    "muted": "#565c66",
+    "panel": "#f0f2f5",
+    "paper": "#fbfcff",
+    "path": "/portafolio-web"
+  },
+  {
+    "accent": "#0050d8",
+    "footer": "rgb(251, 252, 255)",
+    "ink": "#18202b",
+    "muted": "#565c66",
+    "panel": "#f0f2f5",
+    "paper": "#fbfcff",
+    "path": "/experiencia"
+  },
+  {
+    "accent": "#0050d8",
+    "footer": "rgb(251, 252, 255)",
+    "ink": "#18202b",
+    "muted": "#565c66",
+    "panel": "#f0f2f5",
+    "paper": "#fbfcff",
+    "path": "/aviso-legal"
+  },
+  {
+    "accent": "#0050d8",
+    "footer": "rgb(251, 252, 255)",
+    "ink": "#18202b",
+    "muted": "#565c66",
+    "panel": "#f0f2f5",
+    "paper": "#fbfcff",
+    "path": "/privacidad"
+  },
+  {
+    "logoWidth": 176,
+    "overflow": 0,
+    "path": "/portafolio-web",
+    "width": 320
+  }
+]

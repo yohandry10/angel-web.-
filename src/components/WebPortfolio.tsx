@@ -415,7 +415,10 @@ export function WebPortfolio() {
   const [contactOpen, setContactOpen] = useState(false);
   const openContact = () => setContactOpen(true);
   return (
-    <main ref={root} className="corporate-root nextelco-reference-page web-portfolio-page">
+    <main
+      ref={root}
+      className="site-theme corporate-root nextelco-reference-page web-portfolio-page"
+    >
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
       <PortfolioNav onContact={openContact} />
       <KeyboardPortfolioHero />

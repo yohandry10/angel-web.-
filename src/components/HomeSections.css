@@ -1,20 +1,20 @@
 .corporate-root.nextelco-reference-page > .home-section {
-  padding: 96px max(24px, 4.5%, calc((100% - 1360px) / 2));
-  scroll-margin-top: 78px;
+  padding: var(--site-section-space) var(--site-gutter);
+  scroll-margin-top: var(--site-nav-height);
 }
 .home-section {
-  --home-muted: #565c66;
-  color: #0a1b36;
-  background: #fbfcff;
+  --home-muted: var(--site-muted);
+  color: var(--site-ink);
+  background: var(--site-paper);
 }
 .home-section * {
   min-width: 0;
 }
 .corporate-root .home-section h2 {
   margin: 0;
-  font-size: clamp(36px, 4.1vw, 64px);
+  font-size: var(--site-section-title);
   line-height: 1.06;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.035em;
   font-weight: 650;
   text-wrap: pretty;
 }
@@ -86,7 +86,7 @@
 .home-process {
   background: var(--brand-blue);
   color: #fff;
-  --home-muted: #e2ebff;
+  --home-muted: #fff;
 }
 .home-process h2 > span {
   color: #fff;
@@ -115,18 +115,18 @@
   font-size: 48px;
   line-height: 1;
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
 }
 .home-process-list h3 {
   margin: 0 0 16px;
-  font-size: 24px;
+  font-size: var(--site-card-title);
   font-weight: 600;
   letter-spacing: -0.025em;
 }
 .home-process-list p {
   font-size: 15px;
   line-height: 1.7;
-  color: #e2ebff;
+  color: #fff;
   margin-bottom: 28px;
 }
 .home-process-result {
@@ -157,7 +157,7 @@
   gap: 20px;
   padding: 23px 20px;
   text-align: left;
-  color: #565c66;
+  color: var(--site-muted);
   border-radius: 5px;
   font-size: clamp(18px, 1.65vw, 24px);
   font-weight: 550;
@@ -183,7 +183,7 @@
 }
 .home-capability-detail {
   padding: 34px 40px;
-  background: #f0f2f5;
+  background: var(--site-panel);
   border-radius: 8px;
 }
 .home-capability-detail h3 {
@@ -201,7 +201,7 @@
   grid-template-columns: 0.8fr 1.2fr;
   gap: 24px;
   padding: 20px 0;
-  border-top: 1px solid #cbd5e6;
+  border-top: 1px solid var(--site-line);
 }
 .home-capability-detail dt {
   font-size: 16px;
@@ -210,7 +210,7 @@
 }
 .home-capability-detail dd {
   margin: 0;
-  color: #565c66;
+  color: var(--site-muted);
   font-size: 15px;
   line-height: 1.6;
 }
@@ -280,7 +280,7 @@
 .home-research-image {
   overflow: hidden;
   border-radius: 8px;
-  background: #f0f2f5;
+  background: var(--site-panel);
 }
 .home-research-image img {
   display: block;
@@ -291,16 +291,16 @@
   display: block;
   padding: 18px 24px;
   font-size: 14px;
-  color: #565c66;
+  color: var(--site-muted);
 }
 .corporate-root .home-research h2 {
-  font-size: clamp(30px, 3.6vw, 56px);
+  font-size: var(--site-section-title);
 }
 .home-research-intro {
   margin-top: 28px !important;
   font-size: 20px;
   line-height: 1.6;
-  color: #334862;
+  color: var(--site-muted);
   max-width: 48ch;
 }
 .home-research-practices {
@@ -319,7 +319,7 @@
 .home-research-context {
   font-size: 15px;
   line-height: 1.7;
-  color: #565c66;
+  color: var(--site-muted);
 }
 .home-research-context {
   margin-top: 28px !important;
@@ -336,7 +336,7 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
   padding-top: 32px;
-  border-top: 1px solid #cbd5e6;
+  border-top: 1px solid var(--site-line);
   gap: 32px;
 }
 .home-research-facts > div {
@@ -346,14 +346,14 @@
 }
 .home-research-facts dt {
   font-size: 14px;
-  color: #565c66;
+  color: var(--site-muted);
 }
 .home-research-facts dd {
   margin: 0;
   font-size: 48px;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
   line-height: 1;
-  color: #0a1b36;
+  color: var(--site-ink);
 }
 .home-operations {
   background: var(--brand-blue);
@@ -380,7 +380,7 @@
   margin: 0;
   font-size: clamp(42px, 4vw, 64px);
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
 }
 .home-operation-facts dt {
   font-size: 15px;
@@ -398,10 +398,10 @@
   margin-bottom: 24px;
 }
 .corporate-root .home-delivery-copy h2 {
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: var(--site-section-title);
   line-height: 1.12;
   letter-spacing: -0.035em;
-  font-weight: 550;
+  font-weight: 650;
   margin: 0 0 24px;
 }
 .home-delivery-copy p {
@@ -412,7 +412,7 @@
 }
 .home-delivery-flow {
   padding: 8px 32px;
-  background: #f0f2f5;
+  background: var(--site-panel);
   border-radius: 8px;
 }
 .home-delivery-step {
@@ -445,7 +445,7 @@
 .home-delivery-step > div {
   flex: 1;
 }
-.home-delivery-step h4 {
+.home-delivery-step h3 {
   margin: 0 0 6px;
   font-size: 17px;
   font-weight: 550;
@@ -466,7 +466,10 @@
   padding: 20px 0;
   border-top: 1px solid #d3d9e2;
   font-size: 13px;
-  color: #fff;
+  color: var(--site-muted);
+}
+.home-contact {
+  background: var(--site-panel);
 }
 .home-contact-main {
   display: grid;
@@ -505,37 +508,8 @@
 .home-contact-details p > span {
   display: block;
   font-size: 14px;
-  color: #565c66;
+  color: var(--site-muted);
   margin-top: 8px;
-}
-.home-footer {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  padding-top: 32px;
-  margin-top: 72px;
-  border-top: 1px solid #cbd5e6;
-  font-size: 13px;
-  color: #565c66;
-}
-.home-footer .nextelco-brandmark {
-  width: 180px;
-}
-.home-footer .nextelco-logo-on-dark {
-  display: none;
-}
-.home-footer .nextelco-logo-on-light {
-  display: block;
-}
-.home-footer nav {
-  margin-left: auto;
-  display: flex;
-  gap: 24px;
-}
-.home-footer nav a {
-  display: flex;
-  align-items: center;
-  min-height: 44px;
 }
 @media (hover: hover) and (pointer: fine) {
   .home-primary-link:hover {
@@ -546,7 +520,7 @@
     transform: translateY(-1px);
   }
   .home-capability-options button:not([aria-pressed="true"]):hover {
-    background: #f0f2f5;
+    background: var(--site-panel);
     color: var(--brand-blue);
   }
   .home-section
@@ -554,7 +528,6 @@
       .home-text-link,
       .home-section-top a,
       .home-product-modules > a,
-      .home-footer a,
       .home-contact-details a
     ):hover {
     text-decoration: underline;
@@ -665,7 +638,7 @@
     padding: 18px 14px;
     font-size: 17px;
     line-height: 1.35;
-    background: #f0f2f5;
+    background: var(--site-panel);
   }
   .home-capability-index {
     font-size: 11px;
@@ -764,7 +737,7 @@
   .home-delivery-step p {
     font-size: 13px;
   }
-  .home-delivery-step h4 {
+  .home-delivery-step h3 {
     font-size: 16px;
   }
   .home-delivery-step:not(:nth-last-child(2))::after {
@@ -779,19 +752,6 @@
   .home-contact-details > a {
     font-size: 18px;
     gap: 12px;
-  }
-  .home-footer {
-    flex-wrap: wrap;
-    gap: 20px 24px;
-    margin-top: 48px;
-    padding-top: 28px;
-  }
-  .home-footer > a {
-    width: 100%;
-  }
-  .home-footer nav {
-    gap: 16px;
-    margin-left: 0;
   }
 }
 @media (max-width: 420px) {

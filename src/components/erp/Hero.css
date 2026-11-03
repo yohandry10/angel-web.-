@@ -5,8 +5,8 @@
   min-height: 780px;
   height: 100svh;
   max-height: 1200px;
-  background: #fbfcff;
-  color: #050609;
+  background: var(--site-paper);
+  color: var(--site-ink);
   color-scheme: light;
 }
 .erp-orbit-scene {
@@ -88,12 +88,12 @@
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  color: #09234c;
+  color: var(--site-ink);
   font-size: 14px;
 }
 .erp-hero-copy .erp-hero-support {
   margin: 20px 0 0;
-  color: #334862;
+  color: var(--site-muted);
   font-size: 13px;
 }
 .erp-hero-bottom {
@@ -105,7 +105,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 40px;
-  color: #15315b;
+  color: var(--site-muted);
   font-size: 13px;
 }
 .erp-hero-bottom > span {
@@ -127,8 +127,8 @@
   height: 30.8%;
   display: flex;
   overflow: hidden;
-  background: #f4f7fc;
-  color: #12243f;
+  background: var(--site-paper);
+  color: var(--site-ink);
   border-radius: 0.25cqw;
   clip-path: polygon(0 0, 100% 0, 100% 78%, 91% 100%, 0 100%);
   line-height: 1.2;
@@ -140,8 +140,8 @@
   width: 8.1cqw;
   padding: 1.1cqw 0.7cqw;
   gap: 0.5cqw;
-  background: #06162d;
-  color: #b9c9e1;
+  background: #141a22;
+  color: #d5d9e0;
 }
 .erp-control-sidebar .nextelco-brandmark {
   width: 6.5cqw;
@@ -174,7 +174,7 @@
 .erp-control-sidebar > small {
   margin-top: auto;
   font-size: 0.5cqw;
-  color: #b9c9e1;
+  color: #d5d9e0;
 }
 .erp-control-main {
   flex: 1;
@@ -194,7 +194,7 @@
 }
 .erp-control-heading > span {
   font-size: 0.5cqw;
-  color: #4c607d;
+  color: var(--site-muted);
 }
 .erp-control-stats {
   display: grid;
@@ -203,14 +203,14 @@
 }
 .erp-control-stats > div {
   padding: 0.65cqw;
-  background: #e9f0fd;
+  background: var(--site-panel);
   border-radius: 0.35cqw;
 }
 .erp-control-stats span,
 .erp-control-stats small {
   display: block;
   font-size: 0.52cqw;
-  color: #425775;
+  color: var(--site-muted);
   line-height: 1.4;
 }
 .erp-control-stats strong {
@@ -237,7 +237,7 @@
   font-size: 0.57cqw;
 }
 .erp-control-chart > div:first-child span {
-  color: #51617a;
+  color: var(--site-muted);
 }
 .erp-control-chart > svg {
   display: block;
@@ -249,7 +249,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.43cqw;
-  color: #4c607d;
+  color: var(--site-muted);
 }
 .erp-control-orders {
   margin-top: 0.65cqw;

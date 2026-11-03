@@ -22,13 +22,16 @@ export function CookieBanner() {
     <div
       role="dialog"
       aria-label="Aviso de cookies"
-      className="cookie-banner fixed inset-x-0 bottom-0 z-[100] p-4 sm:p-6"
+      className="site-theme cookie-banner fixed inset-x-0 bottom-0 z-[100] p-4 sm:p-6"
     >
       <div className="mx-auto max-w-3xl rounded-xl border border-line bg-background/95 p-5 shadow-2xl backdrop-blur sm:flex sm:items-center sm:gap-6">
         <p className="text-sm leading-relaxed text-muted-foreground">
-          Usamos cookies de medición de Google Analytics y de Google Ads para entender qué páginas se visitan y medir las consultas.
-          Solo se activan si aceptas. Más detalles en la{" "}
-          <Link to="/privacidad" className="underline text-foreground">política de privacidad</Link>.
+          Usamos cookies de medición de Google Analytics y de Google Ads para entender qué páginas
+          se visitan y medir las consultas. Solo se activan si aceptas. Más detalles en la{" "}
+          <Link to="/privacidad" className="underline text-foreground">
+            política de privacidad
+          </Link>
+          .
         </p>
         <div className="mt-4 flex shrink-0 gap-2 sm:mt-0">
           <button

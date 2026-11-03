@@ -1,0 +1,6230 @@
+[
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "40px",
+        "text": "Potentessistemas.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Del diagnósticoa producción.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Entendemos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Diseñamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Implementamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Acompañamos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Construir.Operar. Evolucionar.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "La base para operar y crecer.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Toda tu empresa.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Comercial",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Operaciones",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Finanzas",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Administración",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Investigación aplicada.Ingeniería con criterio.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del modelo al producto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del diseño a la operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Infraestructurabajo control.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Cada entrega,con un camino seguro.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "Validación",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "Build",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "Seguridad",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "Despliegue",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 716,
+        "id": "inicio",
+        "label": "hero-heading",
+        "padding": "110px 0px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 1519,
+        "id": "proceso",
+        "label": "home-process-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1346,
+        "id": "stack",
+        "label": "home-capabilities-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 1126,
+        "id": "producto",
+        "label": "home-product-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1695,
+        "id": "bio",
+        "label": "home-research-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 681,
+        "id": "criterio",
+        "label": "home-operations-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 974,
+        "id": "entregas",
+        "label": "home-delivery-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 561,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "64px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 320
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "48px",
+        "text": "Tu empresa.En control.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Una operación.Todo conectado.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "Pedido PV-000482",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "16 módulos.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "23px",
+        "text": "De la cotización a la venta.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Empresas que operan con orden.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Tiendas que venden en caja y a crédito",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Compras y salidas de almacén por obra",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "De la asistencia a la boleta",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Resolvemostus preguntas.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Funciona sin internet?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo manejar varias sucursales y almacenes?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo controlar lo que ve y hace cada usuario?",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hablemos detu empresa.",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/erp",
+    "revealTargets": 13,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 813,
+        "id": "producto",
+        "label": "erp-hero-title",
+        "padding": "128px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1798,
+        "id": "arquitectura",
+        "label": null,
+        "padding": "64px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1617,
+        "id": "modulos",
+        "label": "erp-modules-title",
+        "padding": "64px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 2944,
+        "id": "clientes",
+        "label": null,
+        "padding": "64px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1135,
+        "id": "faq",
+        "label": "erp-faq-title",
+        "padding": "64px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 663,
+        "id": "cta",
+        "label": null,
+        "padding": "64px 0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 320
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "30.4px",
+        "text": "Webs &portafolios",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "15px",
+        "text": "Podemos construir",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Tu idea, con todassus posibilidades.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Páginas web profesionales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Sistemas administrativos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Ecommerce y tiendas online",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Aulas virtuales (LMS)",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "APIs REST y backend escalable",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Analítica y paneles de control",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Automatización de procesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Consultoría técnica",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Soluciones reales.Negocios reales.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Tienda de Ropa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Tienda de Quesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Ecommerce Multiproducto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "CRM Comercial",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Portal SaaS",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Plataforma Educativa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Empresa Eléctrica",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Agencia de Marketing",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Restaurante",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Laboratorio Clínico",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Estudio de Abogados",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Centro de Conciliación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Empresa Constructora",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Casa de Playa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Hanna",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Peru Explorer",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Empresa de Minerales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "ABC Corporativo",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/portafolio-web",
+    "revealTargets": 4,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1231,
+        "id": "inicio-web",
+        "label": "web-hero-title",
+        "padding": "76px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 2629,
+        "id": "servicios-web",
+        "label": "web-services-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 9513,
+        "id": "proyectos",
+        "label": "web-projects-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 561,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "64px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 320
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "42px",
+        "text": "DevOps, Cloud e inteligencia artificial aplicada.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Ingeniería que conecta cada capa.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "DevOps & DevSecOps",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Cloud & Datos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "IA aplicada a DevOps",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Un agente que decide si tu versión está lista.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "IA aplicada a tu sector.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Sector petrolero",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Seguridad bancaria",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "De la evaluación a la operación.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Evaluación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Laboratorio / PoC",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Automatización",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "¿Cómo podemos ayudarte con tu proyecto?",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/experiencia",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 818,
+        "id": "",
+        "label": "experience-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1975,
+        "id": "",
+        "label": "experience-pillars-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1370,
+        "id": "",
+        "label": "experience-lab-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1279,
+        "id": "",
+        "label": "experience-sectors-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1430,
+        "id": "",
+        "label": "experience-method-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 691,
+        "id": "",
+        "label": "experience-cta-title",
+        "padding": "64px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 320
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "36px",
+        "text": "Aviso legal",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Titular del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Objeto",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Uso del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Propiedad intelectual",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Exactitud de la información",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Enlaces a terceros",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Limitación de responsabilidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Legislación aplicable",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/aviso-legal",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 177,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 394,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 204,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 231,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 287,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 178,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 204,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 320
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "36px",
+        "text": "Política de privacidad",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Responsable del tratamiento",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Datos que recogemos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Finalidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Base legal",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Proveedores que procesan tus datos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Conservación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Cookies y tecnologías similares",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Tus derechos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "9. Seguridad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "10. Cambios en esta política",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/privacidad",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 178,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 317,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 177,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 177,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 486,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 177,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 423,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 312,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 178,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 320
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "46.8px",
+        "text": "Potentessistemas.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Del diagnósticoa producción.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Entendemos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Diseñamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Implementamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Acompañamos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Construir.Operar. Evolucionar.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "La base para operar y crecer.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Toda tu empresa.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Comercial",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Operaciones",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Finanzas",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Administración",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Investigación aplicada.Ingeniería con criterio.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del modelo al producto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del diseño a la operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Infraestructurabajo control.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Cada entrega,con un camino seguro.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "Validación",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "Build",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "Seguridad",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "Despliegue",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 812,
+        "id": "inicio",
+        "label": "hero-heading",
+        "padding": "110px 0px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 1397,
+        "id": "proceso",
+        "label": "home-process-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1212,
+        "id": "stack",
+        "label": "home-capabilities-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 974,
+        "id": "producto",
+        "label": "home-product-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1658,
+        "id": "bio",
+        "label": "home-research-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 654,
+        "id": "criterio",
+        "label": "home-operations-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 888,
+        "id": "entregas",
+        "label": "home-delivery-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 540,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "64px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 390
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "50.7px",
+        "text": "Tu empresa.En control.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Una operación.Todo conectado.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "Pedido PV-000482",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "16 módulos.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "23px",
+        "text": "De la cotización a la venta.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Empresas que operan con orden.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Tiendas que venden en caja y a crédito",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Compras y salidas de almacén por obra",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "De la asistencia a la boleta",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Resolvemostus preguntas.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Funciona sin internet?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo manejar varias sucursales y almacenes?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo controlar lo que ve y hace cada usuario?",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hablemos detu empresa.",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/erp",
+    "revealTargets": 13,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 838,
+        "id": "producto",
+        "label": "erp-hero-title",
+        "padding": "128px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1646,
+        "id": "arquitectura",
+        "label": null,
+        "padding": "64px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1443,
+        "id": "modulos",
+        "label": "erp-modules-title",
+        "padding": "64px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 2404,
+        "id": "clientes",
+        "label": null,
+        "padding": "64px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1062,
+        "id": "faq",
+        "label": "erp-faq-title",
+        "padding": "64px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 617,
+        "id": "cta",
+        "label": null,
+        "padding": "64px 0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 390
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "37.05px",
+        "text": "Webs &portafolios",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "15px",
+        "text": "Podemos construir",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Tu idea, con todassus posibilidades.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Páginas web profesionales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Sistemas administrativos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Ecommerce y tiendas online",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Aulas virtuales (LMS)",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "APIs REST y backend escalable",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Analítica y paneles de control",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Automatización de procesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Consultoría técnica",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Soluciones reales.Negocios reales.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Tienda de Ropa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Tienda de Quesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Ecommerce Multiproducto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "CRM Comercial",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Portal SaaS",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Plataforma Educativa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Empresa Eléctrica",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Agencia de Marketing",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Restaurante",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Laboratorio Clínico",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Estudio de Abogados",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Centro de Conciliación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Empresa Constructora",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Casa de Playa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Hanna",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Peru Explorer",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Empresa de Minerales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "ABC Corporativo",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/portafolio-web",
+    "revealTargets": 4,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1310,
+        "id": "inicio-web",
+        "label": "web-hero-title",
+        "padding": "76px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 2242,
+        "id": "servicios-web",
+        "label": "web-services-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 9357,
+        "id": "proyectos",
+        "label": "web-projects-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 540,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "64px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 390
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "42px",
+        "text": "DevOps, Cloud e inteligencia artificial aplicada.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Ingeniería que conecta cada capa.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "DevOps & DevSecOps",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Cloud & Datos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "IA aplicada a DevOps",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Un agente que decide si tu versión está lista.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "IA aplicada a tu sector.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Sector petrolero",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Seguridad bancaria",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "De la evaluación a la operación.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Evaluación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Laboratorio / PoC",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Automatización",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "20px",
+        "text": "Operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "¿Cómo podemos ayudarte con tu proyecto?",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/experiencia",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 637,
+        "id": "",
+        "label": "experience-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1590,
+        "id": "",
+        "label": "experience-pillars-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1202,
+        "id": "",
+        "label": "experience-lab-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1089,
+        "id": "",
+        "label": "experience-sectors-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1294,
+        "id": "",
+        "label": "experience-method-title",
+        "padding": "64px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 573,
+        "id": "",
+        "label": "experience-cta-title",
+        "padding": "64px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 390
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "36px",
+        "text": "Aviso legal",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Titular del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Objeto",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Uso del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Propiedad intelectual",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Exactitud de la información",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Enlaces a terceros",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Limitación de responsabilidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Legislación aplicable",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/aviso-legal",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 312,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 177,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 204,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 204,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 177,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 390
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "36px",
+        "text": "Política de privacidad",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Responsable del tratamiento",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Datos que recogemos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Finalidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Base legal",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Proveedores que procesan tus datos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Conservación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Cookies y tecnologías similares",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Tus derechos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "9. Seguridad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "10. Cambios en esta política",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/privacidad",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 290,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 431,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 341,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 258,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 390
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "84.48px",
+        "text": "Potentessistemas.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Del diagnósticoa producción.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Entendemos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Diseñamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Implementamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Acompañamos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Construir.Operar. Evolucionar.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "25px",
+        "text": "La base para operar y crecer.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Toda tu empresa.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Comercial",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Operaciones",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Finanzas",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Administración",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Investigación aplicada.Ingeniería con criterio.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del modelo al producto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del diseño a la operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Infraestructurabajo control.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Cada entrega,con un camino seguro.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Validación",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Build",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Seguridad",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Despliegue",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1199,
+        "id": "inicio",
+        "label": "hero-heading",
+        "padding": "118px 0px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 1014,
+        "id": "proceso",
+        "label": "home-process-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 996,
+        "id": "stack",
+        "label": "home-capabilities-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 753,
+        "id": "producto",
+        "label": "home-product-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1067,
+        "id": "bio",
+        "label": "home-research-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 563,
+        "id": "criterio",
+        "label": "home-operations-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 734,
+        "id": "entregas",
+        "label": "home-delivery-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 393,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "96px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 768
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "76.8px",
+        "text": "Tu empresa.En control.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Una operación.Todo conectado.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "Pedido PV-000482",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "16 módulos.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "23px",
+        "text": "De la cotización a la venta.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Empresas que operan con orden.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tiendas que venden en caja y a crédito",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Compras y salidas de almacén por obra",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "De la asistencia a la boleta",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Resolvemostus preguntas.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Funciona sin internet?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo manejar varias sucursales y almacenes?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo controlar lo que ve y hace cada usuario?",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hablemos detu empresa.",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/erp",
+    "revealTargets": 13,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1222,
+        "id": "producto",
+        "label": "erp-hero-title",
+        "padding": "140px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1320,
+        "id": "arquitectura",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1150,
+        "id": "modulos",
+        "label": "erp-modules-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1880,
+        "id": "clientes",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 886,
+        "id": "faq",
+        "label": "erp-faq-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 417,
+        "id": "cta",
+        "label": null,
+        "padding": "96px 0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 768
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "39.552px",
+        "text": "Webs &portafolios",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "14px",
+        "text": "Podemos construir",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Tu idea, con todassus posibilidades.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Páginas web profesionales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Sistemas administrativos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Ecommerce y tiendas online",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Aulas virtuales (LMS)",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "APIs REST y backend escalable",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Analítica y paneles de control",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Automatización de procesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Consultoría técnica",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Soluciones reales.Negocios reales.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tienda de Ropa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tienda de Quesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Ecommerce Multiproducto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "CRM Comercial",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Portal SaaS",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Plataforma Educativa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa Eléctrica",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Agencia de Marketing",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Restaurante",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Laboratorio Clínico",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Estudio de Abogados",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Centro de Conciliación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa Constructora",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Casa de Playa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Hanna",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Peru Explorer",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa de Minerales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "ABC Corporativo",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/portafolio-web",
+    "revealTargets": 4,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1063,
+        "id": "inicio-web",
+        "label": "web-hero-title",
+        "padding": "76px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1424,
+        "id": "servicios-web",
+        "label": "web-services-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 5088,
+        "id": "proyectos",
+        "label": "web-projects-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 393,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "96px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 768
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "42px",
+        "text": "DevOps, Cloud e inteligencia artificial aplicada.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Ingeniería que conecta cada capa.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "DevOps & DevSecOps",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Cloud & Datos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "IA aplicada a DevOps",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "Un agente que decide si tu versión está lista.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "IA aplicada a tu sector.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Sector petrolero",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Seguridad bancaria",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "De la evaluación a la operación.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Evaluación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Laboratorio / PoC",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Automatización",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "34px",
+        "text": "¿Cómo podemos ayudarte con tu proyecto?",
+        "weight": "650"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/experiencia",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 497,
+        "id": "",
+        "label": "experience-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1124,
+        "id": "",
+        "label": "experience-pillars-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 997,
+        "id": "",
+        "label": "experience-lab-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 683,
+        "id": "",
+        "label": "experience-sectors-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 775,
+        "id": "",
+        "label": "experience-method-title",
+        "padding": "96px 24px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 483,
+        "id": "",
+        "label": "experience-cta-title",
+        "padding": "96px 24px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 768
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "36px",
+        "text": "Aviso legal",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Titular del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Objeto",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Uso del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Propiedad intelectual",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Exactitud de la información",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Enlaces a terceros",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Limitación de responsabilidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Legislación aplicable",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/aviso-legal",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 177,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 768
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "36px",
+        "text": "Política de privacidad",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Responsable del tratamiento",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Datos que recogemos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Finalidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Base legal",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Proveedores que procesan tus datos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Conservación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Cookies y tecnologías similares",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Tus derechos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "9. Seguridad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "10. Cambios en esta política",
+        "weight": "600"
+      }
+    ],
+    "height": 844,
+    "pageOverflow": 0,
+    "path": "/privacidad",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 209,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 240,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 177,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 768
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "61.952px",
+        "text": "Potentessistemas.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Del diagnósticoa producción.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Entendemos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Diseñamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Implementamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Acompañamos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Construir.Operar. Evolucionar.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "25px",
+        "text": "La base para operar y crecer.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Toda tu empresa.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Comercial",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Operaciones",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Finanzas",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Administración",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Investigación aplicada.Ingeniería con criterio.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del modelo al producto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del diseño a la operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Infraestructurabajo control.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Cada entrega,con un camino seguro.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Validación",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Build",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Seguridad",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Despliegue",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 900,
+        "id": "inicio",
+        "label": "hero-heading",
+        "padding": "0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 989,
+        "id": "proceso",
+        "label": "home-process-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 896,
+        "id": "stack",
+        "label": "home-capabilities-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 730,
+        "id": "producto",
+        "label": "home-product-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 973,
+        "id": "bio",
+        "label": "home-research-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 563,
+        "id": "criterio",
+        "label": "home-operations-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 671,
+        "id": "entregas",
+        "label": "home-delivery-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 408,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "96px 45.3906px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1024
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "69.632px",
+        "text": "Tu empresa.En control.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Una operación.Todo conectado.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "Pedido PV-000482",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "16 módulos.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "23px",
+        "text": "De la cotización a la venta.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Empresas que operan con orden.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tiendas que venden en caja y a crédito",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Compras y salidas de almacén por obra",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "De la asistencia a la boleta",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Resolvemostus preguntas.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Funciona sin internet?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo manejar varias sucursales y almacenes?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo controlar lo que ve y hace cada usuario?",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Hablemos detu empresa.",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/erp",
+    "revealTargets": 13,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 900,
+        "id": "producto",
+        "label": "erp-hero-title",
+        "padding": "0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1063,
+        "id": "arquitectura",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 949,
+        "id": "modulos",
+        "label": "erp-modules-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1383,
+        "id": "clientes",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 807,
+        "id": "faq",
+        "label": "erp-faq-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 432,
+        "id": "cta",
+        "label": null,
+        "padding": "96px 0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1024
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "52.736px",
+        "text": "Webs &portafolios",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "14px",
+        "text": "Podemos construir",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Tu idea, con todassus posibilidades.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Páginas web profesionales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Sistemas administrativos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Ecommerce y tiendas online",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Aulas virtuales (LMS)",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "APIs REST y backend escalable",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Analítica y paneles de control",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Automatización de procesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Consultoría técnica",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Soluciones reales.Negocios reales.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tienda de Ropa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tienda de Quesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Ecommerce Multiproducto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "CRM Comercial",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Portal SaaS",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Plataforma Educativa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa Eléctrica",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Agencia de Marketing",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Restaurante",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Laboratorio Clínico",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Estudio de Abogados",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Centro de Conciliación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa Constructora",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Casa de Playa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Hanna",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Peru Explorer",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa de Minerales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "ABC Corporativo",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/portafolio-web",
+    "revealTargets": 4,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 950,
+        "id": "inicio-web",
+        "label": "web-hero-title",
+        "padding": "84px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1237,
+        "id": "servicios-web",
+        "label": "web-services-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 5579,
+        "id": "proyectos",
+        "label": "web-projects-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 408,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "96px 45.3906px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1024
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "53.248px",
+        "text": "DevOps, Cloud e inteligencia artificial aplicada.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Ingeniería que conecta cada capa.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "DevOps & DevSecOps",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Cloud & Datos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "IA aplicada a DevOps",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "Un agente que decide si tu versión está lista.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "IA aplicada a tu sector.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Sector petrolero",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Seguridad bancaria",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "De la evaluación a la operación.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Evaluación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Laboratorio / PoC",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Automatización",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "40.96px",
+        "text": "¿Cómo podemos ayudarte con tu proyecto?",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/experiencia",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 490,
+        "id": "",
+        "label": "experience-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 1052,
+        "id": "",
+        "label": "experience-pillars-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1012,
+        "id": "",
+        "label": "experience-lab-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 609,
+        "id": "",
+        "label": "experience-sectors-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 756,
+        "id": "",
+        "label": "experience-method-title",
+        "padding": "96px 45.3906px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 498,
+        "id": "",
+        "label": "experience-cta-title",
+        "padding": "96px 45.3906px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1024
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "40.96px",
+        "text": "Aviso legal",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Titular del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Objeto",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Uso del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Propiedad intelectual",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Exactitud de la información",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Enlaces a terceros",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Limitación de responsabilidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Legislación aplicable",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/aviso-legal",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1024
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "40.96px",
+        "text": "Política de privacidad",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Responsable del tratamiento",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Datos que recogemos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Finalidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Base legal",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Proveedores que procesan tus datos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Conservación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Cookies y tecnologías similares",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Tus derechos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "9. Seguridad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "10. Cambios en esta política",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/privacidad",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 209,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 240,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1024
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "87.12px",
+        "text": "Potentessistemas.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Del diagnósticoa producción.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Entendemos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Diseñamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Implementamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Acompañamos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Construir.Operar. Evolucionar.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "25px",
+        "text": "La base para operar y crecer.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Toda tu empresa.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Comercial",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Operaciones",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Finanzas",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Administración",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Investigación aplicada.Ingeniería con criterio.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del modelo al producto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del diseño a la operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Infraestructurabajo control.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Cada entrega,con un camino seguro.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Validación",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Build",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Seguridad",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Despliegue",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 900,
+        "id": "inicio",
+        "label": "hero-heading",
+        "padding": "0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 729,
+        "id": "proceso",
+        "label": "home-process-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 884,
+        "id": "stack",
+        "label": "home-capabilities-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 730,
+        "id": "producto",
+        "label": "home-product-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1035,
+        "id": "bio",
+        "label": "home-research-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 582,
+        "id": "criterio",
+        "label": "home-operations-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 671,
+        "id": "entregas",
+        "label": "home-delivery-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 440,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "96px 64.125px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1440
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "86.4px",
+        "text": "Tu empresa.En control.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Una operación.Todo conectado.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "Pedido PV-000482",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "16 módulos.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "28.8px",
+        "text": "De la cotización a la venta.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Empresas que operan con orden.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tiendas que venden en caja y a crédito",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Compras y salidas de almacén por obra",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "De la asistencia a la boleta",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Resolvemostus preguntas.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Funciona sin internet?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo manejar varias sucursales y almacenes?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo controlar lo que ve y hace cada usuario?",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Hablemos detu empresa.",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/erp",
+    "revealTargets": 13,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 900,
+        "id": "producto",
+        "label": "erp-hero-title",
+        "padding": "0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1095,
+        "id": "arquitectura",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 932,
+        "id": "modulos",
+        "label": "erp-modules-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1339,
+        "id": "clientes",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 840,
+        "id": "faq",
+        "label": "erp-faq-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 463,
+        "id": "cta",
+        "label": null,
+        "padding": "96px 0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1440
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "74.16px",
+        "text": "Webs &portafolios",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "18.1545px",
+        "text": "Podemos construir",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Tu idea, con todassus posibilidades.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Páginas web profesionales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Sistemas administrativos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Ecommerce y tiendas online",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Aulas virtuales (LMS)",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "APIs REST y backend escalable",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Analítica y paneles de control",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Automatización de procesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Consultoría técnica",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Soluciones reales.Negocios reales.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tienda de Ropa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tienda de Quesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Ecommerce Multiproducto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "CRM Comercial",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Portal SaaS",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Plataforma Educativa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa Eléctrica",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Agencia de Marketing",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Restaurante",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Laboratorio Clínico",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Estudio de Abogados",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Centro de Conciliación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa Constructora",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Casa de Playa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Hanna",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Peru Explorer",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa de Minerales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "ABC Corporativo",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/portafolio-web",
+    "revealTargets": 4,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1213,
+        "id": "inicio-web",
+        "label": "web-hero-title",
+        "padding": "84px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 960,
+        "id": "servicios-web",
+        "label": "web-services-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 3798,
+        "id": "proyectos",
+        "label": "web-projects-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 440,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "96px 64.125px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1440
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "74.88px",
+        "text": "DevOps, Cloud e inteligencia artificial aplicada.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Ingeniería que conecta cada capa.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "DevOps & DevSecOps",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Cloud & Datos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "IA aplicada a DevOps",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Un agente que decide si tu versión está lista.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "IA aplicada a tu sector.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Sector petrolero",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Seguridad bancaria",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "De la evaluación a la operación.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Evaluación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Laboratorio / PoC",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Automatización",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "¿Cómo podemos ayudarte con tu proyecto?",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/experiencia",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 536,
+        "id": "",
+        "label": "experience-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 717,
+        "id": "",
+        "label": "experience-pillars-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 697,
+        "id": "",
+        "label": "experience-lab-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 571,
+        "id": "",
+        "label": "experience-sectors-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 544,
+        "id": "",
+        "label": "experience-method-title",
+        "padding": "96px 64.125px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 531,
+        "id": "",
+        "label": "experience-cta-title",
+        "padding": "96px 64.125px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1440
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "56px",
+        "text": "Aviso legal",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Titular del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Objeto",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Uso del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Propiedad intelectual",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Exactitud de la información",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Enlaces a terceros",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Limitación de responsabilidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Legislación aplicable",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/aviso-legal",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1440
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "56px",
+        "text": "Política de privacidad",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Responsable del tratamiento",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Datos que recogemos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Finalidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Base legal",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Proveedores que procesan tus datos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Conservación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Cookies y tecnologías similares",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Tus derechos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "9. Seguridad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "10. Cambios en esta política",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/privacidad",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 209,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 240,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1440
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "111.36px",
+        "text": "Potentessistemas.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Del diagnósticoa producción.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Entendemos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Diseñamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Implementamos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Acompañamos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Construir.Operar. Evolucionar.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "25px",
+        "text": "La base para operar y crecer.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Toda tu empresa.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Comercial",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Operaciones",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Finanzas",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Administración",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Investigación aplicada.Ingeniería con criterio.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del modelo al producto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Del diseño a la operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Infraestructurabajo control.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Cada entrega,con un camino seguro.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Validación",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Build",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Seguridad",
+        "weight": "550"
+      },
+      {
+        "level": "H3",
+        "size": "17px",
+        "text": "Despliegue",
+        "weight": "550"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 900,
+        "id": "inicio",
+        "label": "hero-heading",
+        "padding": "0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 729,
+        "id": "proceso",
+        "label": "home-process-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 884,
+        "id": "stack",
+        "label": "home-capabilities-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 730,
+        "id": "producto",
+        "label": "home-product-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1067,
+        "id": "bio",
+        "label": "home-research-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 588,
+        "id": "criterio",
+        "label": "home-operations-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 671,
+        "id": "entregas",
+        "label": "home-delivery-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 440,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "96px 272.5px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1920
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "112px",
+        "text": "Tu empresa.En control.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Una operación.Todo conectado.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "Pedido PV-000482",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "16 módulos.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "30px",
+        "text": "De la cotización a la venta.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Empresas que operan con orden.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tiendas que venden en caja y a crédito",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Compras y salidas de almacén por obra",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "De la asistencia a la boleta",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Resolvemostus preguntas.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Funciona sin internet?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo manejar varias sucursales y almacenes?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Puedo controlar lo que ve y hace cada usuario?",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Hablemos detu empresa.",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/erp",
+    "revealTargets": 13,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 900,
+        "id": "producto",
+        "label": "erp-hero-title",
+        "padding": "0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1095,
+        "id": "arquitectura",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 932,
+        "id": "modulos",
+        "label": "erp-modules-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 1339,
+        "id": "clientes",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 840,
+        "id": "faq",
+        "label": "erp-faq-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 463,
+        "id": "cta",
+        "label": null,
+        "padding": "96px 0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1920
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "78px",
+        "text": "Webs &portafolios",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "20px",
+        "text": "Podemos construir",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Tu idea, con todassus posibilidades.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Páginas web profesionales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Sistemas administrativos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Ecommerce y tiendas online",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Aulas virtuales (LMS)",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "APIs REST y backend escalable",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Analítica y paneles de control",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Automatización de procesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Consultoría técnica",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Soluciones reales.Negocios reales.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tienda de Ropa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tienda de Quesos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Ecommerce Multiproducto",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "CRM Comercial",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Portal SaaS",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Plataforma Educativa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa Eléctrica",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Agencia de Marketing",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Restaurante",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Laboratorio Clínico",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Estudio de Abogados",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Centro de Conciliación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa Constructora",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Casa de Playa",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Hanna",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Peru Explorer",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Empresa de Minerales",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "ABC Corporativo",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Hagamos quefuncione.",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/portafolio-web",
+    "revealTargets": 4,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 1340,
+        "id": "inicio-web",
+        "label": "web-hero-title",
+        "padding": "84px 0px 0px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 936,
+        "id": "servicios-web",
+        "label": "web-services-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 3877,
+        "id": "proyectos",
+        "label": "web-projects-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 440,
+        "id": "contacto",
+        "label": "home-contact-title",
+        "padding": "96px 272.5px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1920
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "76px",
+        "text": "DevOps, Cloud e inteligencia artificial aplicada.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Ingeniería que conecta cada capa.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "DevOps & DevSecOps",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Cloud & Datos",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "IA aplicada a DevOps",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Un agente que decide si tu versión está lista.",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "IA aplicada a tu sector.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Sector petrolero",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Seguridad bancaria",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "De la evaluación a la operación.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Evaluación",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Laboratorio / PoC",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Automatización",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Operación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "¿Cómo podemos ayudarte con tu proyecto?",
+        "weight": "650"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/experiencia",
+    "revealTargets": 17,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 538,
+        "id": "",
+        "label": "experience-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 717,
+        "id": "",
+        "label": "experience-pillars-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(240, 242, 245)",
+        "height": 697,
+        "id": "",
+        "label": "experience-lab-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 544,
+        "id": "",
+        "label": "experience-sectors-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 544,
+        "id": "",
+        "label": "experience-method-title",
+        "padding": "96px 272.5px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 531,
+        "id": "",
+        "label": "experience-cta-title",
+        "padding": "96px 272.5px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1920
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "56px",
+        "text": "Aviso legal",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Titular del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Objeto",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Uso del sitio",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Propiedad intelectual",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Exactitud de la información",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Enlaces a terceros",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Limitación de responsabilidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Legislación aplicable",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/aviso-legal",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1920
+  },
+  {
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "56px",
+        "text": "Política de privacidad",
+        "weight": "650"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "1. Responsable del tratamiento",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "2. Datos que recogemos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "3. Finalidad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "4. Base legal",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "5. Proveedores que procesan tus datos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "6. Conservación",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "7. Cookies y tecnologías similares",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "8. Tus derechos",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "9. Seguridad",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "22px",
+        "text": "10. Cambios en esta política",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/privacidad",
+    "revealTargets": 0,
+    "sections": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 209,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 240,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 149,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 122,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 95,
+        "id": "",
+        "label": null,
+        "padding": "0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1920
+  }
+]

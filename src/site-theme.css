@@ -1,0 +1,103 @@
+/* Shared roles for every public page. Artwork keeps its photographic colors. */
+:root {
+  --site-paper: #fbfcff;
+  --site-panel: #f0f2f5;
+  --site-ink: #18202b;
+  --site-muted: #565c66;
+  --site-line: #d3d9e2;
+  --site-section-space: 96px;
+  --site-nav-height: 85px;
+  --site-section-title: clamp(34px, 4vw, 56px);
+  --site-card-title: 22px;
+  --site-gutter: max(24px, 4.5%, calc((100% - 1360px) / 2));
+  --site-content-width: min(calc(100% - 48px), 91%, 1360px);
+}
+.site-theme {
+  --bg: var(--site-paper);
+  --bg-soft: var(--site-panel);
+  --surface: #fff;
+  --surface-2: var(--site-panel);
+  --text: var(--site-ink);
+  --text-2: var(--site-muted);
+  --text-3: var(--site-muted);
+  --text-4: var(--site-muted);
+  --line: var(--site-line);
+  --line-soft: var(--site-line);
+  --accent: var(--brand-blue);
+  --accent-2: var(--brand-blue-hover);
+  --accent-soft: var(--site-panel);
+  --action-bg: var(--brand-blue);
+  --action-hover: var(--brand-blue-hover);
+  --on-accent: #fff;
+  --on-action: #fff;
+  --background: var(--bg);
+  --foreground: var(--text);
+  --ink: var(--surface);
+  --bone: var(--text);
+  --cyan-glow: var(--accent);
+  --amber-glow: var(--accent-2);
+  --muted: var(--surface-2);
+  --muted-foreground: var(--text-2);
+  --border: var(--line);
+  --primary: var(--action-bg);
+  --primary-foreground: var(--on-action);
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light;
+}
+html:has(.site-theme),
+body:has(.site-theme) {
+  background: var(--site-paper);
+  color-scheme: light;
+  scrollbar-color: #9198a3 var(--site-paper);
+}
+.site-theme ::selection {
+  background: var(--brand-blue);
+  color: #fff;
+}
+.site-theme :is(a, button, input, textarea, summary):focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 4px;
+}
+.site-theme :is(input, textarea) {
+  caret-color: var(--brand-blue);
+}
+.site-theme a {
+  text-underline-offset: 4px;
+}
+.site-theme :is(a, button) {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.site-theme :is(h1, h2, h3) {
+  text-wrap: balance;
+}
+.site-theme :is(dt, dd, strong, .tnum) {
+  font-variant-numeric: tabular-nums;
+}
+.site-theme .contact-dialog {
+  color: var(--site-ink);
+  background: var(--site-paper);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.site-theme .contact-backdrop {
+  background: rgb(24 32 43 / 65%);
+}
+.site-theme .contact-dialog button {
+  min-height: 44px;
+}
+@media (max-width: 1000px), (max-width: 1200px) and (orientation: portrait) {
+  :root {
+    --site-nav-height: 77px;
+    --site-gutter: 24px;
+    --site-content-width: calc(100% - 48px);
+  }
+}
+@media (max-width: 700px) {
+  :root {
+    --site-section-space: 64px;
+    --site-card-title: 20px;
+  }
+}

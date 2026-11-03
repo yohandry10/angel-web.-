@@ -132,7 +132,7 @@ function ErpLanding() {
   const [theme, setTheme] = useState<"dark" | "light">("light");
 
   return (
-    <div ref={root} className={`erp-root erp-product-page ${theme} bg-app min-h-screen`}>
+    <div ref={root} className={`site-theme erp-root erp-product-page ${theme} bg-app min-h-screen`}>
       <Nav theme={theme} onThemeChange={setTheme} />
       <main>
         <Hero />

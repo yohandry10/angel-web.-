@@ -1,0 +1,334 @@
+[
+  {
+    "active": "Comercial4 módulos",
+    "items": 4,
+    "kind": "modules"
+  },
+  {
+    "active": "Operaciones4 módulos",
+    "items": 4,
+    "kind": "modules"
+  },
+  {
+    "active": "Finanzas4 módulos",
+    "items": 4,
+    "kind": "modules"
+  },
+  {
+    "active": "Administración4 módulos",
+    "items": 4,
+    "kind": "modules"
+  },
+  {
+    "kind": "flow",
+    "panel": "Pedido PV-000482",
+    "selected": "Venta"
+  },
+  {
+    "kind": "flow",
+    "panel": "Recepción REC-0193",
+    "selected": "Compra"
+  },
+  {
+    "kind": "flow",
+    "panel": "RMA-0057",
+    "selected": "Devolución"
+  },
+  {
+    "kind": "flow",
+    "panel": "Planilla octubre 2026",
+    "selected": "Planilla"
+  },
+  {
+    "kind": "dark-theme",
+    "contrastFailures": [],
+    "footer": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "text": "Inicio\nNEXTELCO ERP\nPortafolio web\nExperiencia\n© 2026 NEXTELCO SAC\nAviso legal\nPrivacidad"
+      }
+    ],
+    "h1Count": 1,
+    "headingSkips": [],
+    "headings": [
+      {
+        "level": "H1",
+        "size": "86.4px",
+        "text": "Tu empresa.En control.",
+        "weight": "700"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Una operación.Todo conectado.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "24px",
+        "text": "Planilla octubre 2026",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "16 módulos.Un solo sistema.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "28.8px",
+        "text": "Personas, documentos y decisiones.",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Empresas que operan con orden.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Tiendas que venden en caja y a crédito",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "Compras y salidas de almacén por obra",
+        "weight": "600"
+      },
+      {
+        "level": "H3",
+        "size": "22px",
+        "text": "De la asistencia a la boleta",
+        "weight": "600"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Resolvemostus preguntas.",
+        "weight": "650"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Pueden migrar mi información actual?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Cuánto toma la implementación?",
+        "weight": "400"
+      },
+      {
+        "level": "H3",
+        "size": "16px",
+        "text": "¿Funciona fuera del Perú?",
+        "weight": "400"
+      },
+      {
+        "level": "H2",
+        "size": "56px",
+        "text": "Hablemos detu empresa.",
+        "weight": "600"
+      }
+    ],
+    "height": 900,
+    "pageOverflow": 0,
+    "path": "/erp",
+    "revealTargets": 13,
+    "sections": [
+      {
+        "background": "rgb(251, 252, 255)",
+        "height": 900,
+        "id": "producto",
+        "label": "erp-hero-title",
+        "padding": "0px"
+      },
+      {
+        "background": "rgb(28, 32, 38)",
+        "height": 1095,
+        "id": "arquitectura",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 932,
+        "id": "modulos",
+        "label": "erp-modules-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(28, 32, 38)",
+        "height": 1339,
+        "id": "clientes",
+        "label": null,
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "height": 812,
+        "id": "faq",
+        "label": "erp-faq-title",
+        "padding": "96px 0px"
+      },
+      {
+        "background": "rgb(0, 80, 216)",
+        "height": 463,
+        "id": "cta",
+        "label": null,
+        "padding": "96px 0px"
+      }
+    ],
+    "textOverflows": [],
+    "width": 1440
+  },
+  {
+    "category": "Todos",
+    "count": 18,
+    "empty": false,
+    "kind": "portfolio-filter"
+  },
+  {
+    "category": "Webs",
+    "count": 12,
+    "empty": false,
+    "kind": "portfolio-filter"
+  },
+  {
+    "category": "Sistemas",
+    "count": 2,
+    "empty": false,
+    "kind": "portfolio-filter"
+  },
+  {
+    "category": "Ecommerce",
+    "count": 3,
+    "empty": false,
+    "kind": "portfolio-filter"
+  },
+  {
+    "category": "Aulas virtuales",
+    "count": 1,
+    "empty": false,
+    "kind": "portfolio-filter"
+  },
+  {
+    "category": "APIs",
+    "count": 0,
+    "empty": true,
+    "kind": "portfolio-filter"
+  },
+  {
+    "category": "Automatizaciones",
+    "count": 0,
+    "empty": true,
+    "kind": "portfolio-filter"
+  },
+  {
+    "kind": "project-dialog",
+    "open": true
+  },
+  {
+    "focus": "Ver detalle de Tienda de Ropa",
+    "kind": "dialog-close",
+    "open": false
+  },
+  {
+    "expanded": "home-navigation",
+    "kind": "mobile-menu",
+    "overflow": 0,
+    "path": "/",
+    "width": 320
+  },
+  {
+    "expanded": "erp-mobile-nav",
+    "kind": "mobile-menu",
+    "overflow": 0,
+    "path": "/erp",
+    "width": 320
+  },
+  {
+    "expanded": "web-mobile-nav",
+    "kind": "mobile-menu",
+    "overflow": 0,
+    "path": "/portafolio-web",
+    "width": 320
+  },
+  {
+    "background": "rgb(251, 252, 255)",
+    "color": "rgb(24, 32, 43)",
+    "height": 672.5999755859375,
+    "kind": "contact-modal",
+    "scrollable": "auto",
+    "viewportHeight": 740,
+    "width": 273.5999755859375
+  },
+  {
+    "answerLength": 317,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿Funciona sin internet?"
+  },
+  {
+    "answerLength": 190,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿Puedo manejar varias sucursales y almacenes?"
+  },
+  {
+    "answerLength": 235,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿Puedo controlar lo que ve y hace cada usuario?"
+  },
+  {
+    "answerLength": 287,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿NEXTELCO ERP emite comprobantes electrónicos?"
+  },
+  {
+    "answerLength": 258,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿La contabilidad se registra sola?"
+  },
+  {
+    "answerLength": 216,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿Qué hace con SIRE y los libros electrónicos?"
+  },
+  {
+    "answerLength": 257,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿Pueden migrar mi información actual?"
+  },
+  {
+    "answerLength": 219,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿Cuánto toma la implementación?"
+  },
+  {
+    "answerLength": 209,
+    "answerVisible": true,
+    "kind": "faq",
+    "linkedQuestion": true,
+    "question": "¿Funciona fuera del Perú?"
+  }
+]

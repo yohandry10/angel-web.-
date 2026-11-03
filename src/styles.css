@@ -2,6 +2,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "./site-theme.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -165,31 +166,31 @@
 :root,
 .erp-root,
 body:has(.erp-root) .cookie-banner {
-  /* Default is DARK theme */
-  --bg: #030713;
-  --bg-soft: #070e1b;
-  --surface: #0b1424;
-  --surface-2: #101d30;
-  --line: #203047;
-  --line-soft: #152238;
-  --text: #f5f7fa;
-  --text-2: #bdc6d5;
-  --text-3: #a2b0c5;
-  --text-4: #8b9ab1;
-  --accent: #2aa8ff;
-  --accent-2: #65c0ff;
-  --accent-soft: rgba(42, 168, 255, 0.10);
+  /* Public pages share the same light palette; ERP authors its dark variant locally. */
+  --bg: var(--site-paper);
+  --bg-soft: var(--site-panel);
+  --surface: #fff;
+  --surface-2: var(--site-panel);
+  --line: var(--site-line);
+  --line-soft: var(--site-line);
+  --text: var(--site-ink);
+  --text-2: var(--site-muted);
+  --text-3: var(--site-muted);
+  --text-4: var(--site-muted);
+  --accent: var(--brand-blue);
+  --accent-2: var(--brand-blue-hover);
+  --accent-soft: var(--site-panel);
   --danger: #ef4444;
-  --on-accent: #03121f;
-  --action-bg: #2aa8ff;
-  --action-hover: #65c0ff;
-  --on-action: #03121f;
+  --on-accent: #fff;
+  --action-bg: var(--brand-blue);
+  --action-hover: var(--brand-blue-hover);
+  --on-action: #fff;
   --control-radius: 8px;
   --type-display: clamp(50px, 5.15vw, 78px);
   --type-section: clamp(32px, 3.7vw, 52px);
-  --cinema-bg: #030713;
+  --cinema-bg: #111418;
   --cinema-text: #f5f7fa;
-  --cinema-secondary: #bdc6d5;
+  --cinema-secondary: #c3c7ce;
 
   /* shadcn mappings */
   --background: var(--bg);
@@ -213,19 +214,19 @@ body:has(.erp-root) .cookie-banner {
 
 .erp-root.light,
 body:has(.erp-root.light) .cookie-banner {
-  --bg: #f7f9fd;
-  --bg-soft: #eef3f9;
+  --bg: var(--site-paper);
+  --bg-soft: var(--site-panel);
   --surface: #ffffff;
-  --surface-2: #e7eef7;
-  --line: #ccd7e5;
-  --line-soft: #dee6f0;
-  --text: #0d1a2d;
-  --text-2: #374a63;
-  --text-3: #435975;
-  --text-4: #526780;
-  --accent: #0066a8;
-  --accent-2: #00568e;
-  --accent-soft: rgba(0, 102, 168, 0.09);
+  --surface-2: var(--site-panel);
+  --line: var(--site-line);
+  --line-soft: var(--site-line);
+  --text: var(--site-ink);
+  --text-2: var(--site-muted);
+  --text-3: var(--site-muted);
+  --text-4: var(--site-muted);
+  --accent: var(--brand-blue);
+  --accent-2: var(--brand-blue-hover);
+  --accent-soft: var(--site-panel);
   --on-accent: #ffffff;
 }
 

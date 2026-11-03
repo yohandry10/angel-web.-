@@ -1,0 +1,134 @@
+.site-chrome-shell {
+  width: var(--site-content-width);
+  margin-inline: auto;
+}
+.site-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--site-paper);
+  color: var(--site-ink);
+  border-bottom: 1px solid var(--site-line);
+}
+.site-page-header > div {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 84px;
+}
+.site-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+.site-home-link > svg:first-child {
+  color: var(--brand-blue);
+}
+.site-home-link .nextelco-brandmark {
+  width: 216px;
+}
+.site-page-label {
+  font-size: 14px;
+  color: var(--site-muted);
+}
+.site-back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 550;
+}
+.site-footer {
+  padding: 40px 0 24px;
+  color: var(--site-ink);
+  background: var(--site-paper);
+  border-top: 1px solid var(--site-line);
+  color-scheme: light;
+}
+.site-footer .nextelco-brandmark {
+  width: 180px;
+}
+.site-theme :is(.site-footer, .site-page-header) .nextelco-logo-on-dark {
+  display: none;
+}
+.site-theme :is(.site-footer, .site-page-header) .nextelco-logo-on-light {
+  display: block;
+}
+.site-footer-main,
+.site-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-footer-main {
+  padding-bottom: 28px;
+}
+.site-footer-bottom {
+  border-top: 1px solid var(--site-line);
+  padding-top: 16px;
+  font-size: 13px;
+  color: var(--site-muted);
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+}
+.site-footer-bottom a {
+  font-size: 13px;
+}
+.site-footer a:focus-visible,
+.site-page-header a:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 4px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .site-footer nav a:hover,
+  .site-back-link:hover {
+    text-decoration: underline;
+  }
+}
+@media (max-width: 1000px), (max-width: 1200px) and (orientation: portrait) {
+  .site-page-header > div {
+    min-height: 76px;
+  }
+  .site-home-link .nextelco-brandmark {
+    width: 176px;
+  }
+  .site-page-label {
+    display: none;
+  }
+  .site-footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .site-footer {
+    padding-top: 32px;
+  }
+  .site-footer-main > nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 4px 20px;
+  }
+  .site-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .site-page-header .site-back-link {
+    display: none;
+  }
+}

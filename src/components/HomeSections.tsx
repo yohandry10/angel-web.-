@@ -10,7 +10,7 @@ import {
   RotateCcw,
   ShieldCheck,
 } from "lucide-react";
-import { BrandLogo } from "./BrandLogo";
+import { SiteFooter } from "./SiteChrome";
 import "./HomeSections.css";
 
 const PROCESS = [
@@ -247,9 +247,9 @@ export function HomeResearch() {
         />
         <span>Explorar. Entender. Resolver.</span>
       </div>
-      <div className="home-research-copy" data-reveal>
+      <div className="home-research-copy">
         <span className="home-section-label">El equipo detrás de NEXTELCO</span>
-        <h2 id="home-research-title">
+        <h2 id="home-research-title" data-reveal>
           Investigación aplicada.
           <br />
           <span>Ingeniería con criterio.</span>
@@ -258,7 +258,7 @@ export function HomeResearch() {
           Somos ingenieros e investigadores. Convertimos problemas complejos de negocio en sistemas
           que funcionan en el mundo real.
         </p>
-        <div className="home-research-practices">
+        <div className="home-research-practices" data-reveal>
           <div>
             <h3>Del modelo al producto</h3>
             <p>
@@ -367,7 +367,7 @@ export function HomeDelivery() {
             <div className="home-delivery-step" key={title}>
               <span className="home-delivery-node">0{index + 1}</span>
               <div>
-                <h4>{title}</h4>
+                <h3>{title}</h3>
                 <p>{detail}</p>
               </div>
               <Check size={17} aria-hidden="true" />
@@ -385,46 +385,39 @@ export function HomeDelivery() {
 
 export function HomeContact({ onContact }: { onContact: () => void }) {
   return (
-    <section
-      id="contacto"
-      className="home-contact home-section"
-      aria-labelledby="home-contact-title"
-    >
-      <div className="home-contact-main" data-reveal>
-        <div>
-          <span className="home-section-label">Tu siguiente proyecto</span>
-          <h2 id="home-contact-title">
-            Hagamos que
-            <br />
-            <span>funcione.</span>
-          </h2>
-          <button type="button" className="home-primary-link" onClick={onContact}>
-            Hablemos de tu proyecto <ArrowUpRight size={20} aria-hidden="true" />
-          </button>
+    <>
+      <section
+        id="contacto"
+        className="home-contact home-section"
+        aria-labelledby="home-contact-title"
+      >
+        <div className="home-contact-main" data-reveal>
+          <div>
+            <span className="home-section-label">Tu siguiente proyecto</span>
+            <h2 id="home-contact-title">
+              Hagamos que
+              <br />
+              <span>funcione.</span>
+            </h2>
+            <button type="button" className="home-primary-link" onClick={onContact}>
+              Hablemos de tu proyecto <ArrowUpRight size={20} aria-hidden="true" />
+            </button>
+          </div>
+          <div className="home-contact-details">
+            <a href="mailto:operaciones@nextelco.cloud">
+              <Mail size={22} aria-hidden="true" />
+              <span>operaciones@nextelco.cloud</span>
+            </a>
+            <a href="tel:+17862244098">
+              001 (786) 2244098 <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+            <p>
+              Lima, Perú<span>UTC−5 · Remoto global</span>
+            </p>
+          </div>
         </div>
-        <div className="home-contact-details">
-          <a href="mailto:operaciones@nextelco.cloud">
-            <Mail size={22} aria-hidden="true" />
-            <span>operaciones@nextelco.cloud</span>
-          </a>
-          <a href="tel:+17862244098">
-            001 (786) 2244098 <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
-          <p>
-            Lima, Perú<span>UTC−5 · Remoto global</span>
-          </p>
-        </div>
-      </div>
-      <footer className="home-footer">
-        <Link to="/" hash="inicio" aria-label="NEXTELCO — volver al inicio">
-          <BrandLogo />
-        </Link>
-        <span>© 2026 NEXTELCO SAC</span>
-        <nav aria-label="Información legal">
-          <Link to="/aviso-legal">Aviso legal</Link>
-          <Link to="/privacidad">Privacidad</Link>
-        </nav>
-      </footer>
-    </section>
+      </section>
+      <SiteFooter />
+    </>
   );
 }

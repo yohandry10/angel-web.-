@@ -1,12 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect } from "react";
-import { BrandLogo } from "@/components/BrandLogo";
+import { useRef } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useSectionReveals } from "@/hooks/use-section-reveals";
+import { SiteFooter, SitePageHeader } from "@/components/SiteChrome";
+import "@/components/SupportingPages.css";
 import heroImg from "@/assets/hero-devops.jpg";
 import { SITE_URL } from "@/lib/seo";
 
 const PAGE_URL = `${SITE_URL}/experiencia`;
 const TITLE = "Experiencia en DevOps, Cloud e Inteligencia Artificial Aplicada — NEXTELCO";
-const DESC = "Diseño, automatización y operación de plataformas modernas: DevOps, arquitecturas Cloud, seguridad, observabilidad e IA aplicada con LLMs, RAG, MCP y agentes.";
+const DESC =
+  "Diseño, automatización y operación de plataformas modernas: DevOps, arquitecturas Cloud, seguridad, observabilidad e IA aplicada con LLMs, RAG, MCP y agentes.";
 
 export const Route = createFileRoute("/experiencia")({
   component: Experiencia,
@@ -37,191 +41,231 @@ export const Route = createFileRoute("/experiencia")({
   }),
 });
 
-function useReveal() {
-  useEffect(() => {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll(".reveal, .reveal-line, .reveal-section, .reveal-left, .reveal-right").forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-}
-
 const PILLARS = [
   {
     n: "01",
     t: "DevOps & DevSecOps",
     d: "Diseño y administración de pipelines CI/CD con automatización de compilaciones, pruebas, quality gates, análisis de seguridad y despliegues en múltiples ambientes. Contenedores e Infrastructure as Code con seguridad y calidad integradas en cada release.",
-    tags: ["Jenkins", "GitHub Actions", "GitLab CI/CD", "Azure DevOps", "Docker", "Kubernetes", "OpenShift", "Helm", "Kustomize", "Terraform", "Ansible", "ArgoCD", "GitOps", "SonarQube", "Trivy", "Grype", "SBOM", "Prometheus", "Grafana", "OpenTelemetry"],
+    tags: [
+      "Jenkins",
+      "GitHub Actions",
+      "GitLab CI/CD",
+      "Azure DevOps",
+      "Docker",
+      "Kubernetes",
+      "OpenShift",
+      "Helm",
+      "Kustomize",
+      "Terraform",
+      "Ansible",
+      "ArgoCD",
+      "GitOps",
+      "SonarQube",
+      "Trivy",
+      "Grype",
+      "SBOM",
+      "Prometheus",
+      "Grafana",
+      "OpenTelemetry",
+    ],
   },
   {
     n: "02",
     t: "Cloud & Datos",
     d: "Arquitecturas sobre AWS, Azure y GCP considerando disponibilidad, seguridad, escalabilidad y costos. Migraciones, landing zones, Kubernetes administrado, identidad y observabilidad — incluyendo plataformas de datos e integración híbrida con on-premise.",
-    tags: ["AWS", "Azure", "GCP", "Landing Zones", "K8s administrado", "IAM / SSO", "Redes / VPC", "BigQuery", "Vertex AI", "Airflow", "dbt", "Terraform", "Híbrido"],
+    tags: [
+      "AWS",
+      "Azure",
+      "GCP",
+      "Landing Zones",
+      "K8s administrado",
+      "IAM / SSO",
+      "Redes / VPC",
+      "BigQuery",
+      "Vertex AI",
+      "Airflow",
+      "dbt",
+      "Terraform",
+      "Híbrido",
+    ],
   },
   {
     n: "03",
-    t: "IA Aplicada a DevOps",
+    t: "IA aplicada a DevOps",
     d: "Integramos IA con pruebas, pipelines, documentación, métricas, logs y clústeres para construir asistentes y agentes capaces de analizar el estado de una plataforma. No un chatbot aislado, sino una capa más de la arquitectura.",
-    tags: ["LLMs", "Embeddings", "FAISS", "RAG", "LangChain", "LangGraph", "MCP", "Agentes", "FastAPI", "MLOps"],
+    tags: [
+      "LLMs",
+      "Embeddings",
+      "FAISS",
+      "RAG",
+      "LangChain",
+      "LangGraph",
+      "MCP",
+      "Agentes",
+      "FastAPI",
+      "MLOps",
+    ],
   },
 ];
 
 const SECTORS = [
   {
     label: "IA · Datos de pozos",
-    t: "Sector Petrolero",
+    t: "Sector petrolero",
     d: "Preparación y análisis de datos de pozos con registros horizontales, datos geológicos y curvas Gamma Ray. Uso de type wells para estimar el comportamiento geológico de nuevos pozos: predicción a lo largo de la perforación, correlación entre pozos, clasificación de formaciones, mantenimiento predictivo y detección de anomalías — de Google Colab a plataformas Cloud con pipelines de datos, MLOps y monitoreo de modelos.",
   },
   {
     label: "IA · DevSecOps",
-    t: "Seguridad Bancaria",
+    t: "Seguridad bancaria",
     d: "Agentes que analizan resultados de SonarQube, Trivy, Grype y SBOM, priorizan hallazgos y correlacionan riesgos con las aplicaciones afectadas. Asistentes RAG sobre políticas, procedimientos, estándares y arquitectura autorizados — implementados con controles estrictos de acceso, protección de información, trazabilidad, validación humana y separación entre recomendaciones y acciones automáticas.",
   },
 ];
 
 const METHOD = [
-  { n: "01", t: "Evaluación", d: "Analizamos infraestructura, aplicaciones, procesos manuales, riesgos y necesidades del negocio para definir una ruta de modernización progresiva." },
-  { n: "02", t: "Laboratorio / PoC", d: "Construimos una prueba de concepto con un caso de uso limitado, validamos la integración entre componentes y documentamos el funcionamiento." },
-  { n: "03", t: "Automatización", d: "Llevamos la solución a CI/CD, contenedores, seguridad y observabilidad, evitando cambios de alto riesgo sobre ambientes productivos." },
-  { n: "04", t: "Operación", d: "Despliegue, monitoreo y optimización. Cada solución crece por fases hasta incorporar agentes que interpretan el estado operativo." },
+  {
+    n: "01",
+    t: "Evaluación",
+    d: "Analizamos infraestructura, aplicaciones, procesos manuales, riesgos y necesidades del negocio para definir una ruta de modernización progresiva.",
+  },
+  {
+    n: "02",
+    t: "Laboratorio / PoC",
+    d: "Construimos una prueba de concepto con un caso de uso limitado, validamos la integración entre componentes y documentamos el funcionamiento.",
+  },
+  {
+    n: "03",
+    t: "Automatización",
+    d: "Llevamos la solución a CI/CD, contenedores, seguridad y observabilidad, evitando cambios de alto riesgo sobre ambientes productivos.",
+  },
+  {
+    n: "04",
+    t: "Operación",
+    d: "Despliegue, monitoreo y optimización. Cada solución crece por fases hasta incorporar agentes que interpretan el estado operativo.",
+  },
 ];
 
 function Experiencia() {
-  useReveal();
+  const root = useRef<HTMLDivElement>(null);
+  useSectionReveals(root);
 
   return (
-    <main className="corporate-root bg-background text-foreground overflow-x-hidden">
-      {/* NAVBAR */}
-      <header className="corporate-nav fixed top-0 left-0 right-0 z-50 nav-blur">
-        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group" aria-label="NEXTELCO — página principal">
-            <BrandLogo />
-          </Link>
-          <Link to="/" className="btn btn-ghost">
-            ← Inicio
-          </Link>
-        </div>
-      </header>
-
-      {/* HERO / INTRO */}
-      <section className="px-[clamp(24px,5vw,80px)] pt-[clamp(140px,20vh,200px)] pb-[clamp(48px,8vh,96px)] relative overflow-hidden">
-                <div className="relative">
-          <h1 className="reveal max-w-5xl font-sans font-semibold tracking-[-0.04em] mb-10">
-            DevOps, Cloud e <span className="text-amber-glow">inteligencia</span> artificial <span className="text-cyan-glow">aplicada</span>.
+    <div ref={root} className="site-theme corporate-root experience-page">
+      <SitePageHeader label="Experiencia" />
+      <main>
+        <section className="experience-intro" aria-labelledby="experience-title">
+          <h1 id="experience-title" data-reveal>
+            DevOps, Cloud e <span className="text-accent">inteligencia artificial aplicada.</span>
           </h1>
-          <p className="reveal max-w-3xl text-base md:text-lg leading-relaxed text-muted-foreground">
-            Contamos con experiencia en el diseño, implementación, automatización y operación de plataformas tecnológicas modernas. Combinamos infraestructura, desarrollo, automatización y análisis inteligente para modernizar procesos, reducir tareas manuales, mejorar la calidad de los despliegues y tomar decisiones basadas en información técnica confiable — en entornos empresariales y financieros como banca, servicios tecnológicos y aplicaciones web.
+          <p data-reveal>
+            Contamos con experiencia en el diseño, implementación, automatización y operación de
+            plataformas tecnológicas modernas. Combinamos infraestructura, desarrollo,
+            automatización y análisis inteligente para modernizar procesos, reducir tareas manuales,
+            mejorar la calidad de los despliegues y tomar decisiones basadas en información técnica
+            confiable — en entornos empresariales y financieros como banca, servicios tecnológicos y
+            aplicaciones web.
           </p>
-        </div>
-      </section>
-
-      {/* PILARES */}
-      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(48px,8vh,96px)] border-t border-line">
-        <div className="grid md:grid-cols-3 gap-px bg-line">
-          {PILLARS.map((p, index) => (
-            <div key={p.n} className="reveal-right" style={{ transitionDelay: `${index * 150}ms` }}>
-              <div className="bg-background p-10 h-full group hover:bg-muted/40 transition-colors duration-700">
-                <div className="font-sans font-light text-cyan-glow mb-10 group-hover:text-amber-glow transition-colors duration-700" style={{ fontSize: "clamp(48px,5vw,88px)", lineHeight: 1, letterSpacing: "-0.04em" }}>{p.n}</div>
-                <h2 className="text-2xl font-medium mb-4">{p.t}</h2>
-                <p className="text-sm leading-relaxed text-muted-foreground mb-8">{p.d}</p>
-                <div className="flex flex-wrap gap-2">
-                  {p.tags.map((tag) => (
-                    <span key={tag} className="font-sans text-[13px] text-muted-foreground border border-line px-2.5 py-1 group-hover:border-cyan-glow/40 transition-colors duration-700">{tag}</span>
+        </section>
+        <section aria-labelledby="experience-pillars-title">
+          <h2 id="experience-pillars-title" data-reveal>
+            Ingeniería que conecta <span className="text-accent">cada capa.</span>
+          </h2>
+          <div className="experience-pillars">
+            {PILLARS.map((pillar, index) => (
+              <article key={pillar.n} data-reveal data-reveal-delay={index * 60}>
+                <h3>{pillar.t}</h3>
+                <p>{pillar.d}</p>
+                <ul className="experience-tags" aria-label={`Tecnologías de ${pillar.t}`}>
+                  {pillar.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
                   ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* PROYECTO DESTACADO — LAB IA + MCP + RAG + AGENTES */}
-      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(48px,8vh,96px)] border-t border-line">
-        <div className="reveal bg-ink border border-line">
-          <div className="flex items-center justify-between px-5 py-3 border-b border-line">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_8px_var(--cyan-glow)]" />
-              <span className="font-sans text-[13px] text-muted-foreground">~/labs/release-readiness-agent</span>
-            </div>
-            <span className="font-sans text-[13px] text-muted-foreground">poc</span>
+                </ul>
+              </article>
+            ))}
           </div>
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 p-8 md:p-12">
-            <div className="lg:col-span-5">
-              <h2 className="font-sans font-medium tracking-[-0.03em] mb-6">
-                Un agente que decide si tu versión <span className="text-amber-glow">está lista</span> para desplegar.
+        </section>
+        <section className="experience-lab" aria-labelledby="experience-lab-title">
+          <div className="experience-lab-layout">
+            <div data-reveal>
+              <h2 id="experience-lab-title">
+                Un agente que decide si tu versión <span className="text-accent">está lista.</span>
               </h2>
-              <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
-                Laboratorio de IA aplicada a DevOps orientado a la automatización de pruebas de APIs y evaluación de preparación para despliegues. El agente recibe resultados de pruebas, monitoreo y seguridad, evalúa condiciones y determina si una versión puede avanzar — generando archivos estructurados y resúmenes comprensibles para los equipos. Puede evolucionar a un Release Readiness Agent, un asistente de troubleshooting o un analizador de incidentes integrado con Jenkins, GitHub Actions, GitLab CI/CD o Azure DevOps.
+              <p>
+                Laboratorio de IA aplicada a DevOps orientado a la automatización de pruebas de APIs
+                y evaluación de preparación para despliegues. El agente recibe resultados de
+                pruebas, monitoreo y seguridad, evalúa condiciones y determina si una versión puede
+                avanzar — generando archivos estructurados y resúmenes comprensibles para los
+                equipos. Puede evolucionar a un Release Readiness Agent, un asistente de
+                troubleshooting o un analizador de incidentes integrado con Jenkins, GitHub Actions,
+                GitLab CI/CD o Azure DevOps.
               </p>
             </div>
-            <div className="lg:col-span-7 flex flex-col justify-center">
-              <div className="font-sans text-[13px] text-muted-foreground mb-5">Flujo de la solución</div>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-4 font-sans text-[13px] md:text-[13px] mb-8">
-                {["Karate · E2E APIs", "MCP · tools", "FAISS · RAG", "LLM", "LangGraph", "Agente"].map((s, i, arr) => (
-                  <span key={s} className="flex items-center gap-3">
-                    <span className="text-foreground border border-line px-3 py-2 bg-background">{s}</span>
-                    {i < arr.length - 1 && <span className="text-cyan-glow">→</span>}
-                  </span>
+            <div className="experience-lab-flow" data-reveal>
+              <p>Flujo de la solución · Prueba de concepto</p>
+              <ol>
+                {[
+                  "Karate · E2E APIs",
+                  "MCP · tools",
+                  "FAISS · RAG",
+                  "LLM",
+                  "LangGraph",
+                  "Agente",
+                ].map((step) => (
+                  <li key={step}>
+                    <ArrowRight aria-hidden="true" />
+                    {step}
+                  </li>
                 ))}
-              </div>
-              <div className="border-t border-line pt-5 font-sans text-[13px] md:text-[12px] leading-relaxed text-muted-foreground">
-                <span className="text-cyan-glow">$ output</span> → ¿versión lista para desplegar?{"  "}<span className="text-amber-glow">+ resumen ejecutivo</span>
-              </div>
+              </ol>
+              <small>
+                Resultado: evaluación de la versión y un resumen ejecutivo para el equipo.
+              </small>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* IA POR SECTOR */}
-      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(48px,8vh,96px)] border-t border-line">
-        <div className="grid md:grid-cols-2 gap-px bg-line">
-          {SECTORS.map((sec) => (
-            <div key={sec.t} className="reveal bg-background p-10 group hover:bg-muted/40 transition-colors duration-700">
-              <div className="font-sans text-[13px] text-cyan-glow mb-6">{sec.label}</div>
-              <h2 className="text-2xl md:text-3xl font-medium mb-4 group-hover:text-cyan-glow transition-colors duration-700">{sec.t}</h2>
-              <p className="text-sm leading-relaxed text-muted-foreground">{sec.d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* METODOLOGÍA */}
-      <section className="px-[clamp(24px,5vw,80px)] py-[clamp(48px,8vh,96px)] border-t border-line">
-        <div className="grid md:grid-cols-4 gap-px bg-line">
-          {METHOD.map((step, index) => (
-            <div key={step.n} className="reveal-right" style={{ transitionDelay: `${index * 120}ms` }}>
-              <div className="bg-background p-10 h-full group hover:bg-muted/40 transition-colors duration-700">
-                <div className="font-sans font-light text-cyan-glow mb-10 group-hover:text-amber-glow transition-colors duration-700" style={{ fontSize: "clamp(48px,5vw,88px)", lineHeight: 1, letterSpacing: "-0.04em" }}>{step.n}</div>
-                <h3 className="text-xl font-medium mb-4">{step.t}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{step.d}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-[clamp(24px,5vw,80px)] pt-[clamp(64px,10vh,120px)] pb-16 border-t border-line relative overflow-hidden">
-        <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-cyan-glow/10 blur-[120px]" />
-        <div className="relative">
-          <h2 className="reveal font-sans font-medium tracking-[-0.04em] max-w-5xl mb-12">
-            ¿Cómo podemos ayudarte con <span className="text-amber-glow">tu proyecto</span>?
+        </section>
+        <section aria-labelledby="experience-sectors-title">
+          <h2 id="experience-sectors-title" data-reveal>
+            IA aplicada <span className="text-accent">a tu sector.</span>
           </h2>
-          <p className="reveal max-w-3xl text-base md:text-lg leading-relaxed text-muted-foreground mb-12">
-            Te acompañamos desde la evaluación y la arquitectura hasta la automatización, el despliegue, el monitoreo y la optimización de tu plataforma. Empezamos con DevOps, migración a la nube, CI/CD, contenedores, Kubernetes, seguridad o IA — mediante un laboratorio controlado o un proyecto piloto que demuestre valor sin riesgo.
-          </p>
-          <Link to="/" className="btn btn-primary btn-lg group">
-            Volver al inicio
-            <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
-          </Link>
-          <div className="mt-24 pt-8 border-t border-line font-sans text-[13px] text-muted-foreground">
-            © 2026 NEXTELCO SAC — DevOps, Cloud & IA aplicada</div>
-            <div className="flex gap-3"><a href="/aviso-legal" className="hover:text-foreground transition-colors">Aviso legal</a> <span aria-hidden="true">·</span> <a href="/privacidad" className="hover:text-foreground transition-colors">Política de privacidad</a>
+          <div className="experience-sectors">
+            {SECTORS.map((sector) => (
+              <article key={sector.t} data-reveal>
+                <span className="experience-sector-label">{sector.label}</span>
+                <h3>{sector.t}</h3>
+                <p>{sector.d}</p>
+              </article>
+            ))}
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+        <section aria-labelledby="experience-method-title">
+          <h2 id="experience-method-title" data-reveal>
+            De la evaluación <span className="text-accent">a la operación.</span>
+          </h2>
+          <div className="experience-method">
+            {METHOD.map((step, index) => (
+              <article key={step.n} data-reveal data-reveal-delay={index * 60}>
+                <span className="experience-method-number">{step.n}</span>
+                <h3>{step.t}</h3>
+                <p>{step.d}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section className="experience-cta" aria-labelledby="experience-cta-title">
+          <div data-reveal>
+            <h2 id="experience-cta-title">¿Cómo podemos ayudarte con tu proyecto?</h2>
+            <p>
+              Te acompañamos desde la evaluación y la arquitectura hasta la automatización, el
+              despliegue, el monitoreo y la optimización de tu plataforma. Empezamos con DevOps,
+              migración a la nube, CI/CD, contenedores, Kubernetes, seguridad o IA — mediante un
+              laboratorio controlado o un proyecto piloto que demuestre valor sin riesgo.
+            </p>
+            <Link to="/" hash="contacto" className="btn btn-primary btn-lg">
+              Hablemos de tu proyecto <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </div>
   );
 }

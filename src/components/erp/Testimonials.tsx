@@ -66,7 +66,7 @@ const TRACE: {
 function OrderTrace() {
   return (
     <div className="w-full">
-      <div className="flex items-baseline justify-between mb-5">
+      <div className="flex flex-wrap items-baseline justify-between gap-3 mb-5">
         <div className="flex flex-col">
           <span className="text-[12.5px] font-medium text-fg-3">Recorrido de un pedido</span>
           <span className="mt-1 text-[12px] text-fg-3">Ejemplo con datos de demostración</span>
@@ -88,7 +88,7 @@ function OrderTrace() {
             t.state === "done"
               ? "var(--accent)"
               : t.state === "partial"
-                ? "color-mix(in oklab, var(--accent) 55%, var(--text-3))"
+                ? "var(--text-2)"
                 : "var(--text-2)";
           return (
             <li key={t.doc} className="relative flex items-start gap-3 py-2">
@@ -99,7 +99,7 @@ function OrderTrace() {
                 <I size={14} className={t.state === "next" ? "text-fg-4" : "text-accent"} />
               </span>
               <div className="flex-1 min-w-0 pt-0.5">
-                <div className="flex items-baseline justify-between gap-3">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                   <span
                     className={
                       "text-[13.5px] font-medium " + (t.state === "next" ? "text-fg-3" : "text-fg")
@@ -232,7 +232,7 @@ export default function Testimonials() {
                 {t.industry}
               </span>
 
-              <h3 className="mt-6 text-[17px] font-semibold tracking-[-0.01em] text-fg">
+              <h3 className="erp-case-title mt-6 font-semibold tracking-[-0.02em] text-fg">
                 {t.title}
               </h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-fg-2">{t.text}</p>

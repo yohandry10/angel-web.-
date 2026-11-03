@@ -34,7 +34,9 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
     const r = schema.safeParse(form);
     if (!r.success) {
       const errs: Record<string, string> = {};
-      r.error.issues.forEach((i) => { errs[i.path[0] as string] = i.message; });
+      r.error.issues.forEach((i) => {
+        errs[i.path[0] as string] = i.message;
+      });
       setErrors(errs);
       return;
     }
@@ -59,17 +61,24 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
   };
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
-      <div className="absolute inset-0 bg-ink/85 backdrop-blur-md" onClick={onClose} />
-      <div role="dialog" aria-modal="true" aria-label="Contacto con NEXTELCO" className="contact-dialog relative w-full max-w-2xl bg-background border border-line rounded-xl shadow-2xl animate-in zoom-in-95 slide-in-from-bottom-4 duration-500">
+      <div className="contact-backdrop absolute inset-0 backdrop-blur-md" onClick={onClose} />
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Contacto con NEXTELCO"
+        className="contact-dialog relative w-full max-w-2xl bg-background border border-line rounded-xl shadow-2xl animate-in zoom-in-95 slide-in-from-bottom-4 duration-500"
+      >
         {/* terminal header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-line">
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_8px_var(--cyan-glow)]" />
-            <span className="font-sans text-[13px] text-muted-foreground">
-              Contacto
-            </span>
+            <span className="font-sans text-[13px] text-muted-foreground">Contacto</span>
           </div>
-          <button onClick={onClose} data-cursor="$ close" className="font-sans text-xs text-muted-foreground hover:text-amber-glow transition">
+          <button
+            onClick={onClose}
+            data-cursor="$ close"
+            className="font-sans text-xs text-muted-foreground hover:text-amber-glow transition"
+          >
             [ESC] ✕
           </button>
         </div>
@@ -79,10 +88,11 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
             <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-[-0.03em] mb-4">
               Mensaje <span className="text-amber-glow">enviado</span>.
             </h3>
-            <p className="text-muted-foreground">
-              Te responderemos en menos de 24h hábiles.
-            </p>
-            <button onClick={onClose} className="mt-8 font-sans text-[13px] border-b border-foreground pb-1 hover:text-cyan-glow hover:border-cyan-glow transition">
+            <p className="text-muted-foreground">Te responderemos en menos de 24h hábiles.</p>
+            <button
+              onClick={onClose}
+              className="mt-8 font-sans text-[13px] border-b border-foreground pb-1 hover:text-cyan-glow hover:border-cyan-glow transition"
+            >
               Cerrar →
             </button>
           </div>
@@ -92,7 +102,13 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
             <div aria-hidden className="absolute left-[-9999px] h-px w-px overflow-hidden">
               <label>
                 Sitio web
-                <input tabIndex={-1} autoComplete="off" name="website" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} />
+                <input
+                  tabIndex={-1}
+                  autoComplete="off"
+                  name="website"
+                  value={form.website}
+                  onChange={(e) => setForm({ ...form, website: e.target.value })}
+                />
               </label>
             </div>
             <div>
@@ -102,25 +118,61 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
             </div>
 
             <div className="grid md:grid-cols-2 gap-5">
-              <Field label="Nombre" name="name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} error={errors.name} />
-              <Field label="Correo electrónico" name="email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} error={errors.email} />
+              <Field
+                label="Nombre"
+                name="name"
+                value={form.name}
+                onChange={(v) => setForm({ ...form, name: v })}
+                error={errors.name}
+              />
+              <Field
+                label="Correo electrónico"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={(v) => setForm({ ...form, email: v })}
+                error={errors.email}
+              />
             </div>
-            <Field label="Empresa (opcional)" name="company" value={form.company} onChange={(v) => setForm({ ...form, company: v })} error={errors.company} />
-            <Field label="Mensaje" name="message" textarea value={form.message} onChange={(v) => setForm({ ...form, message: v })} error={errors.message} />
+            <Field
+              label="Empresa (opcional)"
+              name="company"
+              value={form.company}
+              onChange={(v) => setForm({ ...form, company: v })}
+              error={errors.company}
+            />
+            <Field
+              label="Mensaje"
+              name="message"
+              textarea
+              value={form.message}
+              onChange={(v) => setForm({ ...form, message: v })}
+              error={errors.message}
+            />
 
             {serverError && (
               <p role="alert" className="text-sm text-amber-glow">
                 {serverError} Si el problema sigue, escríbenos a{" "}
-                <a href="mailto:operaciones@nextelco.cloud" className="border-b border-amber-glow">operaciones@nextelco.cloud</a>.
+                <a href="mailto:operaciones@nextelco.cloud" className="border-b border-amber-glow">
+                  operaciones@nextelco.cloud
+                </a>
+                .
               </p>
             )}
             <div className="flex items-center justify-between pt-4">
               <span className="font-sans text-[13px] text-muted-foreground">
                 {form.message.length}/1000
               </span>
-              <button type="submit" disabled={sending} data-cursor="$ send" className="btn btn-primary btn-lg disabled:opacity-60">
+              <button
+                type="submit"
+                disabled={sending}
+                data-cursor="$ send"
+                className="btn btn-primary btn-lg disabled:opacity-60"
+              >
                 {sending ? "Enviando…" : "Enviar mensaje"}
-                <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
+                <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">
+                  →
+                </span>
               </button>
             </div>
           </form>
@@ -130,21 +182,42 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
   );
 }
 
-function Field({ label, name, value, onChange, error, type = "text", textarea }: {
-  label: string; name: string; value?: string; onChange: (v: string) => void;
-  error?: string; type?: string; textarea?: boolean;
+function Field({
+  label,
+  name,
+  value,
+  onChange,
+  error,
+  type = "text",
+  textarea,
+}: {
+  label: string;
+  name: string;
+  value?: string;
+  onChange: (v: string) => void;
+  error?: string;
+  type?: string;
+  textarea?: boolean;
 }) {
   return (
     <label className="block">
       <span className="font-sans text-[13px] text-muted-foreground block mb-2">{label}</span>
       {textarea ? (
         <textarea
-          name={name} value={value} onChange={(e) => onChange(e.target.value)} rows={5} maxLength={1000}
+          name={name}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          rows={5}
+          maxLength={1000}
           className="w-full bg-transparent border-b border-line py-2 focus:border-cyan-glow focus:outline-none transition resize-none font-sans text-base"
         />
       ) : (
         <input
-          name={name} type={type} value={value} onChange={(e) => onChange(e.target.value)} maxLength={200}
+          name={name}
+          type={type}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          maxLength={200}
           className="w-full bg-transparent border-b border-line py-2 focus:border-cyan-glow focus:outline-none transition font-sans text-base"
         />
       )}

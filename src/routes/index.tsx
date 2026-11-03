@@ -63,7 +63,7 @@ function Index() {
   return (
     <main
       ref={root}
-      className="corporate-root nextelco-reference-page bg-background text-foreground overflow-x-hidden"
+      className="site-theme corporate-root nextelco-reference-page bg-background text-foreground overflow-x-hidden"
     >
       <ContactModal open={modal} onClose={() => setModal(false)} />
       <NextelcoHomeNav onContact={openModal} />
