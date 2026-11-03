@@ -149,9 +149,12 @@ export default function Testimonials() {
       data-screen-label="06 Clientes"
       className="relative py-20 sm:py-28 border-t border-line"
     >
-      <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
+      <div className="erp-section-shell">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+          data-reveal
+        >
           <div className="max-w-[36rem]">
             <h2 className="section-title">Empresas que operan con orden.</h2>
           </div>
@@ -160,6 +163,7 @@ export default function Testimonials() {
         {/* Featured case */}
         <div
           className="mt-12 rounded-[16px] border border-line overflow-hidden"
+          data-reveal
           style={{ background: "var(--surface)" }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr]">
@@ -216,7 +220,7 @@ export default function Testimonials() {
         </div>
 
         {/* Supporting cards */}
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5" data-reveal>
           {useCases.map((t) => (
             <article
               key={t.industry}

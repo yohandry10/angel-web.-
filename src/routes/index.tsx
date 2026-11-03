@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useSectionReveals } from "@/hooks/use-section-reveals";
 import { NextelcoHero, NextelcoHomeNav } from "@/components/NextelcoHero";
 import {
   HomeProcess,
@@ -7,6 +8,7 @@ import {
   HomeProduct,
   HomeResearch,
   HomeOperations,
+  HomeDelivery,
   HomeContact,
 } from "@/components/HomeSections";
 import { ContactModal } from "@/components/ContactModal";
@@ -53,11 +55,16 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const root = useRef<HTMLElement>(null);
+  useSectionReveals(root);
   const [modal, setModal] = useState(false);
   const openModal = () => setModal(true);
 
   return (
-    <main className="corporate-root nextelco-reference-page bg-background text-foreground overflow-x-hidden">
+    <main
+      ref={root}
+      className="corporate-root nextelco-reference-page bg-background text-foreground overflow-x-hidden"
+    >
       <ContactModal open={modal} onClose={() => setModal(false)} />
       <NextelcoHomeNav onContact={openModal} />
       <NextelcoHero onContact={openModal} />
@@ -66,6 +73,7 @@ function Index() {
       <HomeProduct />
       <HomeResearch />
       <HomeOperations />
+      <HomeDelivery />
       <HomeContact onContact={openModal} />
     </main>
   );

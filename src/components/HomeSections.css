@@ -1,9 +1,9 @@
 .corporate-root.nextelco-reference-page > .home-section {
-  padding: 96px max(24px, calc((100% - 1360px) / 2));
+  padding: 96px max(24px, 4.5%, calc((100% - 1360px) / 2));
   scroll-margin-top: 78px;
 }
 .home-section {
-  --home-muted: #53647b;
+  --home-muted: #565c66;
   color: #0a1b36;
   background: #fbfcff;
 }
@@ -19,7 +19,7 @@
   text-wrap: pretty;
 }
 .home-section h2 > span {
-  color: #0059f7;
+  color: var(--brand-blue);
 }
 .home-section p {
   margin: 0;
@@ -67,12 +67,12 @@
   min-height: 52px;
   padding: 14px 22px;
   border-radius: 5px;
-  background: #0059f7;
+  background: var(--brand-blue);
   color: #fff;
   font-size: 15px;
   font-weight: 600;
   transition:
-    transform 160ms ease-out,
+    transform 160ms var(--ease-out),
     background-color 160ms ease;
 }
 .home-section :is(button, a) {
@@ -84,12 +84,12 @@
   transform: scale(0.98);
 }
 .home-process {
-  background: #0059f7;
+  background: var(--brand-blue);
   color: #fff;
   --home-muted: #e2ebff;
 }
 .home-process h2 > span {
-  color: #c7dcff;
+  color: #fff;
 }
 .home-process-list {
   display: grid;
@@ -157,7 +157,7 @@
   gap: 20px;
   padding: 23px 20px;
   text-align: left;
-  color: #53647b;
+  color: #565c66;
   border-radius: 5px;
   font-size: clamp(18px, 1.65vw, 24px);
   font-weight: 550;
@@ -165,10 +165,10 @@
   transition:
     background-color 160ms ease,
     color 160ms ease,
-    transform 160ms ease-out;
+    transform 160ms var(--ease-out);
 }
 .home-capability-options button[aria-pressed="true"] {
-  background: #0059f7;
+  background: var(--brand-blue);
   color: #fff;
 }
 .home-capability-index {
@@ -183,7 +183,7 @@
 }
 .home-capability-detail {
   padding: 34px 40px;
-  background: #edf2fc;
+  background: #f0f2f5;
   border-radius: 8px;
 }
 .home-capability-detail h3 {
@@ -210,7 +210,7 @@
 }
 .home-capability-detail dd {
   margin: 0;
-  color: #53647b;
+  color: #565c66;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -220,20 +220,24 @@
   align-items: center;
   gap: 96px;
   color: #fff;
-  background: #07172f;
+  background: var(--brand-blue);
+}
+.home-product .home-primary-link {
+  background: #fff;
+  color: var(--brand-blue);
 }
 .home-product h2 > span {
-  color: #6aabff;
+  color: #fff;
 }
 .home-product-copy > p {
   margin: 28px 0 32px;
   font-size: 17px;
   line-height: 1.7;
-  color: #c0cde1;
+  color: #fff;
   max-width: 49ch;
 }
 .home-product .home-section-label {
-  color: #8abaff;
+  color: #fff;
 }
 .home-product-modules > div {
   display: flex;
@@ -244,7 +248,7 @@
 }
 .home-product-modules > div > span {
   font-size: 14px;
-  color: #8abaff;
+  color: #fff;
 }
 .home-product-modules > div > div {
   flex: 1;
@@ -256,7 +260,7 @@
 }
 .home-product-modules p {
   font-size: 15px;
-  color: #c0cde1;
+  color: #fff;
   line-height: 1.5;
 }
 .home-product-modules > a {
@@ -276,7 +280,7 @@
 .home-research-image {
   overflow: hidden;
   border-radius: 8px;
-  background: #edf2fc;
+  background: #f0f2f5;
 }
 .home-research-image img {
   display: block;
@@ -287,7 +291,7 @@
   display: block;
   padding: 18px 24px;
   font-size: 14px;
-  color: #53647b;
+  color: #565c66;
 }
 .corporate-root .home-research h2 {
   font-size: clamp(30px, 3.6vw, 56px);
@@ -315,14 +319,14 @@
 .home-research-context {
   font-size: 15px;
   line-height: 1.7;
-  color: #53647b;
+  color: #565c66;
 }
 .home-research-context {
   margin-top: 28px !important;
 }
 .home-research .home-text-link {
   margin-top: 22px;
-  color: #0059f7;
+  color: var(--brand-blue);
   font-size: 15px;
   font-weight: 550;
 }
@@ -342,7 +346,7 @@
 }
 .home-research-facts dt {
   font-size: 14px;
-  color: #53647b;
+  color: #565c66;
 }
 .home-research-facts dd {
   margin: 0;
@@ -352,12 +356,12 @@
   color: #0a1b36;
 }
 .home-operations {
-  background: #07172f;
+  background: var(--brand-blue);
   color: #fff;
-  --home-muted: #c0cde1;
+  --home-muted: #fff;
 }
 .home-operations h2 > span {
-  color: #6aabff;
+  color: #fff;
 }
 .home-operation-facts {
   display: grid;
@@ -380,22 +384,20 @@
 }
 .home-operation-facts dt {
   font-size: 15px;
-  color: #c0cde1;
+  color: #fff;
 }
 .home-delivery {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 96px;
   align-items: center;
-  margin-top: 48px;
-  padding-top: 64px;
-  border-top: 1px solid #ffffff29;
+  margin: 0;
 }
 .home-delivery-copy > svg {
-  color: #6aabff;
+  color: var(--brand-blue);
   margin-bottom: 24px;
 }
-.home-delivery-copy h3 {
+.corporate-root .home-delivery-copy h2 {
   font-size: clamp(28px, 3vw, 44px);
   line-height: 1.12;
   letter-spacing: -0.035em;
@@ -403,14 +405,14 @@
   margin: 0 0 24px;
 }
 .home-delivery-copy p {
-  color: #c0cde1;
+  color: var(--home-muted);
   font-size: 17px;
   line-height: 1.7;
   max-width: 42ch;
 }
 .home-delivery-flow {
   padding: 8px 32px;
-  background: #0f2442;
+  background: #f0f2f5;
   border-radius: 8px;
 }
 .home-delivery-step {
@@ -426,9 +428,9 @@
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  border: 1px solid #6aabff;
+  border: 1px solid var(--brand-blue);
   border-radius: 50%;
-  color: #a7ceff;
+  color: var(--brand-blue);
   font-size: 12px;
 }
 .home-delivery-step:not(:nth-last-child(2))::after {
@@ -438,7 +440,7 @@
   top: calc(50% + 21px);
   bottom: -25px;
   width: 1px;
-  background: #6aabff66;
+  background: #c7cdd5;
 }
 .home-delivery-step > div {
   flex: 1;
@@ -450,11 +452,11 @@
 }
 .home-delivery-step p {
   font-size: 14px;
-  color: #c0cde1;
+  color: var(--home-muted);
   line-height: 1.5;
 }
 .home-delivery-step > svg {
-  color: #6aabff;
+  color: var(--brand-blue);
   flex-shrink: 0;
 }
 .home-delivery-rollback {
@@ -462,9 +464,9 @@
   gap: 12px;
   align-items: center;
   padding: 20px 0;
-  border-top: 1px solid #ffffff29;
+  border-top: 1px solid #d3d9e2;
   font-size: 13px;
-  color: #a7ceff;
+  color: #fff;
 }
 .home-contact-main {
   display: grid;
@@ -494,7 +496,7 @@
 }
 .home-contact-details svg {
   flex-shrink: 0;
-  color: #0059f7;
+  color: var(--brand-blue);
 }
 .home-contact-details p {
   margin-top: 12px;
@@ -503,7 +505,7 @@
 .home-contact-details p > span {
   display: block;
   font-size: 14px;
-  color: #53647b;
+  color: #565c66;
   margin-top: 8px;
 }
 .home-footer {
@@ -514,7 +516,7 @@
   margin-top: 72px;
   border-top: 1px solid #cbd5e6;
   font-size: 13px;
-  color: #53647b;
+  color: #565c66;
 }
 .home-footer .nextelco-brandmark {
   width: 180px;
@@ -537,11 +539,15 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .home-primary-link:hover {
-    background: #0046cc;
+    background: var(--brand-blue-hover);
+  }
+  .home-product .home-primary-link:hover {
+    background: #fff;
+    transform: translateY(-1px);
   }
   .home-capability-options button:not([aria-pressed="true"]):hover {
-    background: #edf2fc;
-    color: #0059f7;
+    background: #f0f2f5;
+    color: var(--brand-blue);
   }
   .home-section
     :is(
@@ -583,6 +589,11 @@
   .home-research-practices {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+}
+@media (max-width: 1000px), (max-width: 1200px) and (orientation: portrait) {
+  .corporate-root.nextelco-reference-page > .home-section {
+    padding-inline: 24px;
   }
 }
 @media (max-width: 700px) {
@@ -654,7 +665,7 @@
     padding: 18px 14px;
     font-size: 17px;
     line-height: 1.35;
-    background: #edf2fc;
+    background: #f0f2f5;
   }
   .home-capability-index {
     font-size: 11px;
@@ -739,10 +750,6 @@
   .home-operation-facts dt {
     font-size: 14px;
     text-align: right;
-  }
-  .home-delivery {
-    margin-top: 28px;
-    padding-top: 40px;
   }
   .home-delivery-copy p {
     font-size: 16px;

@@ -131,8 +131,8 @@ export default function Hero() {
       </div>
       <div className="erp-hero-copy">
         <h1 id="erp-hero-title">
-          <span>TU EMPRESA.</span>
-          <span>EN CONTROL.</span>
+          <span>Tu empresa.</span>
+          <span>En control.</span>
         </h1>
         <p>
           Ventas, inventario y finanzas.

@@ -1,0 +1,226 @@
+[
+  {
+    "backgrounds": [
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "proceso"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "producto"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "criterio"
+      },
+      {
+        "color": "rgb(251, 252, 255)",
+        "id": "entregas"
+      }
+    ],
+    "independentSections": true,
+    "overflow": 0,
+    "sameLeftEdge": true,
+    "textOverflow": [],
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "proceso"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "producto"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "criterio"
+      },
+      {
+        "color": "rgb(251, 252, 255)",
+        "id": "entregas"
+      }
+    ],
+    "independentSections": true,
+    "overflow": 0,
+    "sameLeftEdge": true,
+    "textOverflow": [],
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "proceso"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "producto"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "criterio"
+      },
+      {
+        "color": "rgb(251, 252, 255)",
+        "id": "entregas"
+      }
+    ],
+    "independentSections": true,
+    "overflow": 0,
+    "sameLeftEdge": true,
+    "textOverflow": [],
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "proceso"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "producto"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "criterio"
+      },
+      {
+        "color": "rgb(251, 252, 255)",
+        "id": "entregas"
+      }
+    ],
+    "independentSections": true,
+    "overflow": 0,
+    "sameLeftEdge": true,
+    "textOverflow": [],
+    "viewport": [
+      1024,
+      768
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "proceso"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "producto"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "criterio"
+      },
+      {
+        "color": "rgb(251, 252, 255)",
+        "id": "entregas"
+      }
+    ],
+    "independentSections": true,
+    "overflow": 0,
+    "sameLeftEdge": true,
+    "textOverflow": [],
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "proceso"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "producto"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "criterio"
+      },
+      {
+        "color": "rgb(251, 252, 255)",
+        "id": "entregas"
+      }
+    ],
+    "independentSections": true,
+    "overflow": 0,
+    "sameLeftEdge": true,
+    "textOverflow": [],
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "proceso"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "producto"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "criterio"
+      },
+      {
+        "color": "rgb(251, 252, 255)",
+        "id": "entregas"
+      }
+    ],
+    "independentSections": true,
+    "overflow": 0,
+    "sameLeftEdge": true,
+    "textOverflow": [],
+    "viewport": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "proceso"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "producto"
+      },
+      {
+        "color": "rgb(0, 80, 216)",
+        "id": "criterio"
+      },
+      {
+        "color": "rgb(251, 252, 255)",
+        "id": "entregas"
+      }
+    ],
+    "independentSections": true,
+    "overflow": 0,
+    "sameLeftEdge": true,
+    "textOverflow": [],
+    "viewport": [
+      2560,
+      1440
+    ]
+  }
+]

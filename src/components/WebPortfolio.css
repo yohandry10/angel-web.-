@@ -1,6 +1,6 @@
 .web-portfolio-page {
-  background: #010515;
-  color: #f5f7ff;
+  background: #fbfcff;
+  color: #141615;
 }
 .web-portfolio-page :is(a, button) {
   touch-action: manipulation;
@@ -13,9 +13,29 @@
   position: fixed;
   z-index: 50;
   inset: 0 0 auto;
-  color: #f5f7ff;
-  background: #010515;
-  border-bottom: 1px solid #ffffff14;
+  color: #141615;
+  background: #fbfcff;
+  border-bottom: 1px solid #d3d9e2;
+}
+.web-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+.web-nav-brand > svg:first-child {
+  color: var(--brand-blue);
+  flex-shrink: 0;
+}
+.web-nav .nextelco-logo-on-dark {
+  display: none;
+}
+.web-nav .nextelco-logo-on-light {
+  display: block;
+}
+.web-portfolio-page .contact-dialog {
+  color: var(--text);
 }
 .web-nav-inner {
   display: flex;
@@ -31,9 +51,9 @@
 }
 .web-nav-label {
   padding-left: 24px;
-  border-left: 1px solid #ffffff35;
+  border-left: 1px solid #d3d9e2;
   font-size: 13px;
-  color: #aebbd0;
+  color: #435872;
 }
 .web-nav-desktop {
   display: flex;
@@ -50,7 +70,7 @@
 }
 .web-nav-desktop button {
   padding-inline: 18px;
-  border: 1px solid #5b789a;
+  border: 1px solid #67819b;
   border-radius: 5px;
 }
 .web-menu-toggle {
@@ -66,7 +86,7 @@
   padding: 8px 24px 20px;
   max-height: calc(100dvh - 76px);
   overflow-y: auto;
-  border-top: 1px solid #ffffff29;
+  border-top: 1px solid #d3d9e2;
 }
 .web-nav-mobile :is(a, button) {
   display: flex;
@@ -75,95 +95,7 @@
   min-height: 48px;
   font-size: 16px;
 }
-.web-hero {
-  background: #010515;
-  overflow: hidden;
-}
-.web-hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.02fr;
-  align-items: center;
-  min-height: 800px;
-  max-width: 1480px;
-  margin-inline: auto;
-  padding: 104px 40px 0;
-}
-.web-hero-copy {
-  position: relative;
-  z-index: 1;
-  padding-block: 32px 72px;
-}
-.web-hero-lead {
-  font-size: 21px;
-  margin: 0 0 22px;
-  color: #c6d1e5;
-  letter-spacing: -0.025em;
-}
-.web-portfolio-page .web-hero h1 {
-  font-size: clamp(72px, 7.7vw, 120px);
-  line-height: 0.97;
-  font-weight: 750;
-  letter-spacing: -0.055em;
-  margin: 0;
-  text-wrap: nowrap;
-}
-.web-hero h1 > span {
-  display: block;
-}
-.web-hero h1 > span:first-child {
-  width: fit-content;
-  background-image: linear-gradient(100deg, #08d5df 5%, #308fff 56%, #a96aff 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.web-hero-description {
-  max-width: 38ch;
-  margin: 30px 0 0;
-  font-size: 20px;
-  line-height: 1.6;
-  color: #c6d1e5;
-  letter-spacing: -0.025em;
-}
-.web-hero-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 36px;
-  min-height: 52px;
-  padding: 14px 22px;
-  margin-top: 32px;
-  border-radius: 5px;
-  color: #03101e;
-  background: #63d9fb;
-  font-size: 15px;
-  font-weight: 650;
-  transition:
-    transform 160ms ease-out,
-    background-color 160ms ease;
-}
-.web-hero-disciplines {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 15px;
-  margin: 32px 0 0;
-  font-size: 13px;
-  color: #aebbd0;
-}
-.web-hero-disciplines > span {
-  color: #63d9fb;
-}
-.web-hero-art {
-  align-self: end;
-  min-width: 0;
-}
-.web-hero-art img {
-  display: block;
-  width: 100%;
-  height: min(760px, 58vw);
-  object-fit: cover;
-  object-position: center bottom;
-  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 97%, transparent);
-}
+
 .corporate-root.web-portfolio-page > .web-section {
   padding: 96px max(24px, calc((100% - 1360px) / 2));
   scroll-margin-top: 84px;
@@ -194,7 +126,7 @@
   margin: 0;
 }
 .web-section h2 > span {
-  color: #0059f7;
+  color: var(--brand-blue);
 }
 .web-section-heading > p {
   max-width: 38ch;
@@ -218,7 +150,7 @@
   background: #f8faff;
 }
 .web-services-grid > article > svg {
-  color: #0059f7;
+  color: var(--brand-blue);
   margin-bottom: 28px;
 }
 .web-services-grid h3 {
@@ -258,8 +190,8 @@
 }
 .web-project-filters button[aria-pressed="true"] {
   color: #fff;
-  background: #0059f7;
-  border-color: #0059f7;
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 .web-project-count {
   margin: 24px 0;
@@ -369,8 +301,8 @@
     transform 160ms ease-out;
 }
 .web-project-actions a {
-  background: #0059f7;
-  border-color: #0059f7;
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
   color: #fff;
 }
 .web-project-empty {
@@ -381,7 +313,7 @@
   color: #53647b;
 }
 .web-project-empty > svg {
-  color: #0059f7;
+  color: var(--brand-blue);
   margin: 0 auto 20px;
 }
 .web-project-empty h3 {
@@ -401,7 +333,7 @@
   align-items: center;
   gap: 16px;
   min-height: 44px;
-  color: #0059f7;
+  color: var(--brand-blue);
   font-weight: 550;
 }
 .web-project-dialog {
@@ -505,7 +437,7 @@
 }
 .web-project-features svg {
   flex-shrink: 0;
-  color: #0059f7;
+  color: var(--brand-blue);
   margin-top: 3px;
 }
 .web-project-result {
@@ -541,42 +473,36 @@
 }
 .web-project-detail-copy > footer .web-detail-primary {
   color: #fff;
-  background: #0059f7;
-  border-color: #0059f7;
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 .web-project-detail-copy > footer button {
   margin-left: auto;
 }
-.web-hero-action:active,
 .web-project-actions :is(a, button):active {
   transform: scale(0.98);
 }
 @media (hover: hover) and (pointer: fine) {
-  .web-hero-action:hover {
-    background: #9deaff;
-  }
   .web-project-preview:hover img {
     transform: scale(1.025);
   }
   .web-project-actions button:hover,
   .web-project-filters button:not([aria-pressed="true"]):hover {
     background: #e1eaf9;
-    color: #0059f7;
+    color: var(--brand-blue);
   }
   .web-project-actions a:hover {
     background: #0046cc;
   }
   .web-nav-desktop a:hover {
-    color: #63d9fb;
+    color: var(--brand-blue);
   }
 }
 @media (max-width: 1100px) {
   .web-nav-label {
     display: none;
   }
-  .web-hero-description {
-    font-size: 18px;
-  }
+
   .web-services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -591,7 +517,7 @@
     padding: 12px 24px;
   }
   .web-nav .nextelco-brandmark {
-    width: 176px;
+    width: clamp(132px, 38vw, 176px);
   }
   .web-nav-desktop {
     display: none;
@@ -599,35 +525,7 @@
   .web-menu-toggle {
     display: grid;
   }
-  .web-hero-inner {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    padding: 124px 24px 0;
-  }
-  .web-hero-copy {
-    padding: 0;
-    max-width: 600px;
-  }
-  .web-portfolio-page .web-hero h1 {
-    font-size: clamp(62px, 12vw, 110px);
-  }
-  .web-hero-lead {
-    font-size: 18px;
-  }
-  .web-hero-description {
-    font-size: 18px;
-    max-width: 35ch;
-    margin-top: 26px;
-  }
-  .web-hero-art {
-    margin-top: 16px;
-    justify-self: center;
-    width: min(100%, 680px);
-  }
-  .web-hero-art img {
-    height: clamp(380px, 90vw, 620px);
-    mask-image: none;
-  }
+
   .web-section-heading {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -643,21 +541,7 @@
     padding-block: 64px;
     scroll-margin-top: 76px;
   }
-  .web-hero-inner {
-    padding-top: 116px;
-  }
-  .web-hero-lead {
-    font-size: 16px;
-    margin-bottom: 18px;
-  }
-  .web-hero-description {
-    font-size: 17px;
-  }
-  .web-hero-disciplines {
-    font-size: 12px;
-    gap: 12px;
-    margin-top: 26px;
-  }
+
   .web-project-grid,
   .web-services-grid {
     grid-template-columns: 1fr;
@@ -704,13 +588,11 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .web-hero-action,
   .web-project-actions :is(a, button),
   .web-project-preview img,
   .web-project-filters button {
     transition: none;
   }
-  .web-hero-action:active,
   .web-project-actions :is(a, button):active,
   .web-project-preview:hover img {
     transform: none;

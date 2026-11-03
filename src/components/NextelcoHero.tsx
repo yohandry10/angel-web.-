@@ -7,7 +7,6 @@ import {
   Database,
   Globe2,
   Headset,
-  Mail,
   Menu,
   UsersRound,
   X,
@@ -34,46 +33,21 @@ const SERVICES = [
   },
 ];
 
-function HeroLogo({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={`reveal-brand ${className}`}
-      viewBox="35 145 1370 810"
-      role="img"
-      aria-label="NEXTELCO"
-      width="220"
-      height="130"
-    >
-      <image href="/media/brand/nextelco-stacked-transparent.png" width="1448" height="1086" />
-    </svg>
-  );
-}
-
 export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
-  const [onHero, setOnHero] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const update = () => {
-      const hero = document.getElementById("inicio");
-      setOnHero(!!hero && window.scrollY < 32);
-    };
     const escape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
     };
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
     document.addEventListener("keydown", escape);
     return () => {
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
       document.removeEventListener("keydown", escape);
     };
   }, []);
 
   return (
-    <header className="reference-nav" data-on-hero={onHero}>
+    <header className="reference-nav">
       <div className="reference-nav-inner">
         <a
           className="reference-nav-logo"
@@ -81,12 +55,7 @@ export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
           aria-label="NEXTELCO — inicio"
           onClick={() => setMenuOpen(false)}
         >
-          <span className="reference-logo-stacked">
-            <HeroLogo />
-          </span>
-          <span className="reference-logo-horizontal">
-            <BrandLogo />
-          </span>
+          <BrandLogo />
         </a>
         <nav className="reference-nav-links" aria-label="Principal">
           <a href="#proceso">Proceso</a>
@@ -205,11 +174,10 @@ export function NextelcoHero({ onContact }: { onContact: () => void }) {
       </div>
 
       <div className="reference-copy">
-        {/* prettier-ignore */}
-        <p className="reference-kicker">DE TU IDEA A{/* taste-skill-ignore: the user explicitly requires the reference's lead-in. */}</p>
+        <p className="reference-kicker">De tu idea a</p>
         <h1 id="hero-heading">
-          <span>POTENTES</span>
-          <span>SISTEMAS</span>
+          <span>Potentes</span>
+          <span>sistemas.</span>
         </h1>
         <p className="reference-description">
           Desarrollamos soluciones digitales
@@ -234,18 +202,6 @@ export function NextelcoHero({ onContact }: { onContact: () => void }) {
             strokeLinejoin="round"
           />
         </svg>
-      </div>
-
-      <div className="reference-contact-strip">
-        <a href="https://www.nextelco.cloud/" aria-label="Página de NEXTELCO">
-          <Globe2 aria-hidden="true" />
-          <span>www.nextelco.cloud</span>
-        </a>
-        <span className="reference-contact-divider" aria-hidden="true" />
-        <a href="mailto:operaciones@nextelco.cloud">
-          <Mail aria-hidden="true" />
-          <span>operaciones@nextelco.cloud</span>
-        </a>
       </div>
     </section>
   );

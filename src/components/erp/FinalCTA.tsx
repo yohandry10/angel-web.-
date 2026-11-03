@@ -4,7 +4,7 @@ import { DEMO_WA_URL } from "@/lib/erp-contact";
 export default function FinalCTA() {
   return (
     <section id="cta" className="erp-contact-section">
-      <div className="erp-section-shell erp-contact-layout">
+      <div className="erp-section-shell erp-contact-layout" data-reveal>
         <div>
           <h2>
             Hablemos de

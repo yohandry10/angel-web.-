@@ -1,0 +1,282 @@
+{
+  "home": [
+    {
+      "heroHeight": 726.1875,
+      "navbarHeight": 77,
+      "pageOverflow": 0,
+      "path": "/",
+      "textOverflow": [],
+      "viewport": [
+        320,
+        740
+      ]
+    },
+    {
+      "heroHeight": 823.375,
+      "navbarHeight": 77,
+      "pageOverflow": 0,
+      "path": "/",
+      "textOverflow": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "heroHeight": 1219.453125,
+      "navbarHeight": 77,
+      "pageOverflow": 0,
+      "path": "/",
+      "textOverflow": [],
+      "viewport": [
+        768,
+        1024
+      ]
+    },
+    {
+      "heroHeight": 768,
+      "navbarHeight": 85,
+      "pageOverflow": 0,
+      "path": "/",
+      "textOverflow": [],
+      "viewport": [
+        1024,
+        768
+      ]
+    },
+    {
+      "heroHeight": 760,
+      "navbarHeight": 85,
+      "pageOverflow": 0,
+      "path": "/",
+      "textOverflow": [],
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "heroHeight": 900,
+      "navbarHeight": 85,
+      "pageOverflow": 0,
+      "path": "/",
+      "textOverflow": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "heroHeight": 1080,
+      "navbarHeight": 85,
+      "pageOverflow": 0,
+      "path": "/",
+      "textOverflow": [],
+      "viewport": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "heroHeight": 1300,
+      "navbarHeight": 85,
+      "pageOverflow": 0,
+      "path": "/",
+      "textOverflow": [],
+      "viewport": [
+        2560,
+        1440
+      ]
+    }
+  ],
+  "erp": [
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        320,
+        740
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        360,
+        800
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        375,
+        812
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        768,
+        1024
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        1024,
+        768
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "hero": "Tu empresa.En control.",
+      "pageOverflow": 0,
+      "textOverflow": [],
+      "viewport": [
+        2560,
+        1440
+      ]
+    }
+  ],
+  "navbarSequence": [
+    {
+      "font": "16px",
+      "height": 85,
+      "logoWidth": 216,
+      "y": 0
+    },
+    {
+      "font": "16px",
+      "height": 85,
+      "logoWidth": 216,
+      "y": 40
+    },
+    {
+      "font": "16px",
+      "height": 85,
+      "logoWidth": 216,
+      "revealed": [
+        {
+          "seen": "true",
+          "tag": "home-heading-row"
+        },
+        {
+          "seen": "true",
+          "tag": "LI"
+        },
+        {
+          "seen": "true",
+          "tag": "LI"
+        },
+        {
+          "seen": "true",
+          "tag": "LI"
+        },
+        {
+          "seen": "true",
+          "tag": "LI"
+        }
+      ],
+      "y": 922
+    }
+  ],
+  "interactions": {
+    "modules": [
+      {
+        "count": 4,
+        "heading": "De la cotización a la venta.",
+        "selected": "Comercial4 módulos"
+      },
+      {
+        "count": 4,
+        "heading": "Cada producto, en su lugar.",
+        "selected": "Operaciones4 módulos"
+      },
+      {
+        "count": 4,
+        "heading": "Las cuentas claras, siempre.",
+        "selected": "Finanzas4 módulos"
+      },
+      {
+        "count": 4,
+        "heading": "Personas, documentos y decisiones.",
+        "selected": "Administración4 módulos"
+      }
+    ],
+    "faq": [
+      {
+        "openAnswers": 1,
+        "overflow": 0,
+        "questions": [
+          "¿Funciona sin internet?",
+          "¿Puedo manejar varias sucursales y almacenes?",
+          "¿Puedo controlar lo que ve y hace cada usuario?"
+        ],
+        "selected": "Operación diaria3"
+      },
+      {
+        "openAnswers": 1,
+        "overflow": 0,
+        "questions": [
+          "¿NEXTELCO ERP emite comprobantes electrónicos?",
+          "¿La contabilidad se registra sola?",
+          "¿Qué hace con SIRE y los libros electrónicos?"
+        ],
+        "selected": "Contabilidad y SUNAT3"
+      },
+      {
+        "openAnswers": 1,
+        "overflow": 0,
+        "questions": [
+          "¿Pueden migrar mi información actual?",
+          "¿Cuánto toma la implementación?",
+          "¿Funciona fuera del Perú?"
+        ],
+        "selected": "Implementación3"
+      }
+    ]
+  }
+}

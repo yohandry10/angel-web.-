@@ -20,6 +20,8 @@
 }
 
 :root {
+  --brand-blue: #0050d8;
+  --brand-blue-hover: #0048cf;
   --background: var(--bg);
   --foreground: var(--text);
   --ink: var(--surface);

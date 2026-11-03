@@ -37,17 +37,22 @@
 }
 .erp-root .erp-hero-copy h1 {
   margin: 0;
-  font-size: clamp(64px, 5.7vw, 116px);
-  line-height: 0.97;
-  font-weight: 850;
+  font-size: clamp(68px, 6vw, 112px);
+  line-height: 1.06;
+  font-weight: 700;
   letter-spacing: -0.04em;
 }
 .erp-hero-copy h1 span {
   display: block;
   white-space: nowrap;
 }
+.erp-hero-copy h1 span:first-child {
+  font-size: 0.68em;
+  font-weight: 500;
+  margin-bottom: 0.08em;
+}
 .erp-hero-copy h1 span:last-child {
-  color: #0059f7;
+  color: var(--brand-blue);
 }
 .erp-hero-copy > p:first-of-type {
   margin: 27px 0 0;
@@ -71,7 +76,7 @@
   padding: 0 21px;
   border-radius: 5px;
   color: #fff;
-  background: #0059f7;
+  background: var(--brand-blue);
   font-size: 14px;
   font-weight: 600;
   transition:
@@ -159,7 +164,7 @@
 }
 .erp-control-sidebar > .is-active {
   color: #fff;
-  background: #0059f7;
+  background: var(--brand-blue);
 }
 .erp-control-sidebar svg:not(.nextelco-brandmark) {
   width: 0.85cqw;
@@ -281,7 +286,7 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .erp-hero-cta:hover {
-    background: #0048cf;
+    background: var(--brand-blue-hover);
   }
   .erp-hero-explore:hover {
     text-decoration: underline;
@@ -387,7 +392,7 @@
     padding-top: 128px;
   }
   .erp-root .erp-hero-copy h1 {
-    font-size: clamp(43px, 11.9vw, 63px);
+    font-size: clamp(48px, 13vw, 70px);
   }
   .erp-hero-copy > p:first-of-type {
     font-size: 18px;

@@ -17,18 +17,14 @@ Cada ficha muestra todos los campos y enlaces disponibles. El diálogo nativo pe
 
 El repositorio de origen permanece intacto.
 
-## Recursos
+## Hero y recursos actuales
 
-- Capturas: `public/media/portfolio/projects/*.webp`, 18 imágenes, 1 589 588 bytes en total. Proceden de `public/assets` del origen. Conversión a WebP y ancho máximo de 1440 px, conservando proporciones y contenido.
-- Hero: `public/media/portfolio/web-creative-hero.png` y `.webp`, 1122 × 1402 px. Imagen nueva con la herramienta integrada image_gen, inspirada en la cuarta referencia del usuario. Retrato conceptual, no fotografía del equipo. Titular y controles en HTML.
-- El degradado cian-azul-violeta del titular se conserva por la referencia visual solicitada. Excepción del detector `gradient-text` limitada a `src/components/WebPortfolio.css`.
+El hero actual reproduce la composición de la referencia del teclado y puerta Enter, adaptada a webs y portafolios. Recursos, prompts de edición, tipografía y comprobaciones de 19 tamaños están en [hero-keyboard/README.md](hero-keyboard/README.md). Sustituye al anterior retrato con cinta y titular con degradado; esos recursos anteriores quedan como historial sin uso en la ruta.
 
-### Prompt de la imagen
-
-Generate a premium cinematic creative-agency advertising photograph as a website hero artwork for NEXTELCO web design and development. Portrait 4:5 composition. A striking photoreal young adult woman wearing a black finely ribbed turtleneck, her hair pulled back neatly, head lifted slightly and turned toward the left, shoulders filling the lower edge, strong elegant face, calm focused expression. A wide sculptural glossy luminous ribbon passes across her eyes and wraps around behind her head in a graceful orbital loop. Ribbon material transitions from electric cyan at left through cobalt blue to rich violet at right; physically convincing depth, specular reflections, translucent edges, premium commercial advertising, absolutely not cartoon. On the front visible ribbon is small crisp condensed WHITE typography, exactly 'DISEÑO → CÓDIGO → WEB', following the curved material. No other lettering anywhere. The portrait has beautiful cyan rim light from left, subtle purple light on the right, face dark navy but details visible. At the right of the portrait, a few precise tall narrow translucent glass fins slice vertically through cyan and violet light, clean elegant physical forms. Deep nearly black navy seamless backdrop #040b18, ample clean dark breathing room above the head and around the silhouette, no busy environment, no dots or grids or UI. Head and ribbon centered around 47 percent of image height, neck and shoulders lower half. The entire face and front ribbon must be visible with generous side margins. High-end editorial photographic finish, confident beautiful contrast, matching a futuristic creative web design poster. NO additional headline, NO logo, NO watermark, NO website UI, NO frames, NO decorative spheres. One photographic visual asset; all marketing headlines and buttons will be live HTML elsewhere.
+Las capturas de los 18 proyectos están en `public/media/portfolio/projects/*.webp` y proceden de `public/assets` del origen. Conversión a WebP y ancho máximo de 1440 px, conservando proporciones y contenido.
 
 ## Validación
 
-TypeScript, ESLint, Prettier, build de cliente y SSR, comparación de los datos completos con el origen, existencia de las 18 imágenes y revisión en Chrome. `responsive-checks.json` registra nueve tamaños desde 320 × 740 hasta 2560 × 1223: sin desbordamientos de página o texto, con ocho servicios y 18 proyectos accesibles.
+La comparación completa de datos con el origen está en `migration-check.json`. La comprobación de diseño actual está en `hero-keyboard/responsive-checks.json`. El archivo `responsive-checks.json` de esta carpeta corresponde a la versión inicial de la migración.
 
-Filtros comprobados: Todos 18; Webs 12; Sistemas 2; Ecommerce 3; Aulas virtuales 1; APIs 0; Automatizaciones 0. Fichas comprobadas en escritorio y móvil, cierre mediante Escape y retorno del foco, enlaces desde Home en ambos tamaños, menú móvil y apertura/cierre del formulario sin enviar datos. Verificación mediante viewport de escritorio, no en un dispositivo físico.
+Filtros: Todos 18; Webs 12; Sistemas 2; Ecommerce 3; Aulas virtuales 1; APIs 0; Automatizaciones 0. Fichas con Escape y retorno del foco; enlaces desde Home en escritorio y móvil; menú móvil y formulario de contacto sin enviar datos. La validación funcional posterior y las correcciones de Home y ERP están en `docs/ui-refinements`.

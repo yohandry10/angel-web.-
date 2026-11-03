@@ -96,7 +96,7 @@ export function HomeProcess() {
           Explorar capacidades <ArrowDown size={16} />
         </a>
       </div>
-      <div className="home-heading-row">
+      <div className="home-heading-row" data-reveal>
         <h2 id="home-process-title">
           Del diagnóstico
           <br />
@@ -106,7 +106,7 @@ export function HomeProcess() {
       </div>
       <ol className="home-process-list">
         {PROCESS.map((step, index) => (
-          <li key={step.title}>
+          <li key={step.title} data-reveal data-reveal-delay={index * 60}>
             <div className="home-process-number">
               <span>0{index + 1}</span>
               <ArrowRight size={24} aria-hidden="true" />
@@ -137,7 +137,7 @@ export function HomeCapabilities() {
         <span>Nuestras capacidades</span>
         <span>Ingeniería de principio a fin</span>
       </div>
-      <div className="home-heading-row">
+      <div className="home-heading-row" data-reveal>
         <h2 id="home-capabilities-title">
           Construir.
           <br />
@@ -148,7 +148,7 @@ export function HomeCapabilities() {
           conectar cada parte.
         </p>
       </div>
-      <div className="home-capability-layout">
+      <div className="home-capability-layout" data-reveal>
         <div className="home-capability-options" role="group" aria-label="Áreas de especialización">
           {CAPABILITIES.map((item, index) => (
             <button
@@ -165,6 +165,7 @@ export function HomeCapabilities() {
           ))}
         </div>
         <div
+          key={area.name}
           id="home-capability-detail"
           className="home-capability-detail"
           role="region"
@@ -193,7 +194,7 @@ export function HomeProduct() {
       className="home-product home-section"
       aria-labelledby="home-product-title"
     >
-      <div className="home-product-copy">
+      <div className="home-product-copy" data-reveal>
         <span className="home-section-label">NEXTELCO ERP</span>
         <h2 id="home-product-title">
           Toda tu empresa.
@@ -208,7 +209,7 @@ export function HomeProduct() {
           Conocer NEXTELCO ERP <ArrowUpRight size={20} aria-hidden="true" />
         </Link>
       </div>
-      <div className="home-product-modules" aria-label="Áreas de NEXTELCO ERP">
+      <div className="home-product-modules" data-reveal aria-label="Áreas de NEXTELCO ERP">
         {[
           ["01", "Comercial", "Ventas, POS y compras"],
           ["02", "Operaciones", "Inventario, almacenes y logística"],
@@ -235,7 +236,7 @@ export function HomeProduct() {
 export function HomeResearch() {
   return (
     <section id="bio" className="home-research home-section" aria-labelledby="home-research-title">
-      <div className="home-research-image">
+      <div className="home-research-image" data-reveal>
         <img
           src="/media/home/applied-research.webp"
           alt="Una estructura de capas de aluminio y metal azul revela su núcleo, junto a una herramienta de precisión. Concepto de investigación e ingeniería."
@@ -246,7 +247,7 @@ export function HomeResearch() {
         />
         <span>Explorar. Entender. Resolver.</span>
       </div>
-      <div className="home-research-copy">
+      <div className="home-research-copy" data-reveal>
         <span className="home-section-label">El equipo detrás de NEXTELCO</span>
         <h2 id="home-research-title">
           Investigación aplicada.
@@ -281,7 +282,7 @@ export function HomeResearch() {
           Conoce nuestra experiencia <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       </div>
-      <dl className="home-research-facts">
+      <dl className="home-research-facts" data-reveal>
         {[
           ["17+", "Experiencia combinada"],
           ["40+", "Clusters operados"],
@@ -309,7 +310,7 @@ export function HomeOperations() {
         <span>En producción</span>
         <ShieldCheck size={22} aria-hidden="true" />
       </div>
-      <div className="home-heading-row">
+      <div className="home-heading-row" data-reveal>
         <h2 id="home-operations-title">
           Infraestructura
           <br />
@@ -320,7 +321,7 @@ export function HomeOperations() {
           y tu plataforma siga respondiendo.
         </p>
       </div>
-      <dl className="home-operation-facts">
+      <dl className="home-operation-facts" data-reveal>
         {[
           ["180+", "Despliegues por semana"],
           ["< 9 min", "MTTR promedio"],
@@ -332,20 +333,31 @@ export function HomeOperations() {
           </div>
         ))}
       </dl>
+    </section>
+  );
+}
+
+export function HomeDelivery() {
+  return (
+    <section
+      id="entregas"
+      className="home-delivery-section home-section"
+      aria-labelledby="home-delivery-title"
+    >
       <div className="home-delivery">
-        <div className="home-delivery-copy">
+        <div className="home-delivery-copy" data-reveal>
           <GitBranch size={28} aria-hidden="true" />
-          <h3>
+          <h2 id="home-delivery-title">
             Cada entrega,
             <br />
             con un camino seguro.
-          </h3>
+          </h2>
           <p>
             Validación, build reproducible, escaneo de seguridad y despliegue progresivo. Si algo
             falla, el rollback es automático.
           </p>
         </div>
-        <div className="home-delivery-flow" aria-label="Etapas del pipeline de entrega">
+        <div className="home-delivery-flow" data-reveal aria-label="Etapas del pipeline de entrega">
           {[
             ["Validación", "Pruebas antes de avanzar"],
             ["Build", "El mismo artefacto en cada entorno"],
@@ -378,7 +390,7 @@ export function HomeContact({ onContact }: { onContact: () => void }) {
       className="home-contact home-section"
       aria-labelledby="home-contact-title"
     >
-      <div className="home-contact-main">
+      <div className="home-contact-main" data-reveal>
         <div>
           <span className="home-section-label">Tu siguiente proyecto</span>
           <h2 id="home-contact-title">

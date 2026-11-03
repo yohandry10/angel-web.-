@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
+import { useSectionReveals } from "@/hooks/use-section-reveals";
 import Nav from "@/components/erp/Nav";
 import Hero from "@/components/erp/Hero";
 import EventArchitecture from "@/components/erp/EventArchitecture";
@@ -126,27 +127,12 @@ export const Route = createFileRoute("/erp")({
 });
 
 function ErpLanding() {
+  const root = useRef<HTMLDivElement>(null);
+  useSectionReveals(root);
   const [theme, setTheme] = useState<"dark" | "light">("light");
-  // Reveal-on-scroll (ported from the ERP landing)
-  useEffect(() => {
-    const els = document.querySelectorAll(".erp-root .reveal");
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
 
   return (
-    <div className={`erp-root erp-product-page ${theme} bg-app min-h-screen`}>
+    <div ref={root} className={`erp-root erp-product-page ${theme} bg-app min-h-screen`}>
       <Nav theme={theme} onThemeChange={setTheme} />
       <main>
         <Hero />

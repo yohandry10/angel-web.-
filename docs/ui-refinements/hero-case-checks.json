@@ -1,0 +1,107 @@
+[
+  {
+    "heading": [
+      {
+        "font": "27.2px",
+        "text": "Potentes",
+        "weight": "500"
+      },
+      {
+        "font": "40px",
+        "text": "sistemas.",
+        "weight": "700"
+      }
+    ],
+    "overflow": 0,
+    "titleOverflow": false,
+    "url": "/",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "heading": [
+      {
+        "font": "31.824px",
+        "text": "Potentes",
+        "weight": "500"
+      },
+      {
+        "font": "46.8px",
+        "text": "sistemas.",
+        "weight": "700"
+      }
+    ],
+    "overflow": 0,
+    "titleOverflow": false,
+    "url": "/",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "heading": [
+      {
+        "font": "57.4464px",
+        "text": "Potentes",
+        "weight": "500"
+      },
+      {
+        "font": "84.48px",
+        "text": "sistemas.",
+        "weight": "700"
+      }
+    ],
+    "overflow": 0,
+    "titleOverflow": false,
+    "url": "/",
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "heading": [
+      {
+        "font": "59.2416px",
+        "text": "Potentes",
+        "weight": "500"
+      },
+      {
+        "font": "87.12px",
+        "text": "sistemas.",
+        "weight": "700"
+      }
+    ],
+    "overflow": 0,
+    "titleOverflow": false,
+    "url": "/",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "heading": [
+      {
+        "font": "100.966px",
+        "text": "Potentes",
+        "weight": "500"
+      },
+      {
+        "font": "148.48px",
+        "text": "sistemas.",
+        "weight": "700"
+      }
+    ],
+    "overflow": 0,
+    "titleOverflow": false,
+    "url": "/",
+    "viewport": [
+      2560,
+      1440
+    ]
+  }
+]

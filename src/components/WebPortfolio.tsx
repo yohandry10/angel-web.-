@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
-  ArrowDown,
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   BrainCircuit,
@@ -21,6 +21,8 @@ import {
 import { BrandLogo } from "./BrandLogo";
 import { ContactModal } from "./ContactModal";
 import { HomeContact } from "./HomeSections";
+import { KeyboardPortfolioHero } from "./KeyboardPortfolioHero";
+import { useSectionReveals } from "@/hooks/use-section-reveals";
 import {
   CATEGORIES,
   PROJECTS,
@@ -85,12 +87,15 @@ function PortfolioNav({ onContact }: { onContact: () => void }) {
       if (event.key === "Escape") setOpen(false);
     };
     document.addEventListener("keydown", escape);
-    return () => document.removeEventListener("keydown", escape);
+    return () => {
+      document.removeEventListener("keydown", escape);
+    };
   }, []);
   return (
     <header className="web-nav">
       <div className="web-nav-inner">
-        <Link to="/" aria-label="NEXTELCO — página principal">
+        <Link to="/" className="web-nav-brand" aria-label="NEXTELCO — volver al inicio">
+          <ArrowLeft size={20} aria-hidden="true" />
           <BrandLogo />
         </Link>
         <span className="web-nav-label">Portafolio web</span>
@@ -143,43 +148,6 @@ function PortfolioNav({ onContact }: { onContact: () => void }) {
   );
 }
 
-function PortfolioHero() {
-  return (
-    <section id="inicio-web" className="web-hero corporate-hero" aria-labelledby="web-hero-title">
-      <div className="web-hero-inner">
-        <div className="web-hero-copy">
-          <p className="web-hero-lead">Diseño y desarrollo web</p>
-          <h1 id="web-hero-title">
-            <span>Creamos</span>
-            <span>tu web.</span>
-          </h1>
-          <p className="web-hero-description">
-            Diseño que conecta. Desarrollo que funciona.
-            <br />
-            Webs, tiendas online y plataformas hechas para tu negocio.
-          </p>
-          <a className="web-hero-action" href="#proyectos">
-            Explorar proyectos <ArrowDown size={19} aria-hidden="true" />
-          </a>
-          <p className="web-hero-disciplines">
-            Estrategia <span>·</span> Diseño <span>·</span> Desarrollo
-          </p>
-        </div>
-        <div className="web-hero-art">
-          <img
-            src="/media/portfolio/web-creative-hero.webp"
-            alt="Retrato creativo iluminado en azul y violeta, rodeado por una cinta con las palabras Diseño, Código y Web."
-            width="1122"
-            height="1402"
-            fetchPriority="high"
-            decoding="async"
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function PortfolioServices() {
   return (
     <section
@@ -187,7 +155,7 @@ function PortfolioServices() {
       className="web-services web-section"
       aria-labelledby="web-services-title"
     >
-      <div className="web-section-heading">
+      <div className="web-section-heading" data-reveal>
         <div>
           <p className="web-section-lead">Lo que construimos</p>
           <h2 id="web-services-title">
@@ -200,7 +168,7 @@ function PortfolioServices() {
           Desde una página que presenta tu marca hasta una plataforma que sostiene tu operación.
         </p>
       </div>
-      <div className="web-services-grid">
+      <div className="web-services-grid" data-reveal>
         {SERVICES.map(({ icon: Icon, title, description }) => (
           <article key={title}>
             <Icon size={24} aria-hidden="true" />
@@ -386,7 +354,7 @@ function PortfolioProjects() {
       className="web-projects web-section"
       aria-labelledby="web-projects-title"
     >
-      <div className="web-section-heading">
+      <div className="web-section-heading" data-reveal>
         <div>
           <p className="web-section-lead">Proyectos destacados</p>
           <h2 id="web-projects-title">
@@ -442,13 +410,15 @@ function PortfolioProjects() {
 }
 
 export function WebPortfolio() {
+  const root = useRef<HTMLElement>(null);
+  useSectionReveals(root);
   const [contactOpen, setContactOpen] = useState(false);
   const openContact = () => setContactOpen(true);
   return (
-    <main className="corporate-root nextelco-reference-page web-portfolio-page">
+    <main ref={root} className="corporate-root nextelco-reference-page web-portfolio-page">
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
       <PortfolioNav onContact={openContact} />
-      <PortfolioHero />
+      <KeyboardPortfolioHero />
       <PortfolioServices />
       <PortfolioProjects />
       <HomeContact onContact={openContact} />

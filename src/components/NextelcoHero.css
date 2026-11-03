@@ -1,68 +1,61 @@
 /* The supplied poster is the art direction: white, cobalt, black, and a product reveal. */
 .nextelco-reference-page {
+  --accent: var(--brand-blue);
+  --accent-2: var(--brand-blue-hover);
+  --action-bg: var(--brand-blue);
+  --action-hover: var(--brand-blue-hover);
+  --on-action: #fff;
   --hero-paper: #fbfcff;
   --hero-ink: #050609;
-  --hero-blue: #0059f7;
+  --hero-blue: var(--brand-blue);
   --hero-navy: #001b48;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* Fixed logo, type and geometry at the top and throughout scroll. */
 .reference-nav {
   position: fixed;
   z-index: 50;
   inset: 0 0 auto;
   color: var(--hero-navy);
+  background: var(--hero-paper);
+  border-bottom: 1px solid #0a1b3614;
 }
 .reference-nav-inner {
   display: flex;
-  align-items: flex-start;
-  gap: clamp(28px, 4vw, 70px);
-  padding: 27px 4.5vw 12px;
-}
-.reference-logo-horizontal {
-  display: none;
-}
-.reference-nav[data-on-hero="false"] .reference-logo-stacked {
-  display: none;
-}
-.reference-nav[data-on-hero="false"] .reference-logo-horizontal {
-  display: block;
-}
-.reveal-brand {
-  display: block;
-  width: clamp(165px, 15vw, 220px);
-  height: auto;
-  overflow: visible;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 84px;
+  width: min(91%, 1360px);
+  margin-inline: auto;
+  padding: 12px 0;
 }
 .reference-nav-logo {
   flex-shrink: 0;
+}
+.reference-nav .nextelco-brandmark {
+  width: 216px;
+}
+.reference-nav .nextelco-logo-on-dark {
+  display: none;
+}
+.reference-nav .nextelco-logo-on-light {
+  display: block;
 }
 .reference-nav-links {
   display: flex;
   align-items: center;
   gap: clamp(18px, 2vw, 32px);
-  padding-top: 15px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 550;
 }
 .reference-nav-links :is(a, button) {
   display: inline-flex;
-  gap: 5px;
   align-items: center;
+  gap: 5px;
   min-height: 44px;
   white-space: nowrap;
-}
-.reference-nav[data-on-hero="false"] {
-  color: var(--text);
-  background: var(--bg);
-}
-.reference-nav[data-on-hero="false"] .reference-nav-inner {
-  align-items: center;
-  padding-block: 14px;
-}
-.reference-nav[data-on-hero="false"] .reference-nav-links {
-  padding-top: 0;
-  margin-left: auto;
 }
 .reference-menu-toggle {
   display: none;
@@ -130,18 +123,23 @@
   font-size: clamp(15px, 1.5vw, 25px);
   line-height: 1.2;
   font-weight: 650;
-  letter-spacing: 0.23em;
+  letter-spacing: 0.1em;
 }
 .corporate-root .reference-hero h1 {
   margin: 0;
   font-size: clamp(60px, 6.05vw, 130px);
   line-height: 0.97;
-  letter-spacing: -0.055em;
-  font-weight: 850;
+  letter-spacing: -0.04em;
+  font-weight: 700;
   text-wrap: nowrap;
 }
 .reference-hero h1 > span {
   display: block;
+}
+.reference-hero h1 > span:first-child {
+  font-size: 0.68em;
+  font-weight: 500;
+  margin-bottom: 0.1em;
 }
 .reference-hero h1 > span:last-child {
   color: var(--hero-blue);
@@ -176,42 +174,6 @@
   width: clamp(100px, 11vw, 170px);
   height: auto;
   color: #061542;
-}
-.reference-contact-strip {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(18px, 2.5vw, 40px);
-  width: max-content;
-  max-width: calc(100% - 48px);
-  min-height: 54px;
-  padding: 10px 30px;
-  transform: translateX(-50%);
-  background: #00183e;
-  border-radius: 10px;
-  color: #fff;
-}
-.reference-contact-strip a {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 32px;
-  font-size: clamp(13px, 1.35vw, 21px);
-  letter-spacing: -0.035em;
-}
-.reference-contact-strip svg {
-  width: 25px;
-  height: 25px;
-  stroke-width: 1.4;
-  flex-shrink: 0;
-}
-.reference-contact-divider {
-  width: 1px;
-  height: 24px;
-  background: #ffffff90;
 }
 
 /* Position against the actual generated image, keeping the UI inside its physical bezel. */
@@ -248,7 +210,7 @@
 }
 .laptop-contact {
   padding: 0.5cqw 0.65cqw;
-  background: #005cf4;
+  background: var(--brand-blue);
   border-radius: 0.2cqw;
 }
 .laptop-intro {
@@ -257,7 +219,7 @@
 }
 .laptop-eyebrow {
   display: block;
-  color: #448dff;
+  color: var(--brand-blue);
   font-size: 0.5cqw;
   font-weight: 600;
   letter-spacing: 0.035em;
@@ -270,7 +232,7 @@
   font-weight: 650;
 }
 .laptop-intro > p strong {
-  color: #2478ff;
+  color: var(--brand-blue);
   font-weight: inherit;
 }
 .laptop-intro > span:last-child {
@@ -301,14 +263,14 @@
   height: 1.7cqw;
   flex-shrink: 0;
   margin-top: 0.2cqw;
-  color: #267fff;
+  color: var(--brand-blue);
   stroke-width: 1.5;
 }
 .laptop-service-number {
   display: block;
   font-size: 1.2cqw;
   line-height: 1;
-  color: #3989ff;
+  color: var(--brand-blue);
   letter-spacing: -0.04em;
 }
 .laptop-service strong {
@@ -335,7 +297,7 @@
 }
 .reference-hero :is(a, button):focus-visible,
 .reference-nav :is(a, button):focus-visible {
-  outline: 3px solid #478fff;
+  outline: 3px solid var(--brand-blue);
   outline-offset: 5px;
 }
 .reference-project-button:active,
@@ -344,7 +306,7 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .reference-project-button:hover {
-    background: #0049d2;
+    background: var(--brand-blue-hover);
   }
   .reference-nav-links :is(a, button):hover {
     text-decoration: underline;
@@ -353,10 +315,6 @@
   .laptop-service:hover {
     background: #1b2c45;
     transform: translateY(-1px);
-  }
-  .reference-contact-strip a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -412,7 +370,7 @@
 @media (max-width: 1100px) {
   .reference-nav-links {
     gap: 18px;
-    font-size: 12px;
+    font-size: 15px;
   }
   .reference-nav-links > button {
     display: none;
@@ -435,29 +393,14 @@
     width: 110px;
   }
 }
-@media (max-width: 900px), (max-width: 1200px) and (orientation: portrait) {
+@media (max-width: 1000px), (max-width: 1200px) and (orientation: portrait) {
   .reference-nav-inner {
     justify-content: space-between;
     align-items: center;
     min-height: 76px;
-    padding: 12px 24px;
+    width: calc(100% - 48px);
+    padding: 12px 0;
     background: var(--hero-paper);
-  }
-  .reference-logo-stacked {
-    display: none;
-  }
-  .reference-logo-horizontal {
-    display: block;
-  }
-  .reference-nav[data-on-hero="true"] .nextelco-logo-on-dark {
-    display: none;
-  }
-  .reference-nav[data-on-hero="true"] .nextelco-logo-on-light {
-    display: block;
-  }
-  .reference-nav[data-on-hero="false"] .reference-nav-inner {
-    padding-block: 12px;
-    background: var(--bg);
   }
   .reference-nav-links {
     display: none;
@@ -467,13 +410,6 @@
     background: #ffffffdb;
     border-radius: 50%;
     color: #001b48;
-  }
-  .reference-nav[data-on-hero="false"] .reference-menu-toggle {
-    color: var(--text);
-    background: var(--surface);
-  }
-  .reference-nav .reveal-brand {
-    width: 155px;
   }
   .reference-nav .nextelco-brandmark {
     width: 176px;
@@ -526,26 +462,6 @@
   .reference-arrow {
     display: none;
   }
-  .reference-contact-strip {
-    position: relative;
-    order: 2;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin: -8px auto 24px;
-    padding: 10px 19px;
-    gap: 13px;
-    min-height: 62px;
-    max-width: calc(100% - 32px);
-  }
-  .reference-contact-strip a {
-    gap: 8px;
-    font-size: 13px;
-  }
-  .reference-contact-strip svg {
-    width: 20px;
-    height: 20px;
-  }
 }
 @media (max-width: 540px) {
   .reference-hero {
@@ -569,26 +485,6 @@
   .reference-scene {
     width: 180%;
     margin-left: -57%;
-  }
-  .reference-contact-strip {
-    flex-direction: column;
-    gap: 0;
-    align-items: flex-start;
-    min-height: 77px;
-    width: calc(100% - 48px);
-    margin-top: -8px;
-    padding: 9px 20px;
-  }
-  .reference-contact-strip a {
-    font-size: clamp(12px, 3.5vw, 14px);
-    min-height: 28px;
-  }
-  .reference-contact-strip svg {
-    width: 19px;
-    height: 19px;
-  }
-  .reference-contact-divider {
-    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {

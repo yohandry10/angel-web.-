@@ -1,0 +1,363 @@
+[
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      320,
+      740
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      360,
+      800
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      390,
+      844
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      500,
+      844
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      500,
+      1160
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      700,
+      1000
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      701,
+      1000
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      735,
+      1100
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      768,
+      1024
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      844,
+      390
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      1024,
+      768
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      1024,
+      1366
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      1100,
+      800
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      1101,
+      800
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      1280,
+      720
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      1440,
+      900
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      1440,
+      1300
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      1920,
+      1080
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  },
+  {
+    "backHref": "/",
+    "brandVisible": true,
+    "correctImage": true,
+    "fontLoaded": true,
+    "glyphBounds": true,
+    "imageLoaded": true,
+    "pageOverflow": 0,
+    "phoneInHero": false,
+    "projects": 18,
+    "regionsOverlap": false,
+    "textOverflows": [],
+    "titleBelowScene": true,
+    "viewport": [
+      2560,
+      1440
+    ],
+    "whiteSurface": "rgb(251, 252, 255)"
+  }
+]

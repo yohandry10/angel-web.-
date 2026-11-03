@@ -1,0 +1,66 @@
+{
+  "modules": [
+    {
+      "count": 4,
+      "heading": "De la cotización a la venta.",
+      "selected": "Comercial4 módulos"
+    },
+    {
+      "count": 4,
+      "heading": "Cada producto, en su lugar.",
+      "selected": "Operaciones4 módulos"
+    },
+    {
+      "count": 4,
+      "heading": "Las cuentas claras, siempre.",
+      "selected": "Finanzas4 módulos"
+    },
+    {
+      "count": 4,
+      "heading": "Personas, documentos y decisiones.",
+      "selected": "Administración4 módulos"
+    }
+  ],
+  "faq": [
+    {
+      "openAnswers": 1,
+      "overflow": 0,
+      "questions": [
+        "¿Funciona sin internet?",
+        "¿Puedo manejar varias sucursales y almacenes?",
+        "¿Puedo controlar lo que ve y hace cada usuario?"
+      ],
+      "selected": "Operación diaria3"
+    },
+    {
+      "openAnswers": 1,
+      "overflow": 0,
+      "questions": [
+        "¿NEXTELCO ERP emite comprobantes electrónicos?",
+        "¿La contabilidad se registra sola?",
+        "¿Qué hace con SIRE y los libros electrónicos?"
+      ],
+      "selected": "Contabilidad y SUNAT3"
+    },
+    {
+      "openAnswers": 1,
+      "overflow": 0,
+      "questions": [
+        "¿Pueden migrar mi información actual?",
+        "¿Cuánto toma la implementación?",
+        "¿Funciona fuera del Perú?"
+      ],
+      "selected": "Implementación3"
+    }
+  ],
+  "portfolio": {
+    "filter": "Ecommerce",
+    "count": 3,
+    "detail": "Tienda de Ropa",
+    "escapeCloses": true,
+    "resetToAll": 18,
+    "contactReadability": "white text on dark surface",
+    "contactOpenedAndClosed": true,
+    "messagesSent": 0
+  }
+}

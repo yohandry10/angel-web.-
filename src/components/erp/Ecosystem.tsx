@@ -126,10 +126,10 @@ export default function Ecosystem() {
   const [active, setActive] = useState(MODULE_GROUPS[0].id);
   const group = MODULE_GROUPS.find((item) => item.id === active) ?? MODULE_GROUPS[0];
   return (
-    <section id="modulos" className="erp-modules-section">
+    <section id="modulos" className="erp-modules-section" aria-labelledby="erp-modules-title">
       <div className="erp-section-shell">
-        <div className="erp-modules-heading">
-          <h2>
+        <div className="erp-modules-heading" data-reveal>
+          <h2 id="erp-modules-title">
             16 módulos.
             <br />
             <span>Un solo sistema.</span>
@@ -139,8 +139,8 @@ export default function Ecosystem() {
             conexión entre operaciones.
           </p>
         </div>
-        <div className="erp-modules-layout">
-          <div className="erp-module-navigation" aria-label="Áreas de los módulos">
+        <div className="erp-modules-layout" data-reveal>
+          <div className="erp-module-navigation" role="group" aria-label="Áreas de los módulos">
             {MODULE_GROUPS.map((item) => (
               <button
                 type="button"
@@ -157,10 +157,6 @@ export default function Ecosystem() {
                 <Ic.arrowR aria-hidden="true" />
               </button>
             ))}
-            <p className="erp-modules-country">
-              Web y aplicación de escritorio, con configuración por empresa. Alcance descrito para
-              Perú; consulta las funciones disponibles para Argentina y Colombia.
-            </p>
           </div>
           <div
             className="erp-module-detail"
@@ -168,7 +164,12 @@ export default function Ecosystem() {
             role="region"
             aria-label={`Módulos de ${group.name.toLowerCase()}`}
           >
-            <h3>{group.title}</h3>
+            <div className="erp-module-detail-heading">
+              <h3>{group.title}</h3>
+              <a href="#cta" className="erp-modules-question">
+                Solicitar una demo <Ic.arrowR size={17} aria-hidden="true" />
+              </a>
+            </div>
             <dl className="erp-module-list">
               {group.items.map((index) => {
                 const item = ECOSYSTEM[index];
@@ -184,10 +185,11 @@ export default function Ecosystem() {
                 );
               })}
             </dl>
-            <a href="#cta" className="erp-modules-question">
-              Ver estos módulos en una demo <Ic.arrowR size={17} aria-hidden="true" />
-            </a>
           </div>
+          <p className="erp-modules-country">
+            Web y aplicación de escritorio, con configuración por empresa. Alcance descrito para
+            Perú; consulta las funciones disponibles para Argentina y Colombia.
+          </p>
         </div>
       </div>
     </section>

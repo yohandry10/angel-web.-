@@ -259,7 +259,7 @@ export default function EventArchitecture() {
   return (
     <section id="arquitectura" className="erp-flow-section">
       <div className="erp-section-shell">
-        <div className="erp-flow-heading">
+        <div className="erp-flow-heading" data-reveal>
           <h2>
             Una operación.
             <br />
@@ -308,6 +308,7 @@ export default function EventArchitecture() {
           role="tabpanel"
           aria-labelledby={`erp-flow-tab-${flow.id}`}
           className="erp-flow-workspace"
+          data-reveal
           data-ui
         >
           <div className="erp-flow-source">
@@ -349,7 +350,7 @@ export default function EventArchitecture() {
             })}
           </div>
         </div>
-        <div className="erp-flow-guarantees">
+        <div className="erp-flow-guarantees" data-reveal>
           <span>
             <Ic.layers />
             Trazabilidad hasta el origen
