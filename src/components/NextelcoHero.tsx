@@ -51,7 +51,7 @@ export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
   useEffect(() => {
     const update = () => {
       const hero = document.getElementById("inicio");
-      setOnHero(!!hero && hero.getBoundingClientRect().bottom > 110);
+      setOnHero(!!hero && window.scrollY < 32);
     };
     const escape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
@@ -76,7 +76,12 @@ export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
           aria-label="NEXTELCO — inicio"
           onClick={() => setMenuOpen(false)}
         >
-          {onHero ? <HeroLogo /> : <BrandLogo />}
+          <span className="reference-logo-stacked">
+            <HeroLogo />
+          </span>
+          <span className="reference-logo-horizontal">
+            <BrandLogo />
+          </span>
         </a>
         <nav className="reference-nav-links" aria-label="Principal">
           <a href="#proceso">Proceso</a>

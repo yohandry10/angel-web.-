@@ -1,0 +1,112 @@
+[
+  {
+    "desktopSeparation": null,
+    "flowGap": 14,
+    "heroHeight": 819.1875,
+    "layout": "relative",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [320, 740]
+  },
+  {
+    "desktopSeparation": null,
+    "flowGap": 14,
+    "heroHeight": 916.375,
+    "layout": "relative",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [390, 844]
+  },
+  {
+    "desktopSeparation": null,
+    "flowGap": 14,
+    "heroHeight": 1073.96875,
+    "layout": "relative",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [500, 844]
+  },
+  {
+    "desktopSeparation": null,
+    "flowGap": 14,
+    "heroHeight": 1073.96875,
+    "layout": "relative",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [500, 1160]
+  },
+  {
+    "desktopSeparation": null,
+    "flowGap": 14,
+    "heroHeight": 1297.453125,
+    "layout": "relative",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [768, 1024]
+  },
+  {
+    "desktopSeparation": null,
+    "flowGap": 14,
+    "heroHeight": 1532.390625,
+    "layout": "relative",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [1000, 1400]
+  },
+  {
+    "desktopSeparation": 21,
+    "flowGap": null,
+    "heroHeight": 768,
+    "layout": "absolute",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [1024, 768]
+  },
+  {
+    "desktopSeparation": 29,
+    "flowGap": null,
+    "heroHeight": 760,
+    "layout": "absolute",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [1440, 700]
+  },
+  {
+    "desktopSeparation": 29,
+    "flowGap": null,
+    "heroHeight": 900,
+    "layout": "absolute",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [1440, 900]
+  },
+  {
+    "desktopSeparation": 35,
+    "flowGap": null,
+    "heroHeight": 900,
+    "layout": "absolute",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [1800, 900]
+  },
+  {
+    "desktopSeparation": 50,
+    "flowGap": null,
+    "heroHeight": 1223,
+    "layout": "absolute",
+    "pageOverflow": 0,
+    "screenOverflow": 0,
+    "textOverflows": [],
+    "viewport": [2560, 1223]
+  }
+]
