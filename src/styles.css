@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 @import "./site-theme.css";
+@import "./motion.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -49,10 +49,10 @@
   ::selection { background: var(--cyan-glow); color: var(--ink); }
 
   @media (pointer: fine) {
-    body, a, button, [role="button"], input, textarea { cursor: none; }
+    body.cursor-ready, body.cursor-ready :is(a, button, [role="button"], input, textarea) { cursor: none; }
     /* Custom cursor renders on every route (incl. ERP) — hide native cursor even on
        elements that set cursor via utilities (e.g. .cursor-pointer) */
-    * { cursor: none !important; }
+    body.cursor-ready * { cursor: none !important; }
   }
 }
 
@@ -85,7 +85,7 @@
 .cursor-hover .cursor-ring { width: 64px; height: 64px; margin: -32px 0 0 -32px; border-color: var(--amber-glow); }
 .cursor-hover .cursor-dot { background: var(--amber-glow); box-shadow: 0 0 16px var(--amber-glow); }
 .cursor-hover .cursor-label { opacity: 1; }
-.cursor-click .cursor-ring { transform: translate3d(var(--cx,0), var(--cy,0), 0) scale(0.6); }
+.cursor-click .cursor-ring { scale: 0.85; }
 
 @layer utilities {
   .font-mono { font-family: var(--font-mono); }
@@ -122,27 +122,10 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Geist";
-  src: url("/fonts/Geist-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geist";
-  src: url("/fonts/Geist-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geist";
-  src: url("/fonts/Geist-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geist";
-  src: url("/fonts/Geist-Bold.woff2") format("woff2");
-  font-weight: 700;
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains-mono-latin.woff2") format("woff2");
+  font-weight: 400 800;
+  font-style: normal;
   font-display: swap;
 }
 

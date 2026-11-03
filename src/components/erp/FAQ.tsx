@@ -15,7 +15,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="erp-faq-section" aria-labelledby="erp-faq-title">
       <div className="erp-section-shell">
-        <div className="erp-faq-heading" data-reveal>
+        <div className="erp-faq-heading" data-reveal="group">
           <h2 id="erp-faq-title">
             Resolvemos
             <br />

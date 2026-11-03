@@ -8,68 +8,89 @@ export function ITCursor() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    if (window.matchMedia("(pointer: fine)").matches) setEnabled(true);
+    const pointer = window.matchMedia("(pointer: fine)");
+    const update = () => setEnabled(pointer.matches);
+    update();
+    pointer.addEventListener("change", update);
+    return () => pointer.removeEventListener("change", update);
   }, []);
 
   useEffect(() => {
     if (!enabled) return;
-    let mx = 0, my = 0;
+    let mx = -100,
+      my = -100;
     let raf = 0;
-
-    const move = (e: MouseEvent) => { mx = e.clientX; my = e.clientY; };
-    const loop = () => {
-      if (dotRef.current) dotRef.current.style.transform = `translate3d(${mx - 3}px, ${my - 3}px, 0)`;
+    let visible = false;
+    const nodes = () => [dotRef.current, ringRef.current, labelRef.current];
+    const draw = () => {
+      raf = 0;
+      if (!visible) {
+        nodes().forEach((node) => {
+          if (node) node.style.opacity = "";
+        });
+        visible = true;
+      }
+      if (dotRef.current)
+        dotRef.current.style.transform = `translate3d(${mx - 3}px, ${my - 3}px, 0)`;
       if (ringRef.current) ringRef.current.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
       if (labelRef.current) labelRef.current.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
-      raf = requestAnimationFrame(loop);
     };
-
-    const over = (e: MouseEvent) => {
-      const t = e.target as HTMLElement;
-      const i = t.closest("[data-cursor]") as HTMLElement | null;
-      if (i || t.closest("a, button, [role=button], input, textarea")) {
+    const move = (event: MouseEvent) => {
+      mx = event.clientX;
+      my = event.clientY;
+      if (!raf) raf = requestAnimationFrame(draw);
+    };
+    const over = (event: MouseEvent) => {
+      if (!(event.target instanceof Element)) return;
+      const custom = event.target.closest<HTMLElement>("[data-cursor]");
+      if (custom || event.target.closest("a, button, [role=button], input, textarea")) {
         document.body.classList.add("cursor-hover");
-        setLabel(i?.dataset.cursor || "$ click");
-      } else {
-        document.body.classList.remove("cursor-hover");
-      }
+        setLabel(custom?.dataset.cursor || "$ click");
+      } else document.body.classList.remove("cursor-hover");
     };
     const down = () => document.body.classList.add("cursor-click");
     const up = () => document.body.classList.remove("cursor-click");
     const leave = () => {
-      if (dotRef.current) dotRef.current.style.opacity = "0";
-      if (ringRef.current) ringRef.current.style.opacity = "0";
+      cancelAnimationFrame(raf);
+      raf = 0;
+      visible = false;
+      nodes().forEach((node) => {
+        if (node) node.style.opacity = "0";
+      });
+      document.body.classList.remove("cursor-hover", "cursor-click");
     };
-    const enter = () => {
-      if (dotRef.current) dotRef.current.style.opacity = "1";
-      if (ringRef.current) ringRef.current.style.opacity = "1";
+    const visibility = () => {
+      if (document.hidden) leave();
     };
-
-    window.addEventListener("mousemove", move);
+    document.body.classList.add("cursor-ready");
+    window.addEventListener("mousemove", move, { passive: true });
     window.addEventListener("mouseover", over);
     window.addEventListener("mousedown", down);
     window.addEventListener("mouseup", up);
     document.addEventListener("mouseleave", leave);
-    document.addEventListener("mouseenter", enter);
-    raf = requestAnimationFrame(loop);
-
+    document.addEventListener("mouseenter", move);
+    document.addEventListener("visibilitychange", visibility);
     return () => {
+      cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseover", over);
       window.removeEventListener("mousedown", down);
       window.removeEventListener("mouseup", up);
       document.removeEventListener("mouseleave", leave);
-      document.removeEventListener("mouseenter", enter);
-      cancelAnimationFrame(raf);
+      document.removeEventListener("mouseenter", move);
+      document.removeEventListener("visibilitychange", visibility);
+      document.body.classList.remove("cursor-ready", "cursor-hover", "cursor-click");
     };
   }, [enabled]);
 
   if (!enabled) return null;
   return (
     <>
-      <div ref={ringRef} className="cursor-ring" />
-      <div ref={dotRef} className="cursor-dot" />
-      <div ref={labelRef} className="cursor-label">{label}</div>
+      <div ref={ringRef} className="cursor-ring" aria-hidden="true" />
+      <div ref={dotRef} className="cursor-dot" aria-hidden="true" />
+      <div ref={labelRef} className="cursor-label" aria-hidden="true">
+        {label}
+      </div>
     </>
   );
 }

@@ -1,0 +1,67 @@
+/* Unscripted content is visible. The observer prepares only content below the fold. */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+[data-motion-state="pending"] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+[data-motion-state="pending"][data-motion-kind="title"] {
+  transform: translateY(32px);
+  clip-path: inset(0 0 16% 0);
+}
+[data-motion-state="pending"][data-motion-kind="image"] {
+  transform: translateY(24px) scale(0.98);
+}
+:root[data-motion="reduced"] [data-motion-state="pending"] {
+  opacity: 0.72;
+  transform: none;
+  clip-path: none;
+}
+.erp-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+.erp-back-icon {
+  flex-shrink: 0;
+  color: var(--brand-blue);
+}
+:is(.home-primary-link, .home-text-link, .keyboard-project-proof, .erp-hero-cta) > svg,
+:is(.site-home-link, .web-nav-brand, .erp-home-link) > svg:first-child {
+  transition: transform 160ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.home-primary-link, .home-text-link, .keyboard-project-proof, .erp-hero-cta):hover > svg {
+    transform: translate(2px, -2px);
+  }
+  :is(.site-home-link, .web-nav-brand, .erp-home-link):hover > svg:first-child {
+    transform: translateX(-3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-label {
+    transition: none;
+  }
+  :root:not([data-motion="full"]) [data-motion-state="pending"] {
+    opacity: 0.72;
+    transform: none;
+    clip-path: none;
+  }
+  :is(.home-primary-link, .home-text-link, .keyboard-project-proof, .erp-hero-cta) > svg,
+  :is(.site-home-link, .web-nav-brand, .erp-home-link) > svg:first-child {
+    transition: none;
+    transform: none !important;
+  }
+}
+@media print {
+  [data-motion-state] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "backArrow": true,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/erp",
+    "pending": 17,
+    "targets": 20,
+    "width": 320
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/portafolio-web",
+    "pending": 30,
+    "targets": 32,
+    "width": 320
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/",
+    "pending": 38,
+    "targets": 40,
+    "width": 320
+  },
+  {
+    "backArrow": true,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/erp",
+    "pending": 18,
+    "targets": 20,
+    "width": 390
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/portafolio-web",
+    "pending": 30,
+    "targets": 32,
+    "width": 390
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/",
+    "pending": 38,
+    "targets": 40,
+    "width": 390
+  },
+  {
+    "backArrow": true,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/erp",
+    "pending": 16,
+    "targets": 20,
+    "width": 430
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/portafolio-web",
+    "pending": 29,
+    "targets": 32,
+    "width": 430
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/",
+    "pending": 38,
+    "targets": 40,
+    "width": 430
+  },
+  {
+    "backArrow": true,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/erp",
+    "pending": 18,
+    "targets": 20,
+    "width": 480
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/portafolio-web",
+    "pending": 30,
+    "targets": 32,
+    "width": 480
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/",
+    "pending": 38,
+    "targets": 40,
+    "width": 480
+  },
+  {
+    "backArrow": true,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/erp",
+    "pending": 16,
+    "targets": 20,
+    "width": 768
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/portafolio-web",
+    "pending": 26,
+    "targets": 32,
+    "width": 768
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/",
+    "pending": 35,
+    "targets": 40,
+    "width": 768
+  },
+  {
+    "backArrow": true,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/erp",
+    "pending": 16,
+    "targets": 20,
+    "width": 1440
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/portafolio-web",
+    "pending": 26,
+    "targets": 32,
+    "width": 1440
+  },
+  {
+    "backArrow": null,
+    "heroOpacity": "1",
+    "mode": "full",
+    "overflow": 0,
+    "path": "/",
+    "pending": 35,
+    "targets": 40,
+    "width": 1440
+  }
+]

@@ -155,7 +155,7 @@ function PortfolioServices() {
       className="web-services web-section"
       aria-labelledby="web-services-title"
     >
-      <div className="web-section-heading" data-reveal>
+      <div className="web-section-heading" data-reveal="group">
         <div>
           <p className="web-section-lead">Lo que construimos</p>
           <h2 id="web-services-title">
@@ -168,7 +168,7 @@ function PortfolioServices() {
           Desde una página que presenta tu marca hasta una plataforma que sostiene tu operación.
         </p>
       </div>
-      <div className="web-services-grid" data-reveal>
+      <div className="web-services-grid" data-reveal="group">
         {SERVICES.map(({ icon: Icon, title, description }) => (
           <article key={title}>
             <Icon size={24} aria-hidden="true" />
@@ -189,7 +189,7 @@ function ProjectCard({
   onSelect: (project: Project) => void;
 }) {
   return (
-    <article className="web-project-card">
+    <article className="web-project-card" data-reveal>
       <button
         className="web-project-preview"
         type="button"
@@ -354,7 +354,7 @@ function PortfolioProjects() {
       className="web-projects web-section"
       aria-labelledby="web-projects-title"
     >
-      <div className="web-section-heading" data-reveal>
+      <div className="web-section-heading" data-reveal="group">
         <div>
           <p className="web-section-lead">Proyectos destacados</p>
           <h2 id="web-projects-title">

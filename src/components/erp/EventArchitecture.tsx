@@ -259,7 +259,7 @@ export default function EventArchitecture() {
   return (
     <section id="arquitectura" className="erp-flow-section">
       <div className="erp-section-shell">
-        <div className="erp-flow-heading" data-reveal>
+        <div className="erp-flow-heading" data-reveal="group">
           <h2>
             Una operación.
             <br />
@@ -308,7 +308,7 @@ export default function EventArchitecture() {
           role="tabpanel"
           aria-labelledby={`erp-flow-tab-${flow.id}`}
           className="erp-flow-workspace"
-          data-reveal
+          data-reveal="group"
           data-ui
         >
           <div className="erp-flow-source">

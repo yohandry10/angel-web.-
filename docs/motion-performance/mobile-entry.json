@@ -1,0 +1,22 @@
+{
+  "heading": [
+    {
+      "opacity": "0.859311",
+      "state": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, 4.50206)"
+    },
+    {
+      "opacity": "0.928005",
+      "state": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, 1.72788)"
+    },
+    {
+      "opacity": "0.928005",
+      "state": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, 1.72788)"
+    }
+  ],
+  "mode": "full",
+  "overflow": -15,
+  "viewport": 390
+}

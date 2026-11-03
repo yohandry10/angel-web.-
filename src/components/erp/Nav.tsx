@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { ArrowLeft, Menu, Moon, Sun, X } from "lucide-react";
 import { DEMO_WA_URL } from "@/lib/erp-contact";
 import { BrandLogo } from "@/components/BrandLogo";
 
@@ -27,13 +28,6 @@ export default function Nav({
   onThemeChange: (theme: "dark" | "light") => void;
 }) {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 60);
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
-  }, []);
   const links = [
     { label: "Producto", href: "#producto" },
     { label: "Cómo funciona", href: "#arquitectura" },
@@ -43,15 +37,15 @@ export default function Nav({
   return (
     <header
       className="erp-product-nav"
-      data-scrolled={scrolled}
       onKeyDown={(event) => {
         if (event.key === "Escape") setOpen(false);
       }}
     >
       <div className="erp-product-nav-inner">
-        <a href="/" aria-label="NEXTELCO — página principal">
+        <Link to="/" className="erp-home-link" aria-label="NEXTELCO — volver al inicio">
+          <ArrowLeft className="erp-back-icon" size={20} aria-hidden="true" />
           <ErpLogo />
-        </a>
+        </Link>
         <nav className="erp-product-links" aria-label="Principal ERP">
           {links.map((link) => (
             <a key={link.href} href={link.href}>
@@ -94,7 +88,17 @@ export default function Nav({
               {link.label}
             </a>
           ))}
-          <a href="/">Sitio corporativo</a>
+          <Link to="/" onClick={() => setOpen(false)}>
+            Sitio corporativo
+          </Link>
+          <a
+            href={DEMO_WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            Solicitar una demo
+          </a>
           <button
             type="button"
             className="erp-mobile-theme"

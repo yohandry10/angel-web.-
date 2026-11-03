@@ -96,7 +96,7 @@ export function HomeProcess() {
           Explorar capacidades <ArrowDown size={16} />
         </a>
       </div>
-      <div className="home-heading-row" data-reveal>
+      <div className="home-heading-row" data-reveal="group">
         <h2 id="home-process-title">
           Del diagnóstico
           <br />
@@ -104,9 +104,9 @@ export function HomeProcess() {
         </h2>
         <p>Cuatro etapas para construir una plataforma confiable y acompañarla mientras crece.</p>
       </div>
-      <ol className="home-process-list">
+      <ol className="home-process-list" data-reveal="group">
         {PROCESS.map((step, index) => (
-          <li key={step.title} data-reveal data-reveal-delay={index * 60}>
+          <li key={step.title}>
             <div className="home-process-number">
               <span>0{index + 1}</span>
               <ArrowRight size={24} aria-hidden="true" />
@@ -137,7 +137,7 @@ export function HomeCapabilities() {
         <span>Nuestras capacidades</span>
         <span>Ingeniería de principio a fin</span>
       </div>
-      <div className="home-heading-row" data-reveal>
+      <div className="home-heading-row" data-reveal="group">
         <h2 id="home-capabilities-title">
           Construir.
           <br />
@@ -148,7 +148,7 @@ export function HomeCapabilities() {
           conectar cada parte.
         </p>
       </div>
-      <div className="home-capability-layout" data-reveal>
+      <div className="home-capability-layout" data-reveal="group">
         <div className="home-capability-options" role="group" aria-label="Áreas de especialización">
           {CAPABILITIES.map((item, index) => (
             <button
@@ -168,6 +168,7 @@ export function HomeCapabilities() {
           key={area.name}
           id="home-capability-detail"
           className="home-capability-detail"
+          data-reveal="panel"
           role="region"
           aria-label={area.name}
           aria-live="polite"
@@ -194,7 +195,7 @@ export function HomeProduct() {
       className="home-product home-section"
       aria-labelledby="home-product-title"
     >
-      <div className="home-product-copy" data-reveal>
+      <div className="home-product-copy" data-reveal="group">
         <span className="home-section-label">NEXTELCO ERP</span>
         <h2 id="home-product-title">
           Toda tu empresa.
@@ -209,7 +210,7 @@ export function HomeProduct() {
           Conocer NEXTELCO ERP <ArrowUpRight size={20} aria-hidden="true" />
         </Link>
       </div>
-      <div className="home-product-modules" data-reveal aria-label="Áreas de NEXTELCO ERP">
+      <div className="home-product-modules" data-reveal="group" aria-label="Áreas de NEXTELCO ERP">
         {[
           ["01", "Comercial", "Ventas, POS y compras"],
           ["02", "Operaciones", "Inventario, almacenes y logística"],
@@ -236,7 +237,7 @@ export function HomeProduct() {
 export function HomeResearch() {
   return (
     <section id="bio" className="home-research home-section" aria-labelledby="home-research-title">
-      <div className="home-research-image" data-reveal>
+      <div className="home-research-image" data-reveal="image">
         <img
           src="/media/home/applied-research.webp"
           alt="Una estructura de capas de aluminio y metal azul revela su núcleo, junto a una herramienta de precisión. Concepto de investigación e ingeniería."
@@ -278,11 +279,11 @@ export function HomeResearch() {
           Experiencia aplicada en banca, telecomunicaciones y tecnología para organizaciones de
           América Latina, EE. UU. y Europa. Desde Lima, Perú.
         </p>
-        <a href="/experiencia" className="home-text-link">
+        <Link to="/experiencia" className="home-text-link">
           Conoce nuestra experiencia <ArrowUpRight size={18} aria-hidden="true" />
-        </a>
+        </Link>
       </div>
-      <dl className="home-research-facts" data-reveal>
+      <dl className="home-research-facts" data-reveal="group">
         {[
           ["17+", "Experiencia combinada"],
           ["40+", "Clusters operados"],
@@ -310,7 +311,7 @@ export function HomeOperations() {
         <span>En producción</span>
         <ShieldCheck size={22} aria-hidden="true" />
       </div>
-      <div className="home-heading-row" data-reveal>
+      <div className="home-heading-row" data-reveal="group">
         <h2 id="home-operations-title">
           Infraestructura
           <br />
@@ -321,7 +322,7 @@ export function HomeOperations() {
           y tu plataforma siga respondiendo.
         </p>
       </div>
-      <dl className="home-operation-facts" data-reveal>
+      <dl className="home-operation-facts" data-reveal="group">
         {[
           ["180+", "Despliegues por semana"],
           ["< 9 min", "MTTR promedio"],
@@ -345,7 +346,7 @@ export function HomeDelivery() {
       aria-labelledby="home-delivery-title"
     >
       <div className="home-delivery">
-        <div className="home-delivery-copy" data-reveal>
+        <div className="home-delivery-copy" data-reveal="group">
           <GitBranch size={28} aria-hidden="true" />
           <h2 id="home-delivery-title">
             Cada entrega,
@@ -357,7 +358,11 @@ export function HomeDelivery() {
             falla, el rollback es automático.
           </p>
         </div>
-        <div className="home-delivery-flow" data-reveal aria-label="Etapas del pipeline de entrega">
+        <div
+          className="home-delivery-flow"
+          data-reveal="group"
+          aria-label="Etapas del pipeline de entrega"
+        >
           {[
             ["Validación", "Pruebas antes de avanzar"],
             ["Build", "El mismo artefacto en cada entorno"],
@@ -391,7 +396,7 @@ export function HomeContact({ onContact }: { onContact: () => void }) {
         className="home-contact home-section"
         aria-labelledby="home-contact-title"
       >
-        <div className="home-contact-main" data-reveal>
+        <div className="home-contact-main" data-reveal="group">
           <div>
             <span className="home-section-label">Tu siguiente proyecto</span>
             <h2 id="home-contact-title">

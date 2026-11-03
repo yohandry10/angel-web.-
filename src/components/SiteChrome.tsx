@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Waves } from "lucide-react";
+import { setMotionPreference, useMotionPreference } from "@/hooks/use-motion-preference";
 import { BrandLogo } from "./BrandLogo";
 import "./SiteChrome.css";
 
@@ -21,6 +22,7 @@ export function SitePageHeader({ label }: { label: string }) {
 }
 
 export function SiteFooter() {
+  const motion = useMotionPreference();
   return (
     <footer className="site-footer" role="contentinfo">
       <div className="site-chrome-shell">
@@ -37,10 +39,20 @@ export function SiteFooter() {
         </div>
         <div className="site-footer-bottom">
           <span>© {new Date().getFullYear()} NEXTELCO SAC</span>
-          <nav aria-label="Información legal">
-            <Link to="/aviso-legal">Aviso legal</Link>
-            <Link to="/privacidad">Privacidad</Link>
-          </nav>
+          <div className="site-footer-options">
+            <button
+              type="button"
+              className="site-motion-toggle"
+              onClick={() => setMotionPreference(motion === "full" ? "reduced" : "full")}
+            >
+              <Waves size={16} aria-hidden="true" />
+              {motion === "full" ? "Reducir animaciones" : "Activar animaciones"}
+            </button>
+            <nav aria-label="Información legal">
+              <Link to="/aviso-legal">Aviso legal</Link>
+              <Link to="/privacidad">Privacidad</Link>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>

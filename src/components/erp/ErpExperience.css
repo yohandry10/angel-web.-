@@ -941,7 +941,7 @@
     width: 176px;
   }
 }
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   .erp-nav-demo {
     display: none;
   }

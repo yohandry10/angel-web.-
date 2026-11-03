@@ -41,8 +41,8 @@ export const Route = createFileRoute("/portafolio-web")({
       {
         rel: "preload",
         as: "font",
-        href: "/fonts/anton-regular.ttf",
-        type: "font/ttf",
+        href: "/fonts/anton-regular.woff2",
+        type: "font/woff2",
         crossOrigin: "anonymous",
       },
     ],

@@ -128,7 +128,7 @@ export default function Ecosystem() {
   return (
     <section id="modulos" className="erp-modules-section" aria-labelledby="erp-modules-title">
       <div className="erp-section-shell">
-        <div className="erp-modules-heading" data-reveal>
+        <div className="erp-modules-heading" data-reveal="group">
           <h2 id="erp-modules-title">
             16 módulos.
             <br />
@@ -139,7 +139,7 @@ export default function Ecosystem() {
             conexión entre operaciones.
           </p>
         </div>
-        <div className="erp-modules-layout" data-reveal>
+        <div className="erp-modules-layout" data-reveal="group">
           <div className="erp-module-navigation" role="group" aria-label="Áreas de los módulos">
             {MODULE_GROUPS.map((item) => (
               <button

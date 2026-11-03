@@ -87,13 +87,31 @@
 .site-footer-bottom a {
   font-size: 13px;
 }
+.site-footer-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+}
+.site-motion-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 13px;
+}
+.site-motion-toggle > svg {
+  color: var(--brand-blue);
+}
 .site-footer a:focus-visible,
+.site-motion-toggle:focus-visible,
 .site-page-header a:focus-visible {
   outline: 2px solid var(--brand-blue);
   outline-offset: 4px;
 }
 @media (hover: hover) and (pointer: fine) {
   .site-footer nav a:hover,
+  .site-motion-toggle:hover,
   .site-back-link:hover {
     text-decoration: underline;
   }

@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MotionSettings } from "@/hooks/use-motion-preference";
 import {
   Outlet,
   Link,
@@ -75,10 +76,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#030713" },
+      { name: "theme-color", content: "#fbfcff" },
       { name: "author", content: "NEXTELCO" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
-      { name: "keywords", content: "NEXTELCO, ERP, CRM, sistemas empresariales, IA, LLM, Deep Learning, Machine Learning, DevOps, DevSecOps, MLOps, Kubernetes, Terraform, AWS, GCP, Azure, CI/CD, Observabilidad, Lima, Perú, America Latina, EEUU, Europa" },
+      {
+        name: "keywords",
+        content:
+          "NEXTELCO, ERP, CRM, sistemas empresariales, IA, LLM, Deep Learning, Machine Learning, DevOps, DevSecOps, MLOps, Kubernetes, Terraform, AWS, GCP, Azure, CI/CD, Observabilidad, Lima, Perú, America Latina, EEUU, Europa",
+      },
       { property: "og:site_name", content: "NEXTELCO" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_PE" },
@@ -86,6 +91,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      {
+        rel: "preload",
+        as: "font",
+        href: "/fonts/Geist-VariableFont_wght.woff2",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
       { rel: "icon", href: "/favicon.ico", sizes: "any" },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
@@ -103,11 +115,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               url: SITE_URL,
               email: "operaciones@nextelco.cloud",
               telephone: "+17862244098",
-              address: { "@type": "PostalAddress", addressLocality: "Lima", addressRegion: "Lima", addressCountry: "PE" },
-              knowsAbout: ["ERP", "CRM", "Sistemas empresariales", "LLMs", "Deep Learning", "Machine Learning", "DevOps", "DevSecOps", "MLOps", "Kubernetes", "Terraform", "AWS", "GCP", "Azure", "CI/CD", "Observability", "GitOps"],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Lima",
+                addressRegion: "Lima",
+                addressCountry: "PE",
+              },
+              knowsAbout: [
+                "ERP",
+                "CRM",
+                "Sistemas empresariales",
+                "LLMs",
+                "Deep Learning",
+                "Machine Learning",
+                "DevOps",
+                "DevSecOps",
+                "MLOps",
+                "Kubernetes",
+                "Terraform",
+                "AWS",
+                "GCP",
+                "Azure",
+                "CI/CD",
+                "Observability",
+                "GitOps",
+              ],
               makesOffer: {
                 "@type": "Offer",
-                itemOffered: { "@type": "SoftwareApplication", name: "NEXTELCO ERP", url: `${SITE_URL}/erp` },
+                itemOffered: {
+                  "@type": "SoftwareApplication",
+                  name: "NEXTELCO ERP",
+                  url: `${SITE_URL}/erp`,
+                },
               },
             },
             {
@@ -148,6 +187,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <MotionSettings />
       <ITCursor />
       <CookieBanner />
       <Outlet />
