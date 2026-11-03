@@ -19,6 +19,8 @@ Herramienta integrada image_gen. Los PNG originales y los WebP optimizados está
 
 TypeScript, ESLint de los archivos modificados, Prettier y compilación Vite de cliente/SSR. Detector Impeccable sin hallazgos. Revisión en Chrome a 2560, 1440 y 390 px; pantalla del monitor sin desbordamiento; catálogo móvil sin desbordamiento horizontal; comprobados los 16 módulos únicos, cambios entre áreas, navegación móvil y flechas de teclado del selector de operaciones. Las capturas de esta carpeta documentan la revisión local. La comprobación de móvil se realiza mediante viewport de escritorio, sin dispositivo físico.
 
+Corrección posterior de móvil: el hero deja de usar una altura mínima de pantalla y una imagen anclada al fondo. Texto e imagen siguen el flujo del documento, con 12 px entre sus contenedores. Verificado a 390 × 844, 500 × 844 y 500 × 1160: los dos tamaños de 500 px conservan la misma altura de contenido (985 px), sin añadir espacio al crecer la ventana. `hero-mobile-tall.jpg` documenta la vista alta.
+
 Publicación por commit y push a main, con despliegue de producción automático en Vercel, proyecto angel-web, ruta https://www.nextelco.cloud/erp.
 
 ## Prompt final — escena estándar
@@ -33,4 +35,3 @@ Exact constraints: NO text, NO words, NO letters, NO logos, NO charts, NO number
 
 Create a 2:1 landscape version, exactly 2048x1024, of the attached NEXTELCO ERP studio scene. Keep the SAME sculptural cobalt-blue and brushed-silver orbital ring, same physical invoices and two blue-banded kraft packages on its small ledges, same premium front-facing black desktop monitor with EMPTY midnight-navy screen, same satin-silver low circular pedestal, same white and cobalt photography. Preserve these objects and material identities. Do NOT add objects.
 Recompose for a full-width desktop website hero with the LEFT 36% completely empty white for large live text. The orbit and monitor should be VERY LARGE across the RIGHT 64%, rather than making everything tiny at the far right. A big front-facing rectangular monitor screen should cover approximately x=900..1820, y=365..775, with straight horizontal top/bottom and vertical sides. The orbit rises behind it x=850..1970, y=85..900, and the pedestal fits entirely x=850..1900 around y=950. Maintain the blue metal orbit's elegant tilted sculptural shape and premium metallic specular light. Low white studio floor; blue at far lower right, not a dark page. No figures, no cloche, no hands, no laptop. Absolutely NO text, NO logo, NO letters, NO interface, NO numbers, NO watermark. Monitor screen completely blank dark navy. This is a premium advertising photograph, not a page mockup. Main requirement is EXACT 2:1 width-to-height framing and a larger screen on the right, keeping the left 36% clean.
-

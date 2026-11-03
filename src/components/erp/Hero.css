@@ -350,36 +350,41 @@
 }
 @media (max-width: 800px) {
   .erp-root .erp-hero {
-    height: 1050px;
-    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
     max-height: none;
+    padding-top: 140px;
   }
   .erp-hero-copy {
-    left: 24px;
-    top: 140px;
+    position: relative;
+    order: 0;
+    left: auto;
+    top: auto;
     width: calc(100% - 48px);
+    margin-inline: 24px;
   }
   .erp-root .erp-hero-copy h1 {
     font-size: clamp(58px, 10vw, 80px);
   }
   .erp-orbit-scene {
+    position: relative;
+    order: 1;
+    flex-shrink: 0;
     width: 145%;
-    right: -10%;
+    right: auto;
+    bottom: auto;
+    margin-top: 12px;
+    margin-left: -35%;
   }
   .erp-hero-bottom {
-    left: 24px;
-    right: 24px;
-  }
-  .erp-hero-bottom > a {
     display: none;
   }
 }
 @media (max-width: 540px) {
   .erp-root .erp-hero {
-    height: 850px;
-  }
-  .erp-hero-copy {
-    top: 135px;
+    padding-top: 128px;
   }
   .erp-root .erp-hero-copy h1 {
     font-size: clamp(43px, 11.9vw, 63px);
@@ -408,10 +413,7 @@
   }
   .erp-orbit-scene {
     width: 170%;
-    right: -10%;
-  }
-  .erp-hero-bottom {
-    display: none;
+    margin-left: -60%;
   }
 }
 @media (prefers-reduced-motion: reduce) {
