@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -15,24 +15,22 @@
   --color-line: var(--line);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Instrument Serif', serif;
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
 :root {
-  --background: oklch(0.14 0.012 240);
-  --foreground: oklch(0.96 0.005 240);
-  --ink: oklch(0.08 0.01 240);
-  --bone: oklch(0.92 0.008 80);
-  --cyan-glow: #2aa8ff;
-  --amber-glow: #6fc6ff;
-  --line: oklch(1 0 0 / 0.12);
-  --muted: oklch(0.22 0.01 240);
-  --muted-foreground: oklch(0.65 0.01 240);
+  --background: var(--bg);
+  --foreground: var(--text);
+  --ink: var(--surface);
+  --bone: var(--text);
+  --cyan-glow: var(--accent);
+  --amber-glow: var(--accent-2);
+  --muted: var(--surface-2);
+  --muted-foreground: var(--text-2);
   --border: var(--line);
-  --primary: var(--cyan-glow);
-  --primary-foreground: var(--ink);
+  --primary: var(--action-bg);
+  --primary-foreground: var(--on-action);
 }
 
 @layer base {
@@ -42,7 +40,8 @@
   body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    font-feature-settings: "ss01", "cv11";
+    font-feature-settings: "ss01", "cv01", "cv11";
+    text-rendering: optimizeLegibility;
   }
   ::selection { background: var(--cyan-glow); color: var(--ink); }
 
@@ -86,7 +85,6 @@
 .cursor-click .cursor-ring { transform: translate3d(var(--cx,0), var(--cy,0), 0) scale(0.6); }
 
 @layer utilities {
-  .font-serif-it { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
   .font-mono { font-family: var(--font-mono); }
 
   .reveal { opacity: 0; transform: translateY(28px); filter: blur(8px); transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1), filter 1s ease; }
@@ -104,13 +102,6 @@
   .reveal-right { opacity: 0; transform: translateX(120px); filter: blur(8px); transition: all 1.5s cubic-bezier(.16,.84,.22,1); }
   .reveal-right.in { opacity: 1; transform: translateX(0); filter: blur(0); }
 
-  .hairline { background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.25), transparent); height:1px; }
-  .grid-bg {
-    background-image:
-      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
 }
 
 
@@ -152,7 +143,7 @@
   font-display: swap;
 }
 
-@theme {
+@theme inline {
 
   /* Theme mappings for Tailwind classes */
   --color-app: var(--bg);
@@ -169,75 +160,71 @@
   --color-danger: var(--danger);
 }
 
-.erp-root {
+:root,
+.erp-root,
+body:has(.erp-root) .cookie-banner {
   /* Default is DARK theme */
-  --bg: #09090b;
-  --bg-soft: #0b0b0e;
-  --surface: #0f0f12;
-  --surface-2: #131316;
-  --line: #1f1f23;
-  --line-soft: #18181b;
-  --text: #fafafa;
-  --text-2: #a1a1aa;
-  --text-3: #71717a;
-  --text-4: #52525b;
+  --bg: #030713;
+  --bg-soft: #070e1b;
+  --surface: #0b1424;
+  --surface-2: #101d30;
+  --line: #203047;
+  --line-soft: #152238;
+  --text: #f5f7fa;
+  --text-2: #bdc6d5;
+  --text-3: #a2b0c5;
+  --text-4: #8b9ab1;
   --accent: #2aa8ff;
-  --accent-2: #1b90e6;
+  --accent-2: #65c0ff;
   --accent-soft: rgba(42, 168, 255, 0.10);
   --danger: #ef4444;
+  --on-accent: #03121f;
+  --action-bg: #2aa8ff;
+  --action-hover: #65c0ff;
+  --on-action: #03121f;
+  --control-radius: 8px;
+  --type-display: clamp(50px, 5.15vw, 78px);
+  --type-section: clamp(32px, 3.7vw, 52px);
+  --cinema-bg: #030713;
+  --cinema-text: #f5f7fa;
+  --cinema-secondary: #bdc6d5;
 
   /* shadcn mappings */
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  --background: var(--bg);
+  --foreground: var(--text);
+  --card: var(--surface);
+  --card-foreground: var(--text);
+  --popover: var(--surface);
+  --popover-foreground: var(--text);
+  --primary: var(--action-bg);
+  --primary-foreground: var(--on-action);
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--text);
+  --muted: var(--surface-2);
+  --muted-foreground: var(--text-3);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --radius: 0.625rem;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--accent);
+  --radius: 0.5rem;
 }
 
-.erp-root.light {
-  --bg: #ffffff;
-  --bg-soft: #fafafa;
+.erp-root.light,
+body:has(.erp-root.light) .cookie-banner {
+  --bg: #f7f9fd;
+  --bg-soft: #eef3f9;
   --surface: #ffffff;
-  --surface-2: #fafafa;
-  --line: #e4e4e7;
-  --line-soft: #f4f4f5;
-  --text: #09090b;
-  --text-2: #52525b;
-  --text-3: #71717a;
-  --text-4: #a1a1aa;
-  --accent: #1e90e6;
-  --accent-2: #1877cc;
-  --accent-soft: rgba(42, 168, 255, 0.08);
-
-  /* shadcn light mappings */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --surface-2: #e7eef7;
+  --line: #ccd7e5;
+  --line-soft: #dee6f0;
+  --text: #0d1a2d;
+  --text-2: #374a63;
+  --text-3: #435975;
+  --text-4: #526780;
+  --accent: #0066a8;
+  --accent-2: #00568e;
+  --accent-soft: rgba(0, 102, 168, 0.09);
+  --on-accent: #ffffff;
 }
 
 @layer base {
@@ -317,14 +304,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  height: 40px;
+  min-height: 44px;
   padding: 0 16px;
-  border-radius: 10px;
+  border-radius: var(--control-radius, 8px);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.005em;
   transition: transform 180ms ease-out, background 180ms ease-out, border-color 180ms ease-out, color 180ms ease-out, box-shadow 180ms ease-out;
-  will-change: transform;
   
   &:hover {
     transform: translateY(-1px);
@@ -332,13 +318,12 @@
 }
 
 @utility btn-primary {
-  background: var(--accent);
-  color: #04101c;
-  border: 1px solid var(--accent);
+  background: var(--action-bg, var(--accent));
+  color: var(--on-action, #04101c);
+  border: 1px solid var(--action-bg, var(--accent));
   
   &:hover {
-    background: var(--accent-2);
-    box-shadow: 0 8px 24px -8px rgba(42, 168, 255, 0.4);
+    background: var(--action-hover, var(--accent-2));
   }
 }
 
@@ -354,10 +339,11 @@
 }
 
 @utility btn-lg {
-  height: 48px;
+  height: 52px;
   padding: 0 22px;
   font-size: 15px;
-  border-radius: 12px;
+  font-weight: 600;
+  border-radius: var(--control-radius, 8px);
 }
 
 /* Pill / Badge */
@@ -385,12 +371,9 @@
   }
 }
 
-/* Animated gradient text on H1 (subtle, single-hue) */
+/* Headline emphasis uses the same readable ink as the surrounding title. */
 @utility h1-emphasis {
-  background: linear-gradient(180deg, var(--text) 0%, var(--text) 65%, var(--text-3) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text);
 }
 
 /* Code block syntax */
@@ -668,6 +651,115 @@ details[open] .acc-plus {
 }
 
 /* Logotipo en tema claro del ERP: versión oscura del mismo logo */
-.erp-root.light .erp-logo {
-  filter: invert(1);
+.nextelco-brandmark { display: block; width: 224px; height: auto; aspect-ratio: 2040 / 420; flex-shrink: 0; }
+.nextelco-logo-on-light { display: none; }
+.erp-root.light .nextelco-logo-on-dark { display: none; }
+.erp-root.light .nextelco-logo-on-light { display: block; }
+
+/* The opening navigation belongs to the dark cinematic scene in both themes. */
+.erp-root.light .erp-nav:not(.nav-blur) {
+  color: var(--cinema-text);
+}
+.erp-root.light .erp-nav:not(.nav-blur) > div:first-child :is(a:not(.btn-primary), button, span) {
+  color: var(--cinema-secondary);
+  border-color: #203047;
+}
+.erp-root.light .erp-nav:not(.nav-blur) .nextelco-logo-on-dark { display: block; }
+.erp-root.light .erp-nav:not(.nav-blur) .nextelco-logo-on-light { display: none; }
+.erp-root .btn { min-height: 44px; }
+.erp-root a { text-underline-offset: 4px; }
+.erp-root { color-scheme: dark; scrollbar-color: var(--line) var(--bg); }
+.erp-root.light { color-scheme: light; }
+body:has(.erp-root) .cookie-banner { font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: var(--text); }
+body:has(.erp-root) .cookie-banner > div { background: var(--surface); }
+@media (max-width: 639px) {
+  .erp-nav .nextelco-brandmark { width: 160px; }
+}
+@media (max-width: 379px) {
+  .erp-nav .nextelco-brandmark { width: 176px; }
+  .erp-nav-demo { display: none; }
+}
+
+/* Corporate pages share the ERP's palette, type scale, logo and controls. */
+.corporate-root { color-scheme: dark; }
+.corporate-root > section:not(.corporate-hero) {
+  padding-inline: max(32px, calc((100% - 1180px) / 2));
+}
+.corporate-root section[id] { scroll-margin-top: 88px; }
+.corporate-root h1 {
+  font-size: var(--type-display);
+  line-height: 1.045;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+.corporate-root h2, .section-title {
+  font-size: var(--type-section);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.corporate-root h2.text-2xl { font-size: 24px; line-height: 1.25; letter-spacing: -0.02em; }
+.corporate-root :is(h1, h2) span { font-weight: inherit; }
+.corporate-root :is(a, button):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.corporate-root a { text-underline-offset: 4px; }
+.corporate-nav nav a { min-height: 44px; display: inline-flex; align-items: center; }
+.corporate-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  grid-template-areas: "copy media";
+  gap: 48px;
+  max-width: 1244px;
+  margin-inline: auto;
+  padding-inline: 32px;
+  min-height: clamp(700px, 90svh, 880px);
+}
+.corporate-hero-copy {
+  grid-area: copy;
+  min-width: 0;
+  padding-block: 128px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.corporate-hero h1 { max-width: 100%; font-size: clamp(36px, 5.15vw, 78px); }
+.corporate-hero h1 > span { display: block; }
+.corporate-hero-media {
+  grid-area: media;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--bg);
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 14%, #000 80%, transparent);
+  mask-composite: intersect;
+}
+.corporate-hero-media img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: contain; mix-blend-mode: lighten; }
+.corporate-root .corporate-statement {
+  font-size: var(--type-section);
+  line-height: 1.15;
+}
+.corporate-root pre { overflow-x: auto; font-size: 13px; }
+.contact-dialog { max-height: calc(100svh - 32px); overflow-y: auto; background: var(--surface); }
+.contact-dialog button { min-height: 44px; }
+@media (max-width: 767px) {
+  .corporate-root > section:not(.corporate-hero) { padding-inline: 24px; }
+  .corporate-root h1 { font-size: clamp(30px, 9.5vw, 64px); line-height: 1.08; }
+  .corporate-hero-layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "media"; gap: 0; padding-inline: 24px; min-height: 0; }
+  .corporate-hero-copy { padding-block: 106px 24px; justify-content: flex-start; }
+  .corporate-hero-copy > p { font-size: 16px; line-height: 1.6; max-width: 36ch; }
+  .corporate-hero-media { height: 320px; }
+  .corporate-nav .nextelco-brandmark { width: 176px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .corporate-root :is(.reveal, .reveal-line > span, .reveal-section, .reveal-left, .reveal-right) { opacity: 1; transform: none; filter: none; transition: none; }
+  .erp-root .marquee-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; gap: 20px 32px; }
+  .erp-root .marquee-track > [aria-hidden="true"] { display: none; }
+  .erp-root .marquee-mask { mask-image: none; -webkit-mask-image: none; }
+  .erp-root .pulse-dot::before { animation: none; }
 }

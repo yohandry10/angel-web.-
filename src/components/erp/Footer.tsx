@@ -35,7 +35,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10">
           {/* Brand col */}
           <div className="col-span-2">
-            <ErpLogo size={28} />
+            <a href="/" className="inline-flex" aria-label="NEXTELCO — página principal">
+              <ErpLogo size={28} />
+            </a>
             <p className="mt-5 text-[13.5px] text-fg-3 leading-[1.55] max-w-[28ch]">
               Ventas, compras, inventario, logística, finanzas, contabilidad y planillas conectados en un mismo ERP.
             </p>
@@ -47,7 +49,7 @@ export default function Footer() {
 
           {cols.map((c, i) => (
             <div key={i}>
-              <h3 className="text-[11.5px] font-medium uppercase tracking-[0.14em] text-fg-4">{c.title}</h3>
+              <h3 className="text-[14px] font-semibold text-fg">{c.title}</h3>
               <ul className="mt-4 flex flex-col gap-2.5">
                 {c.links.map((l, j) => (
                   <li key={j}>
@@ -86,13 +88,10 @@ export default function Footer() {
         {/* Giant wordmark */}
         <div aria-hidden className="mt-14 -mb-2 overflow-hidden select-none pointer-events-none">
           <div
-            className="text-center font-semibold tracking-[-0.06em] leading-none whitespace-nowrap"
+            className="text-center font-semibold tracking-[-0.04em] leading-none whitespace-nowrap"
             style={{
-              fontSize: "clamp(80px, 18vw, 240px)",
-              background: "linear-gradient(180deg, var(--line) 0%, transparent 90%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
+              fontSize: "clamp(32px, 12vw, 176px)",
+              color: "var(--line)",
             }}
           >
             NEXTELCO ERP

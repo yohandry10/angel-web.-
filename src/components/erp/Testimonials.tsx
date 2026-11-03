@@ -86,8 +86,7 @@ export default function Testimonials() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-[36rem]">
-            <span className="kicker">Clientes</span>
-            <h2 className="mt-4 text-[32px] sm:text-[44px] lg:text-[52px] font-semibold tracking-[-0.035em] leading-[1.04]">
+            <h2 className="section-title">
               Empresas que operan con orden.
             </h2>
           </div>

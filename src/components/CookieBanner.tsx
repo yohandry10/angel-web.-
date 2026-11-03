@@ -22,7 +22,7 @@ export function CookieBanner() {
     <div
       role="dialog"
       aria-label="Aviso de cookies"
-      className="fixed inset-x-0 bottom-0 z-[100] p-4 sm:p-6"
+      className="cookie-banner fixed inset-x-0 bottom-0 z-[100] p-4 sm:p-6"
     >
       <div className="mx-auto max-w-3xl rounded-xl border border-line bg-background/95 p-5 shadow-2xl backdrop-blur sm:flex sm:items-center sm:gap-6">
         <p className="text-sm leading-relaxed text-muted-foreground">
@@ -34,14 +34,14 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={() => choose("denied")}
-            className="h-10 rounded-md border border-line px-4 text-sm text-foreground hover:bg-muted"
+            className="h-11 rounded-md border border-line px-4 text-sm text-foreground hover:bg-muted"
           >
             Rechazar
           </button>
           <button
             type="button"
             onClick={() => choose("granted")}
-            className="h-10 rounded-md bg-foreground px-4 text-sm font-medium text-background hover:opacity-90"
+            className="h-11 rounded-md bg-foreground px-4 text-sm font-medium text-background hover:opacity-90"
           >
             Aceptar
           </button>

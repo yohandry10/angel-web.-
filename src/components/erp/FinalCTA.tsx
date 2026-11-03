@@ -4,22 +4,9 @@ import { DEMO_WA_URL } from "@/lib/erp-contact";
 
 export default function FinalCTA() {
   return (
-    <section id="cta" data-screen-label="09 Final CTA" className="relative border-t border-line overflow-hidden">
-      <div aria-hidden className="absolute inset-0 dot-grid-strong" />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{ background: "radial-gradient(ellipse 60% 80% at 50% 50%, transparent 30%, var(--bg) 80%)" }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 40% 60% at 50% 50%, rgba(42,168,255,0.12), transparent 70%)" }}
-      />
-
+    <section id="cta" data-screen-label="09 Final CTA" className="relative border-t border-line bg-surface overflow-hidden">
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8 py-[100px] sm:py-[120px] text-center">
-        <span className="kicker justify-center">Demo</span>
-        <h2 className="mt-5 max-w-[20ch] mx-auto font-semibold tracking-[-0.04em] leading-[1.04]" style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)" }}>
+        <h2 className="section-title max-w-[20ch] mx-auto">
           Mira tu operación conectada en NEXTELCO ERP.
         </h2>
         <p className="mt-6 max-w-[44ch] mx-auto text-[16px] sm:text-[18px] text-fg-2 leading-[1.55]">

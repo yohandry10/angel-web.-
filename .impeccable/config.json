@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "files": [
+          "src/styles.css"
+        ],
+        "createdAt": "2026-11-03T10:54:37.202Z",
+        "reason": "Agent: Geist was already the locally hosted ERP typeface before this refinement; preserving the incumbent identity and consistent typography rather than introducing an unrelated font."
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "files": [
+          "src/styles.css"
+        ],
+        "createdAt": "2026-11-03T10:54:37.272Z",
+        "reason": "Agent: existing corporate-site font import predates this ERP refinement; the ERP renders in Geist, so changing Inter would broaden the work to a separate surface."
+      }
+    ]
+  }
+}

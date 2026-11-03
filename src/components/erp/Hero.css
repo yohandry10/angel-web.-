@@ -1,0 +1,177 @@
+.erp-root .erp-hero {
+  --hero-ground: var(--cinema-bg);
+  --hero-ink: var(--cinema-text);
+  --hero-secondary: var(--cinema-secondary);
+  --hero-accent: var(--action-bg);
+  position: relative;
+  overflow: clip;
+  background: var(--hero-ground);
+  color: var(--hero-ink);
+}
+.erp-hero-stage {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(640px, 82svh, 800px);
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 120px max(32px, calc((100% - 1180px) / 2)) 80px;
+}
+.erp-hero-cinema {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 15%;
+  pointer-events: none;
+  /* The film is a layer of the hero. The intersecting masks dissolve every
+     edge into the page rather than drawing a rectangular media component. */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 16%, #000 48%, #000 92%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 18%, #000 74%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 16%, #000 48%, #000 92%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 18%, #000 74%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.erp-hero-poster, .erp-hero-film {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% center;
+}
+.erp-hero-film { opacity: 0; transition: opacity 400ms ease; }
+.erp-hero-film.is-visible { opacity: 1; }
+.erp-hero-copy { position: relative; z-index: 1; min-width: 0; max-width: 640px; }
+.erp-hero-copy h1 {
+  margin: 0;
+  color: var(--hero-ink);
+  font-size: var(--type-display);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.045;
+}
+.erp-hero-copy h1 span { display: block; white-space: nowrap; }
+.erp-hero-copy > p:first-of-type {
+  max-width: 390px;
+  margin: 28px 0 0;
+  color: var(--hero-secondary);
+  font-size: 17px;
+  line-height: 1.65;
+}
+.erp-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 52px;
+  margin-top: 30px;
+  padding: 0 22px;
+  border-radius: var(--control-radius);
+  background: var(--hero-accent);
+  color: var(--on-action);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 180ms, transform 180ms;
+}
+.erp-hero-cta:hover { background: var(--action-hover); }
+.erp-hero-cta:active { transform: translateY(2px); }
+.erp-hero-cta svg { transition: transform 180ms; }
+.erp-hero-cta:hover svg { transform: translate(2px, -2px); }
+.erp-hero-copy .erp-hero-support { margin: 18px 0 0; color: var(--hero-secondary); font-size: 13px; line-height: 1.5; }
+.erp-hero-bottom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1244px;
+  margin: 0 auto;
+  padding: 6px 32px 26px;
+  color: var(--hero-secondary);
+  font-size: 14px;
+}
+.erp-hero-bottom p { margin: 0; color: var(--hero-ink); }
+.erp-hero-bottom p span { margin-left: 8px; color: var(--hero-secondary); }
+.erp-hero-bottom a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; }
+.erp-hero-bottom a:hover { color: var(--hero-ink); }
+.erp-hero-bottom a svg { transition: transform 180ms; }
+.erp-hero-bottom a:hover svg { transform: translateY(3px); }
+@media (min-width: 1800px) {
+  .erp-hero-stage { padding-inline: 130px; }
+}
+@media (max-width: 1099px) and (min-width: 768px) {
+  .erp-hero-stage { min-height: 720px; align-items: flex-start; padding-top: 150px; padding-inline: 40px; }
+  .erp-hero-copy h1 { font-size: 58px; }
+  .erp-hero-cinema { inset: 180px -140px 0 10%; }
+  .erp-hero-poster, .erp-hero-film { object-position: 60% center; }
+}
+@media (max-width: 767px) {
+  .erp-hero-stage { min-height: 780px; display: block; padding: 106px 24px 0; }
+  .erp-hero-copy h1 { font-size: clamp(30px, 9.5vw, 64px); line-height: 1.08; letter-spacing: -0.04em; }
+  .erp-hero-copy > p:first-of-type { margin-top: 22px; max-width: 460px; font-size: 16px; line-height: 1.6; }
+  .erp-hero-desktop-break { display: none; }
+  .erp-hero-cta { margin-top: 24px; min-height: 50px; }
+  .erp-hero-copy .erp-hero-support { font-size: 12px; margin-top: 14px; }
+  .erp-hero-cinema {
+    inset: 408px 0 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, transparent, #000 18%, #000 75%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, transparent, #000 18%, #000 75%, transparent);
+  }
+  .erp-hero-poster, .erp-hero-film { object-position: 62% center; }
+  .erp-hero-bottom { padding: 0 24px 26px; flex-direction: column; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .erp-hero-bottom p span { margin-left: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .erp-hero *, .erp-hero *::before, .erp-hero *::after { transition: none !important; animation: none !important; }
+  .erp-hero-cta:hover svg, .erp-hero-cta:active, .erp-hero-bottom a:hover svg { transform: none; }
+}
+
+/* The supplied Sume film is portrait. Keep its complete composition visible. */
+.erp-hero-stage--portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-areas: "copy cinema";
+  gap: 48px;
+  padding-block: 88px 48px;
+}
+.erp-hero-stage--portrait .erp-hero-copy { grid-area: copy; }
+.erp-hero-stage--portrait .erp-hero-cinema {
+  grid-area: cinema;
+  position: relative;
+  inset: auto;
+  z-index: 0;
+  height: clamp(520px, 70svh, 720px);
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 4 / 7;
+  justify-self: end;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent), linear-gradient(180deg, transparent, #000 12%, #000 86%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent), linear-gradient(180deg, transparent, #000 12%, #000 86%, transparent);
+}
+.erp-hero-stage--portrait :is(.erp-hero-poster, .erp-hero-film) {
+  object-fit: contain;
+  object-position: center;
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .erp-hero-stage--portrait { gap: 32px; padding-block: 104px 40px; }
+  .erp-hero-stage--portrait .erp-hero-copy h1 { font-size: clamp(40px, 5.15vw, 58px); }
+  .erp-hero-stage--portrait .erp-hero-cinema { height: clamp(440px, 60svh, 600px); }
+}
+@media (max-width: 767px) {
+  .erp-hero-stage--portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    min-height: 0;
+    padding: 106px 24px 0;
+  }
+  .erp-hero-stage--portrait .erp-hero-copy { order: 0; }
+  .erp-hero-stage--portrait .erp-hero-cinema {
+    order: 1;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    align-self: center;
+    flex-shrink: 0;
+  }
+}

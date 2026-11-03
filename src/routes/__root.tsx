@@ -75,7 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#0a1218" },
+      { name: "theme-color", content: "#030713" },
       { name: "author", content: "NEXTELCO" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "keywords", content: "NEXTELCO, ERP, CRM, sistemas empresariales, IA, LLM, Deep Learning, Machine Learning, DevOps, DevSecOps, MLOps, Kubernetes, Terraform, AWS, GCP, Azure, CI/CD, Observabilidad, Lima, Perú, America Latina, EEUU, Europa" },

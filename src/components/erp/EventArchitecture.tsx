@@ -142,7 +142,6 @@ function TriggerCard({ flow }: { flow: Flow }) {
         background: "var(--surface)",
         border: "1px solid var(--accent)",
         borderRadius: 14,
-        boxShadow: "0 0 0 6px color-mix(in oklab, var(--accent) 10%, transparent), 0 24px 48px -20px rgba(42,168,255,0.35)",
       }}
     >
       <div className="px-4 pt-3.5 pb-3">
@@ -194,7 +193,6 @@ function EffectCard({ icon: I, name, headline, status }: Effect) {
       style={{
         background: "var(--surface)",
         border: "1px solid var(--line)",
-        boxShadow: "0 12px 24px -16px rgba(0,0,0,0.4)",
       }}
     >
       <div className="flex items-center gap-2 min-w-0">
@@ -459,8 +457,7 @@ export default function EventArchitecture() {
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8">
         {/* Header */}
         <div className="max-w-[52rem]">
-          <span className="kicker">Cómo funciona</span>
-          <h2 className="mt-4 text-[32px] sm:text-[44px] lg:text-[52px] font-semibold tracking-[-0.035em] leading-[1.04]">
+          <h2 className="section-title">
             Una operación alimenta
             <br className="hidden sm:inline" /> <span className="text-fg-3">a las que dependen de ella.</span>
           </h2>
@@ -476,7 +473,7 @@ export default function EventArchitecture() {
           <div
             role="tablist"
             aria-label="Recorridos"
-            className="inline-flex self-start p-1 rounded-full max-w-full overflow-x-auto no-scrollbar"
+            className="grid grid-cols-2 sm:inline-flex self-start w-full sm:w-auto p-1 gap-1 rounded-xl sm:rounded-full max-w-full"
             style={{ background: "var(--surface)", border: "1px solid var(--line)" }}
           >
             {FLOWS.map((f) => {
@@ -485,10 +482,25 @@ export default function EventArchitecture() {
                 <button
                   key={f.id}
                   role="tab"
+                  id={`erp-flow-tab-${f.id}`}
                   aria-selected={on}
+                  aria-controls={`erp-flow-panel-${f.id}`}
+                  tabIndex={on ? 0 : -1}
                   onClick={() => setActive(f.id)}
-                  className={"h-8 px-3.5 sm:px-4 rounded-full text-[13px] font-medium transition-colors cursor-pointer shrink-0 " + (on ? "" : "text-fg-3 hover:text-fg")}
-                  style={on ? { background: "var(--accent)", color: "#04101c" } : undefined}
+                  onKeyDown={(event) => {
+                    const index = FLOWS.findIndex((item) => item.id === f.id);
+                    let next = index;
+                    if (event.key === "ArrowRight") next = (index + 1) % FLOWS.length;
+                    else if (event.key === "ArrowLeft") next = (index - 1 + FLOWS.length) % FLOWS.length;
+                    else if (event.key === "Home") next = 0;
+                    else if (event.key === "End") next = FLOWS.length - 1;
+                    else return;
+                    event.preventDefault();
+                    setActive(FLOWS[next].id);
+                    event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[next]?.focus();
+                  }}
+                  className={"h-11 px-3 sm:px-4 rounded-full text-[13px] font-medium transition-colors cursor-pointer shrink-0 " + (on ? "" : "text-fg-3 hover:text-fg")}
+                  style={on ? { background: "var(--accent)", color: "var(--on-accent)" } : undefined}
                 >
                   {f.tab}
                 </button>
@@ -506,7 +518,7 @@ export default function EventArchitecture() {
         </div>
 
         {/* Flow viz */}
-        <div className="mt-10 sm:mt-12" role="tabpanel" aria-label={flow.tab}>
+        <div className="mt-10 sm:mt-12" role="tabpanel" id={`erp-flow-panel-${flow.id}`} aria-labelledby={`erp-flow-tab-${flow.id}`}>
           <FlowViz flow={flow} />
         </div>
 

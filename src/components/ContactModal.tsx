@@ -60,30 +60,29 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
       <div className="absolute inset-0 bg-ink/85 backdrop-blur-md" onClick={onClose} />
-      <div className="relative w-full max-w-2xl bg-background border border-line shadow-2xl animate-in zoom-in-95 slide-in-from-bottom-4 duration-500">
+      <div role="dialog" aria-modal="true" aria-label="Contacto con NEXTELCO" className="contact-dialog relative w-full max-w-2xl bg-background border border-line rounded-xl shadow-2xl animate-in zoom-in-95 slide-in-from-bottom-4 duration-500">
         {/* terminal header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-line">
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_8px_var(--cyan-glow)]" />
-            <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-              ~/contact — new_session.sh
+            <span className="font-sans text-[13px] text-muted-foreground">
+              Contacto
             </span>
           </div>
-          <button onClick={onClose} data-cursor="$ close" className="font-mono text-xs text-muted-foreground hover:text-amber-glow transition">
+          <button onClick={onClose} data-cursor="$ close" className="font-sans text-xs text-muted-foreground hover:text-amber-glow transition">
             [ESC] ✕
           </button>
         </div>
 
         {sent ? (
           <div className="p-12 text-center">
-            <div className="font-mono text-xs tracking-[0.3em] uppercase text-cyan-glow mb-6">[ Recibido ]</div>
             <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-[-0.03em] mb-4">
-              Mensaje <span className="font-serif-it font-normal text-amber-glow">enviado</span>.
+              Mensaje <span className="text-amber-glow">enviado</span>.
             </h3>
             <p className="text-muted-foreground">
               Te responderemos en menos de 24h hábiles.
             </p>
-            <button onClick={onClose} className="mt-8 font-mono text-[11px] tracking-[0.25em] uppercase border-b border-foreground pb-1 hover:text-cyan-glow hover:border-cyan-glow transition">
+            <button onClick={onClose} className="mt-8 font-sans text-[13px] border-b border-foreground pb-1 hover:text-cyan-glow hover:border-cyan-glow transition">
               Cerrar →
             </button>
           </div>
@@ -97,18 +96,17 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
               </label>
             </div>
             <div>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-cyan-glow mb-2">[ Iniciar conversación ]</div>
               <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-[-0.03em]">
-                Cuéntanos del <span className="font-serif-it font-normal text-amber-glow">proyecto</span>.
+                Cuéntanos del <span className="text-amber-glow">proyecto</span>.
               </h3>
             </div>
 
             <div className="grid md:grid-cols-2 gap-5">
-              <Field label="$ name" name="name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} error={errors.name} />
-              <Field label="$ email" name="email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} error={errors.email} />
+              <Field label="Nombre" name="name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} error={errors.name} />
+              <Field label="Correo electrónico" name="email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} error={errors.email} />
             </div>
-            <Field label="$ company (opt)" name="company" value={form.company} onChange={(v) => setForm({ ...form, company: v })} error={errors.company} />
-            <Field label="$ message" name="message" textarea value={form.message} onChange={(v) => setForm({ ...form, message: v })} error={errors.message} />
+            <Field label="Empresa (opcional)" name="company" value={form.company} onChange={(v) => setForm({ ...form, company: v })} error={errors.company} />
+            <Field label="Mensaje" name="message" textarea value={form.message} onChange={(v) => setForm({ ...form, message: v })} error={errors.message} />
 
             {serverError && (
               <p role="alert" className="text-sm text-amber-glow">
@@ -117,10 +115,10 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
               </p>
             )}
             <div className="flex items-center justify-between pt-4">
-              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+              <span className="font-sans text-[13px] text-muted-foreground">
                 {form.message.length}/1000
               </span>
-              <button type="submit" disabled={sending} data-cursor="$ send" className="group disabled:opacity-60 inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
+              <button type="submit" disabled={sending} data-cursor="$ send" className="btn btn-primary btn-lg disabled:opacity-60">
                 {sending ? "Enviando…" : "Enviar mensaje"}
                 <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
               </button>
@@ -138,7 +136,7 @@ function Field({ label, name, value, onChange, error, type = "text", textarea }:
 }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground block mb-2">{label}</span>
+      <span className="font-sans text-[13px] text-muted-foreground block mb-2">{label}</span>
       {textarea ? (
         <textarea
           name={name} value={value} onChange={(e) => onChange(e.target.value)} rows={5} maxLength={1000}
@@ -150,7 +148,7 @@ function Field({ label, name, value, onChange, error, type = "text", textarea }:
           className="w-full bg-transparent border-b border-line py-2 focus:border-cyan-glow focus:outline-none transition font-sans text-base"
         />
       )}
-      {error && <span className="block mt-1 font-mono text-[10px] tracking-[0.2em] uppercase text-amber-glow">! {error}</span>}
+      {error && <span className="block mt-1 font-sans text-[13px] text-amber-glow">! {error}</span>}
     </label>
   );
 }

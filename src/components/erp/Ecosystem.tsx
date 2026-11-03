@@ -107,14 +107,13 @@ export default function Ecosystem() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-[44ch]">
-            <span className="kicker">Ecosistema</span>
-            <h2 className="mt-4 text-[32px] sm:text-[44px] lg:text-[52px] font-semibold tracking-[-0.035em] leading-[1.04]">
+            <h2 className="section-title">
               Dieciséis módulos.
               <br />
               <span className="text-fg-3">Un solo sistema.</span>
             </h2>
           </div>
-          <p className="text-[14px] text-fg-3 max-w-[40ch]">
+          <p className="text-[16px] leading-relaxed text-fg-2 max-w-[40ch]">
             Desde la cotización hasta el asiento contable, desde la asistencia hasta la boleta. En web y en aplicación de escritorio, con configuración por empresa.
           </p>
         </div>
@@ -135,7 +134,7 @@ export default function Ecosystem() {
                   <span className="text-[12.5px] font-medium text-fg-3">{m.cat}</span>
                 </div>
                 <div className="mt-5 text-[16px] font-semibold tracking-[-0.01em] text-fg">{m.name}</div>
-                <div className="mt-1.5 text-[12.5px] text-fg-3 leading-[1.5]">{m.desc}</div>
+                <div className="mt-2 text-[14px] text-fg-2 leading-[1.6]">{m.desc}</div>
               </div>
             );
           })}

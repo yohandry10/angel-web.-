@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-devops.jpg";
-import logoNavbar from "@/assets/logo-navbar-white.png";
+import { BrandLogo } from "@/components/BrandLogo";
 import { ContactModal } from "@/components/ContactModal";
 import { SITE_URL } from "@/lib/seo";
 
@@ -65,7 +65,6 @@ const CAPABILITIES = {
 
 function Index() {
   useReveal();
-  const heroRef = useRef<HTMLDivElement>(null);
   const [modal, setModal] = useState(false);
   const [tab, setTab] = useState<keyof typeof CAPABILITIES>("Cloud & OS");
   const [scrolled, setScrolled] = useState(false);
@@ -74,9 +73,6 @@ function Index() {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      if (heroRef.current) {
-        heroRef.current.style.transform = `translate3d(0, ${y * 0.12}px, 0) scale(${1 + y * 0.0002})`;
-      }
       setScrolled(y > 50);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -86,16 +82,16 @@ function Index() {
   const openModal = (e?: React.MouseEvent) => { e?.preventDefault(); setModal(true); };
 
   return (
-    <main className="bg-background text-foreground overflow-x-hidden">
+    <main className="corporate-root bg-background text-foreground overflow-x-hidden">
       <ContactModal open={modal} onClose={() => setModal(false)} />
 
       {/* NAVBAR — fixed + glassmorphism on scroll */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/80 backdrop-blur-xl border-b border-line/50 shadow-[0_1px_20px_rgba(0,0,0,0.3)]" : "bg-transparent border-b border-transparent"}`}>
-        <div className="flex items-center justify-between px-[clamp(24px,5vw,80px)] py-5">
-          <a href="/" className="flex items-center gap-3 group">
-            <img src={logoNavbar} alt="NEXTELCO" className="h-9 w-auto" />
+      <header className={`corporate-nav fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${scrolled ? "nav-blur" : "bg-transparent border-b border-transparent"}`}>
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 h-16 flex items-center justify-between">
+          <a href="/" className="flex items-center gap-3 group" aria-label="NEXTELCO — página principal">
+            <BrandLogo />
           </a>
-          <nav className="hidden md:flex items-center gap-10 font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground">
+          <nav className="hidden xl:flex items-center gap-6 text-[13.5px] font-medium text-fg-2" aria-label="Principal">
             <a href="#proceso" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Proceso</a>
             <a href="#stack" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Stack</a>
             <Link to="/experiencia" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">Experiencia</Link>
@@ -104,14 +100,16 @@ function Index() {
             <Link to="/erp" data-cursor="$ goto" className="hover:text-cyan-glow transition-colors duration-300">ERP</Link>
           </nav>
           <div className="flex items-center gap-6">
-            <button onClick={openModal} data-cursor="$ contact" className="hidden sm:inline-flex font-mono text-[12px] tracking-[0.2em] uppercase border-b border-foreground/60 pb-0.5 hover:border-cyan-glow hover:text-cyan-glow transition-colors duration-300">
+            <button onClick={openModal} data-cursor="$ contact" className="btn btn-primary hidden sm:inline-flex">
               Conversemos →
             </button>
             {/* Hamburger — mobile only */}
             <button
               onClick={() => setMobileMenu(!mobileMenu)}
-              className="md:hidden flex flex-col gap-1.5 p-1"
+              className="xl:hidden flex flex-col items-center justify-center gap-1.5 w-11 h-11 rounded-md border border-line"
               aria-label="Menú"
+              aria-expanded={mobileMenu}
+              aria-controls="corporate-mobile-nav"
             >
               <span className={`block w-6 h-px bg-foreground transition-all duration-300 ${mobileMenu ? "rotate-45 translate-y-[3.5px]" : ""}`} />
               <span className={`block w-6 h-px bg-foreground transition-all duration-300 ${mobileMenu ? "opacity-0" : ""}`} />
@@ -120,14 +118,14 @@ function Index() {
           </div>
         </div>
         {/* Mobile menu dropdown */}
-        <div className={`md:hidden overflow-hidden transition-all duration-500 ${mobileMenu ? "max-h-80 border-t border-line/30" : "max-h-0"}`}>
+        <div id="corporate-mobile-nav" inert={!mobileMenu} className={`xl:hidden overflow-hidden transition-all duration-300 ${mobileMenu ? "max-h-[460px] border-t border-line" : "max-h-0"}`}>
           <nav className="flex flex-col gap-1 px-[clamp(24px,5vw,80px)] py-4 bg-background/95 backdrop-blur-xl">
             {["Proceso", "Stack", "Equipo", "Criterio"].map((item) => (
               <a
                 key={item}
                 href={`#${item === "Equipo" ? "bio" : item.toLowerCase()}`}
                 onClick={() => setMobileMenu(false)}
-                className="font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
+                className="font-sans text-[12px] text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
               >
                 {item}
               </a>
@@ -135,20 +133,20 @@ function Index() {
             <Link
               to="/experiencia"
               onClick={() => setMobileMenu(false)}
-              className="font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
+              className="font-sans text-[12px] text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
             >
               Experiencia
             </Link>
             <Link
               to="/erp"
               onClick={() => setMobileMenu(false)}
-              className="font-mono text-[12px] tracking-[0.2em] uppercase text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
+              className="font-sans text-[12px] text-muted-foreground hover:text-cyan-glow transition-colors py-3 border-b border-line/20"
             >
               ERP
             </Link>
             <button
               onClick={() => { setMobileMenu(false); openModal(); }}
-              className="font-mono text-[12px] tracking-[0.2em] uppercase text-cyan-glow py-3 text-left"
+              className="font-sans text-[12px] text-cyan-glow py-3 text-left"
             >
               Conversemos →
             </button>
@@ -157,43 +155,33 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section className="relative min-h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
-        <div ref={heroRef} className="absolute right-0 top-0 h-full w-full md:w-[64vw] z-[1] will-change-transform">
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 md:via-background/70 to-transparent z-10 w-full md:w-[28%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/30 md:from-background/80 md:via-transparent md:to-background/40 z-10" />
-          <img src={heroImg} alt="Server rack iluminado representando infraestructura DevOps" className="h-full w-full object-cover object-center" width={1080} height={1920} fetchPriority="high" />
-          <div className="absolute top-1/3 right-[18%] w-[2px] h-[40vh] bg-cyan-glow/60 blur-[2px] z-20 hidden md:block" />
+      <section className="corporate-hero relative w-full overflow-hidden">
+        <div className="corporate-hero-layout">
+        <div className="corporate-hero-media">
+          <img src={heroImg} alt="Server rack iluminado representando infraestructura DevOps" width={1080} height={1920} fetchPriority="high" />
         </div>
 
 
-        <div className="relative z-20 flex flex-col justify-start min-h-screen w-[90vw] md:w-[min(54vw,900px)]"
-          style={{ paddingLeft: "clamp(24px,5vw,80px)", paddingTop: "clamp(120px, 15vh, 160px)", paddingBottom: "clamp(40px, 8vh, 80px)" }}>
-          <div className="reveal in mb-6 flex items-center gap-4">
-            <div className="w-10 h-px bg-cyan-glow" />
-            <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">Ingeniería · Infraestructura · 2026</span>
-          </div>
-          <h1 className="font-sans font-semibold tracking-[-0.05em]" style={{ fontSize: "clamp(42px, 7.5vw, 128px)", lineHeight: 0.85 }}>
-            <span className="reveal-line in"><span className="block">DEPLOY</span></span>
-            <span className="reveal-line in"><span className="font-serif-it font-normal text-amber-glow block pl-[0.2em]">sin</span></span>
-            <span className="reveal-line in"><span className="block">FRICCIÓN.</span></span>
-            <span className="reveal-line in"><span className="font-serif-it font-normal text-amber-glow block pl-[0.1em]">escalar</span></span>
-            <span className="reveal-line in"><span className="block">CON CRITERIO.</span></span>
+        <div className="corporate-hero-copy">
+          <h1>
+            <span>Deploy sin fricción.</span>
+            <span>Escalar con criterio.</span>
           </h1>
-          <p className="reveal in mt-6 max-w-md text-base md:text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-7 max-w-[500px] text-[17px] leading-relaxed text-fg-2">
             Construimos sistemas empresariales de alto rendimiento —ERP, CRM y plataformas a medida— y resolvemos problemas complejos de negocio con Deep Learning, Machine Learning, DevOps y DevSecOps para América Latina, EEUU y Europa.
           </p>
           <div className="reveal in mt-8 flex flex-wrap items-center gap-8">
-            <button onClick={openModal} data-cursor="$ deploy" className="group inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
+            <button onClick={openModal} data-cursor="$ deploy" className="btn btn-primary btn-lg group">
               Iniciar proyecto
               <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
             </button>
-            <a href="#proceso" data-cursor="$ scroll" className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted-foreground hover:text-foreground transition">↓ Cómo trabajamos</a>
+            <a href="#proceso" data-cursor="$ scroll" className="font-sans text-[13px] text-muted-foreground hover:text-foreground transition">↓ Cómo trabajamos</a>
           </div>
-          <div className="relative mt-auto pt-12 flex flex-wrap items-end gap-12 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-            <div><div className="text-cyan-glow/60 mb-2">[01]</div><div>Lima, Perú</div><div>—12.05° S</div></div>
-            <div><div className="text-cyan-glow/60 mb-2">[02]</div><div>Uptime 99.98%</div><div>Last 12 months</div></div>
+          <div className="mt-12 flex flex-wrap gap-10 text-[13px] text-fg-3">
+            <div><div>Lima, Perú</div><div>—12.05° S</div></div>
+            <div><div>Disponibilidad 99.98%</div><div>Últimos 12 meses</div></div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -201,12 +189,8 @@ function Index() {
 
       {/* PROCESO */}
       <section id="proceso" className="px-[clamp(24px,5vw,80px)] pt-16 pb-[clamp(100px,15vh,200px)] overflow-hidden">
-        <div className="reveal-left flex items-center gap-4 mb-24">
-          <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ Proceso ]</span>
-          <div className="flex-1 hairline" />
-        </div>
-        <h2 className="reveal-left max-w-4xl font-sans font-medium tracking-[-0.04em] mb-32" style={{ fontSize: "clamp(40px,5.5vw,88px)", lineHeight: 0.92 }}>
-          Cuatro etapas para llevar tu plataforma <span className="font-serif-it font-normal text-amber-glow">de frágil</span> a confiable.
+        <h2 className="reveal-left max-w-4xl font-sans font-medium tracking-[-0.04em] mb-12">
+          Cuatro etapas para llevar tu plataforma <span className="text-amber-glow">de frágil</span> a confiable.
         </h2>
         <div className="grid md:grid-cols-4 gap-px bg-line">
           {[
@@ -217,7 +201,7 @@ function Index() {
           ].map((step, index) => (
             <div key={step.n} className="reveal-right" style={{ transitionDelay: `${index * 150}ms` }}>
               <div className="bg-background p-10 h-full group hover:bg-muted/40 transition-colors duration-700">
-                <div className="font-sans font-light text-cyan-glow mb-12 group-hover:text-amber-glow transition-colors duration-700" style={{ fontSize: "clamp(60px,7vw,120px)", lineHeight: 1, letterSpacing: "-0.05em" }}>{step.n}</div>
+                <div className="font-sans font-light text-cyan-glow mb-12 group-hover:text-amber-glow transition-colors duration-700" style={{ fontSize: "clamp(48px,5vw,72px)", lineHeight: 1, letterSpacing: "-0.04em" }}>{step.n}</div>
                 <h3 className="text-2xl font-medium mb-4">{step.t}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{step.d}</p>
               </div>
@@ -228,17 +212,12 @@ function Index() {
 
       {/* STACK / CAPACIDADES — REDISEÑADA */}
       <section id="stack" className="px-[clamp(24px,5vw,80px)] py-[clamp(72px,10vh,140px)] border-t border-line relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
-        <div className="relative">
-          <div className="reveal flex items-center gap-4 mb-16">
-            <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ Capacidades · 04 dominios ]</span>
-            <div className="flex-1 hairline" />
-          </div>
+                <div className="relative">
 
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
             <div className="lg:col-span-5 flex flex-col reveal-left">
-              <h2 className="font-sans font-medium tracking-[-0.04em] mb-12" style={{ fontSize: "clamp(40px,5.5vw,88px)", lineHeight: 0.92 }}>
-                Lo que <span className="font-serif-it font-normal text-amber-glow">construimos</span>,<br />operamos y{" "}<span className="font-serif-it font-normal text-cyan-glow">mantenemos</span>.
+              <h2 className="font-sans font-medium tracking-[-0.04em] mb-12">
+                Lo que <span className="text-amber-glow">construimos</span>,<br />operamos y{" "}<span className="text-cyan-glow">mantenemos</span>.
               </h2>
 
               {/* Tabs verticales tipo terminal */}
@@ -252,13 +231,13 @@ function Index() {
                       data-cursor="$ select"
                       className={`group w-full text-left py-5 pl-6 pr-4 flex items-baseline gap-4 transition-all duration-500 border-l-2 -ml-px ${active ? "bg-muted/40 border-cyan-glow" : "border-transparent hover:bg-muted/20"}`}
                     >
-                      <span className={`font-mono text-[10px] tracking-[0.25em] ${active ? "text-cyan-glow" : "text-muted-foreground"}`}>
+                      <span className={`font-sans text-[13px] ${active ? "text-cyan-glow" : "text-muted-foreground"}`}>
                         0{i + 1}
                       </span>
                       <span className={`flex-1 font-sans text-lg md:text-xl tracking-[-0.02em] ${active ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"}`}>
                         {k}
                       </span>
-                      <span className={`font-mono text-xs transition-transform duration-500 ${active ? "text-amber-glow translate-x-1" : "text-muted-foreground/40 opacity-0 group-hover:opacity-100"}`}>→</span>
+                      <span className={`font-sans text-xs transition-transform duration-500 ${active ? "text-amber-glow translate-x-1" : "text-muted-foreground opacity-0 group-hover:opacity-100"}`}>→</span>
                     </button>
                   );
                 })}
@@ -270,24 +249,24 @@ function Index() {
                 <div className="flex items-center justify-between px-5 py-3 border-b border-line">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_8px_var(--cyan-glow)]" />
-                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                    <span className="font-sans text-[13px] text-muted-foreground">
                       ~/capabilities/{tab.toLowerCase().replace(/[\s&]+/g, "-")}.yaml
                     </span>
                   </div>
-                  <span className="font-mono text-[10px] text-muted-foreground/60">live</span>
+                  <span className="font-sans text-[13px] text-muted-foreground">live</span>
                 </div>
                 <div key={tab} className="p-6 md:p-10 space-y-px animate-in fade-in slide-in-from-bottom-2 duration-500 flex-1 flex flex-col justify-between">
                   {CAPABILITIES[tab].map((s) => (
                     <div key={s.n} className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-5 border-b border-line last:border-b-0 group">
-                      <div className="font-mono text-[10px] tracking-[0.2em] text-cyan-glow shrink-0 sm:w-8">{s.n}</div>
+                      <div className="font-sans text-[13px] text-cyan-glow shrink-0 sm:w-8">{s.n}</div>
                       <div className="text-base md:text-lg font-medium group-hover:text-cyan-glow transition shrink-0 sm:w-40 lg:w-44">{s.k}</div>
                       <div className="text-sm text-muted-foreground leading-relaxed flex-1">{s.v}</div>
                     </div>
                   ))}
-                  <div className="pt-6 mt-4 border-t border-line font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60 flex items-center gap-3">
+                  <div className="pt-6 mt-4 border-t border-line font-sans text-[13px] text-muted-foreground flex items-center gap-3">
                     <span>$ status:</span>
                     <span className="text-cyan-glow">ready</span>
-                    <span className="text-muted-foreground/30">·</span>
+                    <span className="text-muted-foreground">·</span>
                     <span>{CAPABILITIES[tab].length} módulos</span>
                   </div>
                 </div>
@@ -299,26 +278,21 @@ function Index() {
 
       {/* PRODUCTO ESTRELLA — NEXTELCO ERP */}
       <section id="producto" className="px-[clamp(24px,5vw,80px)] py-[clamp(72px,10vh,140px)] border-t border-line relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
-        <div className="relative">
-          <div className="reveal-left flex items-center gap-4 mb-16">
-            <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ Producto estrella ]</span>
-            <div className="flex-1 hairline" />
-          </div>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div className="relative">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 reveal-left">
-              <h2 className="font-sans font-medium tracking-[-0.04em] mb-8" style={{ fontSize: "clamp(40px,5.5vw,80px)", lineHeight: 0.92 }}>
-                NEXTELCO ERP — nuestro producto <span className="font-serif-it font-normal text-amber-glow">insignia</span>.
+              <h2 className="font-sans font-medium tracking-[-0.04em] mb-8">
+                NEXTELCO ERP — nuestro producto <span className="text-amber-glow">insignia</span>.
               </h2>
               <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-6 max-w-xl">
                 Nuestro producto estrella: un ERP que conecta ventas, compras, inventario, logística, finanzas, contabilidad y planillas. Cada operación alimenta a las que dependen de ella, con permisos e historial, sin volver a digitar lo mismo.
               </p>
               <div className="flex flex-wrap gap-2 mb-10">
                 {["Comprobantes electrónicos", "Contabilidad desde operaciones", "Inventario multi-almacén", "POS y cajas", "PECOSA", "Planillas", "Multi-sucursal"].map((t) => (
-                  <span key={t} className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground border border-line px-2.5 py-1">{t}</span>
+                  <span key={t} className="font-sans text-[13px] text-muted-foreground border border-line px-2.5 py-1">{t}</span>
                 ))}
               </div>
-              <Link to="/erp" data-cursor="$ open" className="group inline-flex items-center gap-4 bg-foreground text-ink px-7 py-4 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
+              <Link to="/erp" data-cursor="$ open" className="btn btn-primary btn-lg group">
                 Conocer NEXTELCO ERP
                 <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
               </Link>
@@ -328,19 +302,19 @@ function Index() {
                 <div className="flex items-center justify-between px-5 py-3 border-b border-line">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_8px_var(--cyan-glow)]" />
-                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">~/nextelco/erp — módulos</span>
+                    <span className="font-sans text-[13px] text-muted-foreground">~/nextelco/erp — módulos</span>
                   </div>
-                  <span className="font-mono text-[10px] text-muted-foreground/60">live</span>
+                  <span className="font-sans text-[13px] text-muted-foreground">live</span>
                 </div>
                 <div className="grid grid-cols-2 gap-px bg-line">
                   {[["Ventas", "POS + CPE"], ["Compras", "OC + recepción"], ["Contabilidad", "asientos vinculados"], ["Inventario", "multi-almacén"], ["CPE SUNAT", "CPE + GRE + SIRE"], ["Finanzas", "caja + bancos"]].map(([k, v]) => (
                     <div key={k} className="bg-ink p-5 md:p-6 group hover:bg-muted/40 transition-colors duration-500">
                       <div className="text-base md:text-lg font-medium group-hover:text-cyan-glow transition-colors duration-500">{k}</div>
-                      <div className="font-mono text-[10px] tracking-[0.1em] uppercase text-muted-foreground mt-1">{v}</div>
+                      <div className="font-sans text-[13px] text-muted-foreground mt-1">{v}</div>
                     </div>
                   ))}
                 </div>
-                <div className="px-6 py-4 border-t border-line font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60 flex items-center gap-3">
+                <div className="px-6 py-4 border-t border-line font-sans text-[13px] text-muted-foreground flex items-center gap-3">
                   <span>$ status:</span>
                   <span className="text-cyan-glow">más de 100 clientes en Perú</span>
                 </div>
@@ -355,25 +329,21 @@ function Index() {
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           {/* Left column — sticky avatar card, narrower */}
           <div className="lg:col-span-3">
-            <div className="reveal flex items-center gap-4 mb-12">
-              <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ equipo ]</span>
-            </div>
-            <div className="reveal sticky top-24">
+                <div className="reveal sticky top-24">
               <div className="aspect-[3/4] bg-muted/30 border border-line relative overflow-hidden group">
-                <div className="absolute inset-0 grid-bg opacity-40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="font-sans font-light text-cyan-glow opacity-30 group-hover:opacity-50 transition-opacity duration-700" style={{ fontSize: "clamp(64px,10vw,160px)", lineHeight: 1, letterSpacing: "-0.05em" }}>
+                                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="font-sans font-light text-cyan-glow opacity-30 group-hover:opacity-50 transition-opacity duration-700" style={{ fontSize: "clamp(64px,10vw,160px)", lineHeight: 1, letterSpacing: "-0.04em" }}>
                     {"{ }"}
                   </div>
                 </div>
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between font-sans text-[13px] text-muted-foreground">
                   <span>· research_team</span>
                   <span className="text-cyan-glow flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-glow animate-pulse shadow-[0_0_6px_var(--cyan-glow)]" />
                     ONLINE
                   </span>
                 </div>
-                <div className="absolute bottom-4 left-4 right-4 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+                <div className="absolute bottom-4 left-4 right-4 font-sans text-[13px] text-muted-foreground">
                   Lima · UTC−5
                 </div>
               </div>
@@ -382,9 +352,9 @@ function Index() {
 
           {/* Right column — main content, wider */}
           <div className="lg:col-span-9">
-            <h2 className="reveal font-sans font-medium tracking-[-0.04em] mb-10" style={{ fontSize: "clamp(40px,5.5vw,88px)", lineHeight: 0.92 }}>
-              Equipo de{" "}<span className="font-serif-it font-normal text-amber-glow">investigación aplicada</span>.<br />
-              Ingeniería con{" "}<span className="font-serif-it font-normal text-cyan-glow">criterio</span>.
+            <h2 className="reveal font-sans font-medium tracking-[-0.04em] mb-10">
+              Equipo de{" "}<span className="text-amber-glow">investigación aplicada</span>.<br />
+              Ingeniería con{" "}<span className="text-cyan-glow">criterio</span>.
             </h2>
 
             <div className="space-y-8 max-w-2xl text-base md:text-lg leading-[1.75] text-muted-foreground">
@@ -408,7 +378,7 @@ function Index() {
               ].map((m) => (
                 <div key={m.k}>
                   <div className="font-sans font-light tracking-[-0.04em] text-foreground" style={{ fontSize: "clamp(36px,3.8vw,60px)", lineHeight: 1 }}>{m.v}</div>
-                  <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground mt-4 leading-relaxed">{m.k}</div>
+                  <div className="font-sans text-[13px] text-muted-foreground mt-4 leading-relaxed">{m.k}</div>
                 </div>
               ))}
             </div>
@@ -418,11 +388,10 @@ function Index() {
 
       {/* CRITERIO */}
       <section id="criterio" className="reveal-section px-[clamp(24px,5vw,80px)] py-[clamp(72px,10vh,140px)] border-t border-line relative">
-        <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
-        <div className="relative">
-          <p className="reveal max-w-5xl font-sans font-medium tracking-[-0.03em] mb-20" style={{ fontSize: "clamp(40px,5vw,76px)", lineHeight: 1.05 }}>
-            La infraestructura <span className="font-serif-it text-cyan-glow">no es invisible</span> cuando falla.
-            Nuestro trabajo es que <span className="font-serif-it text-amber-glow">nunca tengas que pensar</span> en ella.
+                <div className="relative">
+          <p className="corporate-statement reveal max-w-5xl font-sans font-medium tracking-[-0.03em] mb-20">
+            La infraestructura <span className="text-cyan-glow">no es invisible</span> cuando falla.
+            Nuestro trabajo es que <span className="text-amber-glow">nunca tengas que pensar</span> en ella.
           </p>
           <div className="grid md:grid-cols-3 border-t border-line">
             {[
@@ -431,8 +400,8 @@ function Index() {
               { k: "Ahorro cloud", v: "−38%" },
             ].map((m) => (
               <div key={m.k} className="reveal border-b md:border-b-0 md:border-r border-line last:border-r-0 py-12 pr-8">
-                <div className="font-sans font-light tracking-[-0.04em] mb-4" style={{ fontSize: "clamp(56px,7vw,120px)", lineHeight: 1 }}>{m.v}</div>
-                <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground">{m.k}</div>
+                <div className="font-sans font-light tracking-[-0.04em] mb-4" style={{ fontSize: "clamp(48px,5vw,72px)", lineHeight: 1 }}>{m.v}</div>
+                <div className="font-sans text-[13px] text-muted-foreground">{m.k}</div>
               </div>
             ))}
           </div>
@@ -443,11 +412,8 @@ function Index() {
       <section className="reveal-section px-[clamp(24px,5vw,80px)] py-[clamp(72px,10vh,140px)] border-t border-line">
         <div className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
-            <div className="reveal flex items-center gap-4 mb-10">
-              <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ En vivo ]</span>
-            </div>
-            <h2 className="reveal font-sans font-medium tracking-[-0.04em] mb-8" style={{ fontSize: "clamp(40px,5.5vw,88px)", lineHeight: 0.92 }}>
-              Pipelines que <span className="font-serif-it font-normal text-amber-glow">no rompen</span> los viernes.
+                <h2 className="reveal font-sans font-medium tracking-[-0.04em] mb-8">
+              Pipelines que <span className="text-amber-glow">no rompen</span> los viernes.
             </h2>
             <p className="reveal text-muted-foreground leading-relaxed max-w-md">
               Cada commit pasa por validación, build reproducible, escaneo de seguridad y despliegue progresivo. Si algo falla, el rollback es automático.
@@ -459,9 +425,9 @@ function Index() {
                 <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
                 <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
                 <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
-                <span className="ml-4 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">~/platform — main</span>
+                <span className="ml-4 font-sans text-[13px] text-muted-foreground">~/platform — main</span>
               </div>
-              <pre className="font-mono text-[11px] md:text-[13px] leading-relaxed p-8 text-muted-foreground">
+              <pre className="font-mono text-[13px] md:text-[13px] leading-relaxed p-8 text-muted-foreground">
                 <span className="text-cyan-glow">$ terraform apply</span>{"\n"}
                 ✓ aws_eks_cluster.prod        <span className="text-amber-glow">created</span>{"\n"}
                 ✓ helm_release.argocd          <span className="text-amber-glow">created</span>{"\n"}
@@ -473,7 +439,7 @@ function Index() {
                 worker-8b1e-pq2   <span className="text-cyan-glow">2/2</span>     Running   0{"\n"}
                 gateway-4d2a-zx   <span className="text-cyan-glow">3/3</span>     Running   0{"\n"}
                 {"\n"}
-                <span className="text-muted-foreground/60"># deploy time: 2m 14s · zero downtime ✓</span>
+                <span className="text-muted-foreground"># deploy time: 2m 14s · zero downtime ✓</span>
               </pre>
             </div>
           </div>
@@ -487,11 +453,10 @@ function Index() {
         <div className="relative">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-7">
-              <div className="reveal font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow mb-8">[ Siguiente sprint ]</div>
-              <h2 className="reveal font-sans font-medium tracking-[-0.05em] mb-12" style={{ fontSize: "clamp(44px,6vw,104px)", lineHeight: 0.88 }}>
-                Hablemos de tu <span className="font-serif-it font-normal text-amber-glow">infraestructura</span>.
+              <h2 className="reveal font-sans font-medium tracking-[-0.04em] mb-12">
+                Hablemos de tu <span className="text-amber-glow">infraestructura</span>.
               </h2>
-              <button onClick={openModal} data-cursor="$ open" className="reveal group inline-flex items-center gap-4 bg-foreground text-ink px-8 py-5 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
+              <button onClick={openModal} data-cursor="$ open" className="btn btn-primary btn-lg group">
                 Abrir formulario
                 <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
               </button>
@@ -499,7 +464,7 @@ function Index() {
 
             <div className="lg:col-span-5 reveal">
               <div className="bg-ink/60 border border-line p-8 md:p-10">
-                <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-5">Contacto</div>
+                <div className="font-sans text-[13px] text-muted-foreground mb-5">Contacto</div>
                 <div className="flex flex-col gap-4 pb-8 border-b border-line">
                   <a href="mailto:operaciones@nextelco.cloud" data-cursor="$ mail" className="flex items-center gap-3 text-lg md:text-xl text-muted-foreground hover:text-cyan-glow transition group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -512,12 +477,12 @@ function Index() {
                 </div>
                 <div className="grid grid-cols-2 gap-6 pt-8">
                   <div>
-                    <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Ubicación</div>
+                    <div className="font-sans text-[13px] text-muted-foreground mb-3">Ubicación</div>
                     <div className="text-lg md:text-xl">Lima, Perú</div>
-                    <div className="font-mono text-xs text-muted-foreground mt-1">UTC−5 · Remoto global</div>
+                    <div className="font-sans text-xs text-muted-foreground mt-1">UTC−5 · Remoto global</div>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Disponibilidad</div>
+                    <div className="font-sans text-[13px] text-muted-foreground mb-3">Disponibilidad</div>
                     <div className="flex items-center gap-3 text-lg md:text-xl">
                       <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_12px_var(--cyan-glow)] animate-pulse" />
                       Q1 2026
@@ -528,7 +493,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-20 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+          <div className="mt-20 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 font-sans text-[13px] text-muted-foreground">
             <div>© 2026 NEXTELCO SAC — Sistemas empresariales, DevOps y DevSecOps</div>
             <div className="flex gap-3"><a href="/aviso-legal" className="hover:text-foreground transition-colors">Aviso legal</a> <span aria-hidden="true">·</span> <a href="/privacidad" className="hover:text-foreground transition-colors">Política de privacidad</a></div>
             <div>Hecho con criterio · No con plantillas</div>

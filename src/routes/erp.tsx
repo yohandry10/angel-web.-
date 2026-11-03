@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Nav from "@/components/erp/Nav";
 import Hero from "@/components/erp/Hero";
 import Logos from "@/components/erp/Logos";
@@ -10,7 +10,7 @@ import FAQ from "@/components/erp/FAQ";
 import FinalCTA from "@/components/erp/FinalCTA";
 import Footer from "@/components/erp/Footer";
 import { FAQ_ITEMS } from "@/components/erp/faq-data";
-import heroImg from "@/assets/hero-devops.jpg";
+const heroImg = "/media/erp/business-transformation-poster.webp";
 import { SITE_URL } from "@/lib/seo";
 
 const PAGE_URL = `${SITE_URL}/erp`;
@@ -105,6 +105,7 @@ export const Route = createFileRoute("/erp")({
 });
 
 function ErpLanding() {
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   // Reveal-on-scroll (ported from the ERP landing)
   useEffect(() => {
     const els = document.querySelectorAll(".erp-root .reveal");
@@ -124,8 +125,8 @@ function ErpLanding() {
   }, []);
 
   return (
-    <div className="erp-root dark bg-app min-h-screen">
-      <Nav />
+    <div className={`erp-root ${theme} bg-app min-h-screen`}>
+      <Nav theme={theme} onThemeChange={setTheme} />
       <main>
         <Hero />
         <Logos />

@@ -18,7 +18,7 @@ export default function Logos() {
     <section id="confianza" data-screen-label="02 Logos" className="relative py-16 sm:py-20 border-t border-line-soft">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         <div className="text-center">
-          <p className="text-[12.5px] font-mono uppercase tracking-[0.16em] text-fg-4">
+          <p className="text-[15px] font-medium text-fg-3">
             Más de <span className="text-fg-2">100 clientes</span> operan con NEXTELCO ERP
           </p>
         </div>

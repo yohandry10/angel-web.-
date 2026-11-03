@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import logoNavbar from "@/assets/logo-navbar-white.png";
+import { BrandLogo } from "@/components/BrandLogo";
 import heroImg from "@/assets/hero-devops.jpg";
 import { SITE_URL } from "@/lib/seo";
 
@@ -92,14 +92,14 @@ function Experiencia() {
   useReveal();
 
   return (
-    <main className="bg-background text-foreground overflow-x-hidden">
+    <main className="corporate-root bg-background text-foreground overflow-x-hidden">
       {/* NAVBAR */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-line/50">
-        <div className="flex items-center justify-between px-[clamp(24px,5vw,80px)] py-5">
-          <Link to="/" className="flex items-center gap-3 group">
-            <img src={logoNavbar} alt="NEXTELCO" className="h-9 w-auto" />
+      <header className="corporate-nav fixed top-0 left-0 right-0 z-50 nav-blur">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 h-16 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-3 group" aria-label="NEXTELCO — página principal">
+            <BrandLogo />
           </Link>
-          <Link to="/" className="font-mono text-[12px] tracking-[0.2em] uppercase border-b border-foreground/60 pb-0.5 hover:border-cyan-glow hover:text-cyan-glow transition-colors duration-300">
+          <Link to="/" className="btn btn-ghost">
             ← Inicio
           </Link>
         </div>
@@ -107,14 +107,9 @@ function Experiencia() {
 
       {/* HERO / INTRO */}
       <section className="px-[clamp(24px,5vw,80px)] pt-[clamp(140px,20vh,200px)] pb-[clamp(48px,8vh,96px)] relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
-        <div className="relative">
-          <div className="reveal mb-8 flex items-center gap-4">
-            <div className="w-10 h-px bg-cyan-glow" />
-            <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">Experiencia · DevOps · Cloud · IA</span>
-          </div>
-          <h1 className="reveal max-w-5xl font-sans font-semibold tracking-[-0.05em] mb-10" style={{ fontSize: "clamp(40px,7vw,104px)", lineHeight: 0.9 }}>
-            DevOps, Cloud e <span className="font-serif-it font-normal text-amber-glow">inteligencia</span> artificial <span className="font-serif-it font-normal text-cyan-glow">aplicada</span>.
+                <div className="relative">
+          <h1 className="reveal max-w-5xl font-sans font-semibold tracking-[-0.04em] mb-10">
+            DevOps, Cloud e <span className="text-amber-glow">inteligencia</span> artificial <span className="text-cyan-glow">aplicada</span>.
           </h1>
           <p className="reveal max-w-3xl text-base md:text-lg leading-relaxed text-muted-foreground">
             Contamos con experiencia en el diseño, implementación, automatización y operación de plataformas tecnológicas modernas. Combinamos infraestructura, desarrollo, automatización y análisis inteligente para modernizar procesos, reducir tareas manuales, mejorar la calidad de los despliegues y tomar decisiones basadas en información técnica confiable — en entornos empresariales y financieros como banca, servicios tecnológicos y aplicaciones web.
@@ -124,20 +119,16 @@ function Experiencia() {
 
       {/* PILARES */}
       <section className="px-[clamp(24px,5vw,80px)] py-[clamp(48px,8vh,96px)] border-t border-line">
-        <div className="reveal-left flex items-center gap-4 mb-16">
-          <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ Capacidades · 03 pilares ]</span>
-          <div className="flex-1 hairline" />
-        </div>
         <div className="grid md:grid-cols-3 gap-px bg-line">
           {PILLARS.map((p, index) => (
             <div key={p.n} className="reveal-right" style={{ transitionDelay: `${index * 150}ms` }}>
               <div className="bg-background p-10 h-full group hover:bg-muted/40 transition-colors duration-700">
-                <div className="font-sans font-light text-cyan-glow mb-10 group-hover:text-amber-glow transition-colors duration-700" style={{ fontSize: "clamp(48px,5vw,88px)", lineHeight: 1, letterSpacing: "-0.05em" }}>{p.n}</div>
+                <div className="font-sans font-light text-cyan-glow mb-10 group-hover:text-amber-glow transition-colors duration-700" style={{ fontSize: "clamp(48px,5vw,88px)", lineHeight: 1, letterSpacing: "-0.04em" }}>{p.n}</div>
                 <h2 className="text-2xl font-medium mb-4">{p.t}</h2>
                 <p className="text-sm leading-relaxed text-muted-foreground mb-8">{p.d}</p>
                 <div className="flex flex-wrap gap-2">
                   {p.tags.map((tag) => (
-                    <span key={tag} className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground border border-line px-2.5 py-1 group-hover:border-cyan-glow/40 transition-colors duration-700">{tag}</span>
+                    <span key={tag} className="font-sans text-[13px] text-muted-foreground border border-line px-2.5 py-1 group-hover:border-cyan-glow/40 transition-colors duration-700">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -148,30 +139,26 @@ function Experiencia() {
 
       {/* PROYECTO DESTACADO — LAB IA + MCP + RAG + AGENTES */}
       <section className="px-[clamp(24px,5vw,80px)] py-[clamp(48px,8vh,96px)] border-t border-line">
-        <div className="reveal-left flex items-center gap-4 mb-16">
-          <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ Proyecto · IA, MCP, RAG y agentes ]</span>
-          <div className="flex-1 hairline" />
-        </div>
         <div className="reveal bg-ink border border-line">
           <div className="flex items-center justify-between px-5 py-3 border-b border-line">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-cyan-glow shadow-[0_0_8px_var(--cyan-glow)]" />
-              <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">~/labs/release-readiness-agent</span>
+              <span className="font-sans text-[13px] text-muted-foreground">~/labs/release-readiness-agent</span>
             </div>
-            <span className="font-mono text-[10px] text-muted-foreground/60">poc</span>
+            <span className="font-sans text-[13px] text-muted-foreground">poc</span>
           </div>
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 p-8 md:p-12">
             <div className="lg:col-span-5">
-              <h2 className="font-sans font-medium tracking-[-0.03em] mb-6" style={{ fontSize: "clamp(28px,3vw,48px)", lineHeight: 1.05 }}>
-                Un agente que decide si tu versión <span className="font-serif-it font-normal text-amber-glow">está lista</span> para desplegar.
+              <h2 className="font-sans font-medium tracking-[-0.03em] mb-6">
+                Un agente que decide si tu versión <span className="text-amber-glow">está lista</span> para desplegar.
               </h2>
               <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
                 Laboratorio de IA aplicada a DevOps orientado a la automatización de pruebas de APIs y evaluación de preparación para despliegues. El agente recibe resultados de pruebas, monitoreo y seguridad, evalúa condiciones y determina si una versión puede avanzar — generando archivos estructurados y resúmenes comprensibles para los equipos. Puede evolucionar a un Release Readiness Agent, un asistente de troubleshooting o un analizador de incidentes integrado con Jenkins, GitHub Actions, GitLab CI/CD o Azure DevOps.
               </p>
             </div>
             <div className="lg:col-span-7 flex flex-col justify-center">
-              <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60 mb-5">Flujo de la solución</div>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-4 font-mono text-[11px] md:text-[13px] mb-8">
+              <div className="font-sans text-[13px] text-muted-foreground mb-5">Flujo de la solución</div>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-4 font-sans text-[13px] md:text-[13px] mb-8">
                 {["Karate · E2E APIs", "MCP · tools", "FAISS · RAG", "LLM", "LangGraph", "Agente"].map((s, i, arr) => (
                   <span key={s} className="flex items-center gap-3">
                     <span className="text-foreground border border-line px-3 py-2 bg-background">{s}</span>
@@ -179,7 +166,7 @@ function Experiencia() {
                   </span>
                 ))}
               </div>
-              <div className="border-t border-line pt-5 font-mono text-[11px] md:text-[12px] leading-relaxed text-muted-foreground">
+              <div className="border-t border-line pt-5 font-sans text-[13px] md:text-[12px] leading-relaxed text-muted-foreground">
                 <span className="text-cyan-glow">$ output</span> → ¿versión lista para desplegar?{"  "}<span className="text-amber-glow">+ resumen ejecutivo</span>
               </div>
             </div>
@@ -189,14 +176,10 @@ function Experiencia() {
 
       {/* IA POR SECTOR */}
       <section className="px-[clamp(24px,5vw,80px)] py-[clamp(48px,8vh,96px)] border-t border-line">
-        <div className="reveal-left flex items-center gap-4 mb-16">
-          <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ IA por sector ]</span>
-          <div className="flex-1 hairline" />
-        </div>
         <div className="grid md:grid-cols-2 gap-px bg-line">
           {SECTORS.map((sec) => (
             <div key={sec.t} className="reveal bg-background p-10 group hover:bg-muted/40 transition-colors duration-700">
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-cyan-glow mb-6">{sec.label}</div>
+              <div className="font-sans text-[13px] text-cyan-glow mb-6">{sec.label}</div>
               <h2 className="text-2xl md:text-3xl font-medium mb-4 group-hover:text-cyan-glow transition-colors duration-700">{sec.t}</h2>
               <p className="text-sm leading-relaxed text-muted-foreground">{sec.d}</p>
             </div>
@@ -206,15 +189,11 @@ function Experiencia() {
 
       {/* METODOLOGÍA */}
       <section className="px-[clamp(24px,5vw,80px)] py-[clamp(48px,8vh,96px)] border-t border-line">
-        <div className="reveal-left flex items-center gap-4 mb-16">
-          <span className="font-mono text-[10px] tracking-[0.35em] uppercase text-cyan-glow">[ Metodología · progresiva ]</span>
-          <div className="flex-1 hairline" />
-        </div>
         <div className="grid md:grid-cols-4 gap-px bg-line">
           {METHOD.map((step, index) => (
             <div key={step.n} className="reveal-right" style={{ transitionDelay: `${index * 120}ms` }}>
               <div className="bg-background p-10 h-full group hover:bg-muted/40 transition-colors duration-700">
-                <div className="font-sans font-light text-cyan-glow mb-10 group-hover:text-amber-glow transition-colors duration-700" style={{ fontSize: "clamp(48px,5vw,88px)", lineHeight: 1, letterSpacing: "-0.05em" }}>{step.n}</div>
+                <div className="font-sans font-light text-cyan-glow mb-10 group-hover:text-amber-glow transition-colors duration-700" style={{ fontSize: "clamp(48px,5vw,88px)", lineHeight: 1, letterSpacing: "-0.04em" }}>{step.n}</div>
                 <h3 className="text-xl font-medium mb-4">{step.t}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{step.d}</p>
               </div>
@@ -227,17 +206,17 @@ function Experiencia() {
       <section className="px-[clamp(24px,5vw,80px)] pt-[clamp(64px,10vh,120px)] pb-16 border-t border-line relative overflow-hidden">
         <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-cyan-glow/10 blur-[120px]" />
         <div className="relative">
-          <h2 className="reveal font-sans font-medium tracking-[-0.05em] max-w-5xl mb-12" style={{ fontSize: "clamp(40px,6vw,96px)", lineHeight: 0.9 }}>
-            ¿Cómo podemos ayudarte con <span className="font-serif-it font-normal text-amber-glow">tu proyecto</span>?
+          <h2 className="reveal font-sans font-medium tracking-[-0.04em] max-w-5xl mb-12">
+            ¿Cómo podemos ayudarte con <span className="text-amber-glow">tu proyecto</span>?
           </h2>
           <p className="reveal max-w-3xl text-base md:text-lg leading-relaxed text-muted-foreground mb-12">
             Te acompañamos desde la evaluación y la arquitectura hasta la automatización, el despliegue, el monitoreo y la optimización de tu plataforma. Empezamos con DevOps, migración a la nube, CI/CD, contenedores, Kubernetes, seguridad o IA — mediante un laboratorio controlado o un proyecto piloto que demuestre valor sin riesgo.
           </p>
-          <Link to="/" className="reveal group inline-flex items-center gap-4 bg-foreground text-ink px-8 py-5 font-mono text-xs tracking-[0.25em] uppercase hover:bg-cyan-glow transition-colors duration-500">
+          <Link to="/" className="btn btn-primary btn-lg group">
             Volver al inicio
             <span className="inline-block transition-transform duration-500 group-hover:translate-x-2">→</span>
           </Link>
-          <div className="mt-24 pt-8 border-t border-line font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+          <div className="mt-24 pt-8 border-t border-line font-sans text-[13px] text-muted-foreground">
             © 2026 NEXTELCO SAC — DevOps, Cloud & IA aplicada</div>
             <div className="flex gap-3"><a href="/aviso-legal" className="hover:text-foreground transition-colors">Aviso legal</a> <span aria-hidden="true">·</span> <a href="/privacidad" className="hover:text-foreground transition-colors">Política de privacidad</a>
           </div>
