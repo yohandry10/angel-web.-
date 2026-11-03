@@ -20,6 +20,15 @@
         ],
         "createdAt": "2026-11-03T10:54:37.272Z",
         "reason": "Agent: existing corporate-site font import predates this ERP refinement; the ERP renders in Geist, so changing Inter would broaden the work to a separate surface."
+      },
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "files": [
+          "src/components/NextelcoHero.css"
+        ],
+        "createdAt": "2026-11-03T14:13:24.662Z",
+        "reason": "Agent: src/styles.css already defines and locally hosts Geist as the Nextelco corporate and ERP typeface; the laptop interface intentionally preserves that existing identity. No font replacement was requested."
       }
     ]
   }
