@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import Nav from "@/components/erp/Nav";
 import Hero from "@/components/erp/Hero";
-import Logos from "@/components/erp/Logos";
 import EventArchitecture from "@/components/erp/EventArchitecture";
 import Ecosystem from "@/components/erp/Ecosystem";
 import Testimonials from "@/components/erp/Testimonials";
@@ -10,8 +9,9 @@ import FAQ from "@/components/erp/FAQ";
 import FinalCTA from "@/components/erp/FinalCTA";
 import Footer from "@/components/erp/Footer";
 import { FAQ_ITEMS } from "@/components/erp/faq-data";
-const heroImg = "/media/erp/business-transformation-poster.webp";
+const heroImg = "/media/erp/connected-business-hero.webp";
 import { SITE_URL } from "@/lib/seo";
+import "@/components/erp/ErpExperience.css";
 
 const PAGE_URL = `${SITE_URL}/erp`;
 const TITLE = "NEXTELCO ERP — Ventas, inventario y contabilidad conectados";
@@ -23,9 +23,14 @@ export const Route = createFileRoute("/erp")({
   head: () => ({
     meta: [
       { title: TITLE },
+      { name: "theme-color", content: "#fbfcff" },
       { name: "description", content: DESC },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
-      { name: "keywords", content: "NEXTELCO ERP, ERP Perú, ERP peruano, facturación electrónica SUNAT, software contable Perú, inventario multi-almacén, PECOSA, POS y cajas, guías de remisión electrónicas, SIRE, libros electrónicos PLE, planillas PLAME, conciliación bancaria" },
+      {
+        name: "keywords",
+        content:
+          "NEXTELCO ERP, ERP Perú, ERP peruano, facturación electrónica SUNAT, software contable Perú, inventario multi-almacén, PECOSA, POS y cajas, guías de remisión electrónicas, SIRE, libros electrónicos PLE, planillas PLAME, conciliación bancaria",
+      },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_PE" },
       { property: "og:site_name", content: "NEXTELCO" },
@@ -38,7 +43,23 @@ export const Route = createFileRoute("/erp")({
       { name: "twitter:description", content: DESC },
       { name: "twitter:image", content: `${SITE_URL}${heroImg}` },
     ],
-    links: [{ rel: "canonical", href: PAGE_URL }],
+    links: [
+      { rel: "canonical", href: PAGE_URL },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroImg,
+        type: "image/webp",
+        media: "(max-width: 1799px)",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/media/erp/connected-business-wide.webp",
+        type: "image/webp",
+        media: "(min-width: 1800px)",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -105,7 +126,7 @@ export const Route = createFileRoute("/erp")({
 });
 
 function ErpLanding() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   // Reveal-on-scroll (ported from the ERP landing)
   useEffect(() => {
     const els = document.querySelectorAll(".erp-root .reveal");
@@ -118,18 +139,17 @@ function ErpLanding() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
 
   return (
-    <div className={`erp-root ${theme} bg-app min-h-screen`}>
+    <div className={`erp-root erp-product-page ${theme} bg-app min-h-screen`}>
       <Nav theme={theme} onThemeChange={setTheme} />
       <main>
         <Hero />
-        <Logos />
         <EventArchitecture />
         <Ecosystem />
         <Testimonials />

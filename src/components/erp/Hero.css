@@ -1,177 +1,427 @@
 .erp-root .erp-hero {
-  --hero-ground: var(--cinema-bg);
-  --hero-ink: var(--cinema-text);
-  --hero-secondary: var(--cinema-secondary);
-  --hero-accent: var(--action-bg);
-  position: relative;
-  overflow: clip;
-  background: var(--hero-ground);
-  color: var(--hero-ink);
-}
-.erp-hero-stage {
   position: relative;
   isolation: isolate;
-  min-height: clamp(640px, 82svh, 800px);
-  max-width: 1800px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding: 120px max(32px, calc((100% - 1180px) / 2)) 80px;
+  overflow: hidden;
+  min-height: 780px;
+  height: 100svh;
+  max-height: 1200px;
+  background: #fbfcff;
+  color: #050609;
+  color-scheme: light;
 }
-.erp-hero-cinema {
+.erp-orbit-scene {
   position: absolute;
   z-index: -1;
-  inset: 0 0 0 15%;
-  pointer-events: none;
-  /* The film is a layer of the hero. The intersecting masks dissolve every
-     edge into the page rather than drawing a rectangular media component. */
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 16%, #000 48%, #000 92%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 18%, #000 74%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, transparent 16%, #000 48%, #000 92%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 18%, #000 74%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  container-type: inline-size;
 }
-.erp-hero-poster, .erp-hero-film {
-  position: absolute;
-  inset: 0;
+.erp-orbit-scene > picture,
+.erp-orbit-scene > picture img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 55% center;
 }
-.erp-hero-film { opacity: 0; transition: opacity 400ms ease; }
-.erp-hero-film.is-visible { opacity: 1; }
-.erp-hero-copy { position: relative; z-index: 1; min-width: 0; max-width: 640px; }
-.erp-hero-copy h1 {
+.erp-orbit-scene > picture {
+  mask-image:
+    linear-gradient(90deg, transparent, #000 18%), linear-gradient(180deg, transparent, #000 2%);
+  mask-composite: intersect;
+}
+.erp-hero-copy {
+  position: absolute;
+  left: 4.5%;
+  top: 28%;
+  width: 46%;
+}
+.erp-root .erp-hero-copy h1 {
   margin: 0;
-  color: var(--hero-ink);
-  font-size: var(--type-display);
-  font-weight: 500;
+  font-size: clamp(64px, 5.7vw, 116px);
+  line-height: 0.97;
+  font-weight: 850;
   letter-spacing: -0.04em;
-  line-height: 1.045;
 }
-.erp-hero-copy h1 span { display: block; white-space: nowrap; }
+.erp-hero-copy h1 span {
+  display: block;
+  white-space: nowrap;
+}
+.erp-hero-copy h1 span:last-child {
+  color: #0059f7;
+}
 .erp-hero-copy > p:first-of-type {
-  max-width: 390px;
-  margin: 28px 0 0;
-  color: var(--hero-secondary);
-  font-size: 17px;
-  line-height: 1.65;
+  margin: 27px 0 0;
+  font-size: clamp(19px, 1.65vw, 28px);
+  line-height: 1.45;
+  letter-spacing: -0.025em;
+}
+.erp-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-top: 30px;
 }
 .erp-hero-cta {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  min-height: 52px;
-  margin-top: 30px;
-  padding: 0 22px;
-  border-radius: var(--control-radius);
-  background: var(--hero-accent);
-  color: var(--on-action);
-  font-size: 15px;
+  gap: 30px;
+  min-height: 50px;
+  padding: 0 21px;
+  border-radius: 5px;
+  color: #fff;
+  background: #0059f7;
+  font-size: 14px;
   font-weight: 600;
-  transition: background 180ms, transform 180ms;
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 160ms ease;
 }
-.erp-hero-cta:hover { background: var(--action-hover); }
-.erp-hero-cta:active { transform: translateY(2px); }
-.erp-hero-cta svg { transition: transform 180ms; }
-.erp-hero-cta:hover svg { transform: translate(2px, -2px); }
-.erp-hero-copy .erp-hero-support { margin: 18px 0 0; color: var(--hero-secondary); font-size: 13px; line-height: 1.5; }
+.erp-hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: #09234c;
+  font-size: 14px;
+}
+.erp-hero-copy .erp-hero-support {
+  margin: 20px 0 0;
+  color: #334862;
+  font-size: 13px;
+}
 .erp-hero-bottom {
-  position: relative;
+  position: absolute;
+  bottom: 28px;
+  left: 4.5%;
+  right: 4.5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  color: #15315b;
+  font-size: 13px;
+}
+.erp-hero-bottom > span {
+  font-weight: 600;
+}
+.erp-hero-bottom > a {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 44px;
+}
+
+/* The generated monitor is a physical frame for this illustrative ERP interface. */
+.erp-control-screen {
+  position: absolute;
+  left: 44.53%;
+  top: 34.06%;
+  width: 41.44%;
+  height: 30.8%;
+  display: flex;
+  overflow: hidden;
+  background: #f4f7fc;
+  color: #12243f;
+  border-radius: 0.25cqw;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 91% 100%, 0 100%);
+  line-height: 1.2;
+}
+.erp-control-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 8.1cqw;
+  padding: 1.1cqw 0.7cqw;
+  gap: 0.5cqw;
+  background: #06162d;
+  color: #b9c9e1;
+}
+.erp-control-sidebar .nextelco-brandmark {
+  width: 6.5cqw;
+  margin-bottom: 1cqw;
+}
+.erp-root .erp-control-sidebar .nextelco-logo-on-dark {
+  display: block;
+}
+.erp-root .erp-control-sidebar .nextelco-logo-on-light {
+  display: none;
+}
+.erp-control-sidebar > span {
+  display: flex;
+  align-items: center;
+  gap: 0.4cqw;
+  padding: 0.6cqw 0.4cqw;
+  font-size: 0.55cqw;
+  line-height: 1.3;
+  border-radius: 0.3cqw;
+}
+.erp-control-sidebar > .is-active {
+  color: #fff;
+  background: #0059f7;
+}
+.erp-control-sidebar svg:not(.nextelco-brandmark) {
+  width: 0.85cqw;
+  height: 0.85cqw;
+  flex-shrink: 0;
+}
+.erp-control-sidebar > small {
+  margin-top: auto;
+  font-size: 0.5cqw;
+  color: #b9c9e1;
+}
+.erp-control-main {
+  flex: 1;
+  min-width: 0;
+  padding: 1cqw 1.1cqw;
+}
+.erp-control-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  max-width: 1244px;
-  margin: 0 auto;
-  padding: 6px 32px 26px;
-  color: var(--hero-secondary);
-  font-size: 14px;
+  margin-bottom: 0.8cqw;
+  gap: 1cqw;
 }
-.erp-hero-bottom p { margin: 0; color: var(--hero-ink); }
-.erp-hero-bottom p span { margin-left: 8px; color: var(--hero-secondary); }
-.erp-hero-bottom a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; }
-.erp-hero-bottom a:hover { color: var(--hero-ink); }
-.erp-hero-bottom a svg { transition: transform 180ms; }
-.erp-hero-bottom a:hover svg { transform: translateY(3px); }
-@media (min-width: 1800px) {
-  .erp-hero-stage { padding-inline: 130px; }
+.erp-control-heading > strong {
+  font-size: 1.12cqw;
+  letter-spacing: -0.025em;
 }
-@media (max-width: 1099px) and (min-width: 768px) {
-  .erp-hero-stage { min-height: 720px; align-items: flex-start; padding-top: 150px; padding-inline: 40px; }
-  .erp-hero-copy h1 { font-size: 58px; }
-  .erp-hero-cinema { inset: 180px -140px 0 10%; }
-  .erp-hero-poster, .erp-hero-film { object-position: 60% center; }
+.erp-control-heading > span {
+  font-size: 0.5cqw;
+  color: #4c607d;
 }
-@media (max-width: 767px) {
-  .erp-hero-stage { min-height: 780px; display: block; padding: 106px 24px 0; }
-  .erp-hero-copy h1 { font-size: clamp(30px, 9.5vw, 64px); line-height: 1.08; letter-spacing: -0.04em; }
-  .erp-hero-copy > p:first-of-type { margin-top: 22px; max-width: 460px; font-size: 16px; line-height: 1.6; }
-  .erp-hero-desktop-break { display: none; }
-  .erp-hero-cta { margin-top: 24px; min-height: 50px; }
-  .erp-hero-copy .erp-hero-support { font-size: 12px; margin-top: 14px; }
-  .erp-hero-cinema {
-    inset: 408px 0 0;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, transparent, #000 18%, #000 75%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, transparent, #000 18%, #000 75%, transparent);
+.erp-control-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6cqw;
+}
+.erp-control-stats > div {
+  padding: 0.65cqw;
+  background: #e9f0fd;
+  border-radius: 0.35cqw;
+}
+.erp-control-stats span,
+.erp-control-stats small {
+  display: block;
+  font-size: 0.52cqw;
+  color: #425775;
+  line-height: 1.4;
+}
+.erp-control-stats strong {
+  display: block;
+  margin: 0.3cqw 0;
+  font-size: 1.25cqw;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 650;
+}
+.erp-control-stats small {
+  font-size: 0.43cqw;
+}
+.erp-control-chart {
+  margin-top: 0.7cqw;
+  padding: 0.7cqw 0.7cqw 0.3cqw;
+  background: #fff;
+  border-radius: 0.35cqw;
+}
+.erp-control-chart > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 1cqw;
+  font-size: 0.57cqw;
+}
+.erp-control-chart > div:first-child span {
+  color: #51617a;
+}
+.erp-control-chart > svg {
+  display: block;
+  width: 100%;
+  height: 4.6cqw;
+  margin-top: 0.35cqw;
+}
+.erp-control-days {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.43cqw;
+  color: #4c607d;
+}
+.erp-control-orders {
+  margin-top: 0.65cqw;
+  font-size: 0.49cqw;
+  padding-right: 2.8cqw;
+}
+.erp-control-orders > strong {
+  display: block;
+  margin-bottom: 0.3cqw;
+  font-size: 0.6cqw;
+}
+.erp-control-orders > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5cqw;
+  padding: 0.3cqw 0;
+}
+.erp-control-orders b {
+  font-weight: 400;
+}
+.erp-control-orders em {
+  color: #176148;
+  font-style: normal;
+  background: #e3f4eb;
+  padding: 0.15cqw 0.3cqw;
+  border-radius: 0.2cqw;
+}
+.erp-hero :is(a, button) {
+  touch-action: manipulation;
+}
+.erp-hero-cta:active {
+  transform: scale(0.97);
+}
+@media (hover: hover) and (pointer: fine) {
+  .erp-hero-cta:hover {
+    background: #0048cf;
   }
-  .erp-hero-poster, .erp-hero-film { object-position: 62% center; }
-  .erp-hero-bottom { padding: 0 24px 26px; flex-direction: column; align-items: flex-start; gap: 8px; font-size: 13px; }
-  .erp-hero-bottom p span { margin-left: 5px; }
+  .erp-hero-explore:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .erp-hero-copy {
+    animation: erp-copy-enter 600ms var(--ease-out) both;
+  }
+  @keyframes erp-copy-enter {
+    from {
+      opacity: 0.7;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+@media (min-width: 1800px) {
+  .erp-orbit-scene {
+    aspect-ratio: 2 / 1;
+  }
+  .erp-control-screen {
+    left: 44.6%;
+    top: 31.34%;
+    width: 43.6%;
+    height: 34.85%;
+  }
+  .erp-control-main {
+    padding-block: 0.7cqw;
+  }
+  .erp-control-stats > div {
+    padding-block: 0.5cqw;
+  }
+  .erp-control-stats small {
+    display: none;
+  }
+  .erp-control-chart {
+    margin-top: 0.5cqw;
+  }
+  .erp-control-chart > svg {
+    height: 3cqw;
+  }
+  .erp-control-orders {
+    margin-top: 0.5cqw;
+  }
+}
+@media (max-width: 1100px) {
+  .erp-orbit-scene {
+    height: auto;
+    width: 110%;
+    right: -10%;
+  }
+  .erp-hero-copy {
+    top: 26%;
+  }
+  .erp-root .erp-hero-copy h1 {
+    font-size: 6.8vw;
+  }
+  .erp-hero-copy > p:first-of-type {
+    font-size: 19px;
+  }
+}
+@media (max-width: 800px) {
+  .erp-root .erp-hero {
+    height: 1050px;
+    min-height: 100svh;
+    max-height: none;
+  }
+  .erp-hero-copy {
+    left: 24px;
+    top: 140px;
+    width: calc(100% - 48px);
+  }
+  .erp-root .erp-hero-copy h1 {
+    font-size: clamp(58px, 10vw, 80px);
+  }
+  .erp-orbit-scene {
+    width: 145%;
+    right: -10%;
+  }
+  .erp-hero-bottom {
+    left: 24px;
+    right: 24px;
+  }
+  .erp-hero-bottom > a {
+    display: none;
+  }
+}
+@media (max-width: 540px) {
+  .erp-root .erp-hero {
+    height: 850px;
+  }
+  .erp-hero-copy {
+    top: 135px;
+  }
+  .erp-root .erp-hero-copy h1 {
+    font-size: clamp(43px, 11.9vw, 63px);
+  }
+  .erp-hero-copy > p:first-of-type {
+    font-size: 18px;
+    margin-top: 21px;
+  }
+  .erp-hero-actions {
+    gap: 15px;
+    margin-top: 24px;
+  }
+  .erp-hero-cta {
+    font-size: 13px;
+    gap: 16px;
+    min-height: 48px;
+    padding-inline: 16px;
+  }
+  .erp-hero-explore {
+    font-size: 13px;
+    gap: 5px;
+  }
+  .erp-hero-copy .erp-hero-support {
+    font-size: 12px;
+    margin-top: 17px;
+  }
+  .erp-orbit-scene {
+    width: 170%;
+    right: -10%;
+  }
+  .erp-hero-bottom {
+    display: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .erp-hero *, .erp-hero *::before, .erp-hero *::after { transition: none !important; animation: none !important; }
-  .erp-hero-cta:hover svg, .erp-hero-cta:active, .erp-hero-bottom a:hover svg { transform: none; }
-}
-
-/* The supplied Sume film is portrait. Keep its complete composition visible. */
-.erp-hero-stage--portrait {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  grid-template-areas: "copy cinema";
-  gap: 48px;
-  padding-block: 88px 48px;
-}
-.erp-hero-stage--portrait .erp-hero-copy { grid-area: copy; }
-.erp-hero-stage--portrait .erp-hero-cinema {
-  grid-area: cinema;
-  position: relative;
-  inset: auto;
-  z-index: 0;
-  height: clamp(520px, 70svh, 720px);
-  width: auto;
-  max-width: 100%;
-  aspect-ratio: 4 / 7;
-  justify-self: end;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent), linear-gradient(180deg, transparent, #000 12%, #000 86%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent), linear-gradient(180deg, transparent, #000 12%, #000 86%, transparent);
-}
-.erp-hero-stage--portrait :is(.erp-hero-poster, .erp-hero-film) {
-  object-fit: contain;
-  object-position: center;
-}
-@media (min-width: 768px) and (max-width: 1099px) {
-  .erp-hero-stage--portrait { gap: 32px; padding-block: 104px 40px; }
-  .erp-hero-stage--portrait .erp-hero-copy h1 { font-size: clamp(40px, 5.15vw, 58px); }
-  .erp-hero-stage--portrait .erp-hero-cinema { height: clamp(440px, 60svh, 600px); }
-}
-@media (max-width: 767px) {
-  .erp-hero-stage--portrait {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    min-height: 0;
-    padding: 106px 24px 0;
+  .erp-hero-copy {
+    animation: none;
   }
-  .erp-hero-stage--portrait .erp-hero-copy { order: 0; }
-  .erp-hero-stage--portrait .erp-hero-cinema {
-    order: 1;
-    width: 100%;
-    max-width: 440px;
-    height: auto;
-    align-self: center;
-    flex-shrink: 0;
+  .erp-hero-cta {
+    transition: none;
+  }
+  .erp-hero-cta:active {
+    transform: none;
   }
 }

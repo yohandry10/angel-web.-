@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Ic } from "./Icons";
 
 const ECOSYSTEM = [
@@ -100,55 +100,94 @@ const ECOSYSTEM = [
   },
 ];
 
+const MODULE_GROUPS = [
+  {
+    id: "comercial",
+    name: "Comercial",
+    title: "De la cotización a la venta.",
+    items: [0, 1, 2, 6],
+  },
+  {
+    id: "operaciones",
+    name: "Operaciones",
+    title: "Cada producto, en su lugar.",
+    items: [3, 4, 5, 14],
+  },
+  { id: "finanzas", name: "Finanzas", title: "Las cuentas claras, siempre.", items: [7, 8, 9, 10] },
+  {
+    id: "administracion",
+    name: "Administración",
+    title: "Personas, documentos y decisiones.",
+    items: [11, 12, 13, 15],
+  },
+];
+
 export default function Ecosystem() {
+  const [active, setActive] = useState(MODULE_GROUPS[0].id);
+  const group = MODULE_GROUPS.find((item) => item.id === active) ?? MODULE_GROUPS[0];
   return (
-    <section id="modulos" data-screen-label="05 Ecosistema" className="relative py-20 sm:py-28 border-t border-line">
-      <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div className="max-w-[44ch]">
-            <h2 className="section-title">
-              Dieciséis módulos.
-              <br />
-              <span className="text-fg-3">Un solo sistema.</span>
-            </h2>
+    <section id="modulos" className="erp-modules-section">
+      <div className="erp-section-shell">
+        <div className="erp-modules-heading">
+          <h2>
+            16 módulos.
+            <br />
+            <span>Un solo sistema.</span>
+          </h2>
+          <p>
+            Explora el ERP por área. De la primera cotización al cierre contable, sin perder la
+            conexión entre operaciones.
+          </p>
+        </div>
+        <div className="erp-modules-layout">
+          <div className="erp-module-navigation" aria-label="Áreas de los módulos">
+            {MODULE_GROUPS.map((item) => (
+              <button
+                type="button"
+                key={item.id}
+                className="erp-module-category"
+                aria-pressed={active === item.id}
+                aria-controls="erp-module-detail"
+                onClick={() => setActive(item.id)}
+              >
+                <span>
+                  <strong>{item.name}</strong>
+                  <small>{item.items.length} módulos</small>
+                </span>
+                <Ic.arrowR aria-hidden="true" />
+              </button>
+            ))}
+            <p className="erp-modules-country">
+              Web y aplicación de escritorio, con configuración por empresa. Alcance descrito para
+              Perú; consulta las funciones disponibles para Argentina y Colombia.
+            </p>
           </div>
-          <p className="text-[16px] leading-relaxed text-fg-2 max-w-[40ch]">
-            Desde la cotización hasta el asiento contable, desde la asistencia hasta la boleta. En web y en aplicación de escritorio, con configuración por empresa.
-          </p>
-        </div>
-
-        {/* Grid */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-line">
-          {ECOSYSTEM.map((m, i) => {
-            const I = m.icon;
-            return (
-              <div key={i} className="border-r border-b border-line p-5 sm:p-6 group lift cursor-default" style={{ background: "var(--bg)" }}>
-                <div className="flex items-center gap-2.5">
-                  <span
-                    className="inline-grid place-items-center w-9 h-9 rounded-md"
-                    style={{ background: "var(--surface)", border: "1px solid var(--line)" }}
-                  >
-                    <I size={15} className="text-fg-2 group-hover:text-accent transition-colors" />
-                  </span>
-                  <span className="text-[12.5px] font-medium text-fg-3">{m.cat}</span>
-                </div>
-                <div className="mt-5 text-[16px] font-semibold tracking-[-0.01em] text-fg">{m.name}</div>
-                <div className="mt-2 text-[14px] text-fg-2 leading-[1.6]">{m.desc}</div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Footer line */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[13.5px] text-fg-3 max-w-[70ch]">
-            La implementación contempla Perú, Argentina y Colombia, con funciones específicas por país. Esta página describe el alcance para Perú.
-          </p>
-          <a href="#cta" className="inline-flex items-center gap-1.5 text-[13px] text-fg-2 hover:text-accent transition-colors shrink-0">
-            Consultar el alcance para tu país
-            <Ic.arrowR size={13} />
-          </a>
+          <div
+            className="erp-module-detail"
+            id="erp-module-detail"
+            role="region"
+            aria-label={`Módulos de ${group.name.toLowerCase()}`}
+          >
+            <h3>{group.title}</h3>
+            <dl className="erp-module-list">
+              {group.items.map((index) => {
+                const item = ECOSYSTEM[index];
+                const Icon = item.icon;
+                return (
+                  <div key={item.name}>
+                    <dt>
+                      <Icon aria-hidden="true" />
+                      {item.name}
+                    </dt>
+                    <dd>{item.desc}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+            <a href="#cta" className="erp-modules-question">
+              Ver estos módulos en una demo <Ic.arrowR size={17} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
