@@ -70,18 +70,19 @@ function ControlScreen() {
             aria-label="Ejemplo de evolución de ventas durante la semana"
             role="img"
           >
-            <path d="M5 85H435M5 48H435M5 12H435" stroke="#e3eaf4" strokeWidth="1" />
+            <path d="M5 85H435M5 48H435M5 12H435" stroke="var(--site-line)" strokeWidth="1" />
             <path
               d="M5 76L75 62L145 70L215 32L285 44L355 15L435 8"
               fill="none"
-              stroke="#0059f7"
+              stroke="var(--brand-blue)"
               strokeWidth="3"
               strokeLinejoin="round"
             />
             <path
               d="M5 86L75 80L145 84L215 64L285 70L355 48L435 50"
               fill="none"
-              stroke="#94bafc"
+              stroke="var(--brand-blue)"
+              strokeOpacity="0.45"
               strokeWidth="2"
               strokeLinejoin="round"
             />
