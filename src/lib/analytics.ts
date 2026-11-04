@@ -52,8 +52,10 @@ export function applyConsent(value: Consent) {
   window.dataLayer = window.dataLayer || [];
   window.gtag =
     window.gtag ||
-    function gtag(...args: unknown[]) {
-      window.dataLayer!.push(args);
+    function gtag() {
+      // gtag.js solo procesa el objeto `arguments`; un array con rest params se ignora.
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer!.push(arguments);
     };
   if (!measurementStarted) {
     window.gtag("consent", "default", {
