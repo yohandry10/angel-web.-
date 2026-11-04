@@ -13,8 +13,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as ErpRouteImport } from './routes/erp'
 import { Route as ExperienciaRouteImport } from './routes/experiencia'
+import { Route as FacturacionElectronicaSunatRouteImport } from './routes/facturacion-electronica-sunat'
 import { Route as PortafolioWebRouteImport } from './routes/portafolio-web'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
+import { Route as SistemaPosPeruRouteImport } from './routes/sistema-pos-peru'
+import { Route as SoftwareInventarioRouteImport } from './routes/software-inventario'
 import { Route as ApiContactRouteImport } from './routes/api.contact'
 
 const IndexRoute = IndexRouteImport.update({
@@ -37,6 +40,12 @@ const ExperienciaRoute = ExperienciaRouteImport.update({
   path: '/experiencia',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FacturacionElectronicaSunatRoute =
+  FacturacionElectronicaSunatRouteImport.update({
+    id: '/facturacion-electronica-sunat',
+    path: '/facturacion-electronica-sunat',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PortafolioWebRoute = PortafolioWebRouteImport.update({
   id: '/portafolio-web',
   path: '/portafolio-web',
@@ -45,6 +54,16 @@ const PortafolioWebRoute = PortafolioWebRouteImport.update({
 const PrivacidadRoute = PrivacidadRouteImport.update({
   id: '/privacidad',
   path: '/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SistemaPosPeruRoute = SistemaPosPeruRouteImport.update({
+  id: '/sistema-pos-peru',
+  path: '/sistema-pos-peru',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoftwareInventarioRoute = SoftwareInventarioRouteImport.update({
+  id: '/software-inventario',
+  path: '/software-inventario',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiContactRoute = ApiContactRouteImport.update({
@@ -58,8 +77,11 @@ export interface FileRoutesByFullPath {
   '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/facturacion-electronica-sunat': typeof FacturacionElectronicaSunatRoute
   '/portafolio-web': typeof PortafolioWebRoute
   '/privacidad': typeof PrivacidadRoute
+  '/sistema-pos-peru': typeof SistemaPosPeruRoute
+  '/software-inventario': typeof SoftwareInventarioRoute
   '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesByTo {
@@ -67,8 +89,11 @@ export interface FileRoutesByTo {
   '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/facturacion-electronica-sunat': typeof FacturacionElectronicaSunatRoute
   '/portafolio-web': typeof PortafolioWebRoute
   '/privacidad': typeof PrivacidadRoute
+  '/sistema-pos-peru': typeof SistemaPosPeruRoute
+  '/software-inventario': typeof SoftwareInventarioRoute
   '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesById {
@@ -77,8 +102,11 @@ export interface FileRoutesById {
   '/aviso-legal': typeof AvisoLegalRoute
   '/erp': typeof ErpRoute
   '/experiencia': typeof ExperienciaRoute
+  '/facturacion-electronica-sunat': typeof FacturacionElectronicaSunatRoute
   '/portafolio-web': typeof PortafolioWebRoute
   '/privacidad': typeof PrivacidadRoute
+  '/sistema-pos-peru': typeof SistemaPosPeruRoute
+  '/software-inventario': typeof SoftwareInventarioRoute
   '/api/contact': typeof ApiContactRoute
 }
 export interface FileRouteTypes {
@@ -88,8 +116,11 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/erp'
     | '/experiencia'
+    | '/facturacion-electronica-sunat'
     | '/portafolio-web'
     | '/privacidad'
+    | '/sistema-pos-peru'
+    | '/software-inventario'
     | '/api/contact'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -97,8 +128,11 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/erp'
     | '/experiencia'
+    | '/facturacion-electronica-sunat'
     | '/portafolio-web'
     | '/privacidad'
+    | '/sistema-pos-peru'
+    | '/software-inventario'
     | '/api/contact'
   id:
     | '__root__'
@@ -106,8 +140,11 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/erp'
     | '/experiencia'
+    | '/facturacion-electronica-sunat'
     | '/portafolio-web'
     | '/privacidad'
+    | '/sistema-pos-peru'
+    | '/software-inventario'
     | '/api/contact'
   fileRoutesById: FileRoutesById
 }
@@ -116,8 +153,11 @@ export interface RootRouteChildren {
   AvisoLegalRoute: typeof AvisoLegalRoute
   ErpRoute: typeof ErpRoute
   ExperienciaRoute: typeof ExperienciaRoute
+  FacturacionElectronicaSunatRoute: typeof FacturacionElectronicaSunatRoute
   PortafolioWebRoute: typeof PortafolioWebRoute
   PrivacidadRoute: typeof PrivacidadRoute
+  SistemaPosPeruRoute: typeof SistemaPosPeruRoute
+  SoftwareInventarioRoute: typeof SoftwareInventarioRoute
   ApiContactRoute: typeof ApiContactRoute
 }
 
@@ -151,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperienciaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/facturacion-electronica-sunat': {
+      id: '/facturacion-electronica-sunat'
+      path: '/facturacion-electronica-sunat'
+      fullPath: '/facturacion-electronica-sunat'
+      preLoaderRoute: typeof FacturacionElectronicaSunatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/portafolio-web': {
       id: '/portafolio-web'
       path: '/portafolio-web'
@@ -163,6 +210,20 @@ declare module '@tanstack/react-router' {
       path: '/privacidad'
       fullPath: '/privacidad'
       preLoaderRoute: typeof PrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sistema-pos-peru': {
+      id: '/sistema-pos-peru'
+      path: '/sistema-pos-peru'
+      fullPath: '/sistema-pos-peru'
+      preLoaderRoute: typeof SistemaPosPeruRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/software-inventario': {
+      id: '/software-inventario'
+      path: '/software-inventario'
+      fullPath: '/software-inventario'
+      preLoaderRoute: typeof SoftwareInventarioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/contact': {
@@ -180,8 +241,11 @@ const rootRouteChildren: RootRouteChildren = {
   AvisoLegalRoute: AvisoLegalRoute,
   ErpRoute: ErpRoute,
   ExperienciaRoute: ExperienciaRoute,
+  FacturacionElectronicaSunatRoute: FacturacionElectronicaSunatRoute,
   PortafolioWebRoute: PortafolioWebRoute,
   PrivacidadRoute: PrivacidadRoute,
+  SistemaPosPeruRoute: SistemaPosPeruRoute,
+  SoftwareInventarioRoute: SoftwareInventarioRoute,
   ApiContactRoute: ApiContactRoute,
 }
 export const routeTree = rootRouteImport

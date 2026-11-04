@@ -35,6 +35,9 @@ export function SiteFooter() {
             <Link to="/erp">NEXTELCO ERP</Link>
             <Link to="/portafolio-web">Portafolio web</Link>
             <Link to="/experiencia">Experiencia</Link>
+            <Link to="/facturacion-electronica-sunat">Facturación SUNAT</Link>
+            <Link to="/sistema-pos-peru">Sistema POS</Link>
+            <Link to="/software-inventario">Inventario</Link>
           </nav>
         </div>
         <div className="site-footer-bottom">

@@ -18,6 +18,9 @@ test("only public documents get short CDN caching while browsers revalidate", ()
     "/erp",
     "/portafolio-web",
     "/experiencia",
+    "/facturacion-electronica-sunat",
+    "/sistema-pos-peru",
+    "/software-inventario",
     "/aviso-legal",
     "/privacidad",
   ]) {

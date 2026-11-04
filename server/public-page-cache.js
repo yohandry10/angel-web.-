@@ -3,6 +3,9 @@ const PUBLIC_PAGES = new Set([
   "/erp",
   "/portafolio-web",
   "/experiencia",
+  "/facturacion-electronica-sunat",
+  "/sistema-pos-peru",
+  "/software-inventario",
   "/aviso-legal",
   "/privacidad",
 ]);

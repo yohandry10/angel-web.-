@@ -4,7 +4,17 @@ import { dirname } from "node:path";
 
 const base = process.argv[2] || "http://127.0.0.1:5173";
 const output = process.argv[3] || "docs/mobile-seo/seo-checks.json";
-const paths = ["/", "/erp", "/portafolio-web", "/experiencia", "/aviso-legal", "/privacidad"];
+const paths = [
+  "/",
+  "/erp",
+  "/portafolio-web",
+  "/experiencia",
+  "/facturacion-electronica-sunat",
+  "/sistema-pos-peru",
+  "/software-inventario",
+  "/aviso-legal",
+  "/privacidad",
+];
 const results = [];
 for (const path of paths) {
   const response = await fetch(base + path);
