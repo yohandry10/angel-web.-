@@ -46,6 +46,7 @@ export const Route = createFileRoute("/portafolio-web")({
         children: JSON.stringify({
           ...pageSchema("/portafolio-web", TITLE, DESCRIPTION, "CollectionPage"),
           mainEntity: { "@id": `${PAGE_URL}#projects` },
+          about: { "@id": `${PAGE_URL}#web-service` },
         }),
       },
       {

@@ -50,3 +50,24 @@ export function pageSchema(path: string, name: string, description: string, type
     publisher: { "@id": `${SITE_URL}#organization` },
   };
 }
+
+/** Describes the same services shown on the page, without ratings or invented offers. */
+export function webServicesSchema(services: readonly { title: string; description: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}/portafolio-web#web-service`,
+    name: "Diseño y desarrollo web",
+    url: `${SITE_URL}/portafolio-web#servicios-web`,
+    provider: { "@id": `${SITE_URL}#organization` },
+    areaServed: { "@type": "Country", name: "Perú" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Servicios de desarrollo web",
+      itemListElement: services.map(({ title, description }) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: title, description },
+      })),
+    },
+  };
+}

@@ -43,8 +43,37 @@ for (const path of paths) {
     ...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi),
   ].map(([, json]) => JSON.parse(json));
   assert.ok(schemas.length > 0, `${path}: valid structured data in SSR HTML`);
+  assert.ok(
+    schemas.some((schema) => ["WebPage", "CollectionPage"].includes(schema["@type"])),
+    `${path}: connected page schema`,
+  );
+  if (path === "/erp") {
+    assert.equal(
+      [...html.matchAll(/id="erp-faq-question-\d+"/g)].length,
+      9,
+      "all nine FAQ questions are server rendered",
+    );
+    const moduleLists = [...html.matchAll(/<dl class="erp-module-list">([\s\S]*?)<\/dl>/g)];
+    assert.equal(moduleLists.length, 4, "all four module areas are server rendered");
+    assert.equal(
+      moduleLists.flatMap(([, list]) => [...list.matchAll(/<dt>/g)]).length,
+      16,
+      "all sixteen modules have server-rendered descriptions",
+    );
+  }
   if (path === "/portafolio-web") {
     const list = schemas.find((schema) => schema["@type"] === "ItemList");
+    const service = schemas.find((schema) => schema["@type"] === "Service");
+    assert.equal(
+      service.hasOfferCatalog.itemListElement.length,
+      8,
+      "schema covers the eight visible services",
+    );
+    assert.equal(
+      [...html.matchAll(/srcSet="[^"]*responsive\//g)].length,
+      18,
+      "all project previews offer responsive sources",
+    );
     assert.equal(list.itemListElement.length, 18);
     for (const entry of list.itemListElement)
       assert.ok(html.includes(`id="${entry.item.url.split("#")[1]}"`));

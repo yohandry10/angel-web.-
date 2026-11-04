@@ -124,7 +124,6 @@ const MODULE_GROUPS = [
 
 export default function Ecosystem() {
   const [active, setActive] = useState(MODULE_GROUPS[0].id);
-  const group = MODULE_GROUPS.find((item) => item.id === active) ?? MODULE_GROUPS[0];
   return (
     <section id="modulos" className="erp-modules-section" aria-labelledby="erp-modules-title">
       <div className="erp-section-shell">
@@ -147,7 +146,7 @@ export default function Ecosystem() {
                 key={item.id}
                 className="erp-module-category"
                 aria-pressed={active === item.id}
-                aria-controls="erp-module-detail"
+                aria-controls={`erp-module-detail-${item.id}`}
                 onClick={() => setActive(item.id)}
               >
                 <span>
@@ -158,34 +157,38 @@ export default function Ecosystem() {
               </button>
             ))}
           </div>
-          <div
-            className="erp-module-detail"
-            id="erp-module-detail"
-            role="region"
-            aria-label={`Módulos de ${group.name.toLowerCase()}`}
-          >
-            <div className="erp-module-detail-heading">
-              <h3>{group.title}</h3>
-              <a href="#cta" className="erp-modules-question">
-                Solicitar una demo <Ic.arrowR size={17} aria-hidden="true" />
-              </a>
+          {MODULE_GROUPS.map((group) => (
+            <div
+              className="erp-module-detail"
+              key={group.id}
+              id={`erp-module-detail-${group.id}`}
+              hidden={active !== group.id}
+              role="region"
+              aria-label={`Módulos de ${group.name.toLowerCase()}`}
+            >
+              <div className="erp-module-detail-heading">
+                <h3>{group.title}</h3>
+                <a href="#cta" className="erp-modules-question">
+                  Solicitar una demo <Ic.arrowR size={17} aria-hidden="true" />
+                </a>
+              </div>
+              <dl className="erp-module-list">
+                {group.items.map((index) => {
+                  const item = ECOSYSTEM[index];
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.name}>
+                      <dt>
+                        <Icon aria-hidden="true" />
+                        {item.name}
+                      </dt>
+                      <dd>{item.desc}</dd>
+                    </div>
+                  );
+                })}
+              </dl>
             </div>
-            <dl className="erp-module-list">
-              {group.items.map((index) => {
-                const item = ECOSYSTEM[index];
-                const Icon = item.icon;
-                return (
-                  <div key={item.name}>
-                    <dt>
-                      <Icon aria-hidden="true" />
-                      {item.name}
-                    </dt>
-                    <dd>{item.desc}</dd>
-                  </div>
-                );
-              })}
-            </dl>
-          </div>
+          ))}
           <p className="erp-modules-country">
             Web y aplicación de escritorio, con configuración por empresa. Alcance descrito para
             Perú; consulta las funciones disponibles para Argentina y Colombia.

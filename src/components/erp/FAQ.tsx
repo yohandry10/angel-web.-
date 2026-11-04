@@ -46,11 +46,14 @@ export default function FAQ() {
           ))}
         </div>
         <div id="erp-faq-list" className="erp-faq-list" data-reveal>
-          {TOPICS[topic].items.map((index) => {
-            const item = FAQ_ITEMS[index];
+          {FAQ_ITEMS.map((item, index) => {
             const expanded = open === index;
             return (
-              <div className="erp-faq-item" key={item.q}>
+              <div
+                className="erp-faq-item"
+                key={item.q}
+                hidden={!TOPICS[topic].items.includes(index)}
+              >
                 <h3>
                   <button
                     type="button"

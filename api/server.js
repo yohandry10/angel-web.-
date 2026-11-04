@@ -1,5 +1,6 @@
 import { Readable } from "node:stream";
 import server from "../dist/server/server.js";
+import { publicPageCacheHeaders } from "../server/public-page-cache.js";
 
 export default async function handler(req, res) {
   const method = req.method;
@@ -36,6 +37,9 @@ export default async function handler(req, res) {
   webResponse.headers.forEach((value, key) => {
     res.setHeader(key, value);
   });
+  for (const [key, value] of Object.entries(publicPageCacheHeaders(webRequest, webResponse))) {
+    res.setHeader(key, value);
+  }
 
   if (webResponse.body) {
     Readable.fromWeb(webResponse.body).pipe(res);

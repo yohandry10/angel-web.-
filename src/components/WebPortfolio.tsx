@@ -24,7 +24,7 @@ import { preloadContactModal } from "@/lib/contact-loader";
 import { HomeContact } from "./HomeSections";
 import { KeyboardPortfolioHero } from "./KeyboardPortfolioHero";
 import { useSectionReveals } from "@/hooks/use-section-reveals";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, webServicesSchema } from "@/lib/seo";
 import {
   CATEGORIES,
   PROJECTS,
@@ -100,6 +100,8 @@ const SERVICES = [
     description: "Arquitectura de software, auditorías de código y acompañamiento estratégico.",
   },
 ];
+
+const portfolioServiceSchema = JSON.stringify(webServicesSchema(SERVICES)).replace(/</g, "\\u003c");
 
 function PortfolioNav({ onContact }: { onContact: () => void }) {
   const [open, setOpen] = useState(false);
@@ -224,6 +226,8 @@ function ProjectCard({
       >
         <img
           src={project.image}
+          srcSet={`${project.image.replace("/projects/", "/projects/responsive/").replace(".webp", "-480.webp")} 480w, ${project.image.replace("/projects/", "/projects/responsive/").replace(".webp", "-960.webp")} 960w, ${project.image} 1440w`}
+          sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 700px) calc((100vw - 64px) / 2), (max-width: 1100px) calc((91vw - 24px) / 2), (max-width: 1495px) calc((91vw - 56px) / 3), 435px"
           alt={project.imageAlt}
           width="1440"
           height="900"
@@ -448,6 +452,7 @@ export function WebPortfolio() {
       <DeferredContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
       <PortfolioNav onContact={openContact} />
       <script type="application/ld+json">{portfolioListSchema}</script>
+      <script type="application/ld+json">{portfolioServiceSchema}</script>
       <KeyboardPortfolioHero />
       <PortfolioServices />
       <PortfolioProjects />
