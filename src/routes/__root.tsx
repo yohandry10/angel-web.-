@@ -125,7 +125,7 @@ export const Route = createRootRoute({
               },
               url: SITE_URL,
               email: "operaciones@nextelco.cloud",
-              telephone: "+17862244098",
+              telephone: "+51904963051",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Lima",
