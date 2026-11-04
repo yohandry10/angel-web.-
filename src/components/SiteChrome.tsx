@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft, Waves } from "lucide-react";
 import { setMotionPreference, useMotionPreference } from "@/hooks/use-motion-preference";
 import { BrandLogo } from "./BrandLogo";
+import { ERP_LOGIN_URL } from "@/lib/erp-access";
 import "./SiteChrome.css";
 
 export function SitePageHeader({ label }: { label: string }) {
@@ -33,6 +34,7 @@ export function SiteFooter() {
           <nav aria-label="Explorar NEXTELCO">
             <Link to="/">Inicio</Link>
             <Link to="/erp">NEXTELCO ERP</Link>
+            <a href={ERP_LOGIN_URL}>Acceder al ERP</a>
             <Link to="/portafolio-web">Portafolio web</Link>
             <Link to="/experiencia">Experiencia</Link>
             <Link to="/facturacion-electronica-sunat">Facturación SUNAT</Link>

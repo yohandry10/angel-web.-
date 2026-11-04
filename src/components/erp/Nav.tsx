@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, Menu, Moon, Sun, X } from "lucide-react";
 import { DEMO_WA_URL } from "@/lib/erp-contact";
+import { ERP_LOGIN_URL } from "@/lib/erp-access";
 import { BrandLogo } from "@/components/BrandLogo";
 
 export function ErpLogo({
@@ -62,8 +63,8 @@ export default function Nav({
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <a className="erp-nav-demo" href={DEMO_WA_URL} target="_blank" rel="noopener noreferrer">
-            Solicitar demo
+          <a className="erp-nav-demo" href={ERP_LOGIN_URL}>
+            Acceder al ERP
           </a>
           <button
             className="erp-icon-button erp-menu-button"
@@ -88,6 +89,9 @@ export default function Nav({
               {link.label}
             </a>
           ))}
+          <a href={ERP_LOGIN_URL} onClick={() => setOpen(false)}>
+            Acceder al ERP
+          </a>
           <Link to="/" onClick={() => setOpen(false)}>
             Sitio corporativo
           </Link>

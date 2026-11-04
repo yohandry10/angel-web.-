@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { preloadContactModal } from "@/lib/contact-loader";
+import { ERP_LOGIN_URL } from "@/lib/erp-access";
 import "./NextelcoHero.css";
 
 const SERVICES = [
@@ -64,6 +65,9 @@ export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
           <Link to="/erp">ERP</Link>
           <Link to="/portafolio-web">Portafolio web</Link>
           <Link to="/experiencia">Experiencia</Link>
+          <a href={ERP_LOGIN_URL}>
+            Acceder al ERP <ArrowUpRight size={15} aria-hidden="true" />
+          </a>
           <button
             type="button"
             onClick={onContact}
@@ -95,6 +99,9 @@ export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
           <Link to="/erp" onClick={() => setMenuOpen(false)}>
             NEXTELCO ERP
           </Link>
+          <a href={ERP_LOGIN_URL} onClick={() => setMenuOpen(false)}>
+            Acceder al ERP <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
           <Link to="/portafolio-web" onClick={() => setMenuOpen(false)}>
             Portafolio web
           </Link>
