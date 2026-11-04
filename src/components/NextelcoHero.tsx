@@ -183,7 +183,9 @@ export function NextelcoHero({ onContact }: { onContact: () => void }) {
         <p className="reference-kicker">De tu idea a</p>
         <h1 id="hero-heading">
           <span>Potentes</span>
-          <span>sistemas.</span>
+          <span>
+            sistemas.<span className="sr-only"> ERP y software a medida en Perú</span>
+          </span>
         </h1>
         <p className="reference-description">
           Desarrollamos soluciones digitales

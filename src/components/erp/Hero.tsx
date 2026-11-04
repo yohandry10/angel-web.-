@@ -133,7 +133,9 @@ export default function Hero() {
       <div className="erp-hero-copy">
         <h1 id="erp-hero-title">
           <span>Tu empresa.</span>
-          <span>En control.</span>
+          <span>
+            En control.<span className="sr-only"> ERP para empresas en Perú</span>
+          </span>
         </h1>
         <p>
           Ventas, inventario y finanzas.
