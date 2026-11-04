@@ -22,7 +22,7 @@ import { BrandLogo } from "./BrandLogo";
 import { DeferredContactModal } from "./DeferredContactModal";
 import { preloadContactModal } from "@/lib/contact-loader";
 import { HomeContact } from "./HomeSections";
-import { KeyboardPortfolioHero } from "./KeyboardPortfolioHero";
+import { GlassPortfolioHero } from "./GlassPortfolioHero";
 import { useSectionReveals } from "@/hooks/use-section-reveals";
 import { SITE_URL, webServicesSchema } from "@/lib/seo";
 import {
@@ -453,7 +453,7 @@ export function WebPortfolio() {
       <PortfolioNav onContact={openContact} />
       <script type="application/ld+json">{portfolioListSchema}</script>
       <script type="application/ld+json">{portfolioServiceSchema}</script>
-      <KeyboardPortfolioHero />
+      <GlassPortfolioHero onContact={openContact} />
       <PortfolioServices />
       <PortfolioProjects />
       <HomeContact onContact={openContact} />

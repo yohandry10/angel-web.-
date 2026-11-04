@@ -26,6 +26,10 @@ function subscribe(listener: () => void) {
     window.removeEventListener(CHANGE_EVENT, listener);
   };
 }
+/** Valor real en el navegador desde el primer render; en el servidor, "reduced". No usar para marcado. */
+export function currentMotionPreference(): MotionMode {
+  return typeof window === "undefined" ? "reduced" : readMotion();
+}
 export function useMotionPreference() {
   return useSyncExternalStore(subscribe, readMotion, () => "reduced" as MotionMode);
 }

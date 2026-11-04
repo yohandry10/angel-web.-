@@ -29,12 +29,12 @@
   flex-shrink: 0;
   color: var(--brand-blue);
 }
-:is(.home-primary-link, .home-text-link, .keyboard-project-proof, .erp-hero-cta) > svg,
+:is(.home-primary-link, .home-text-link, .erp-hero-cta) > svg,
 :is(.site-home-link, .web-nav-brand, .erp-home-link) > svg:first-child {
   transition: transform 160ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
-  :is(.home-primary-link, .home-text-link, .keyboard-project-proof, .erp-hero-cta):hover > svg {
+  :is(.home-primary-link, .home-text-link, .erp-hero-cta):hover > svg {
     transform: translate(2px, -2px);
   }
   :is(.site-home-link, .web-nav-brand, .erp-home-link):hover > svg:first-child {
@@ -52,7 +52,7 @@
     transform: none;
     clip-path: none;
   }
-  :is(.home-primary-link, .home-text-link, .keyboard-project-proof, .erp-hero-cta) > svg,
+  :is(.home-primary-link, .home-text-link, .erp-hero-cta) > svg,
   :is(.site-home-link, .web-nav-brand, .erp-home-link) > svg:first-child {
     transition: none;
     transform: none !important;

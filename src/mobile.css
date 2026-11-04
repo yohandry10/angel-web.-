@@ -1,6 +1,5 @@
 /* A phone gets its own reading order and touch geometry, with the same brand. */
-.reference-explore,
-.keyboard-title .keyboard-mobile-primary {
+.reference-explore {
   display: none;
 }
 .contact-loading {
@@ -165,106 +164,6 @@
     overflow-wrap: anywhere;
   }
 
-  /* The portfolio's promise and main action precede the artwork on a phone. */
-  .web-portfolio-page .keyboard-hero {
-    padding-top: var(--site-nav-height);
-  }
-  .web-portfolio-page .keyboard-poster {
-    padding: 28px 20px 32px;
-    gap: 28px;
-  }
-  .web-portfolio-page .keyboard-title {
-    grid-row: 1;
-    text-align: left;
-  }
-  .web-portfolio-page .keyboard-kicker {
-    font-size: 14px;
-    letter-spacing: 0;
-    margin-bottom: 12px;
-  }
-  .web-portfolio-page .keyboard-hero h1 > span {
-    margin-inline: 0;
-    font-size: clamp(44px, 15.7cqw, 92px);
-  }
-  .web-portfolio-page .keyboard-hero h1 > span:first-child {
-    font-size: clamp(64px, 22cqw, 128px);
-  }
-  .web-portfolio-page .keyboard-tagline {
-    margin: 18px 0 0;
-    border: 0;
-    padding: 0;
-    font-size: 15px;
-    letter-spacing: 0.02em;
-    font-weight: 550;
-  }
-  .web-portfolio-page .keyboard-title .keyboard-mobile-primary {
-    display: flex;
-    width: 100%;
-    min-height: 52px;
-    margin-top: 24px;
-    border-radius: 5px;
-    justify-content: space-between;
-    padding-inline: 20px;
-    font-size: 15px;
-  }
-  .web-portfolio-page .keyboard-photo {
-    position: relative;
-    grid-column: 1;
-    grid-row: 2;
-    z-index: auto;
-    inset: auto;
-    width: calc(100% + 40px);
-    margin-inline: -20px;
-    height: 78cqw;
-    overflow: hidden;
-  }
-  .web-portfolio-page .keyboard-photo img {
-    mask-image: none;
-  }
-  .web-portfolio-page .keyboard-scene {
-    display: none;
-  }
-  .web-portfolio-page .keyboard-offerings {
-    grid-row: 3;
-    margin: 0;
-  }
-  .web-portfolio-page .keyboard-poster .keyboard-offerings h2 {
-    font-size: 20px;
-    padding: 0;
-    background: none;
-    color: var(--site-ink);
-  }
-  .web-portfolio-page .keyboard-offerings ul {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 20px;
-  }
-  .web-portfolio-page .keyboard-offerings li {
-    font-size: 15px;
-    line-height: 1.45;
-    align-items: flex-start;
-  }
-  .web-portfolio-page .keyboard-check {
-    margin-top: 3px;
-  }
-  .web-portfolio-page .keyboard-project-proof {
-    margin-top: 28px;
-    min-height: 48px;
-  }
-  .web-portfolio-page .keyboard-features {
-    padding-top: 24px;
-  }
-  .web-portfolio-page .keyboard-features p {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-  .web-portfolio-page .keyboard-footer .keyboard-primary {
-    display: none;
-  }
-  .web-portfolio-page .keyboard-location p {
-    font-size: 12px;
-  }
   .corporate-root.web-portfolio-page > .web-section {
     padding-block: 56px;
   }
