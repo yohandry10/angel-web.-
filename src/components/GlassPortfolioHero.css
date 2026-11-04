@@ -1,358 +1,392 @@
-.glass-hero {
-  --glass-field: #eef2fa;
-  --glass-blue: var(--brand-blue);
-  --glass-ink: var(--site-ink);
+/* Hero póster: la imagen es la pantalla completa y el texto flota encima. */
+.poster-hero {
+  --poster-field: #eef2fa;
+  --poster-blue: var(--brand-blue);
+  --poster-ink: var(--site-ink);
+  /* Relación de la imagen en uso: horizontal en escritorio, vertical en el teléfono. */
+  --poster-ratio: calc(1672 / 941);
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  padding: 96px 0 44px;
-  color: var(--glass-ink);
-  background: var(--glass-field);
+  height: 100svh;
+  min-height: 640px;
+  max-height: 1100px;
+  color: var(--poster-ink);
+  background: var(--poster-field);
   color-scheme: light;
-  container-type: inline-size;
-}
-.glass-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
-  align-items: center;
-  gap: 2%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 4.5%;
-}
-.glass-hero-copy {
-  position: relative;
-  z-index: 2;
-  max-width: 640px;
-}
-.glass-hero-kicker {
-  margin: 0 0 18px;
-  color: var(--glass-blue);
-  font-size: clamp(15px, 1.25cqw, 19px);
-  font-weight: 650;
-  letter-spacing: -0.01em;
-}
-.web-portfolio-page .glass-hero h1 {
-  margin: 0;
-  font-size: clamp(46px, 5.3cqw, 88px);
-  font-weight: 750;
-  line-height: 0.98;
-  letter-spacing: -0.05em;
-  text-transform: none;
-}
-.glass-hero h1 > span {
-  display: block;
-  white-space: nowrap;
-}
-.glass-hero h1 > span:last-child {
-  color: var(--glass-blue);
-}
-.glass-hero-lead {
-  max-width: 34rem;
-  margin: 26px 0 0;
-  color: var(--glass-ink);
-  font-size: clamp(17px, 1.35cqw, 20px);
-  line-height: 1.55;
-}
-.glass-hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 34px;
-}
-.glass-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 54px;
-  padding: 0 26px;
-  border-radius: 999px;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1;
-  cursor: pointer;
-}
-.glass-btn-primary {
-  color: #fff;
-  background: var(--glass-blue);
-  box-shadow: 0 14px 34px -14px rgb(0 80 216 / 0.7);
-}
-.glass-btn-ghost {
-  color: var(--glass-ink);
-  background: rgb(255 255 255 / 0.55);
-  border: 1px solid rgb(255 255 255 / 0.9);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
-.glass-btn:focus-visible,
-.glass-chip:focus-visible {
-  outline: 3px solid var(--glass-blue);
-  outline-offset: 3px;
-}
-.glass-hero-proof {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
-  margin: 38px 0 0;
-  padding: 0;
-  list-style: none;
-}
-.glass-hero-proof li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 15px;
-  font-weight: 550;
-}
-.glass-hero-proof svg {
-  width: 18px;
-  height: 18px;
-  color: var(--glass-blue);
 }
 
-/* Escenario: la imagen protagonista y sus etiquetas de vidrio */
-.glass-hero-stage {
-  position: relative;
-  perspective: 1400px;
+/* La imagen se ajusta al alto del hero y conserva sus proporciones, así las etiquetas en %
+   caen siempre sobre su lámina y la composición completa (mano + pila) siempre se ve.
+   Más estrecha que 16:9: se recortan los lados. Más ancha: los bordes se funden con el fondo. */
+.poster-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  perspective: 1600px;
+  transform-origin: 58% 60%;
 }
-.glass-hero-art {
-  position: relative;
-  width: min(118%, 860px);
-  margin-left: auto;
-  margin-right: -9%;
+.poster-frame {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  aspect-ratio: var(--poster-ratio);
+  translate: -50% 0;
   transform-style: preserve-3d;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
 }
-.glass-hero-float {
-  position: relative;
+.poster-float {
+  position: absolute;
+  inset: 0;
+  container-type: inline-size;
 }
-.glass-hero-art picture,
-.glass-hero-art img {
+.poster-float picture,
+.poster-float img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
-.glass-hero-art img {
-  mask-image: radial-gradient(closest-side, #000 82%, transparent);
-  -webkit-mask-image: radial-gradient(closest-side, #000 82%, transparent);
-}
-.glass-slab-labels {
+
+.poster-slabs {
   position: absolute;
   inset: 0;
   margin: 0;
   padding: 0;
   list-style: none;
   pointer-events: none;
-  container-type: inline-size;
 }
-.glass-slab-labels li {
+.poster-slabs li {
   position: absolute;
+  left: var(--wide-x);
+  top: var(--wide-y);
+  width: var(--wide-w);
+  rotate: var(--wide-r);
+  translate: -50% -50%;
   display: flex;
   align-items: center;
-  gap: 3.2cqw;
-  translate: -50% -50%;
+  gap: 1.6cqw;
+  overflow: hidden;
+  padding: 0.4cqw 0.2cqw;
   color: #fff;
-  font-size: 2.3cqw;
+  font-size: 1.32cqw;
   font-weight: 650;
   line-height: 1.15;
   letter-spacing: -0.01em;
-  text-shadow: 0 1px 6px rgb(0 25 110 / 0.55);
-  transform-origin: center;
+  white-space: nowrap;
+  text-shadow: 0 1px 8px rgb(0 25 110 / 0.6);
 }
-.glass-slab-text {
+.poster-slab-text {
   flex: 1;
 }
-.glass-slab-short {
+.poster-slab-short {
   display: none;
 }
-.glass-slab-bar {
+.poster-slab-bar {
   width: 2px;
-  height: 4.6cqw;
+  height: 2.4cqw;
   border-radius: 2px;
   background: rgb(255 255 255 / 0.75);
 }
-.glass-slab-icon {
-  width: 4.4cqw;
-  height: 4.4cqw;
+.poster-slab-icon {
+  width: 2.2cqw;
+  height: 2.2cqw;
   stroke-width: 1.8;
 }
-.glass-chip {
+.poster-slab-glint {
   position: absolute;
-  z-index: 3;
+  inset: -60% auto -60% 0;
+  width: 14%;
+  rotate: 18deg;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.7), transparent);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* El bloque de texto no ocupa lugar en escritorio: cada pieza se ubica sobre un claro de la imagen. */
+.poster-copy {
+  display: contents;
+}
+
+/* Titular centrado arriba, como un póster */
+.poster-head {
+  position: absolute;
+  z-index: 2;
+  inset: calc(var(--site-nav-height, 72px) + clamp(18px, 4svh, 48px)) 4% auto;
+  text-align: center;
+}
+.poster-kicker {
+  margin: 0 0 clamp(8px, 1.4svh, 16px);
+  color: var(--poster-blue);
+  font-size: clamp(15px, 1.15vw, 20px);
+  font-weight: 650;
+}
+.web-portfolio-page .poster-hero h1 {
+  margin: 0;
+  font-size: clamp(40px, 4.6vw, 92px);
+  font-weight: 760;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  text-transform: none;
+}
+/* El espacio dentro de cada palabra se pierde al ser inline-block; el margen lo repone
+   (a la derecha, para que una línea nueva no empiece con sangría). */
+.poster-hero h1 > .poster-word:not(:last-child) {
+  margin-right: 0.24em;
+}
+.poster-hero h1 > .poster-word {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  vertical-align: top;
+}
+.poster-word > span {
+  display: inline-block;
+}
+.poster-word.is-blue {
+  color: var(--poster-blue);
+}
+
+/* Mensaje y acciones en el claro inferior izquierdo de la imagen */
+.poster-side {
+  position: absolute;
+  z-index: 2;
+  left: 4.5%;
+  bottom: clamp(110px, 17svh, 170px);
+  width: min(28%, 420px);
+}
+.poster-side p {
+  margin: 0;
+  font-size: clamp(20px, 1.75vw, 32px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.poster-side strong {
+  color: var(--poster-blue);
+  font-weight: 750;
+}
+.poster-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.poster-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1;
+  cursor: pointer;
+}
+.poster-btn-primary {
+  color: #fff;
+  background: var(--poster-blue);
+  box-shadow: 0 16px 36px -14px rgb(0 80 216 / 0.75);
+}
+.poster-btn-glass,
+.poster-chip,
+.poster-bar {
+  background: rgb(255 255 255 / 0.5);
+  border: 1px solid rgb(255 255 255 / 0.9);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+}
+.poster-btn-glass {
+  color: var(--poster-ink);
+}
+.poster-btn:focus-visible,
+.poster-chip:focus-visible,
+.poster-bar a:focus-visible {
+  outline: 3px solid var(--poster-blue);
+  outline-offset: 3px;
+}
+
+.poster-chip {
+  position: absolute;
+  z-index: 2;
+  right: 4.5%;
+  /* Claro superior derecho: la pila nunca llega ahí. */
+  top: 34%;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 18px;
-  border-radius: 20px;
-  color: var(--glass-ink);
-  background: rgb(255 255 255 / 0.5);
-  border: 1px solid rgb(255 255 255 / 0.85);
-  backdrop-filter: blur(18px) saturate(1.4);
-  -webkit-backdrop-filter: blur(18px) saturate(1.4);
-  box-shadow: 0 24px 50px -24px rgb(0 40 140 / 0.45);
-  transform: translateZ(60px);
+  padding: 14px 20px;
+  border-radius: 22px;
+  color: var(--poster-ink);
+  box-shadow: 0 24px 50px -24px rgb(0 40 140 / 0.5);
 }
-.glass-chip-projects {
-  left: 2%;
-  bottom: 9%;
-}
-.glass-chip strong {
-  color: var(--glass-blue);
-  font-size: 38px;
-  font-weight: 750;
+.poster-chip strong {
+  color: var(--poster-blue);
+  font-size: 44px;
+  font-weight: 760;
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
-.glass-chip span {
+.poster-chip span {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.2;
 }
-.glass-chip svg {
-  color: var(--glass-blue);
-}
 
-/* Lista completa de lo que construimos */
-.glass-hero-offerings {
+/* Barra de contacto de vidrio, como cierre del póster */
+.poster-bar {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: clamp(16px, 3svh, 32px);
+  translate: -50% 0;
   display: flex;
   align-items: center;
-  gap: 18px 26px;
-  max-width: 1440px;
-  margin: 28px auto 0;
-  padding: 0 4.5%;
-}
-.web-portfolio-page .glass-hero-offerings h2 {
-  flex-shrink: 0;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  text-transform: none;
-}
-.glass-hero-offerings ul {
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.glass-hero-offerings li {
-  padding: 8px 14px;
+  padding: 8px;
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.6);
-  border: 1px solid rgb(255 255 255 / 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  font-size: 14px;
-  font-weight: 550;
+  font-style: normal;
+  box-shadow: 0 24px 60px -30px rgb(0 40 140 / 0.55);
+}
+.poster-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  color: var(--poster-ink);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.poster-bar a.poster-bar-web {
+  color: #fff;
+  background: var(--poster-ink);
+}
+.poster-bar svg {
+  width: 18px;
+  height: 18px;
+  color: var(--poster-blue);
+}
+.poster-bar-web svg {
+  color: #fff;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .glass-btn-primary:hover {
+  .poster-btn-primary:hover {
     background: var(--brand-blue-hover);
   }
-  .glass-btn-ghost:hover {
+  .poster-btn-glass:hover,
+  .poster-bar a:not(.poster-bar-web):hover {
     background: rgb(255 255 255 / 0.85);
   }
 }
 
-@media (max-width: 1000px) {
-  .glass-hero {
-    padding-top: 92px;
+@media (max-width: 1100px) {
+  .poster-side {
+    width: min(32%, 380px);
   }
-  .glass-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  .glass-hero-copy {
-    max-width: none;
-  }
-  .glass-hero-art {
-    width: min(100%, 680px);
-    margin: 0 auto;
-  }
-  .glass-hero-offerings {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-@media (max-width: 700px) {
-  .glass-hero {
-    padding: 84px 0 32px;
-  }
-  .glass-hero-grid,
-  .glass-hero-offerings {
-    padding: 0 20px;
-  }
-  .web-portfolio-page .glass-hero h1 {
-    font-size: clamp(42px, 12.4cqw, 64px);
-  }
-  /* En el teléfono la imagen sube justo después de los botones. */
-  .glass-hero-copy {
-    display: contents;
-  }
-  .glass-hero-kicker,
-  .glass-hero-copy h1,
-  .glass-hero-lead,
-  .glass-hero-actions {
-    order: 1;
-  }
-  .glass-hero-stage {
-    order: 2;
-    margin: 4px -20px -12px;
-  }
-  .glass-hero-proof {
-    order: 3;
-    margin-top: 0;
-  }
-  .glass-hero-art {
-    width: 100%;
-  }
-  .glass-slab-labels li {
-    justify-content: center;
-    font-size: 3.4cqw;
-    white-space: nowrap;
-  }
-  .glass-slab-bar,
-  .glass-slab-icon {
+  .poster-chip {
     display: none;
   }
-  .glass-slab-full {
+  .poster-bar a.poster-bar-mail {
+    display: none;
+  }
+}
+
+/* Teléfono: imagen vertical sin recorte lateral, apoyada abajo; texto y acciones arriba. */
+@media (max-width: 700px) {
+  /* El alto sale de la imagen (150vw) más la franja del texto, así nunca queda un hueco. */
+  .poster-hero {
+    --poster-ratio: calc(1024 / 1536);
+    height: calc(150vw + 182px);
+    min-height: 0;
+    max-height: none;
+  }
+  .poster-frame {
+    width: 100%;
+    height: auto;
+    top: auto;
+    bottom: 0;
+    translate: -50% 0;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .poster-slabs li {
+    left: var(--tall-x);
+    top: var(--tall-y);
+    width: var(--tall-w);
+    rotate: var(--tall-r);
+    justify-content: center;
+    font-size: 3.7cqw;
+  }
+  .poster-slab-bar,
+  .poster-slab-icon {
+    display: none;
+  }
+  .poster-slab-full {
     position: absolute;
     width: 1px;
     height: 1px;
     overflow: hidden;
     clip-path: inset(50%);
-    white-space: nowrap;
   }
-  .glass-slab-short {
+  .poster-slab-short {
     display: inline;
   }
-  .glass-hero-actions {
+  .poster-copy {
+    position: absolute;
+    z-index: 2;
+    top: calc(var(--site-nav-height, 64px) + 18px);
+    left: 20px;
+    right: 20px;
+    display: flex;
     flex-direction: column;
+    gap: 18px;
   }
-  .glass-btn {
-    width: 100%;
+  .poster-head,
+  .poster-side {
+    position: static;
+    width: auto;
+    text-align: left;
   }
-  .glass-hero-proof {
-    gap: 10px 16px;
+  .web-portfolio-page .poster-hero h1 {
+    font-size: clamp(38px, 11vw, 56px);
   }
-  .glass-hero-proof li {
+  .poster-kicker {
     font-size: 14px;
   }
-  .glass-chip {
-    padding: 10px 14px;
-    gap: 9px;
-    border-radius: 16px;
+  .poster-side p {
+    display: none;
   }
-  .glass-chip strong {
-    font-size: 28px;
+  .poster-actions {
+    flex-wrap: nowrap;
+    margin-top: 0;
   }
-  .glass-chip span {
-    font-size: 12px;
+  .poster-btn {
+    flex: 1 1 auto;
+    min-height: 50px;
+    padding: 0 16px;
+    font-size: 14.5px;
+    white-space: nowrap;
   }
-  .glass-hero-offerings li {
-    font-size: 13px;
-    padding: 7px 12px;
+  .poster-bar {
+    left: 20px;
+    right: 20px;
+    translate: none;
+    justify-content: center;
+    bottom: 14px;
+  }
+  .poster-bar a {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+  .poster-bar a.poster-bar-web {
+    display: none;
   }
 }

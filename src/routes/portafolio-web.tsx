@@ -14,7 +14,7 @@ export const Route = createFileRoute("/portafolio-web")({
       title: TITLE,
       description: DESCRIPTION,
       path: "/portafolio-web",
-      image: "/media/portfolio/portfolio-glass-hero-1254.webp",
+      image: "/media/portfolio/portfolio-hero-wide-1672.webp",
       imageAlt: "Láminas de vidrio azul apiladas: los servicios de desarrollo web de NEXTELCO",
     }),
     links: [
@@ -22,14 +22,23 @@ export const Route = createFileRoute("/portafolio-web")({
       {
         rel: "preload",
         as: "image",
-        href: "/media/portfolio/portfolio-glass-hero-1254.webp",
+        href: "/media/portfolio/portfolio-hero-wide-1672.webp",
         type: "image/webp",
-        media: "(min-width: 701px)",
+        media: "(min-width: 1301px)",
       },
       {
         rel: "preload",
         as: "image",
-        href: "/media/portfolio/portfolio-glass-hero-760.webp",
+        href: "/media/portfolio/portfolio-hero-wide-1200.webp",
+        type: "image/webp",
+        media: "(min-width: 701px) and (max-width: 1300px)",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        imageSrcSet:
+          "/media/portfolio/portfolio-hero-tall-720.webp 720w, /media/portfolio/portfolio-hero-tall-1024.webp 1024w",
+        imageSizes: "100vw",
         type: "image/webp",
         media: "(max-width: 700px)",
       },

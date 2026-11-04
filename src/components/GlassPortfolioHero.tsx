@@ -2,11 +2,12 @@ import {
   ArrowDown,
   ArrowUpRight,
   Code2,
+  Globe2,
   LayoutTemplate,
-  MapPin,
+  Mail,
+  Phone,
   Search,
   ShoppingBag,
-  Smartphone,
   Workflow,
 } from "lucide-react";
 import {
@@ -18,67 +19,72 @@ import {
   useScroll,
   useSpring,
   useTransform,
-  type Variants,
 } from "motion/react";
-import { useEffect, useRef, useState, type PointerEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import { PROJECTS } from "@/data/portfolio-projects";
 import { currentMotionPreference, useMotionPreference } from "@/hooks/use-motion-preference";
 import "./GlassPortfolioHero.css";
 
 /**
- * Cada etiqueta va sobre una lámina de vidrio de la imagen.
- * x/y son el centro de la cara superior y w su ancho, en % del cuadro (imagen 1254×1254); de la base hacia arriba.
- * En la lámina superior el pulgar cubre el lado izquierdo: su etiqueta va sin icono y empieza a la derecha del dedo.
+ * La imagen es el hero completo; cada etiqueta va sobre una lámina de vidrio.
+ * Posiciones en % del cuadro de cada imagen (centro de la cara superior, ancho y giro), de la base hacia arriba.
+ * `wide` = portfolio-hero-wide (1672×941) · `tall` = portfolio-hero-tall (1024×1536).
+ * En la lámina superior el pulgar cubre el lado izquierdo: su etiqueta va sin icono y a la derecha del dedo.
  */
+type Spot = { x: number; y: number; w: number; r: number };
 const SLABS: {
   label: string;
-  icon: typeof Code2;
-  x: number;
-  y: number;
-  tilt: number;
-  w: number;
-  bare?: boolean;
-  /** Texto visible en teléfonos cuando el completo no cabe en la lámina. */
   short?: string;
+  icon: typeof Code2;
+  bare?: boolean;
+  wide: Spot;
+  tall: Spot;
 }[] = [
-  { label: "Desarrollo web a medida", icon: Code2, x: 57.6, y: 76.6, tilt: 0, w: 41 },
-  { label: "Webs profesionales", icon: LayoutTemplate, x: 58, y: 64, tilt: -1, w: 40 },
-  { label: "Tiendas online", icon: ShoppingBag, x: 58, y: 52.2, tilt: -1, w: 37 },
-  { label: "Sistemas a medida", icon: Workflow, x: 57.8, y: 41.4, tilt: -1, w: 35 },
+  {
+    label: "Desarrollo web a medida",
+    icon: Code2,
+    wide: { x: 58.6, y: 80.6, w: 34, r: 0 },
+    tall: { x: 61.5, y: 77.5, w: 58, r: -4 },
+  },
+  {
+    label: "Webs profesionales",
+    icon: LayoutTemplate,
+    wide: { x: 58.6, y: 69.8, w: 31, r: -1 },
+    tall: { x: 61, y: 67.7, w: 56, r: -4 },
+  },
+  {
+    label: "Tiendas online",
+    icon: ShoppingBag,
+    wide: { x: 58.2, y: 62, w: 27, r: -1 },
+    tall: { x: 60.5, y: 57.3, w: 52, r: -4 },
+  },
+  {
+    label: "Sistemas a medida",
+    icon: Workflow,
+    wide: { x: 58, y: 52.6, w: 25, r: -2 },
+    tall: { x: 60, y: 46.5, w: 48, r: -3 },
+  },
   {
     label: "Posicionamiento SEO",
-    icon: Search,
-    x: 61.6,
-    y: 25.4,
-    tilt: -9,
-    w: 26,
-    bare: true,
     short: "SEO",
+    icon: Search,
+    bare: true,
+    wide: { x: 58, y: 37.4, w: 17, r: -8 },
+    tall: { x: 64, y: 33.4, w: 30, r: -6 },
   },
 ];
 
-const OFFERINGS = [
-  "Webs profesionales",
-  "Portafolios digitales",
-  "Tiendas online y ecommerce",
-  "Sistemas administrativos",
-  "Aulas virtuales (LMS)",
-  "APIs e integraciones",
-  "SEO y posicionamiento en Google",
-  "Automatización de procesos",
-];
-
+const HEADLINE = ["Haz", "crecer", "tu", "marca", "online."];
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const copy: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
-};
-// El texto nunca empieza oculto: sin JavaScript se lee igual y el LCP no espera a la animación.
-const rise: Variants = {
-  hidden: { y: 28 },
-  show: { y: 0, transition: { duration: 0.8, ease: EASE } },
-};
+function spotVars({ x, y, w, r }: Spot, prefix: string) {
+  return {
+    [`--${prefix}-x`]: `${x}%`,
+    [`--${prefix}-y`]: `${y}%`,
+    [`--${prefix}-w`]: `${w}cqw`,
+    [`--${prefix}-r`]: `${r}deg`,
+  };
+}
 
 export function GlassPortfolioHero({ onContact }: { onContact: () => void }) {
   // Respeta el interruptor "Reducir animaciones" del sitio y la preferencia del sistema.
@@ -91,17 +97,19 @@ export function GlassPortfolioHero({ onContact }: { onContact: () => void }) {
   const reduce = (hydrated ? preference : firstPreference) === "reduced";
   const root = useRef<HTMLElement>(null);
 
-  // Parallax con el puntero (solo escritorio) y con el scroll.
+  // La imagen sigue al puntero y, al hacer scroll, se acerca mientras el titular se aleja.
   const px = useMotionValue(0);
   const py = useMotionValue(0);
-  const sx = useSpring(px, { stiffness: 70, damping: 18 });
-  const sy = useSpring(py, { stiffness: 70, damping: 18 });
-  const tiltX = useTransform(sy, [-1, 1], [5, -5]);
-  const tiltY = useTransform(sx, [-1, 1], [-7, 7]);
-  const shiftX = useTransform(sx, [-1, 1], [-14, 14]);
+  const sx = useSpring(px, { stiffness: 60, damping: 18 });
+  const sy = useSpring(py, { stiffness: 60, damping: 18 });
+  const tiltX = useTransform(sy, [-1, 1], [3, -3]);
+  const tiltY = useTransform(sx, [-1, 1], [-4, 4]);
+  const panX = useTransform(sx, [-1, 1], [-18, 18]);
+  const panY = useTransform(sy, [-1, 1], [-10, 10]);
   const { scrollYProgress } = useScroll({ target: root, offset: ["start start", "end start"] });
-  const artY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const copyY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const zoom = useTransform(scrollYProgress, [0, 1], [1, 1.14]);
+  const headY = useTransform(scrollYProgress, [0, 1], [0, -140]);
+  const headFade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   function onPointerMove(event: PointerEvent<HTMLElement>) {
     if (reduce || event.pointerType !== "mouse") return;
@@ -116,7 +124,7 @@ export function GlassPortfolioHero({ onContact }: { onContact: () => void }) {
         <section
           ref={root}
           id="inicio-web"
-          className="glass-hero corporate-hero"
+          className="poster-hero corporate-hero"
           aria-labelledby="web-hero-title"
           onPointerMove={onPointerMove}
           onPointerLeave={() => {
@@ -124,154 +132,181 @@ export function GlassPortfolioHero({ onContact }: { onContact: () => void }) {
             py.set(0);
           }}
         >
-          <div className="glass-hero-grid">
+          {/* La imagen: llena toda la pantalla */}
+          <m.div className="poster-stage" style={{ scale: zoom }} aria-hidden="false">
             <m.div
-              className="glass-hero-copy"
-              variants={copy}
-              initial="hidden"
-              animate="show"
-              style={{ y: copyY }}
+              className="poster-frame"
+              initial={{ scale: 1.16, filter: "blur(10px)" }}
+              animate={{ scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1.8, ease: EASE }}
+              style={{ rotateX: tiltX, rotateY: tiltY, x: panX, y: panY }}
             >
-              <m.p className="glass-hero-kicker" variants={rise}>
+              <m.div
+                className="poster-float"
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              >
+                <picture>
+                  <source
+                    media="(max-width: 700px)"
+                    srcSet="/media/portfolio/portfolio-hero-tall-720.webp 720w, /media/portfolio/portfolio-hero-tall-1024.webp 1024w"
+                    sizes="100vw"
+                    width="1024"
+                    height="1536"
+                  />
+                  <source
+                    media="(max-width: 1300px)"
+                    srcSet="/media/portfolio/portfolio-hero-wide-1200.webp"
+                    width="1200"
+                    height="675"
+                  />
+                  <img
+                    src="/media/portfolio/portfolio-hero-wide-1672.webp"
+                    width="1672"
+                    height="941"
+                    alt="Una mano coloca la última lámina de vidrio azul sobre una pila luminosa: cada lámina es un servicio web de NEXTELCO."
+                    fetchPriority="high"
+                    decoding="async"
+                  />
+                </picture>
+                <ul className="poster-slabs" aria-label="Servicios web">
+                  {SLABS.map(({ label, short, icon: Icon, bare, wide, tall }, index) => (
+                    <m.li
+                      key={label}
+                      style={
+                        { ...spotVars(wide, "wide"), ...spotVars(tall, "tall") } as CSSProperties
+                      }
+                      initial={{ opacity: 0, x: 80, filter: "blur(8px)" }}
+                      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                      transition={{ duration: 0.8, delay: 1 + index * 0.16, ease: EASE }}
+                    >
+                      <span className="poster-slab-text">
+                        {short ? (
+                          <>
+                            <span className="poster-slab-full">{label}</span>
+                            <span className="poster-slab-short" aria-hidden="true">
+                              {short}
+                            </span>
+                          </>
+                        ) : (
+                          label
+                        )}
+                      </span>
+                      {!bare && (
+                        <>
+                          <span className="poster-slab-bar" aria-hidden="true" />
+                          <Icon className="poster-slab-icon" aria-hidden="true" />
+                        </>
+                      )}
+                      <m.span
+                        className="poster-slab-glint"
+                        aria-hidden="true"
+                        initial={{ x: "-150%", opacity: 0 }}
+                        animate={{ x: ["-150%", "450%"], opacity: [0, 1, 0] }}
+                        transition={{
+                          duration: 1.4,
+                          delay: 2 + index * 0.16,
+                          repeat: Infinity,
+                          repeatDelay: 6,
+                          ease: "easeInOut",
+                        }}
+                      />
+                    </m.li>
+                  ))}
+                </ul>
+              </m.div>
+            </m.div>
+          </m.div>
+
+          {/* El texto: adorno sobre la imagen */}
+          <div className="poster-copy">
+            <m.div className="poster-head" style={{ y: headY, opacity: headFade }}>
+              <m.p
+                className="poster-kicker"
+                initial={{ y: 16 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
+              >
                 Diseño y desarrollo web en Lima, Perú
               </m.p>
-              <m.h1 id="web-hero-title" variants={rise}>
-                <span>Haz crecer</span>
-                <span>tu marca online.</span>
-              </m.h1>
-              <m.p className="glass-hero-lead" variants={rise}>
-                Webs profesionales, tiendas online y sistemas a medida, rápidos en cada pantalla y
-                optimizados para que tus clientes te encuentren en Google.
-              </m.p>
-              <m.div className="glass-hero-actions" variants={rise}>
+              <h1 id="web-hero-title">
+                {HEADLINE.map((word, index) => (
+                  <span key={word} className={index > 1 ? "poster-word is-blue" : "poster-word"}>
+                    <m.span
+                      initial={{ y: "105%" }}
+                      animate={{ y: "0%" }}
+                      transition={{ duration: 0.9, delay: 0.3 + index * 0.08, ease: EASE }}
+                    >
+                      {word}
+                    </m.span>{" "}
+                  </span>
+                ))}
+              </h1>
+            </m.div>
+
+            <m.div
+              className="poster-side"
+              initial={{ x: -30 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1, delay: 0.9, ease: EASE }}
+            >
+              <p>
+                Webs, tiendas online y sistemas <strong>que te ponen primero en Google.</strong>
+              </p>
+              <div className="poster-actions">
                 <m.a
-                  className="glass-btn glass-btn-primary"
+                  className="poster-btn poster-btn-primary"
                   href="#proyectos"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.97 }}
+                  whileHover={{ y: -3 }}
+                  whileTap={{ scale: 0.96 }}
                 >
                   Ver {PROJECTS.length} proyectos <ArrowDown size={18} aria-hidden="true" />
                 </m.a>
                 <m.button
                   type="button"
-                  className="glass-btn glass-btn-ghost"
+                  className="poster-btn poster-btn-glass"
                   onClick={onContact}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.97 }}
+                  whileHover={{ y: -3 }}
+                  whileTap={{ scale: 0.96 }}
                 >
                   Cotizar mi web <ArrowUpRight size={18} aria-hidden="true" />
                 </m.button>
-              </m.div>
-              <m.ul className="glass-hero-proof" variants={rise} aria-label="Cómo trabajamos">
-                <li>
-                  <Smartphone aria-hidden="true" />
-                  Responsive en cada pantalla
-                </li>
-                <li>
-                  <Search aria-hidden="true" />
-                  SEO desde el primer día
-                </li>
-                <li>
-                  <MapPin aria-hidden="true" />
-                  Equipo en Lima, Perú
-                </li>
-              </m.ul>
-            </m.div>
-
-            <m.div className="glass-hero-stage" style={{ y: artY }}>
-              <m.div
-                className="glass-hero-art"
-                initial={{ scale: 1.08, y: 30 }}
-                animate={{ scale: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: EASE }}
-                style={{ rotateX: tiltX, rotateY: tiltY, x: shiftX }}
-              >
-                <m.div
-                  className="glass-hero-float"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <picture>
-                    <source
-                      media="(min-width: 701px)"
-                      srcSet="/media/portfolio/portfolio-glass-hero-1254.webp"
-                      width="1254"
-                      height="1254"
-                    />
-                    <img
-                      src="/media/portfolio/portfolio-glass-hero-760.webp"
-                      width="760"
-                      height="760"
-                      alt="Una mano coloca la última lámina de vidrio azul sobre una pila luminosa: cada lámina es un servicio web de NEXTELCO."
-                      fetchPriority="high"
-                      decoding="async"
-                    />
-                  </picture>
-                  <ul className="glass-slab-labels" aria-label="Servicios web">
-                    {SLABS.map(({ label, icon: Icon, x, y, tilt, w, bare, short }, index) => (
-                      <m.li
-                        key={label}
-                        style={{ left: `${x}%`, top: `${y}%`, width: `${w}cqw`, rotate: tilt }}
-                        initial={{ opacity: 0, x: 60, filter: "blur(6px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.7, delay: 0.7 + index * 0.14, ease: EASE }}
-                      >
-                        <span className="glass-slab-text">
-                          {short ? (
-                            <>
-                              <span className="glass-slab-full">{label}</span>
-                              <span className="glass-slab-short" aria-hidden="true">
-                                {short}
-                              </span>
-                            </>
-                          ) : (
-                            label
-                          )}
-                        </span>
-                        {!bare && (
-                          <>
-                            <span className="glass-slab-bar" aria-hidden="true" />
-                            <Icon className="glass-slab-icon" aria-hidden="true" />
-                          </>
-                        )}
-                      </m.li>
-                    ))}
-                  </ul>
-                </m.div>
-
-                <m.a
-                  href="#proyectos"
-                  className="glass-chip glass-chip-projects"
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.5, ease: EASE }}
-                  whileHover={{ y: -4 }}
-                >
-                  <strong>{PROJECTS.length}</strong>
-                  <span>
-                    proyectos
-                    <br />
-                    para explorar
-                  </span>
-                  <ArrowUpRight size={16} aria-hidden="true" />
-                </m.a>
-              </m.div>
+              </div>
             </m.div>
           </div>
 
-          <m.div
-            className="glass-hero-offerings"
-            initial={{ y: 24 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
+          <m.a
+            href="#proyectos"
+            className="poster-chip"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2, ease: EASE }}
+            whileHover={{ y: -4 }}
           >
-            <h2>Podemos construir</h2>
-            <ul>
-              {OFFERINGS.map((offering) => (
-                <li key={offering}>{offering}</li>
-              ))}
-            </ul>
-          </m.div>
+            <strong>{PROJECTS.length}</strong>
+            <span>
+              proyectos
+              <br />
+              publicados
+            </span>
+          </m.a>
+
+          <m.address
+            className="poster-bar"
+            initial={{ y: 40 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.9, delay: 1.2, ease: EASE }}
+          >
+            <a href="tel:+51904963051">
+              <Phone aria-hidden="true" /> +51 904 963 051
+            </a>
+            <a href="https://www.nextelco.cloud" className="poster-bar-web">
+              <Globe2 aria-hidden="true" /> nextelco.cloud
+            </a>
+            <a href="mailto:operaciones@nextelco.cloud" className="poster-bar-mail">
+              <Mail aria-hidden="true" /> operaciones@nextelco.cloud
+            </a>
+          </m.address>
         </section>
       </MotionConfig>
     </LazyMotion>
