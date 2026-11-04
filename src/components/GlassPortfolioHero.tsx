@@ -28,14 +28,34 @@ import "./GlassPortfolioHero.css";
 /**
  * Cada etiqueta va sobre una lámina de vidrio de la imagen.
  * x/y son el centro de la cara superior y w su ancho, en % del cuadro (imagen 1254×1254); de la base hacia arriba.
+ * En la lámina superior el pulgar cubre el lado izquierdo: su etiqueta va sin icono y empieza a la derecha del dedo.
  */
-const SLABS = [
+const SLABS: {
+  label: string;
+  icon: typeof Code2;
+  x: number;
+  y: number;
+  tilt: number;
+  w: number;
+  bare?: boolean;
+  /** Texto visible en teléfonos cuando el completo no cabe en la lámina. */
+  short?: string;
+}[] = [
   { label: "Desarrollo web a medida", icon: Code2, x: 57.6, y: 76.6, tilt: 0, w: 41 },
   { label: "Webs profesionales", icon: LayoutTemplate, x: 58, y: 64, tilt: -1, w: 40 },
   { label: "Tiendas online", icon: ShoppingBag, x: 58, y: 52.2, tilt: -1, w: 37 },
   { label: "Sistemas a medida", icon: Workflow, x: 57.8, y: 41.4, tilt: -1, w: 35 },
-  { label: "Posicionamiento SEO", icon: Search, x: 59.4, y: 26.2, tilt: -9, w: 35 },
-] as const;
+  {
+    label: "Posicionamiento SEO",
+    icon: Search,
+    x: 61.6,
+    y: 25.4,
+    tilt: -9,
+    w: 26,
+    bare: true,
+    short: "SEO",
+  },
+];
 
 const OFFERINGS = [
   "Webs profesionales",
@@ -188,7 +208,7 @@ export function GlassPortfolioHero({ onContact }: { onContact: () => void }) {
                     />
                   </picture>
                   <ul className="glass-slab-labels" aria-label="Servicios web">
-                    {SLABS.map(({ label, icon: Icon, x, y, tilt, w }, index) => (
+                    {SLABS.map(({ label, icon: Icon, x, y, tilt, w, bare, short }, index) => (
                       <m.li
                         key={label}
                         style={{ left: `${x}%`, top: `${y}%`, width: `${w}cqw`, rotate: tilt }}
@@ -196,9 +216,24 @@ export function GlassPortfolioHero({ onContact }: { onContact: () => void }) {
                         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.7, delay: 0.7 + index * 0.14, ease: EASE }}
                       >
-                        <span className="glass-slab-text">{label}</span>
-                        <span className="glass-slab-bar" aria-hidden="true" />
-                        <Icon className="glass-slab-icon" aria-hidden="true" />
+                        <span className="glass-slab-text">
+                          {short ? (
+                            <>
+                              <span className="glass-slab-full">{label}</span>
+                              <span className="glass-slab-short" aria-hidden="true">
+                                {short}
+                              </span>
+                            </>
+                          ) : (
+                            label
+                          )}
+                        </span>
+                        {!bare && (
+                          <>
+                            <span className="glass-slab-bar" aria-hidden="true" />
+                            <Icon className="glass-slab-icon" aria-hidden="true" />
+                          </>
+                        )}
                       </m.li>
                     ))}
                   </ul>

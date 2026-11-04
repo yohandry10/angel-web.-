@@ -161,6 +161,9 @@
 .glass-slab-text {
   flex: 1;
 }
+.glass-slab-short {
+  display: none;
+}
 .glass-slab-bar {
   width: 2px;
   height: 4.6cqw;
@@ -313,6 +316,17 @@
   .glass-slab-bar,
   .glass-slab-icon {
     display: none;
+  }
+  .glass-slab-full {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .glass-slab-short {
+    display: inline;
   }
   .glass-hero-actions {
     flex-direction: column;
