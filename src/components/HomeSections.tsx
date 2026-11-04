@@ -413,8 +413,8 @@ export function HomeContact({ onContact }: { onContact: () => void }) {
               <Mail size={22} aria-hidden="true" />
               <span>operaciones@nextelco.cloud</span>
             </a>
-            <a href="tel:+17862244098">
-              001 (786) 2244098 <ArrowUpRight size={18} aria-hidden="true" />
+            <a href="tel:+51904963051">
+              +51 904 963 051 <ArrowUpRight size={18} aria-hidden="true" />
             </a>
             <p>
               Lima, Perú<span>UTC−5 · Remoto global</span>
