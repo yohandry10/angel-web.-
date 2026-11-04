@@ -19,10 +19,12 @@ import {
   X,
 } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
-import { ContactModal } from "./ContactModal";
+import { DeferredContactModal } from "./DeferredContactModal";
+import { preloadContactModal } from "@/lib/contact-loader";
 import { HomeContact } from "./HomeSections";
 import { KeyboardPortfolioHero } from "./KeyboardPortfolioHero";
 import { useSectionReveals } from "@/hooks/use-section-reveals";
+import { SITE_URL } from "@/lib/seo";
 import {
   CATEGORIES,
   PROJECTS,
@@ -30,6 +32,25 @@ import {
   type ProjectCategory,
 } from "@/data/portfolio-projects";
 import "./WebPortfolio.css";
+
+// Emitted in SSR HTML with the portfolio, without loading its data on every route.
+const portfolioListSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${SITE_URL}/portafolio-web#projects`,
+  numberOfItems: PROJECTS.length,
+  itemListElement: PROJECTS.map((project, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "CreativeWork",
+      name: project.name,
+      description: project.short,
+      url: `${SITE_URL}/portafolio-web#proyecto-${project.id}`,
+      image: `${SITE_URL}${project.image}`,
+    },
+  })),
+}).replace(/</g, "\\u003c");
 
 const SERVICES = [
   {
@@ -103,7 +124,12 @@ function PortfolioNav({ onContact }: { onContact: () => void }) {
           <Link to="/">Inicio</Link>
           <a href="#servicios-web">Servicios</a>
           <a href="#proyectos">Proyectos</a>
-          <button type="button" onClick={onContact}>
+          <button
+            type="button"
+            onClick={onContact}
+            onPointerEnter={preloadContactModal}
+            onFocus={preloadContactModal}
+          >
             Hablemos <ArrowUpRight size={16} aria-hidden="true" />
           </button>
         </nav>
@@ -189,7 +215,7 @@ function ProjectCard({
   onSelect: (project: Project) => void;
 }) {
   return (
-    <article className="web-project-card" data-reveal>
+    <article id={`proyecto-${project.id}`} className="web-project-card" data-reveal>
       <button
         className="web-project-preview"
         type="button"
@@ -419,8 +445,9 @@ export function WebPortfolio() {
       ref={root}
       className="site-theme corporate-root nextelco-reference-page web-portfolio-page"
     >
-      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
+      <DeferredContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
       <PortfolioNav onContact={openContact} />
+      <script type="application/ld+json">{portfolioListSchema}</script>
       <KeyboardPortfolioHero />
       <PortfolioServices />
       <PortfolioProjects />

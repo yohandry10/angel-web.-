@@ -1,0 +1,370 @@
+/* A phone gets its own reading order and touch geometry, with the same brand. */
+.reference-explore,
+.keyboard-title .keyboard-mobile-primary {
+  display: none;
+}
+.contact-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(24 32 43 / 65%);
+}
+.contact-loading > div {
+  width: min(100%, 480px);
+  padding: 32px;
+  background: var(--site-paper);
+  color: var(--site-ink);
+  border-radius: 12px;
+}
+.contact-loading button {
+  min-height: 48px;
+  margin-top: 16px;
+  color: var(--brand-blue);
+}
+.site-theme :is(button, [role="button"]) {
+  -webkit-user-select: none;
+  user-select: none;
+}
+.web-project-card {
+  scroll-margin-top: calc(var(--site-nav-height) + 24px);
+}
+.reference-nav,
+.web-nav,
+.erp-product-nav,
+.site-page-header {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.site-footer {
+  padding-bottom: max(24px, env(safe-area-inset-bottom, 0px));
+}
+@media (max-width: 1000px), (max-width: 1200px) and (orientation: portrait) {
+  .corporate-root .reference-explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    max-width: 440px;
+    font-size: 14px;
+    color: var(--site-ink);
+  }
+}
+@media (max-width: 700px) {
+  :root {
+    --site-gutter: 20px;
+    --site-content-width: calc(100% - 40px);
+    --site-nav-height: calc(73px + env(safe-area-inset-top, 0px));
+  }
+  .reference-nav .reference-nav-inner,
+  .web-nav .web-nav-inner,
+  .erp-product-nav .erp-product-nav-inner,
+  .site-page-header > .site-chrome-shell {
+    width: var(--site-content-width);
+    min-height: 72px;
+    padding-block: 10px;
+  }
+  .reference-nav .nextelco-brandmark,
+  .web-nav .nextelco-brandmark,
+  .erp-product-nav .nextelco-brandmark {
+    width: 168px;
+  }
+  .corporate-root .reference-hero {
+    padding-top: calc(var(--site-nav-height) + 28px);
+  }
+  .corporate-root .reference-copy,
+  .erp-root .erp-hero-copy {
+    width: var(--site-content-width);
+    margin-inline: 20px;
+  }
+  .corporate-root .reference-kicker {
+    margin-left: 0;
+    font-size: 14px;
+  }
+  .corporate-root .reference-hero h1 {
+    font-size: clamp(52px, 15vw, 76px);
+  }
+  .corporate-root .reference-description {
+    max-width: 32ch;
+    margin: 20px 0 0;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+  }
+  .corporate-root .reference-project-button {
+    width: 100%;
+    min-height: 52px;
+    margin: 24px 0 0;
+    padding-inline: 20px;
+    font-size: 15px;
+  }
+  .corporate-root .reference-explore {
+    max-width: none;
+  }
+  .corporate-root .reference-scene {
+    margin-top: 0;
+  }
+  .corporate-root.nextelco-reference-page > .home-section {
+    padding-inline: 20px;
+    padding-block: 56px;
+  }
+  .corporate-root .home-heading-row {
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .corporate-root .home-process-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .corporate-root .home-process-list > li {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 16px;
+    padding-top: 24px;
+  }
+  .corporate-root .home-process-number {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    display: block;
+    margin: 0;
+  }
+  .corporate-root .home-process-number > span {
+    font-size: 28px;
+  }
+  .corporate-root .home-process-number > svg {
+    display: none;
+  }
+  .corporate-root .home-process-list :is(h3, p, .home-process-result) {
+    grid-column: 2;
+  }
+  .corporate-root .home-process-list h3 {
+    margin-bottom: 12px;
+  }
+  .corporate-root .home-process-list p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .corporate-root .home-capability-options button {
+    font-size: 16px;
+    min-height: 76px;
+  }
+  .corporate-root .home-operation-facts dd {
+    flex-shrink: 0;
+  }
+  .corporate-root .home-capability-detail {
+    padding: 24px 20px;
+  }
+  .corporate-root .home-primary-link {
+    width: 100%;
+  }
+  .corporate-root .home-contact-details > a {
+    font-size: clamp(15px, 4.4vw, 19px);
+    overflow-wrap: anywhere;
+  }
+
+  /* The portfolio's promise and main action precede the artwork on a phone. */
+  .web-portfolio-page .keyboard-hero {
+    padding-top: var(--site-nav-height);
+  }
+  .web-portfolio-page .keyboard-poster {
+    padding: 28px 20px 32px;
+    gap: 28px;
+  }
+  .web-portfolio-page .keyboard-title {
+    grid-row: 1;
+    text-align: left;
+  }
+  .web-portfolio-page .keyboard-kicker {
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .web-portfolio-page .keyboard-hero h1 > span {
+    margin-inline: 0;
+    font-size: clamp(44px, 15.7cqw, 92px);
+  }
+  .web-portfolio-page .keyboard-hero h1 > span:first-child {
+    font-size: clamp(64px, 22cqw, 128px);
+  }
+  .web-portfolio-page .keyboard-tagline {
+    margin: 18px 0 0;
+    border: 0;
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    font-weight: 550;
+  }
+  .web-portfolio-page .keyboard-title .keyboard-mobile-primary {
+    display: flex;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 24px;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding-inline: 20px;
+    font-size: 15px;
+  }
+  .web-portfolio-page .keyboard-photo {
+    position: relative;
+    grid-column: 1;
+    grid-row: 2;
+    z-index: auto;
+    inset: auto;
+    width: calc(100% + 40px);
+    margin-inline: -20px;
+    height: 78cqw;
+    overflow: hidden;
+  }
+  .web-portfolio-page .keyboard-photo img {
+    mask-image: none;
+  }
+  .web-portfolio-page .keyboard-scene {
+    display: none;
+  }
+  .web-portfolio-page .keyboard-offerings {
+    grid-row: 3;
+    margin: 0;
+  }
+  .web-portfolio-page .keyboard-poster .keyboard-offerings h2 {
+    font-size: 20px;
+    padding: 0;
+    background: none;
+    color: var(--site-ink);
+  }
+  .web-portfolio-page .keyboard-offerings ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .web-portfolio-page .keyboard-offerings li {
+    font-size: 15px;
+    line-height: 1.45;
+    align-items: flex-start;
+  }
+  .web-portfolio-page .keyboard-check {
+    margin-top: 3px;
+  }
+  .web-portfolio-page .keyboard-project-proof {
+    margin-top: 28px;
+    min-height: 48px;
+  }
+  .web-portfolio-page .keyboard-features {
+    padding-top: 24px;
+  }
+  .web-portfolio-page .keyboard-features p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .web-portfolio-page .keyboard-footer .keyboard-primary {
+    display: none;
+  }
+  .web-portfolio-page .keyboard-location p {
+    font-size: 12px;
+  }
+  .corporate-root.web-portfolio-page > .web-section {
+    padding-block: 56px;
+  }
+  .web-portfolio-page .web-services-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .web-portfolio-page .web-services-grid > article {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 8px 16px;
+    border: 0;
+    border-bottom: 1px solid var(--site-line);
+    border-radius: 0;
+    padding: 24px 0;
+    background: transparent;
+  }
+  .web-portfolio-page .web-services-grid > article > svg {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 24px;
+    margin: 2px 0 0;
+  }
+  .web-portfolio-page .web-services-grid :is(h3, p) {
+    grid-column: 2;
+  }
+  .web-portfolio-page .web-services-grid h3 {
+    margin: 0;
+    font-size: 19px;
+  }
+  .web-portfolio-page .web-services-grid p {
+    font-size: 16px;
+  }
+  .web-portfolio-page .web-project-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    margin-inline: -20px;
+    padding: 4px 20px 12px;
+    scrollbar-width: thin;
+    overscroll-behavior-inline: contain;
+  }
+  .web-portfolio-page .web-project-filters button {
+    flex-shrink: 0;
+    font-size: 14px;
+    min-height: 46px;
+  }
+  .web-portfolio-page .web-project-card-copy {
+    padding: 20px;
+  }
+  .web-portfolio-page .web-project-card-copy > p {
+    font-size: 16px;
+  }
+  .web-portfolio-page .web-project-dialog {
+    max-height: calc(
+      100dvh - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)
+    );
+  }
+
+  .erp-product-page .erp-hero-actions {
+    max-width: 440px;
+  }
+  .erp-product-page .erp-faq-topics {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 4px 0 12px;
+    scrollbar-width: thin;
+  }
+  .erp-product-page .erp-faq-topics button {
+    flex-shrink: 0;
+    gap: 16px;
+    font-size: 14px;
+  }
+  .erp-product-page .erp-faq-answer p,
+  .erp-product-page .erp-module-list dd {
+    font-size: 16px;
+  }
+  .site-theme .contact-dialog form {
+    padding: 24px 20px;
+  }
+  .site-theme .contact-dialog > div:first-child {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--site-paper);
+    padding: 12px 20px;
+  }
+  .site-theme .contact-dialog > div:first-child button {
+    width: 44px;
+    display: grid;
+    place-items: center;
+  }
+  .site-theme .contact-dialog :is(input, textarea, select) {
+    font-size: 16px;
+  }
+  .site-theme .contact-dialog {
+    max-height: calc(
+      100dvh - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)
+    );
+  }
+}

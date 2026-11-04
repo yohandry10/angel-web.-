@@ -75,7 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#fbfcff" },
       { name: "author", content: "NEXTELCO" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
@@ -112,6 +112,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@type": "Organization",
               "@id": `${SITE_URL}#organization`,
               name: "NEXTELCO",
+              legalName: "NEXTELCO SAC",
+              taxID: "20616053575",
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE_URL}/media/brand/nextelco-on-light.webp`,
+                width: 768,
+                height: 256,
+              },
               url: SITE_URL,
               email: "operaciones@nextelco.cloud",
               telephone: "+17862244098",

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteFooter, SitePageHeader } from "@/components/SiteChrome";
 import "@/components/SupportingPages.css";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, pageMeta } from "@/lib/seo";
 
 const TITLE = "Política de privacidad — NEXTELCO SAC";
 const DESC =
@@ -10,12 +10,7 @@ const DESC =
 export const Route = createFileRoute("/privacidad")({
   component: Privacidad,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-    ],
+    meta: pageMeta({ title: TITLE, description: DESC, path: "/privacidad" }),
     links: [{ rel: "canonical", href: `${SITE_URL}/privacidad` }],
   }),
 });

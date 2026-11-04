@@ -11,39 +11,18 @@ import FinalCTA from "@/components/erp/FinalCTA";
 import Footer from "@/components/erp/Footer";
 import { FAQ_ITEMS } from "@/components/erp/faq-data";
 const heroImg = "/media/erp/connected-business-hero.webp";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, pageMeta, pageSchema } from "@/lib/seo";
 import "@/components/erp/ErpExperience.css";
 
 const PAGE_URL = `${SITE_URL}/erp`;
 const TITLE = "NEXTELCO ERP — Ventas, inventario y contabilidad conectados";
 const DESC =
-  "NEXTELCO ERP conecta ventas, POS y cajas, compras, inventario, PECOSA, logística, finanzas, contabilidad y planillas. Comprobantes y guías electrónicas, SIRE y libros PLE para Perú, con permisos e historial de cada operación.";
+  "Conecta ventas, inventario, finanzas y contabilidad con NEXTELCO ERP en Perú. Facturación electrónica y operación web y de escritorio. Solicita una demo.";
 
 export const Route = createFileRoute("/erp")({
   component: ErpLanding,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "theme-color", content: "#fbfcff" },
-      { name: "description", content: DESC },
-      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
-      {
-        name: "keywords",
-        content:
-          "NEXTELCO ERP, ERP Perú, ERP peruano, facturación electrónica SUNAT, software contable Perú, inventario multi-almacén, PECOSA, POS y cajas, guías de remisión electrónicas, SIRE, libros electrónicos PLE, planillas PLAME, conciliación bancaria",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:locale", content: "es_PE" },
-      { property: "og:site_name", content: "NEXTELCO" },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: PAGE_URL },
-      { property: "og:image", content: `${SITE_URL}${heroImg}` },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: `${SITE_URL}${heroImg}` },
-    ],
+    meta: pageMeta({ title: TITLE, description: DESC, path: "/erp", image: heroImg }),
     links: [
       { rel: "canonical", href: PAGE_URL },
       {
@@ -62,6 +41,7 @@ export const Route = createFileRoute("/erp")({
       },
     ],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(pageSchema("/erp", TITLE, DESC)) },
       {
         type: "application/ld+json",
         children: JSON.stringify({

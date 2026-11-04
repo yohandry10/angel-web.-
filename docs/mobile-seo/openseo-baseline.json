@@ -1,0 +1,171 @@
+{
+  "audit": {
+    "summary": [
+      {
+        "issueType": "meta-description-too-long",
+        "title": "Meta description too long",
+        "severity": "info",
+        "count": 2
+      },
+      {
+        "issueType": "title-too-long",
+        "title": "Title too long",
+        "severity": "info",
+        "count": 2
+      }
+    ],
+    "issues": [
+      {
+        "severity": "info",
+        "issueType": "meta-description-too-long",
+        "title": "Meta description too long",
+        "url": "https://www.nextelco.cloud/",
+        "details": {
+          "length": 234,
+          "max": 160,
+          "description": "Desde Lima, Perú, construimos sistemas empresariales de alto rendimiento —ERP, CRM y plataformas a m…"
+        },
+        "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+      },
+      {
+        "severity": "info",
+        "issueType": "meta-description-too-long",
+        "title": "Meta description too long",
+        "url": "https://www.nextelco.cloud/erp",
+        "details": {
+          "length": 225,
+          "max": 160,
+          "description": "NEXTELCO ERP conecta ventas, POS y cajas, compras, inventario, PECOSA, logística, finanzas, contabil…"
+        },
+        "howToFix": "Trim the description to roughly 70–160 characters while keeping the core message and call to action."
+      },
+      {
+        "severity": "info",
+        "issueType": "title-too-long",
+        "title": "Title too long",
+        "url": "https://www.nextelco.cloud/",
+        "details": {
+          "length": 62,
+          "max": 60,
+          "title": "NEXTELCO — Sistemas empresariales, ERP, IA, DevOps y DevSecOps"
+        },
+        "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+      },
+      {
+        "severity": "info",
+        "issueType": "title-too-long",
+        "title": "Title too long",
+        "url": "https://www.nextelco.cloud/experiencia",
+        "details": {
+          "length": 74,
+          "max": 60,
+          "title": "Experiencia en DevOps, Cloud e Inteligencia Artificial Aplicada — NEXTELCO"
+        },
+        "howToFix": "Shorten the title to roughly 50–60 characters, front-loading the most important words."
+      }
+    ],
+    "meta": {
+      "projectId": "896ab08e-171f-409e-8bc4-88653ecabf23",
+      "url": "https://app.openseo.so/p/896ab08e-171f-409e-8bc4-88653ecabf23/audit?auditId=ff3566c2-cda2-48e4-8936-664038f5321c"
+    }
+  },
+  "pages": {
+    "pages": [
+      {
+        "id": "21e34abdc67b3fba95f67c0b4ede8945c6a0",
+        "url": "https://www.nextelco.cloud/",
+        "statusCode": 200,
+        "fetchClass": "ok",
+        "redirectUrl": null,
+        "title": "NEXTELCO — Sistemas empresariales, ERP, IA, DevOps y DevSecOps",
+        "metaDescription": "Desde Lima, Perú, construimos sistemas empresariales de alto rendimiento —ERP, CRM y plataformas a medida— y resolvemos problemas complejos de negocio con Deep Learning, Machine Learning, DevOps y DevSecOps. Creadores de NEXTELCO ERP.",
+        "wordCount": 544,
+        "isIndexable": true,
+        "crawlDepth": 0,
+        "inSitemap": true,
+        "internalLinkCount": 6,
+        "responseTimeMs": 68
+      },
+      {
+        "id": "45d25a5d54e79f1e1f72ae9070ba12e97b53",
+        "url": "https://www.nextelco.cloud/aviso-legal",
+        "statusCode": 200,
+        "fetchClass": "ok",
+        "redirectUrl": null,
+        "title": "Aviso legal — NEXTELCO SAC",
+        "metaDescription": "Aviso legal del sitio nextelco.cloud: titular, condiciones de uso y contacto de NEXTELCO SAC.",
+        "wordCount": 301,
+        "isIndexable": true,
+        "crawlDepth": null,
+        "inSitemap": true,
+        "internalLinkCount": 6,
+        "responseTimeMs": 67
+      },
+      {
+        "id": "c64a194f0e1de16435a4c89226626ab685ec",
+        "url": "https://www.nextelco.cloud/erp",
+        "statusCode": 200,
+        "fetchClass": "ok",
+        "redirectUrl": null,
+        "title": "NEXTELCO ERP — Ventas, inventario y contabilidad conectados",
+        "metaDescription": "NEXTELCO ERP conecta ventas, POS y cajas, compras, inventario, PECOSA, logística, finanzas, contabilidad y planillas. Comprobantes y guías electrónicas, SIRE y libros PLE para Perú, con permisos e historial de cada operación.",
+        "wordCount": 827,
+        "isIndexable": true,
+        "crawlDepth": null,
+        "inSitemap": true,
+        "internalLinkCount": 6,
+        "responseTimeMs": 61
+      },
+      {
+        "id": "88612203da1ca6de8c111be5ff90da467f3e",
+        "url": "https://www.nextelco.cloud/experiencia",
+        "statusCode": 200,
+        "fetchClass": "ok",
+        "redirectUrl": null,
+        "title": "Experiencia en DevOps, Cloud e Inteligencia Artificial Aplicada — NEXTELCO",
+        "metaDescription": "Diseño, automatización y operación de plataformas modernas: DevOps, arquitecturas Cloud, seguridad, observabilidad e IA aplicada con LLMs, RAG, MCP y agentes.",
+        "wordCount": 629,
+        "isIndexable": true,
+        "crawlDepth": null,
+        "inSitemap": true,
+        "internalLinkCount": 6,
+        "responseTimeMs": 52
+      },
+      {
+        "id": "0460bbe6e00587f316577e0766eb76b98b52",
+        "url": "https://www.nextelco.cloud/portafolio-web",
+        "statusCode": 200,
+        "fetchClass": "ok",
+        "redirectUrl": null,
+        "title": "Portafolio web — Diseño y desarrollo web | NEXTELCO",
+        "metaDescription": "Explora el portafolio web de NEXTELCO: sitios corporativos, ecommerce, sistemas y plataformas educativas. Conoce los proyectos, sus tecnologías y sus webs.",
+        "wordCount": 617,
+        "isIndexable": true,
+        "crawlDepth": null,
+        "inSitemap": true,
+        "internalLinkCount": 6,
+        "responseTimeMs": 56
+      },
+      {
+        "id": "16d51037805d5e27f215bf0656806bac343d",
+        "url": "https://www.nextelco.cloud/privacidad",
+        "statusCode": 200,
+        "fetchClass": "ok",
+        "redirectUrl": null,
+        "title": "Política de privacidad — NEXTELCO SAC",
+        "metaDescription": "Cómo NEXTELCO SAC trata tus datos personales y cómo ejercer tus derechos según la Ley 29733.",
+        "wordCount": 364,
+        "isIndexable": true,
+        "crawlDepth": null,
+        "inSitemap": true,
+        "internalLinkCount": 6,
+        "responseTimeMs": 37
+      }
+    ],
+    "total": 6,
+    "meta": {
+      "projectId": "896ab08e-171f-409e-8bc4-88653ecabf23",
+      "url": "https://app.openseo.so/p/896ab08e-171f-409e-8bc4-88653ecabf23/audit?auditId=ff3566c2-cda2-48e4-8936-664038f5321c"
+    }
+  }
+}

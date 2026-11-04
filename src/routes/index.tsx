@@ -11,29 +11,18 @@ import {
   HomeDelivery,
   HomeContact,
 } from "@/components/HomeSections";
-import { ContactModal } from "@/components/ContactModal";
-import { SITE_URL } from "@/lib/seo";
+import { DeferredContactModal } from "@/components/DeferredContactModal";
+import { SITE_URL, pageMeta, pageSchema } from "@/lib/seo";
 
 const heroImg = "/media/hero/nextelco-reveal.webp";
-const TITLE = "NEXTELCO — Sistemas empresariales, ERP, IA, DevOps y DevSecOps";
+const TITLE = "NEXTELCO — ERP y software a medida en Perú";
 const DESC =
-  "Desde Lima, Perú, construimos sistemas empresariales de alto rendimiento —ERP, CRM y plataformas a medida— y resolvemos problemas complejos de negocio con Deep Learning, Machine Learning, DevOps y DevSecOps. Creadores de NEXTELCO ERP.";
+  "ERP, desarrollo web y software a medida desde Lima, Perú. Conectamos tu negocio con Cloud, DevOps e inteligencia artificial. Conoce NEXTELCO.";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "theme-color", content: "#fbfcff" },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:url", content: `${SITE_URL}/` },
-      { property: "og:image", content: `${SITE_URL}${heroImg}` },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
-      { name: "twitter:image", content: `${SITE_URL}${heroImg}` },
-    ],
+    meta: pageMeta({ title: TITLE, description: DESC, path: "/", image: heroImg }),
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
       {
@@ -51,6 +40,9 @@ export const Route = createFileRoute("/")({
         media: "(min-width: 1800px)",
       },
     ],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(pageSchema("/", TITLE, DESC)) },
+    ],
   }),
 });
 
@@ -65,7 +57,7 @@ function Index() {
       ref={root}
       className="site-theme corporate-root nextelco-reference-page bg-background text-foreground overflow-x-hidden"
     >
-      <ContactModal open={modal} onClose={() => setModal(false)} />
+      <DeferredContactModal open={modal} onClose={() => setModal(false)} />
       <NextelcoHomeNav onContact={openModal} />
       <NextelcoHero onContact={openModal} />
       <HomeProcess />

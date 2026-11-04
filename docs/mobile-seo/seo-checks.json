@@ -1,0 +1,54 @@
+{
+  "base": "http://127.0.0.1:5173",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "NEXTELCO — ERP y software a medida en Perú",
+      "descriptionLength": 141,
+      "canonical": "https://www.nextelco.cloud/",
+      "schemas": 2
+    },
+    {
+      "path": "/erp",
+      "status": 200,
+      "title": "NEXTELCO ERP — Ventas, inventario y contabilidad conectados",
+      "descriptionLength": 153,
+      "canonical": "https://www.nextelco.cloud/erp",
+      "schemas": 5
+    },
+    {
+      "path": "/portafolio-web",
+      "status": 200,
+      "title": "Desarrollo web en Perú y portafolio | NEXTELCO",
+      "descriptionLength": 150,
+      "canonical": "https://www.nextelco.cloud/portafolio-web",
+      "schemas": 4
+    },
+    {
+      "path": "/experiencia",
+      "status": 200,
+      "title": "Cloud, DevOps e inteligencia artificial | NEXTELCO",
+      "descriptionLength": 158,
+      "canonical": "https://www.nextelco.cloud/experiencia",
+      "schemas": 3
+    },
+    {
+      "path": "/aviso-legal",
+      "status": 200,
+      "title": "Aviso legal — NEXTELCO SAC",
+      "descriptionLength": 93,
+      "canonical": "https://www.nextelco.cloud/aviso-legal",
+      "schemas": 1
+    },
+    {
+      "path": "/privacidad",
+      "status": 200,
+      "title": "Política de privacidad — NEXTELCO SAC",
+      "descriptionLength": 92,
+      "canonical": "https://www.nextelco.cloud/privacidad",
+      "schemas": 1
+    }
+  ],
+  "missingStatus": 404
+}

@@ -12,6 +12,7 @@ import {
   X,
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
+import { preloadContactModal } from "@/lib/contact-loader";
 import "./NextelcoHero.css";
 
 const SERVICES = [
@@ -63,7 +64,12 @@ export function NextelcoHomeNav({ onContact }: { onContact: () => void }) {
           <Link to="/erp">ERP</Link>
           <Link to="/portafolio-web">Portafolio web</Link>
           <Link to="/experiencia">Experiencia</Link>
-          <button type="button" onClick={onContact}>
+          <button
+            type="button"
+            onClick={onContact}
+            onPointerEnter={preloadContactModal}
+            onFocus={preloadContactModal}
+          >
             Conversemos <ArrowUpRight size={15} />
           </button>
         </nav>
@@ -183,9 +189,18 @@ export function NextelcoHero({ onContact }: { onContact: () => void }) {
           Desarrollamos soluciones digitales
           <br className="reference-desktop-break" /> que impulsan tu negocio.
         </p>
-        <button className="reference-project-button" type="button" onClick={onContact}>
+        <button
+          className="reference-project-button"
+          type="button"
+          onClick={onContact}
+          onPointerEnter={preloadContactModal}
+          onFocus={preloadContactModal}
+        >
           Hablemos de tu proyecto <ArrowUpRight size={19} aria-hidden="true" />
         </button>
+        <a className="reference-explore" href="#stack">
+          Explorar nuestros servicios <ArrowUpRight size={17} aria-hidden="true" />
+        </a>
         <svg
           className="reference-arrow"
           width="170"

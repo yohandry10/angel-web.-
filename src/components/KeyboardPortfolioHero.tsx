@@ -76,6 +76,9 @@ export function KeyboardPortfolioHero() {
             <span>portafolios</span>
           </h1>
           <p className="keyboard-tagline">Diseña. Conecta. Crece.</p>
+          <a className="keyboard-primary keyboard-mobile-primary" href="#proyectos">
+            Explorar proyectos <ArrowDown size={18} aria-hidden="true" />
+          </a>
         </div>
 
         <div className="keyboard-offerings">

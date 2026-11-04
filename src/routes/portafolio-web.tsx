@@ -1,27 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { WebPortfolio } from "@/components/WebPortfolio";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, pageMeta, pageSchema } from "@/lib/seo";
 
 const PAGE_URL = `${SITE_URL}/portafolio-web`;
-const TITLE = "Portafolio web — Diseño y desarrollo web | NEXTELCO";
+const TITLE = "Desarrollo web en Perú y portafolio | NEXTELCO";
 const DESCRIPTION =
-  "Explora el portafolio web de NEXTELCO: sitios corporativos, ecommerce, sistemas y plataformas educativas. Conoce los proyectos, sus tecnologías y sus webs.";
+  "Diseño y desarrollo web en Perú: sitios corporativos, ecommerce y plataformas educativas. Explora 18 proyectos de NEXTELCO y conversemos sobre tu web.";
 
 export const Route = createFileRoute("/portafolio-web")({
   component: WebPortfolio,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { name: "theme-color", content: "#fbfcff" },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:url", content: PAGE_URL },
-      { property: "og:image", content: `${SITE_URL}/media/portfolio/keyboard-door-wide.webp` },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESCRIPTION },
-      { name: "twitter:image", content: `${SITE_URL}/media/portfolio/keyboard-door-wide.webp` },
-    ],
+    meta: pageMeta({
+      title: TITLE,
+      description: DESCRIPTION,
+      path: "/portafolio-web",
+      image: "/media/portfolio/keyboard-door-wide.webp",
+    }),
     links: [
       { rel: "canonical", href: PAGE_URL },
       {
@@ -47,6 +41,13 @@ export const Route = createFileRoute("/portafolio-web")({
       },
     ],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          ...pageSchema("/portafolio-web", TITLE, DESCRIPTION, "CollectionPage"),
+          mainEntity: { "@id": `${PAGE_URL}#projects` },
+        }),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

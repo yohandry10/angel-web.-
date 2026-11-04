@@ -3,6 +3,7 @@
 @import "tw-animate-css";
 @import "./site-theme.css";
 @import "./motion.css";
+@import "./mobile.css";
 
 @custom-variant dark (&:is(.dark *));
 

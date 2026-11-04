@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { X } from "lucide-react";
 import { trackLead } from "@/lib/analytics";
 import { z } from "zod";
 
@@ -10,6 +11,7 @@ const schema = z.object({
 });
 
 export function ContactModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const dialog = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "", website: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
@@ -18,12 +20,38 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
 
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const previousFocus =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    const focusable = () =>
+      [
+        ...(dialog.current?.querySelectorAll<HTMLElement>(
+          "button:not([disabled]), a[href], input:not([disabled]), textarea:not([disabled]), [tabindex]",
+        ) ?? []),
+      ].filter((element) => element.tabIndex >= 0 && element.getClientRects().length > 0);
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+      if (event.key !== "Tab") return;
+      const items = focusable();
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    dialog.current
+      ?.querySelector<HTMLInputElement>('input[name="name"]')
+      ?.focus({ preventScroll: true });
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
+      previousFocus?.focus({ preventScroll: true });
     };
   }, [open, onClose]);
 
@@ -63,6 +91,7 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
       <div className="contact-backdrop absolute inset-0 backdrop-blur-md" onClick={onClose} />
       <div
+        ref={dialog}
         role="dialog"
         aria-modal="true"
         aria-label="Contacto con NEXTELCO"
@@ -75,11 +104,13 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
             <span className="font-sans text-[13px] text-muted-foreground">Contacto</span>
           </div>
           <button
+            type="button"
+            aria-label="Cerrar formulario"
             onClick={onClose}
             data-cursor="$ close"
             className="font-sans text-xs text-muted-foreground hover:text-amber-glow transition"
           >
-            [ESC] ✕
+            <X size={20} aria-hidden="true" />
           </button>
         </div>
 
@@ -204,6 +235,8 @@ function Field({
       <span className="font-sans text-[13px] text-muted-foreground block mb-2">{label}</span>
       {textarea ? (
         <textarea
+          aria-invalid={!!error}
+          aria-describedby={error ? `contact-${name}-error` : undefined}
           name={name}
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -213,6 +246,11 @@ function Field({
         />
       ) : (
         <input
+          aria-invalid={!!error}
+          aria-describedby={error ? `contact-${name}-error` : undefined}
+          autoComplete={name === "company" ? "organization" : name}
+          autoCapitalize={type === "email" ? "none" : undefined}
+          enterKeyHint="next"
           name={name}
           type={type}
           value={value}
@@ -221,7 +259,14 @@ function Field({
           className="w-full bg-transparent border-b border-line py-2 focus:border-cyan-glow focus:outline-none transition font-sans text-base"
         />
       )}
-      {error && <span className="block mt-1 font-sans text-[13px] text-amber-glow">! {error}</span>}
+      {error && (
+        <span
+          id={`contact-${name}-error`}
+          className="block mt-1 font-sans text-[13px] text-amber-glow"
+        >
+          {error}
+        </span>
+      )}
     </label>
   );
 }

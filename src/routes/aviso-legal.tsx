@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteFooter, SitePageHeader } from "@/components/SiteChrome";
 import "@/components/SupportingPages.css";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, pageMeta } from "@/lib/seo";
 
 const TITLE = "Aviso legal — NEXTELCO SAC";
 const DESC =
@@ -10,12 +10,7 @@ const DESC =
 export const Route = createFileRoute("/aviso-legal")({
   component: AvisoLegal,
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-    ],
+    meta: pageMeta({ title: TITLE, description: DESC, path: "/aviso-legal" }),
     links: [{ rel: "canonical", href: `${SITE_URL}/aviso-legal` }],
   }),
 });
