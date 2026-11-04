@@ -124,6 +124,7 @@ export const Route = createRootRoute({
                 height: 256,
               },
               url: SITE_URL,
+              sameAs: ["https://www.google.com/maps?cid=6104971793519107200"],
               email: "operaciones@nextelco.cloud",
               telephone: "+51904963051",
               address: {
