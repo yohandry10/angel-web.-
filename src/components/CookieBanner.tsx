@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { applyConsent, getConsent, setConsent } from "@/lib/analytics";
+import { applyConsent, getConsent, setConsent, startContactTracking } from "@/lib/analytics";
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -9,6 +9,7 @@ export function CookieBanner() {
     const saved = getConsent();
     if (saved === "granted") applyConsent("granted");
     setVisible(saved === null);
+    return startContactTracking();
   }, []);
 
   if (!visible) return null;
@@ -26,8 +27,8 @@ export function CookieBanner() {
     >
       <div className="mx-auto max-w-3xl rounded-xl border border-line bg-background/95 p-5 shadow-2xl backdrop-blur sm:flex sm:items-center sm:gap-6">
         <p className="text-sm leading-relaxed text-muted-foreground">
-          Usamos cookies de medición de Google Analytics y de Google Ads para entender qué páginas
-          se visitan y medir las consultas. Solo se activan si aceptas. Más detalles en la{" "}
+          Usamos cookies de Google Analytics para medir visitas y consultas. Solo se activan si
+          aceptas. Más detalles en la{" "}
           <Link to="/privacidad" className="underline text-foreground">
             política de privacidad
           </Link>
