@@ -40,6 +40,22 @@ export const Route = createFileRoute("/api/contact")({
   server: {
     handlers: {
       POST: async ({ request }) => {
+        // Solo aceptamos envíos hechos desde nuestra propia web (bloquea formularios en sitios ajenos).
+        const origin = request.headers.get("origin");
+        let sameOrigin = false;
+        try {
+          sameOrigin = !!origin && new URL(origin).host === new URL(request.url).host;
+        } catch {
+          /* Origin mal formado */
+        }
+        if (!sameOrigin) {
+          return Response.json({ ok: false, error: "Origen no permitido." }, { status: 403 });
+        }
+        // El formulario pesa unos pocos KB; algo mayor no es un envío legítimo.
+        if (Number(request.headers.get("content-length") ?? 0) > 16_384) {
+          return Response.json({ ok: false, error: "Solicitud demasiado grande." }, { status: 413 });
+        }
+
         // En Vercel, x-vercel-forwarded-for lo pone la plataforma y el cliente no puede falsificarlo.
         const ip = request.headers.get("x-vercel-forwarded-for")?.split(",")[0].trim() || "desconocida";
         if (overLimit(ip)) {
